@@ -17,7 +17,7 @@ export default function FaqQuestions({ question }) {
     <div className='border-1px border-solid border-black-10 rounded-5px bg-white p-15px mb-10px transition-all transition-duration-500ms greencss-button'>
       <button className={`bg-transparent ${active}`} onClick={toggleQuestion}>
         <div className='flex'>
-          <h3 className='text-20px font-700 mb-0px'>{question.title}</h3>
+          <h3 className='text-20px font-800 mb-0px'>{question.title}</h3>
           <FaqIcon className={`ml-auto cursor-pointer ${active && 'rotate-45deg'}`} />
         </div>
         <div ref={contentRef} className='overflow-hidden transition-all transition-duration-600ms ease'>

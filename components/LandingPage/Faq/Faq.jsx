@@ -59,7 +59,7 @@ export default function Faq() {
               important factor and represents our credo. If you have any further inquiries, please feel free to send us
               a message.
             </p>
-            <GreenButton hasLink={true} isDefault={false} href='/contact'>
+            <GreenButton hasLink={true} isDefault={false} href='/contact' className='font-400'>
               Shoot a Direct Message
             </GreenButton>
           </div>

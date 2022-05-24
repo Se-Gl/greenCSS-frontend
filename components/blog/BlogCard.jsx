@@ -14,7 +14,7 @@ export default function BlogCard({ post, index }) {
   const isDark = color.isDark()
 
   const [ref, isVisible] = useInView({
-    threshold: 0.25,
+    threshold: 0.15,
     unobserveOnEnter: true
   })
 
