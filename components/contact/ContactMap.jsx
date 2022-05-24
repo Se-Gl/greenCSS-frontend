@@ -29,6 +29,7 @@ const ContactMap = () => {
   return (
     <div className='relative z-0 my-50px w-100per h-50vh overflow-hidden' id='contact-map'>
       <Map
+        scrollZoom={false}
         mapboxAccessToken={`${process.env.NEXT_PUBLIC_MAPBOX_KEY}`}
         initialViewState={{
           longitude: 8.6821267,
