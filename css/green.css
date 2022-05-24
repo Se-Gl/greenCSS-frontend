@@ -92,13 +92,15 @@ ul {
   list-style: none;
 }
 
+
 q {
   quotes: none;
 }
 
+
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -119,8 +121,8 @@ html {
   }
 
   *,
-  *::before,
-  *::after {
+*::before,
+*::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -3000,7 +3002,7 @@ input::-moz-focus-inner,
 }
 
 .monospace {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .text-10px {
@@ -4923,6 +4925,7 @@ input::-moz-focus-inner,
 }
 
 @media (max-width: 480px) {
+
   .sm\:text-20px {
     font-size: 20px;
   }
@@ -5103,6 +5106,7 @@ input::-moz-focus-inner,
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
+
   .md\:text-20px {
     font-size: 20px;
   }
@@ -5239,6 +5243,7 @@ input::-moz-focus-inner,
   }
 }
 @media (min-width: 769px) and (max-width: 1080px) {
+
   .lg\:text-13px {
     font-size: 13px;
   }
