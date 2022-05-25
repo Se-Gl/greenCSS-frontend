@@ -24,7 +24,7 @@ export default function Cookies() {
     <>
       {cookieBanner && (
         <div
-          className='fixed bottom-0per right-0per m-20px min-h-30vh w-30vw sm:w-auto md:w-auto lg:w-auto bg-white z-99 rounded-10px shadow-small-black'
+          className='fixed bottom-0per right-0per m-20px min-h-30vh w-30vw sm:w-auto md:w-auto bg-white z-99 rounded-10px shadow-small-black'
           id='cookie-banner'>
           <div className='flex sm:block min-h-30vh p-20px'>
             <div className='m-auto'>

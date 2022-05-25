@@ -181,9 +181,7 @@ const Sponsor = () => {
       />
       {!prediction && (
         <div className='max-w-50rem m-auto pt-50px'>
-          <h2>
-            Have you heard about our <span className='text-greencss'>emission calculator</span>?
-          </h2>
+          <h2>Have you heard about our emission calculator?</h2>
           <p className='mb-0px'>
             If you want to make a specific and individually tailored donation for yourself, you are welcome to try the{' '}
             <Link href='#calculate-footprint'>
