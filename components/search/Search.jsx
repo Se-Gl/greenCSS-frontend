@@ -11,17 +11,14 @@ export default function Search({ handleCloseClick }) {
       if (searchTerm === '') {
         setSearchResults([])
       } else {
-        const res = await fetch(`/api/search?q=${searchTerm.toLowerCase()}`)
-        const { results } = await res.json()
-        // console.log(results)
+        const res = await fetch(`/api/search?q=${searchTerm}`)
+        const results = await res.json()
+        // console.log(results);
         setSearchResults(results)
       }
     }
     getResults()
   }, [searchTerm])
-
-  //   console.log(searchTerm)
-  // console.log(searchTerm.toLowerCase())
 
   return (
     <>

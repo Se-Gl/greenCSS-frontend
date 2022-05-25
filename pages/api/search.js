@@ -11,5 +11,6 @@ export default function search(req, res) {
       plainText.toLowerCase().indexOf(req.query.q) != -1
   )
   //   console.log(results.length)
-  res.status(200).json(JSON.stringify({ results }))
+  // res.status(200).json(JSON.stringify({ results }))
+  res.status(200).json(results)
 }
