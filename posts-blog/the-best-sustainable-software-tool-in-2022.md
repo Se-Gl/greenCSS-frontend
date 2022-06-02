@@ -1,0 +1,44 @@
+---
+isBlog: true
+title: 'The best Sustainable Software Tool in 2022'
+date: 'Jun 02. 2022'
+excerpt: 'In today’s world, we are surrounded by technology. Creating a professional website is a challenge for many web developers. This sustainable CSS library may help'
+cover_image: '/images/blog/cover/sustainable-software.webp'
+category: 'Sustainability'
+author: 'Severin Glaser'
+keywords: ['green software', 'sustainable software']
+classNames: ''
+author_image: '/images/blog/users/segl-avatar.webp'
+plainText: '" sustainable software for the 21st century sustainable technology is an approach that aims to reduce environmental impact by using resources in a responsible manner it includes technologies that use renewable energy sources recycles waste products and reduces consumption of natural resources greencss is a free open source css library designed to help you create responsive websites it includes features like grid layouts typography handcrafted animations and media queries create responsive websites with greencss if you’re looking for a simple solution to creating responsive websites then check out how to install greencss this open source css library helps you build responsive sites without having to learn any new code the intuitive writing style is easy to learn plus you are doing something good for the environment because sustainable css is unfortunately still rare add more than 110 different animation effects to your website with greencss you can easily add animation effects examples animation to your website these animations will make your website more interesting and attractive in addition to user-friendliness micro-interactions can be promoted to a new level hardly any other css library can compete with these out of the box features designing custom forms using greencss made easy if you are looking for a simple solution to design custom forms using css then greencss is the right choice for you this open source library has been designed with simplicity in mind you can use it to create any type of form you need or would you rather code a hero section blog how-to-create-a-responsive-hero-section ? in that case have a look at the html code design beautiful landing pages a landing page is a webpage that appears when a visitor clicks on a link it usually contains a headline a description of the product or service offered and some call to actions landing pages are often used as part of a paid advertising campaign they are also used to promote websites and products by the way greencss dev was created entirely with this sustainable css library ! create a sustainable landing page 1440x800 caption: create a responsive and sustainable landing page made easy images blog blogcontent sustainable landing-page-example webp manage multiple devices with one codebase there are many different ways to build a landing page you can use any web framework which features html5 css3 javascript php python ruby java etc however one of the biggest challenges web designers are facing is to manage multiple devices if you design a site using responsive design then you need to make sure that everything looks good on mobile phones tablets laptops desktops and tvs with greencss you will never write again annoying media queries the solution sustainable css css has been developed to make web pages more accessible to people who are visually impaired however css is not designed to be sustainable this means that it does not take into account the environment when creating websites "'
+---
+
+## Sustainable Software for the 21st Century
+
+Sustainable technology is an approach that aims to reduce environmental impact by using resources in a responsible manner. It includes technologies that use renewable energy sources, recycles waste products, and reduces consumption of natural resources.
+greenCSS is a free, open source CSS library designed to help you create responsive websites. It includes features like grid layouts, typography, handcrafted animations, and media queries.
+
+## Create Responsive Websites with greenCSS
+
+If you’re looking for a simple solution to creating responsive websites, then check out how to install greenCSS. This open source CSS library helps you build responsive sites without having to learn any new code. The intuitive writing style is easy to learn - plus you're doing something good for the environment. Because sustainable CSS is unfortunately still rare.
+
+### Add more than 110 different Animation Effects to Your Website
+
+With greenCSS, you can easily add [animation effects](/examples/animation) to your website. These animations will make your website more interesting and attractive. In addition to user-friendliness, micro-interactions can be promoted to a new level. Hardly any other CSS library can compete with these out of the box features.
+
+### Designing Custom Forms Using greenCSS - made easy
+
+If you are looking for a simple solution to design custom forms using CSS, then greenCSS is the right choice for you. This open source library has been designed with simplicity in mind. You can use it to create any type of form you need. Or would you rather code a [hero section](/blog/how-to-create-a-responsive-hero-section)? In that case, have a look at the HTML code.
+
+### Design Beautiful Landing Pages
+
+A landing page is a webpage that appears when a visitor clicks on a link. It usually contains a headline, a description of the product or service offered, and some call to actions. Landing pages are often used as part of a paid advertising campaign. They are also used to promote websites and products. By the way, greenCSS.dev was created entirely with this sustainable CSS library.
+
+![create a sustainable landing page {1440x800} {caption: Create a responsive and sustainable landing page - made easy}](/images/blog/blogcontent/sustainable/landing-page-example.webp)
+
+## Manage Multiple Devices with One Codebase
+
+There are many different ways to build a landing page. You can use any web framework which features HTML5, CSS3, JavaScript, PHP, Python, Ruby, Java, etc. However, one of the biggest challenges web designers are facing is to manage multiple devices. If you design a site using responsive design, then you need to make sure that everything looks good on mobile phones, tablets, laptops, desktops, and TVs. With greenCSS you will never write again annoying media queries.
+
+## The Solution - sustainable CSS
+
+CSS has been developed to make web pages more accessible to people who are visually impaired. However, CSS is not designed to be sustainable. This means that it does not take into account the environment when creating websites.
