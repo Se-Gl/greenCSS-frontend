@@ -1,6 +1,7 @@
 describe('Calculation Section', () => {
   before(() => {
     cy.visit('http://localhost:3000')
+    cy.viewport(1001, 800)
   })
   it('renders the calculation section', () => {
     cy.get('#calculate-footprint').scrollIntoView().should('exist').contains('Calculate your green footprint', {
@@ -11,7 +12,7 @@ describe('Calculation Section', () => {
   it('changes the range slider input and gets a result', () => {
     cy.get('#range-slider-W input').eq(1).as('range').invoke('val', 750).trigger('change', { force: true })
     cy.get('#range-slider-h input').eq(1).as('range').invoke('val', 10).trigger('change', { force: true })
-    cy.get('#calculation-result').eq(1).should('not.be.empty')
+    cy.get('#calculation-result').should('not.be.empty')
   })
 })
 

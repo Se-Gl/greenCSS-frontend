@@ -274,6 +274,10 @@ input::-moz-focus-inner,
   color: #fc9494;
 }
 
+.text-red-7 {
+  color: #fdacac;
+}
+
 .text-green-9 {
   color: #edfedb;
 }
@@ -284,10 +288,6 @@ input::-moz-focus-inner,
 
 .hover\:text-greencss-2:hover {
   color: #56aa03;
-}
-
-.text-greencss-5 {
-  color: #7bf104;
 }
 
 .text-black-3 {
@@ -519,12 +519,12 @@ input::-moz-focus-inner,
   color: #fc9494;
 }
 
-.text-green-9 {
-  color: #edfedb;
+.text-red-7 {
+  color: #fdacac;
 }
 
-.text-greencss-5 {
-  color: #7bf104;
+.text-green-9 {
+  color: #edfedb;
 }
 
 .text-black-3 {
@@ -559,12 +559,12 @@ input::-moz-focus-inner,
   color: #fc9494;
 }
 
-.text-green-9 {
-  color: #edfedb;
+.text-red-7 {
+  color: #fdacac;
 }
 
-.text-greencss-5 {
-  color: #7bf104;
+.text-green-9 {
+  color: #edfedb;
 }
 
 .text-black-3 {
@@ -3277,6 +3277,10 @@ input::-moz-focus-inner,
   color: #fc9494;
 }
 
+.text-red-7 {
+  color: #fdacac;
+}
+
 .text-green-9 {
   color: #edfedb;
 }
@@ -3287,10 +3291,6 @@ input::-moz-focus-inner,
 
 .hover\:text-greencss-2:hover {
   color: #56aa03;
-}
-
-.text-greencss-5 {
-  color: #7bf104;
 }
 
 .text-black-3 {
@@ -3522,12 +3522,12 @@ input::-moz-focus-inner,
   color: #fc9494;
 }
 
-.text-green-9 {
-  color: #edfedb;
+.text-red-7 {
+  color: #fdacac;
 }
 
-.text-greencss-5 {
-  color: #7bf104;
+.text-green-9 {
+  color: #edfedb;
 }
 
 .text-black-3 {
@@ -3562,12 +3562,12 @@ input::-moz-focus-inner,
   color: #fc9494;
 }
 
-.text-green-9 {
-  color: #edfedb;
+.text-red-7 {
+  color: #fdacac;
 }
 
-.text-greencss-5 {
-  color: #7bf104;
+.text-green-9 {
+  color: #edfedb;
 }
 
 .text-black-3 {
@@ -3822,6 +3822,10 @@ input::-moz-focus-inner,
   top: 10%;
 }
 
+.top-31per {
+  top: 31%;
+}
+
 .top-50per {
   top: 50%;
 }
@@ -3850,8 +3854,36 @@ input::-moz-focus-inner,
   left: 0%;
 }
 
+.left-5per {
+  left: 5%;
+}
+
+.left-9per {
+  left: 9%;
+}
+
+.left-20per {
+  left: 20%;
+}
+
+.left-23per {
+  left: 23%;
+}
+
+.left-25per {
+  left: 25%;
+}
+
+.left-42per {
+  left: 42%;
+}
+
 .left-50per {
   left: 50%;
+}
+
+.left-61per {
+  left: 61%;
 }
 
 .z-neg-99 {
@@ -3966,6 +3998,10 @@ input::-moz-focus-inner,
   width: 12rem;
 }
 
+.w-15rem {
+  width: 15rem;
+}
+
 .w-21rem {
   width: 21rem;
 }
@@ -3988,6 +4024,10 @@ input::-moz-focus-inner,
 
 .w-50rem {
   width: 50rem;
+}
+
+.w-55rem {
+  width: 55rem;
 }
 
 .w-50per {
@@ -5003,6 +5043,10 @@ input::-moz-focus-inner,
 
   .sm\:h-25px {
     height: 25px;
+  }
+
+  .sm\:h-50vh {
+    height: 50vh;
   }
 
   .sm\:min-h-30px {

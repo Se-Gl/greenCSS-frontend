@@ -6,12 +6,12 @@ Observer API], so check for
 [compatibility](https://caniuse.com/#feat=intersectionobserver).
 [Idea from](https://github.com/bitmap/react-hook-inview)
 
-## `useInView`
+## `isInView`
 
 The hook in its most basic form returns a ref and a boolean.
 
 ```js
-const [ref, inView] = useInView()
+const [ref, inView] = isInView()
 ```
 
 That's all you need to get started, but it does [a lot more](#api).
@@ -23,13 +23,13 @@ element is fully in the viewport. Conditional rendering is required, be carefull
 
 ```js
 import React from 'react'
-import useInView from '../hooks/InView/scrollView'
+import isInView from '../hooks/InView/scrollView'
 
 const Demo = () => {
-  const [ref, isVisible] = useInView({
+  const [ref, isVisible] = isInView({
     threshold: 0.5
   })
-  const [refTwo, isVisibleTwo] = useInView({
+  const [refTwo, isVisibleTwo] = isInView({
     threshold: 0.1,
     unobserveOnEnter: true
   })
@@ -62,7 +62,7 @@ The hook returns a tuple with four items:
 - The `IntersectionObserver` itself
 
 ```js
-const [ref, inView, entry, observer] = useInView(options, [...state])
+const [ref, inView, entry, observer] = isInView(options, [...state])
 ```
 
 ## Options
@@ -96,7 +96,7 @@ An optional second argument will retrigger the hook to mitigate this.
 // Some other state
 const [state, setState] = useState(false)
 
-const [ref, inView] = useInView(
+const [ref, inView] = isInView(
   {
     onEnter: () => console.log(state)
   },

@@ -1,0 +1,12 @@
+.desktopScreenRotation {
+  animation: rotation 0.7s forwards linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateX(-90deg);
+  }
+  to {
+    transform: rotateX(0deg);
+  }
+}

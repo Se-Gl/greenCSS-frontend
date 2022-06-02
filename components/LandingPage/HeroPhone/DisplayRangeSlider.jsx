@@ -1,21 +1,10 @@
 import { useEffect, useContext } from 'react'
 import RangeSlider from '../CalculateFootprint/RangeSlider'
 import DonationContext from '@/utils/DonationContext'
-import CoTwo from '../CalculateFootprint/CoTwo'
 
-export default function DisplayRangeSlider({
-  maxWidth = '',
-  isDefault = true,
-  descriptionClassName = 'mb-0px text-black-10 text-15px',
-  calculateClassName = 'text-black-10 mb-0px'
-}) {
-  const { calculate, valueHour, valueWatt, setValueWatt, setValueHour } = useContext(DonationContext)
+export default function DisplayRangeSlider({ maxWidth = '', descriptionClassName = 'mb-0px text-black-10 text-15px' }) {
+  const { valueHour, valueWatt, setValueWatt, setValueHour } = useContext(DonationContext)
 
-  let adjustBgColor =
-    (calculate <= 1 && 'text-greencss') ||
-    (calculate <= 50 && 'text-yellow') ||
-    (calculate <= 500 && 'text-red') ||
-    (calculate >= 501 && 'text-magenta')
   // map RangeSlider
   const sliders = [
     {
@@ -44,19 +33,6 @@ export default function DisplayRangeSlider({
           {slider.slider}
         </div>
       ))}
-      {isDefault && (
-        <>
-          <p className={`${calculateClassName}`}>
-            You produce{' '}
-            <span className={`${adjustBgColor} text-20px font-600`} id='calculation-result'>
-              {calculate}kg
-            </span>{' '}
-            <CoTwo />
-            per year.*
-          </p>
-          <span className='text-black-10 text-10px'>*Data without guarantee. It is intended as a guidance only.</span>
-        </>
-      )}
     </div>
   )
 }

@@ -2,7 +2,7 @@
 import { useEffect, useState, useCallback } from 'react'
 import useObserver from './useObserver'
 
-const useInView = (
+const isInView = (
   { root, rootMargin, threshold, unobserveOnEnter, target, onEnter, onLeave } = {},
   externalState = []
 ) => {
@@ -49,4 +49,4 @@ const useInView = (
   return [setTarget, state.inView, state.entry, state.observer]
 }
 
-export default useInView
+export default isInView

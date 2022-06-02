@@ -4,7 +4,7 @@ import { usePalette } from 'react-palette'
 import Loader from '@/components/logo/Loader'
 import { LinkButton } from '@/components/reusable/Button'
 
-import useInView from '@/hooks/InView/scrollView'
+import isInView from '@/hooks/InView/scrollView'
 
 export default function BlogCard({ post, index }) {
   let IMAGE_URL = post.frontmatter.cover_image
@@ -13,7 +13,7 @@ export default function BlogCard({ post, index }) {
   const color = tinycolor(`${vibrantColor}`)
   const isDark = color.isDark()
 
-  const [ref, isVisible] = useInView({
+  const [ref, isVisible] = isInView({
     threshold: 0.15,
     unobserveOnEnter: true
   })

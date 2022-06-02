@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import Hero from '@/components/LandingPage/Hero'
+import useWindowDimensions from '@/utils/WindowDimensions'
 import { getPosts } from '@/lib/posts'
 import { sortByDate } from '@/utils/SortBy'
 import { DonationProvider } from '@/utils/DonationContext'
@@ -15,6 +16,7 @@ const Testimonial = dynamic(() => import('@/components/LandingPage/Testimonial')
 const Faq = dynamic(() => import('@/components/LandingPage/Faq/Faq'))
 
 export default function HomePage({ posts }) {
+  const { width } = useWindowDimensions()
   return (
     <SEO>
       <div className='overflow-x-hidden'>
@@ -24,7 +26,7 @@ export default function HomePage({ posts }) {
             <div className='container'>
               <Presentation />
               <Service />
-              <CalculateFootprint />
+              {width >= 1000 && <CalculateFootprint />}
               <Sponsor />
               <News posts={posts} />
               <Testimonial />
