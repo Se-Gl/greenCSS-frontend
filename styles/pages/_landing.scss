@@ -1,3 +1,5 @@
+@use '../abstracts/color' as *;
+
 .desktopScreenRotation {
   animation: rotation 0.7s forwards linear;
 }
@@ -9,4 +11,8 @@
   to {
     transform: rotateX(0deg);
   }
+}
+
+dl {
+  background: repeating-linear-gradient(to right, #898989, #898989 1px, $white 1px, $white 9.9%);
 }

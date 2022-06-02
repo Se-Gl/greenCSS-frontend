@@ -46,7 +46,7 @@ export default function DesktopComputerContent() {
         )}
 
         <div className='absolute left-23per' style={{ top: '187%' }}>
-          <div className='bg-greencss w-15rem h-50px rounded-5px text-white flex px-10px'>
+          <div className='bg-greencss hover:bg-greencss-1 w-15rem h-50px rounded-5px text-white flex px-10px transition-all transition-duration-200ms'>
             <span className='my-auto'>
               compensate <br />
               <CalculatePrice />
@@ -54,7 +54,7 @@ export default function DesktopComputerContent() {
           </div>
         </div>
 
-        <div className='absolute left-42per' style={{ top: '187%' }}>
+        <div className='absolute left-42per select-none' style={{ top: '187%' }}>
           <div className='border-1px border-solid border-greencss w-15rem h-50px rounded-5px flex text-greencss px-10px'>
             <span className='my-auto'>
               weekly emission <br />
@@ -63,7 +63,7 @@ export default function DesktopComputerContent() {
           </div>
         </div>
 
-        <div className='absolute left-61per' style={{ top: '187%' }}>
+        <div className='absolute left-61per select-none' style={{ top: '187%' }}>
           <div className='border-1px border-solid border-greencss w-15rem h-50px rounded-5px flex text-greencss px-10px'>
             <span className='my-auto'>
               monthly emission <br />
@@ -72,7 +72,7 @@ export default function DesktopComputerContent() {
           </div>
         </div>
 
-        <div className='absolute left-25per' style={{ top: '200%' }}>
+        <div className='absolute left-25per select-none' style={{ top: '195%' }}>
           <VisualChart
             data={calculate}
             descriptionClassName='mb-0px text-10px mb-0px'

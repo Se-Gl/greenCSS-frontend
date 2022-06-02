@@ -16,11 +16,14 @@ export default function index() {
         <DesktopComputer />
 
         <div
-          className={`overflow-auto absolute ${isVisible ? 'desktopScreenRotation opacity-100per' : 'opacity-1per'}`}
+          className={`overflow-auto absolute select-none ${
+            isVisible ? 'desktopScreenRotation opacity-100per' : 'opacity-1per'
+          }`}
           ref={ref}
           style={{ top: '4.5%', left: '10.3%', width: '79.2%', height: '72.5%' }}>
           <Image
             quality={100}
+            className='select-none'
             src='/images/landingpage/Landing-desktop-bg.webp'
             alt='greenCSS MacBook donation section'
             width={874}

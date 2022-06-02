@@ -45,6 +45,8 @@ sub,
 b,
 i,
 center,
+dl,
+dd,
 ol,
 ul,
 li,
@@ -351,6 +353,10 @@ input::-moz-focus-inner,
 }
 
 .bg-greencss-1 {
+  background-color: #4a9202;
+}
+
+.hover\:bg-greencss-1:hover {
   background-color: #4a9202;
 }
 
@@ -3357,6 +3363,10 @@ input::-moz-focus-inner,
   background-color: #4a9202;
 }
 
+.hover\:bg-greencss-1:hover {
+  background-color: #4a9202;
+}
+
 .hover\:bg-greencss-5:hover {
   background-color: #7bf104;
 }
@@ -3970,10 +3980,6 @@ input::-moz-focus-inner,
   width: 10px;
 }
 
-.w-15px {
-  width: 15px;
-}
-
 .w-35px {
   width: 35px;
 }
@@ -4162,8 +4168,8 @@ input::-moz-focus-inner,
   height: 10px;
 }
 
-.h-15px {
-  height: 15px;
+.h-20px {
+  height: 20px;
 }
 
 .h-35px {
@@ -4454,8 +4460,8 @@ input::-moz-focus-inner,
   margin-top: 0px;
 }
 
-.mt-7px {
-  margin-top: 7px;
+.mt-3px {
+  margin-top: 3px;
 }
 
 .mt-10px {
@@ -4472,6 +4478,10 @@ input::-moz-focus-inner,
 
 .mt-50px {
   margin-top: 50px;
+}
+
+.mt-75px {
+  margin-top: 75px;
 }
 
 .mt-100px {
@@ -4568,6 +4578,10 @@ input::-moz-focus-inner,
 
 .my-0px {
   margin-block: 0px;
+}
+
+.my-10px {
+  margin-block: 10px;
 }
 
 .my-15px {
@@ -4796,6 +4810,10 @@ input::-moz-focus-inner,
 }
 
 .opacity-100per {
+  opacity: 100%;
+}
+
+.hover\:opacity-100per:hover {
   opacity: 100%;
 }
 
