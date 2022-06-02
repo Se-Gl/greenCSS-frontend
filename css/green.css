@@ -3888,6 +3888,10 @@ input::-moz-focus-inner,
   left: 42%;
 }
 
+.left-48per {
+  left: 48%;
+}
+
 .left-50per {
   left: 50%;
 }
@@ -4130,6 +4134,10 @@ input::-moz-focus-inner,
 
 .min-w-64px {
   min-width: 64px;
+}
+
+.min-w-80px {
+  min-width: 80px;
 }
 
 .min-w-100px {

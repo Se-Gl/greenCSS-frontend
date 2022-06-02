@@ -5,6 +5,7 @@ import VisualChart from './VisualChart'
 import CoTwo from './CoTwo'
 import CalculatePrice from './CalculatePrice'
 import { GreenButton } from '@/components/reusable/Button'
+import Loader from '@/components/logo/Loader'
 
 export default function DesktopComputerContent() {
   const { calculate, finalPrize } = useContext(DonationContext)
@@ -72,13 +73,22 @@ export default function DesktopComputerContent() {
           </div>
         </div>
 
-        <div className='absolute left-25per select-none' style={{ top: '195%' }}>
-          <VisualChart
-            data={calculate}
-            descriptionClassName='mb-0px text-10px mb-0px'
-            percentClassName='mb-0px text-black text-center text-10px font-600'
-          />
-        </div>
+        {finalPrize >= 0.01 ? (
+          <div className='absolute left-25per select-none' style={{ top: '195%' }}>
+            <VisualChart
+              data={calculate}
+              descriptionClassName='mb-0px text-10px mb-0px'
+              percentClassName='mb-0px text-black text-center text-10px font-600'
+            />
+          </div>
+        ) : (
+          <div className='opacity-33per min-w-80px absolute left-48per' style={{ top: '212%' }}>
+            <div className='absolute z-10 fade-in animation-duration-500ms'>
+              <Loader />
+              <span className='text-black-10 text-center ml-neg-30px'>Waiting for your input</span>
+            </div>
+          </div>
+        )}
 
         <div className='absolute left-20per w-55rem' style={{ top: '280%' }}>
           <p className='mb-0px mt-50px text-15px'>
