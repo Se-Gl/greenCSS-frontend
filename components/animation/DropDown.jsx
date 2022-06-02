@@ -89,11 +89,8 @@ export default function DropDown() {
           </code>
           <div
             className='absolute top-50per right-0per pr-15px my-auto cursor-copy'
-            style={{ transform: 'translate(0%, -50%)' }}>
-            <CopyIcon
-              className='fill-white hover:fill-black-10 transition-all transition-duration-500ms'
-              copy={csscode}
-            />
+            style={{ transform: 'translate(0%, -60%)' }}>
+            <CopyIcon copy={csscode} />
           </div>
         </pre>
       </div>

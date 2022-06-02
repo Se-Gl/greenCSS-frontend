@@ -4416,6 +4416,10 @@ input::-moz-focus-inner,
   margin-top: 3px;
 }
 
+.mt-5px {
+  margin-top: 5px;
+}
+
 .mt-10px {
   margin-top: 10px;
 }
@@ -4438,6 +4442,10 @@ input::-moz-focus-inner,
 
 .mt-100px {
   margin-top: 100px;
+}
+
+.mr-5px {
+  margin-right: 5px;
 }
 
 .mr-10px {
@@ -4897,10 +4905,6 @@ input::-moz-focus-inner,
   cursor: copy;
 }
 
-.fill-white {
-  fill: #fdfdfd;
-}
-
 .hover\:fill-white:hover {
   fill: #fdfdfd;
 }
@@ -4910,10 +4914,6 @@ input::-moz-focus-inner,
 }
 
 .fill-black-10 {
-  fill: #898989;
-}
-
-.hover\:fill-black-10:hover {
   fill: #898989;
 }
 
