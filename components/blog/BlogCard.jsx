@@ -31,7 +31,7 @@ export default function BlogCard({ post, index }) {
           ) : (
             <div
               className={`min-h-40rem w-100per rounded-10px bg-cover bg-no-repeat bg-center transition-all transition-duration-500ms greencss-button ${
-                isDark && 'border-1px border-solid border-black'
+                !isDark && 'border-1px border-solid border-black'
               }`}
               style={{ backgroundImage: `url(${post.frontmatter.cover_image})`, backgroundColor: `${vibrantColor}` }}
               id='blog-card'>
@@ -39,15 +39,15 @@ export default function BlogCard({ post, index }) {
                 <Link href={`${post.frontmatter.isBlog ? `/blog/${post.slug}` : `/docs/${post.slug}`}`} passHref>
                   <div
                     className={`cursor-pointer relative m-auto max-w-75per w-75per min-h-35rem p-20px ${
-                      !isDark && 'bg-white text-black'
-                    } ${isDark && 'bg-black text-white'}
+                      isDark && 'bg-white text-black'
+                    } ${!isDark && 'bg-black text-white'}
               `}>
                     <h2 className='text-30px leading-100per'>{post.frontmatter.title}</h2>
                     <p className='text-15px text-black-8 mb-10px'>{post.frontmatter.excerpt}</p>
                     <LinkButton
                       id={`button-${post.slug}`}
                       className={`absolute bottom-0per my-15px transition-all transition-duration-500ms ${
-                        isDark && 'text-white hover:text-black-10 active:hover:text-black-7'
+                        !isDark && 'text-white hover:text-black-10 active:hover:text-black-7'
                       }`}
                       href={`/blog/${post.slug}`}>
                       Read more
