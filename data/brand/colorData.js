@@ -6,7 +6,7 @@ import { primaryColors, secondaryColors, spotColors } from '@/data/colors'
 const badexamples = [
   {
     src: '/images/brand/colors/do-not.webp',
-    alt: 'omen css do not with colors',
+    alt: 'green css do not with colors',
     id: 'greenCSS-do-not-1',
     width: 318,
     height: 394,
@@ -14,7 +14,7 @@ const badexamples = [
   },
   {
     src: '/images/brand/colors/do-not-2.webp',
-    alt: 'omen css do not with colors',
+    alt: 'green css do not with colors',
     id: 'greenCSS-do-not-2',
     width: 318,
     height: 394,
@@ -22,7 +22,7 @@ const badexamples = [
   },
   {
     src: '/images/brand/colors/do-not-3.webp',
-    alt: 'omen css do not with colors',
+    alt: 'green css do not with colors',
     id: 'greenCSS-do-not-3',
     width: 318,
     height: 394,
@@ -31,7 +31,7 @@ const badexamples = [
   },
   {
     src: '/images/brand/colors/do-not-4.webp',
-    alt: 'omen css do not with colors',
+    alt: 'green css do not with colors',
     id: 'greenCSS-do-not-4',
     width: 318,
     height: 395,
@@ -39,7 +39,7 @@ const badexamples = [
   },
   {
     src: '/images/brand/colors/do-not-5.webp',
-    alt: 'omen css do not with colors',
+    alt: 'green css do not with colors',
     id: 'greenCSS-do-not-5',
     width: 318,
     height: 395,
@@ -50,7 +50,7 @@ const badexamples = [
 const goodexamples = [
   {
     src: '/images/brand/colors/ok.webp',
-    alt: 'omen css design with colors',
+    alt: 'green css design with colors',
     id: 'greenCSS-do-1',
     width: 273,
     height: 323,
@@ -58,7 +58,7 @@ const goodexamples = [
   },
   {
     src: '/images/brand/colors/ok-2.webp',
-    alt: 'omen css design with colors',
+    alt: 'green css design with colors',
     id: 'greenCSS-do-2',
     width: 273,
     height: 323,
@@ -66,7 +66,7 @@ const goodexamples = [
   },
   {
     src: '/images/brand/colors/ok-3.webp',
-    alt: 'omen css design with colors',
+    alt: 'green css design with colors',
     id: 'greenCSS-do-3',
     width: 318,
     height: 395,

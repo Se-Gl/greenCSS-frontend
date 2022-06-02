@@ -65,7 +65,7 @@ export default function SlugComponent({
                 layout='fill'
                 objectFit='cover'
                 src={cover_image}
-                alt={excerpt}
+                alt={title}
                 placeholder='blur'
                 blurDataURL={`/_next/image?url=${cover_image}&w=16&q=1`}
               />

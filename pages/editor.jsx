@@ -38,8 +38,8 @@ function MarkDownPage() {
   return (
     <SEO
       title='Markdown editor'
-      keywords='markdown, editor, css library, omen css'
-      description="Create your Markdown documentation, with omen css's markdown editor.">
+      keywords='markdown, editor, css library, green css'
+      description="Create your Markdown documentation, with green css's markdown editor.">
       <Layout className='container sm:px-10px md:px-25px lg:px-50px bg-green-10 pt-5rem sm:pt-0rem md:pt-0rem'>
         <div id='markdowneditor' className='min-w-100per min-h-50vh bg-white'>
           <h1 className='max-w-50vw'>Markdown editor for greenCSS devs</h1>

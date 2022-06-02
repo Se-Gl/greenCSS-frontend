@@ -154,7 +154,7 @@ export const brandCompositionSections = [
           height={1377}
           width={2040}
           src='/images/brand/composition/layout-grid.webp'
-          alt='omen css vertical o-grid and layout composition'
+          alt='green css vertical o-grid and layout composition'
           id='greenCSS-vertical-o-grid'
           placeholder='blur'
           blurDataURL={`/_next/image?url=/images/brand/composition/layout-grid.webp&w=16&q=1`}
@@ -165,7 +165,7 @@ export const brandCompositionSections = [
             height={2327}
             width={2040}
             src='/images/brand/composition/words-images.webp'
-            alt='omen css text in images'
+            alt='green css text in images'
             id='greenCSS-words-in-images'
             className='sm:mt-25px mt-50px'
             placeholder='blur'

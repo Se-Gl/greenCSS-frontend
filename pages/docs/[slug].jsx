@@ -34,7 +34,7 @@ export default function DocsPostPage({
       description={excerpt}
       image={cover_image}
       url={`docs/${slug}`}
-      keywords={`${category}, ${keywords} greenCSS, css, omen css`}
+      keywords={`${category}, ${keywords} greenCSS, css, green css`}
       author={author}>
       <Layout className='flex container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
         <DevelopmentToClipboard content={content} />

@@ -13,7 +13,7 @@ export default function logo() {
       title='Logo Brand Book | Styleguide | Corporate Identity'
       description='The brand system features four core elements - logo'
       url='brand/logo'
-      keywords='Logo, Styleguide, Brand Book, greenCSS, Design, Corporate Identity, omen css'>
+      keywords='Logo, Styleguide, Brand Book, greenCSS, Design, Corporate Identity, green css'>
       <Layout className='flex container sm:px-10px md:px-25px lg:px-50px min-h-100vh mb-10rem'>
         <div className='min-w-100per relative' id='brand-logo-page'>
           <BackButton className='mb-50px'>Back</BackButton>

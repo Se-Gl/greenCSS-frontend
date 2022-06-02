@@ -205,7 +205,7 @@ export const brandTypoSections = [
           height={814}
           width={785}
           src='/images/brand/typography/cards-c2a_gorbiy.webp'
-          alt='omen css call to action'
+          alt='green css call to action'
           id='greenCSS-c2a'
           placeholder='blur'
           blurDataURL='/_next/image?url=/images/brand/typography/cards-c2a_gorbiy.webp&w=16&q=1'
@@ -231,7 +231,7 @@ export const brandTypoSections = [
         height={651}
         width={1128}
         src='/images/brand/typography/images-typography_lknchj.webp'
-        alt='omen css Images vs. Typography'
+        alt='green css Images vs. Typography'
         id='greenCSS-img-typo'
         placeholder='blur'
         blurDataURL='/_next/image?url=/images/brand/typography/images-typography_lknchj.webp&w=16&q=1'

@@ -23,7 +23,7 @@ export default function ExamplesIndexPage() {
       title='Handmade, crafted examples by greenCSS'
       description='The collaboration of design and code plays an important role, especially in web development. Check the full selection, explore countless examples such as animations or tutorial examples.'
       url='examples'
-      keywords='Examples, Animation, handmade css animation, tutorial examples, omen css'>
+      keywords='Examples, Animation, handmade css animation, tutorial examples, green css'>
       <Layout className='container min-h-100vh relative z-2' id='examples-index'>
         <div id='examples-index'>
           <SubSectionHero

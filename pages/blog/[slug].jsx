@@ -23,6 +23,8 @@ export default function BlogPostPage({
   content,
   slug
 }) {
+  let seoKeywords = keywords.toString().replace(',', ', ')
+
   return (
     <SEO
       title={`${title} - ${author}`}
@@ -30,7 +32,7 @@ export default function BlogPostPage({
       description={excerpt}
       image={cover_image}
       url={`blog/${slug}`}
-      keywords={`${category}, ${keywords} greenCSS, css, omen css`}
+      keywords={`${category}, ${seoKeywords}, greenCSS, css, green css`}
       author={author}>
       <Layout className='flex container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
         <DevelopmentToClipboard content={content} />
