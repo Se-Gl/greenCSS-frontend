@@ -11,7 +11,7 @@ import CoTwo from '@/components/LandingPage/CalculateFootprint/CoTwo'
 import SponsorCard from './SponsorCard'
 
 const Sponsor = () => {
-  const { amount, setAmount, prediction, finalPrize } = useContext(DonationContext)
+  const { amount, setAmount, finalPrize } = useContext(DonationContext)
   const [individualAmount, setIndividualAmount] = useState(10)
   const [loading, setLoading] = useState(false)
 
@@ -92,12 +92,14 @@ const Sponsor = () => {
     }
   ]
 
+  const checkPrediction = finalPrize >= 0.1
+
   return (
     <Section id='donation'>
       <SubSectionHero
         header={`${
-          prediction
-            ? `Minimize your personal emissions by donating USD ${prediction ? ceiledPrice : amount}$.`
+          checkPrediction
+            ? `Minimize your personal emissions by donating USD ${checkPrediction ? ceiledPrice : amount}$.`
             : 'Change the world. Even a small donation does a lot.'
         }`}
         subheader='In cooperation with greenCSS partners, global projects are supported in order to minimize the CO2 emissions. Every cent goes directly to a green project. You want to learn more? Subscribe to the newsletter and receive in real time which projects are currently supported.'
@@ -111,7 +113,7 @@ const Sponsor = () => {
             </div>
 
             <div className='grid grid-col-2 gap-30px sm:gap-0px sm:grid-col-1 md:grid-col-1'>
-              {prediction && (
+              {checkPrediction && (
                 <SponsorCard
                   onMouseEnter={() => setAmount(ceiledPrice)}
                   onClick={createCheckOutSession}
@@ -125,7 +127,7 @@ const Sponsor = () => {
               <SponsorCard
                 isDefault={false}
                 customColors={`${
-                  prediction
+                  checkPrediction
                     ? 'bg-green-8 hover:bg-greencss text-black hover:text-white'
                     : 'hover:bg-green-8 bg-greencss hover:text-black text-white'
                 }`}
@@ -179,7 +181,7 @@ const Sponsor = () => {
           </div>
         }
       />
-      {!prediction && (
+      {!checkPrediction && (
         <div className='max-w-50rem m-auto pt-50px'>
           <h2>Have you heard about our emission calculator?</h2>
           <p className='mb-0px'>

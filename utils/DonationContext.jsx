@@ -1,10 +1,9 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState } from 'react'
 
 const DonationContext = createContext()
 
 export function DonationProvider({ children }) {
   const [amount, setAmount] = useState(10)
-  const [prediction, setPrediction] = useState(false)
   const [valueWatt, setValueWatt] = useState(() => {
     const saved = localStorage.getItem('valueWatt')
     const initialValue = JSON.parse(saved)
@@ -22,23 +21,12 @@ export function DonationProvider({ children }) {
   )
 
   let finalPrize = (Math.ceil(calculate) * 40) / 1000
-
-  // check localstorage for prediction
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const getPrediction = localStorage.getItem('hasPrediction')
-      setPrediction(getPrediction)
-    }, 1000)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
     <DonationContext.Provider
       value={{
         calculate: calculate,
         finalCalculation: finalCalculation,
         finalPrize: finalPrize,
-        prediction: prediction,
         amount: amount,
         setAmount: setAmount,
         valueWatt: valueWatt,
