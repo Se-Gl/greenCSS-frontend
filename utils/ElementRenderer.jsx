@@ -73,6 +73,7 @@ export function ImageRenderer(paragraph) {
       <div className='mb-50px w-100per h-100per'>
         <div className='flex justify-center'>
           <Image
+            className='rounded-20px'
             src={image.properties.src}
             width={width}
             height={height}

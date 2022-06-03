@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import remarkGfm from 'remark-gfm'
+import { usePalette } from 'react-palette'
 import { BackButton } from '@/components/reusable/Button'
 import Loader from '@/components/logo/Loader'
 import { HeadingRenderer, LinkRenderer, CodeRenderer, ImageRenderer } from '@/utils/ElementRenderer'
@@ -25,11 +26,13 @@ export default function SlugComponent({
   content,
   slug,
   isBlog,
-  keywords,
   posts,
   categories,
   plainText
 }) {
+  const { data } = usePalette(cover_image)
+  const vibrantColor = data.vibrant
+
   return (
     <div className={`grid grid-col-12 gap-30px ${isBlog === true && 'mx-auto'}`}>
       {isBlog === false && (
@@ -59,7 +62,9 @@ export default function SlugComponent({
             <h2 className='text-20px font-normal'>{excerpt}</h2>
           </div>
           {isBlog === false ? null : (
-            <div className='relative h-50rem rounded-10px overflow-hidden mb-50px'>
+            <div
+              className='relative h-50rem rounded-20px overflow-hidden mb-50px'
+              style={{ boxShadow: `5px 5px 10px -1px ${vibrantColor}` }}>
               <Image
                 quality={100}
                 layout='fill'
