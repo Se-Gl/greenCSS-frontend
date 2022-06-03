@@ -6,7 +6,7 @@ import { LinkButton } from '@/components/reusable/Button'
 
 import isInView from '@/hooks/InView/scrollView'
 
-export default function BlogCard({ post, index }) {
+export default function BlogCard({ post, index, isCategory = false }) {
   let IMAGE_URL = post.frontmatter.cover_image
   const { data, loading } = usePalette(IMAGE_URL)
   const vibrantColor = data.vibrant
@@ -32,15 +32,15 @@ export default function BlogCard({ post, index }) {
             <div
               className={`min-h-40rem w-100per rounded-10px bg-cover bg-no-repeat bg-center transition-all transition-duration-500ms greencss-button ${
                 !isDark && 'border-1px border-solid border-black'
-              }`}
+              } ${isCategory && 'border-1px border-solid border-black'}`}
               style={{ backgroundImage: `url(${post.frontmatter.cover_image})`, backgroundColor: `${vibrantColor}` }}
               id='blog-card'>
               <div className='flex min-h-45rem'>
                 <Link href={`${post.frontmatter.isBlog ? `/blog/${post.slug}` : `/docs/${post.slug}`}`} passHref>
                   <div
-                    className={`cursor-pointer relative m-auto max-w-75per w-75per min-h-35rem p-20px ${
-                      isDark && 'bg-white text-black'
-                    } ${!isDark && 'bg-black text-white'}
+                    className={`cursor-pointer relative m-auto max-w-75per w-75per min-h-35rem p-20px  ${
+                      !isDark || isCategory ? 'bg-black text-white' : 'bg-white text-black'
+                    } 
               `}>
                     <h2 className='text-30px leading-100per'>{post.frontmatter.title}</h2>
                     <p className='text-15px text-black-8 mb-10px'>{post.frontmatter.excerpt}</p>

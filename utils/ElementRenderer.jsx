@@ -15,7 +15,11 @@ export function HeadingRenderer(props) {
   let children = React.Children.toArray(props.children)
   let text = children.reduce(flattenHeader, '')
   let slugify = text.toLowerCase().replace(/\ /g, '-')
-  return React.createElement('h' + props.level, { id: slugify }, props.children)
+  return React.createElement(
+    'h' + props.level,
+    { id: slugify, className: `capitalize ${props.level == 2 ? 'mt-100px' : ''}` },
+    props.children
+  )
 }
 
 export function LinkRenderer({ node, ...props }) {

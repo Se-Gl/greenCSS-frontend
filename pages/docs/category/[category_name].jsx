@@ -41,7 +41,7 @@ export default function DocsCategorySlugPage({ posts, categoryName, categories }
               />
               <BlogLayout>
                 {posts.map((post, index) => (
-                  <BlogCard key={index} post={post} index={index} />
+                  <BlogCard key={index} post={post} index={index} isCategory={true} />
                 ))}
               </BlogLayout>
             </div>
