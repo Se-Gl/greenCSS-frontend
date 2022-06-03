@@ -2,19 +2,9 @@ import dynamic from 'next/dynamic'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import Loader from '@/components/logo/Loader'
 import SEO from '@/components/reusable/SEO'
+import SlugComponent from '@/components/reusable/SlugComponent'
 
-const SlugComponent = dynamic(() => import('@/components/reusable/SlugComponent'), {
-  ssr: false,
-  loading: () => (
-    <div className='flex h-100vh w-100vw overflow-hidden bg-green-10'>
-      <div className='m-auto'>
-        <Loader />
-      </div>
-    </div>
-  )
-})
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 const DevelopmentToClipboard = dynamic(() => import('@/utils/DevelopmentToClipboard'))
 

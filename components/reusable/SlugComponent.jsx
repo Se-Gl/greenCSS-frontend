@@ -10,7 +10,13 @@ import AuthorInformation from '../blog/AuthorInformation'
 
 const ReactMarkdown = dynamic(() => import('react-markdown').then((mod) => mod.default), {
   ssr: false,
-  loading: () => <Loader />
+  loading: () => (
+    <div className='flex h-100vh w-100vw overflow-hidden bg-green-10'>
+      <div className='m-auto'>
+        <Loader />
+      </div>
+    </div>
+  )
 })
 const Toc = dynamic(() => import('../toc/Toc'))
 const SideBar = dynamic(() => import('../category/SideBar'))
