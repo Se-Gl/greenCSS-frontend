@@ -5,7 +5,7 @@ import Section from '../reusable/Section'
 export default function Testimonial() {
   return (
     <Section id='testimonial'>
-      <div className='relative flex min-h-75vh w-100per text-center text-white bg-black rounded-20px'>
+      <div className='relative flex min-h-75vh w-100per text-center text-white bg-black rounded-50px'>
         <div className='m-auto max-w-50rem'>
           <h2 className='font-bold text-50px mb-50px text-green-9'>Hear what the creator says</h2>
           <p className='text-black-10'>

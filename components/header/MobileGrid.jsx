@@ -13,7 +13,6 @@ export default function MobileGrid({ mapping, header, headerLink }) {
           return (
             <Link key={index} href={item.url}>
               <a className='capitalize my-0px no-decoration flex text-15px my-auto font-500 items-center clip-inset-in-top animate animation-forwards'>
-                {item.icon}
                 <span className='ml-10px hover:text-black-5 active:text-black-7 transition-all transition-duration-500ms'>
                   {item.label}
                 </span>

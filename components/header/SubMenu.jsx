@@ -31,34 +31,31 @@ const SubMenu = () => {
       id='submenu'
       className={`${
         isSubmenuOpen
-          ? 'submenu block z-99 bg-white absolute left-50per translate-x-neg-50per rounded-10px transition-all transition-duration-500ms shadow-small-black-10 clip-circle-in animation-duration-700ms animation-forwards'
+          ? 'submenu block p-20px z-99 bg-white absolute left-50per translate-x-neg-50per rounded-10px transition-all transition-duration-500ms shadow-small-black-10 clip-circle-in animation-duration-700ms animation-forwards'
           : 'display-none'
       }`}
       ref={container}>
       <section>
-        <h4 className='mb-0px pt-20px px-20px'>
+        <h4 className='mb-0px'>
           <Link href={`${pageLink}`}>
-            <a className='text-15px font-700 capitalize mb-0px no-decoration cursor-pointer'>{page}</a>
+            <a className='text-15px font-700 capitalize mt-0px mb-0px no-decoration cursor-pointer'>{page}</a>
           </Link>
         </h4>
-        <p className='px-20px text-15px text-black-10 cursor-pointer'>{subtext}</p>
+        <p className='text-15px text-black-10 mb-10px'>{subtext}</p>
 
         {links && (
-          <div className={`p-20px grid bg-green-10 rounded-5px gap-y-25px gap-x-5px ${columns}`}>
+          <div className={`m-auto grid rounded-5px gap-15px ${columns}`}>
             {links &&
               links.map((link, index) => {
-                const { url, icon, label } = link
+                const { url, label } = link
                 return (
-                  <div key={`${label}-${index}`}>
+                  <li key={`${label}-${index}`} style={{ listStyleType: 'none' }}>
                     <Link href={url}>
-                      <a className='capitalize my-0px no-decoration flex text-15px font-700 my-auto items-center'>
-                        {icon}
-                        <span className='ml-10px hover:text-black-5 active:text-black-7 transition-all transition-duration-500ms'>
-                          {label}
-                        </span>
+                      <a className='capitalize my-0px no-decoration flex text-15px font-400 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
+                        {label}
                       </a>
                     </Link>
-                  </div>
+                  </li>
                 )
               })}
 
@@ -67,21 +64,20 @@ const SubMenu = () => {
                 <div className='col-start-1 col-end-3 mt-25px'>
                   <h4 className='mb-0px'>
                     <Link href={`${secondpageLink}`}>
-                      <a className='text-15px font-700 capitalize mb-0px no-decoration cursor-pointer'>{secondpage}</a>
+                      <a className='text-15px font-700 capitalize mt-0px mb-0px no-decoration cursor-pointer'>
+                        {secondpage}
+                      </a>
                     </Link>
                   </h4>
-                  <p className='text-15px text-black-10 cursor-pointer mb-0px'>{secondsubtext}</p>
+                  <p className='text-15px text-black-10 mb-0px'>{secondsubtext}</p>
                 </div>
                 {secondlinks.map((secondlink, index) => {
-                  const { url, icon, label } = secondlink
+                  const { url, label } = secondlink
                   return (
                     <div key={`${label}-${index}`}>
                       <Link href={url}>
-                        <a className='capitalize my-0px no-decoration flex text-15px font-700 my-auto items-center'>
-                          {icon}
-                          <span className='ml-10px hover:text-black-5 active:text-black-7 transition-all transition-duration-500ms'>
-                            {label}
-                          </span>
+                        <a className='capitalize my-0px no-decoration flex text-15px font-400 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
+                          {label}
                         </a>
                       </Link>
                     </div>

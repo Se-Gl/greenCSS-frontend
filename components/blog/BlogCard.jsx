@@ -30,7 +30,7 @@ export default function BlogCard({ post, index, isCategory = false }) {
             <Loader />
           ) : (
             <div
-              className={`min-h-40rem w-100per rounded-10px bg-cover bg-no-repeat bg-center transition-all transition-duration-500ms greencss-button ${
+              className={`min-h-40rem w-100per rounded-20px bg-cover bg-no-repeat bg-center transition-all transition-duration-500ms greencss-button ${
                 !isDark && 'border-1px border-solid border-black'
               } ${isCategory && 'border-1px border-solid border-black'}`}
               style={{ backgroundImage: `url(${post.frontmatter.cover_image})`, backgroundColor: `${vibrantColor}` }}
