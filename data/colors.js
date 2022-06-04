@@ -12,7 +12,8 @@ export const secondaryColors = [
   { className: 'bg-blue', colorName: 'Blue', colorHex: '#066ef9' },
   { className: 'bg-turquoise', colorName: 'Turquoise', colorHex: '#06f9f9' },
   { className: 'bg-purple', colorName: 'Purple', colorHex: '#8006f9' },
-  { className: 'bg-magenta', colorName: 'Magenta', colorHex: '#f906e8' }
+  { className: 'bg-magenta', colorName: 'Magenta', colorHex: '#f906e8' },
+  { className: 'bg-gray', colorName: 'Gray', colorHex: '#7d7d7d' }
 ]
 
 export const spotColors = [
@@ -115,5 +116,15 @@ export const spotColors = [
   { className: 'bg-black-7', colorName: 'black-7', colorHex: '#656565' },
   { className: 'bg-black-8', colorName: 'black-8', colorHex: '#717171' },
   { className: 'bg-black-9', colorName: 'black-9', colorHex: '#7d7d7d' },
-  { className: 'bg-black-10', colorName: 'black-10', colorHex: '#898989' }
+  { className: 'bg-black-10', colorName: 'black-10', colorHex: '#898989' },
+  { className: 'bg-gray-1', colorName: 'gray-1', colorHex: '#898989' },
+  { className: 'bg-gray-2', colorName: 'gray-2', colorHex: '#959595' },
+  { className: 'bg-gray-3', colorName: 'gray-3', colorHex: '#a1a1a1' },
+  { className: 'bg-gray-4', colorName: 'gray-4', colorHex: '#adadad' },
+  { className: 'bg-gray-5', colorName: 'gray-5', colorHex: '#bababa' },
+  { className: 'bg-gray-6', colorName: 'gray-6', colorHex: '#c6c6c6' },
+  { className: 'bg-gray-7', colorName: 'gray-7', colorHex: '#d2d2d2' },
+  { className: 'bg-gray-8', colorName: 'gray-8', colorHex: '#dedede' },
+  { className: 'bg-gray-9', colorName: 'gray-9', colorHex: '#eaeaea' },
+  { className: 'bg-gray-10', colorName: 'gray-10', colorHex: '#f6f6f6' }
 ]
