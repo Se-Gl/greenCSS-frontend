@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function AboutTestimonial() {
   return (
     <div className='my-100px'>
-      <h2 className='line-height-138per'>
+      <h2>
         greenCSS is a global, environmental, sustainable open source cascade style sheet library. The vision of the
         non-profit organization is to make the programming world a better place and contribute for a more competitive
         webapplication development
