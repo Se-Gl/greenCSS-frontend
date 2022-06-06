@@ -62,7 +62,7 @@ export function GreenButton({
         </Link>
       )}
       {isDownload && (
-        <a href={href} download className='no-decoration'>
+        <a href={href} download className='no-decoration mb-0px'>
           <button
             onClick={onClick}
             id={id}
