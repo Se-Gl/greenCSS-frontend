@@ -14,7 +14,7 @@ export default function FaqQuestions({ question }) {
     setActive(!active)
   }
   return (
-    <div className='border-1px border-solid border-black-10 rounded-5px bg-white p-15px mb-10px transition-all transition-duration-500ms greencss-button'>
+    <div className='border-1px border-solid border-black-10 rounded-5px bg-white p-15px mb-10px transition-all transition-duration-500ms greencss-button shadow-small-gray'>
       <button className={`bg-transparent ${active}`} onClick={toggleQuestion}>
         <div className='flex items-center'>
           <h3 className='text-20px font-800 mb-0px'>{question.title}</h3>
