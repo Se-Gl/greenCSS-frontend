@@ -2,7 +2,7 @@ export default function ToastContent({ fillColor, notification, onClick }) {
   return (
     <div className='fade-toast relative' id='toast-information'>
       <div
-        className={`relative min-w-45rem max-w-65rem sm:min-w-35rem md:min-w-45rem max-h-28rem mb-25px bg-gray-10 rounded-5px shadow-small-black-10`}>
+        className={`relative min-w-45rem max-w-65rem sm:min-w-35rem md:min-w-45rem max-h-28rem mb-25px bg-white rounded-5px shadow-small-black-10`}>
         <div className='ml-10px p-20px'>
           <p className={`text-15px font-500 mb-0px`}>{notification}</p>
         </div>
