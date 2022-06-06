@@ -1,18 +1,16 @@
-import React from 'react'
-
-export default function ToastContent({ fillColor, notification, onClick, backgroundColor, textColor, triangleColor }) {
+export default function ToastContent({ fillColor, notification, onClick }) {
   return (
     <div className='fade-toast relative' id='toast-information'>
-      <div className={`triangle triangle-${triangleColor}`} />
-      <div className={`relative max-w-50rem sm:min-w-35rem md:min-w-45rem max-h-28rem mb-25px ${backgroundColor}`}>
+      <div
+        className={`relative min-w-45rem max-w-65rem sm:min-w-35rem md:min-w-45rem max-h-28rem mb-25px bg-gray-10 rounded-5px shadow-small-black-10`}>
         <div className='ml-10px p-20px'>
-          <p className={`text-15px font-600 mb-0px ${textColor}`}>{notification}</p>
+          <p className={`text-15px font-500 mb-0px`}>{notification}</p>
         </div>
         <svg
           id='close-toast'
           onClick={onClick}
-          width='15'
-          height='15'
+          width='10'
+          height='10'
           viewBox='0 0 14 14'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'
