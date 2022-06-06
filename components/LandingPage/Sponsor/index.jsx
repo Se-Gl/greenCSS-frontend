@@ -128,8 +128,8 @@ const Sponsor = () => {
                 isDefault={false}
                 customColors={`${
                   checkPrediction
-                    ? 'bg-green-8 hover:bg-greencss text-black hover:text-white'
-                    : 'hover:bg-green-8 bg-greencss hover:text-black text-white'
+                    ? 'bg-white hover:bg-greencss text-black hover:text-white'
+                    : 'hover:bg-white bg-greencss hover:text-black text-white'
                 }`}
                 cardAmount={individualAmount}
                 cardImageUrl='/images/landingpage/donation/custom.webp'

@@ -9,14 +9,14 @@ export default function SponsorCard({
   cardDescription,
   children,
   isDefault = true,
-  customColors = 'bg-green-8 hover:bg-greencss text-black hover:text-white'
+  customColors = 'bg-white hover:bg-greencss text-black hover:text-white'
 }) {
   return isDefault ? (
     <button
       onMouseEnter={onMouseEnter}
       onClick={onClick}
       id={`donate-cart-amount-${cardAmount}`}
-      className={`sm:mb-25px min-h-24rem min-w-20rem rounded-30px overflow-hidden p-10px transition-all transition-duration-500ms cursor-pointer border-1px border-solid border-greencss sm:border-green-9 md:border-green-9 ${customColors} greencss-button`}>
+      className={`sm:mb-25px min-h-24rem min-w-20rem rounded-30px overflow-hidden p-10px transition-all transition-duration-500ms cursor-pointer shadow-small-gray ${customColors} greencss-button`}>
       <div className='relative h-12rem w-12rem mx-auto py-20px'>
         <Image
           layout='fill'
