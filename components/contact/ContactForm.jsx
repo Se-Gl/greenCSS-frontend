@@ -133,12 +133,12 @@ export default function ContactForm() {
   ]
 
   return (
-    <div className='mb-50px bg-white'>
+    <div className='mb-50px'>
       <form
-        className='rounded-10px shadow-small-black-10 sm:shadow-transparent md:shadow-transparent'
+        className='bg-white rounded-20px shadow-small-gray sm:shadow-transparent md:shadow-transparent'
         onSubmit={handleSubmit}
         id='contact-form'>
-        <div className='px-10px flex flex-col'>
+        <div className='px-20px flex flex-col'>
           <h3 className='pt-25px max-w-50per sm:max-w-100per md:max-w-100per'>
             Get in Touch with Us! And send a message
           </h3>

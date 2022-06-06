@@ -4068,10 +4068,6 @@ input::-moz-focus-inner,
   height: 50px;
 }
 
-.h-64px {
-  height: 64px;
-}
-
 .h-75px {
   height: 75px;
 }
@@ -4140,8 +4136,8 @@ input::-moz-focus-inner,
   min-height: 54px;
 }
 
-.min-h-64px {
-  min-height: 64px;
+.min-h-100px {
+  min-height: 100px;
 }
 
 .min-h-11rem {
