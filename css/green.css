@@ -4556,6 +4556,10 @@ input::-moz-focus-inner,
   margin-block: 15px;
 }
 
+.my-16px {
+  margin-block: 16px;
+}
+
 .my-20px {
   margin-block: 20px;
 }
@@ -4574,6 +4578,10 @@ input::-moz-focus-inner,
 
 .mt-10rem {
   margin-top: 10rem;
+}
+
+.mt-15rem {
+  margin-top: 15rem;
 }
 
 .mb-10rem {
