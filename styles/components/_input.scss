@@ -1,0 +1,51 @@
+// idea from: https://dev.to/murtuzaalisurti/how-to-create-google-s-material-design-text-input-field-animation-38n
+@use '../abstracts/color' as *;
+
+.memberinput {
+  &:focus + .placeholder-text .membertext {
+    color: $black;
+  }
+}
+
+.memberinput:focus + .placeholder-text .membertext,
+:not(.memberinput[value='']) + .placeholder-text .membertext {
+  font-size: 15px;
+  font-weight: 600;
+  color: $black;
+  transform: translate(0, -150%);
+}
+.css-b62m3t-container {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.css-1s2u09g-control {
+  z-index: 99999999 !important;
+  position: relative !important;
+  background-color: $white !important;
+  border-radius: 10px !important;
+  height: 50px !important;
+  width: 40rem !important;
+  box-shadow: 5px 5px 10px -1px #7d7d7d;
+  -webkit-box-shadow: 5px 5px 10px -1px #7d7d7d;
+  -moz-box-shadow: 5px 5px 10px -1px #7d7d7d;
+  -ms-box-shadow: 5px 5px 10px -1px #7d7d7d;
+}
+.css-1pahdxg-control {
+  z-index: 99999999 !important;
+  position: relative !important;
+  background-color: $white !important;
+  border-radius: 10px !important;
+  min-height: 50px !important;
+  width: 40rem !important;
+}
+.css-6j8wv5-Input {
+  color: $black !important;
+}
+.css-1s2u09g-control {
+  border: none !important;
+}
+#react-select-2-listbox {
+  position: relative !important;
+  z-index: 2 !important;
+}
