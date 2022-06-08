@@ -1,11 +1,15 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 import { useGlobalContext } from '@/utils/NavContext'
 import LogoDark from '../icon/Brand/LogoDark'
 import { navmenu } from '@/data/nav'
+import { GreenButton } from '../reusable/Button'
+import SignupModal from '../member/SignupModal'
 
 const Navbar = () => {
   const router = useRouter()
+  const [showModal, setShowModal] = useState(false)
 
   const { openSubmenu, closeSubmenu } = useGlobalContext()
   const handleSubmenu = (e) => {
@@ -53,6 +57,15 @@ const Navbar = () => {
             )
           })}
         </ul>
+        <GreenButton
+          id='member-button'
+          className='ml-auto'
+          isOutline={true}
+          isDefault={false}
+          onClick={() => setShowModal(true)}>
+          Member
+        </GreenButton>
+        <SignupModal showModal={showModal} setShowModal={setShowModal} />
       </div>
     </nav>
   )

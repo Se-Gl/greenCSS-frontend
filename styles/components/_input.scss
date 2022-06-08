@@ -16,7 +16,8 @@
 }
 .css-b62m3t-container {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
+  color: #656565 !important;
 }
 
 .css-1s2u09g-control {
@@ -48,4 +49,15 @@
 #react-select-2-listbox {
   position: relative !important;
   z-index: 2 !important;
+}
+#react-select-19-listbox {
+  width: 40rem !important;
+}
+
+@media (max-width: 480px) {
+  .css-1pahdxg-control,
+  .css-1s2u09g-control,
+  #react-select-19-listbox {
+    max-width: 75vw !important;
+  }
 }

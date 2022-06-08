@@ -3984,6 +3984,10 @@ input::-moz-focus-inner,
   width: 55rem;
 }
 
+.w-33per {
+  width: 33%;
+}
+
 .w-50per {
   width: 50%;
 }
@@ -4268,8 +4272,8 @@ input::-moz-focus-inner,
   min-height: 75vh;
 }
 
-.min-h-90vh {
-  min-height: 90vh;
+.min-h-95vh {
+  min-height: 95vh;
 }
 
 .min-h-100vh {
@@ -4514,10 +4518,6 @@ input::-moz-focus-inner,
 
 .ml-15px {
   margin-left: 15px;
-}
-
-.ml-25px {
-  margin-left: 25px;
 }
 
 .ml-50px {
@@ -4994,6 +4994,10 @@ input::-moz-focus-inner,
     grid-column-end: 1;
   }
 
+  .sm\:row-start-1 {
+    grid-row-start: 1;
+  }
+
   .sm\:row-start-4 {
     grid-row-start: 4;
   }
@@ -5022,8 +5026,16 @@ input::-moz-focus-inner,
     width: 100%;
   }
 
+  .sm\:max-w-30rem {
+    max-width: 30rem;
+  }
+
   .sm\:max-w-100per {
     max-width: 100%;
+  }
+
+  .sm\:max-w-75vw {
+    max-width: 75vw;
   }
 
   .sm\:min-w-90px {
@@ -5066,6 +5078,10 @@ input::-moz-focus-inner,
     margin: 15px;
   }
 
+  .sm\:mt-10px {
+    margin-top: 10px;
+  }
+
   .sm\:mt-25px {
     margin-top: 25px;
   }
@@ -5084,6 +5100,10 @@ input::-moz-focus-inner,
 
   .sm\:mb-50px {
     margin-bottom: 50px;
+  }
+
+  .sm\:ml-0px {
+    margin-left: 0px;
   }
 
   .sm\:mx-0px {
@@ -5159,6 +5179,10 @@ input::-moz-focus-inner,
     grid-column-end: 1;
   }
 
+  .md\:row-start-1 {
+    grid-row-start: 1;
+  }
+
   .md\:row-start-3 {
     grid-row-start: 3;
   }
@@ -5195,6 +5219,10 @@ input::-moz-focus-inner,
     min-width: 45rem;
   }
 
+  .md\:h-50vh {
+    height: 50vh;
+  }
+
   .md\:px-25px {
     padding-inline: 25px;
   }
@@ -5215,6 +5243,10 @@ input::-moz-focus-inner,
     margin-top: 0px;
   }
 
+  .md\:mt-10px {
+    margin-top: 10px;
+  }
+
   .md\:mt-50px {
     margin-top: 50px;
   }
@@ -5225,6 +5257,10 @@ input::-moz-focus-inner,
 
   .md\:mb-50px {
     margin-bottom: 50px;
+  }
+
+  .md\:ml-0px {
+    margin-left: 0px;
   }
 
   .md\:mx-0px {
@@ -5272,6 +5308,10 @@ input::-moz-focus-inner,
     font-size: 45px;
   }
 
+  .lg\:block {
+    display: block;
+  }
+
   .lg\:grid-col-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -5286,5 +5326,13 @@ input::-moz-focus-inner,
 
   .lg\:px-50px {
     padding-inline: 50px;
+  }
+
+  .lg\:mt-10px {
+    margin-top: 10px;
+  }
+
+  .lg\:ml-0px {
+    margin-left: 0px;
   }
 }

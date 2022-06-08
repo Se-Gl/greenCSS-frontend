@@ -35,7 +35,7 @@ const Modal = ({
   const modalContent = show ? (
     <div
       className='fixed fade-in animation-duration-300ms animation-forwards absolute top-0per left-0per w-100per h-100per flex justify-center items-center'
-      style={{ backgroundColor: 'rgba(16,16,16,0.5)' }}>
+      style={{ backgroundColor: 'rgba(16,16,16,0.75)' }}>
       <div className='relative z-1 w-100vw h-100vh' onClick={handleCloseClick} id='backdrop-close' />
       <div
         className={`fade-in-bottom animation-duration-500ms animation-forwards absolute z-2 bg-white rounded-10px overflow-scroll overflow-x-hidden ${modalSize}`}>

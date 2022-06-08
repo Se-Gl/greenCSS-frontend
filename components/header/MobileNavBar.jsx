@@ -2,13 +2,16 @@ import { mobileBrandMenu, mobileContactMenu, mobileDocsMenu } from '@/data/nav'
 import Link from 'next/link'
 import { useState } from 'react'
 import LogoDark from '../icon/Brand/LogoDark'
+import SignupModal from '../member/SignupModal'
 import Modal from '../modal/Modal'
 import SearchBar from '../modal/SearchBar'
+import { GreenButton } from '../reusable/Button'
 import MobileGrid from './MobileGrid'
 
 export default function MobileNavBar() {
   const [isOpen, setIsOpen] = useState(false)
   const [showModal, setShowModal] = useState(false)
+  const [showMemberModal, setShowMemberModal] = useState(false)
 
   return (
     <nav className='z-100 pt-100px display-none sm:block md:block' aria-label='header navigation mobile'>
@@ -39,6 +42,16 @@ export default function MobileNavBar() {
                 </a>
               </Link>
             </div>
+            <GreenButton
+              id='member-button'
+              className=''
+              isOutline={true}
+              isDefault={false}
+              onClick={() => setShowMemberModal(true)}>
+              Member
+            </GreenButton>
+            <SignupModal showModal={showMemberModal} setShowModal={setShowMemberModal} />
+
             {/* TODO add blog */}
             <MobileGrid mapping={mobileBrandMenu} header='brand' headerLink='/brand' />
             <MobileGrid mapping={mobileDocsMenu} header='documentation' headerLink='/docs' />
