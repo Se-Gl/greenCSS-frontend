@@ -59,7 +59,7 @@ const Navbar = () => {
         </ul>
         <GreenButton
           id='member-button'
-          className='ml-auto'
+          className='ml-auto bg-gray-9 border-none hover:border-solid'
           isOutline={true}
           isDefault={false}
           onClick={() => setShowModal(true)}>
