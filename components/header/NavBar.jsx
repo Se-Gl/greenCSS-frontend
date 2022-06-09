@@ -4,8 +4,7 @@ import { useState } from 'react'
 import { useGlobalContext } from '@/utils/NavContext'
 import LogoDark from '../icon/Brand/LogoDark'
 import { navmenu } from '@/data/nav'
-import { GreenButton } from '../reusable/Button'
-import SignupModal from '../member/SignupModal'
+import UserModal from '../member/UserModal'
 
 const Navbar = () => {
   const router = useRouter()
@@ -57,15 +56,7 @@ const Navbar = () => {
             )
           })}
         </ul>
-        <GreenButton
-          id='member-button'
-          className='ml-auto bg-gray-9 border-none hover:border-solid'
-          isOutline={true}
-          isDefault={false}
-          onClick={() => setShowModal(true)}>
-          Member
-        </GreenButton>
-        <SignupModal showModal={showModal} setShowModal={setShowModal} />
+        <UserModal buttonText='Member' showModal={showModal} setShowModal={setShowModal} />
       </div>
     </nav>
   )

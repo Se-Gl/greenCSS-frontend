@@ -1,9 +1,15 @@
+import React, { useState, useContext } from 'react'
+import { UserContext } from '@/utils/SubscriptionContext'
 import { smallScreenTier, tierDescription, tierList } from '@/data/member'
 import useWindowDimensions from '@/utils/WindowDimensions'
 import { GreenButton } from '../reusable/Button'
+import UserModal from './UserModal'
 
 export default function MemberTierCard({ title, price, handleSubscription, isDescription = false }) {
   const { width } = useWindowDimensions()
+  const [showModal, setShowModal] = useState(false)
+  // context
+  const [state] = useContext(UserContext)
 
   return (
     <div className='col-span-3 sm:col-span-12 md:col-span-12'>
@@ -37,15 +43,24 @@ export default function MemberTierCard({ title, price, handleSubscription, isDes
                 ))}
           </ul>
         </div>
-        {isDescription ? null : (
-          <GreenButton
-            id='login-button'
-            className='text-white bg-black greencss-button-reverse sm:m-50px md:m-50px'
-            isOutline={true}
-            isDefault={false}
-            onClick={() => handleSubscription(price)}>
-            {`Get ${title}`}
-          </GreenButton>
+        {state && state.token ? (
+          isDescription ? null : (
+            <GreenButton
+              id='login-button'
+              className='text-white bg-black greencss-button-reverse sm:m-50px md:m-50px'
+              isOutline={true}
+              isDefault={false}
+              onClick={() => handleSubscription(price)}>
+              {`Get ${title}`}
+            </GreenButton>
+          )
+        ) : isDescription ? null : (
+          <UserModal
+            buttonText='Register'
+            buttonStyle='text-white bg-black greencss-button-reverse sm:m-50px md:m-50px'
+            showModal={showModal}
+            setShowModal={setShowModal}
+          />
         )}
       </div>
     </div>

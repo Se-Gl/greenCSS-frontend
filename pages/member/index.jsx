@@ -33,7 +33,7 @@ export default function index({ stripeData }) {
           </div>
         </div>
 
-        <div className='my-100px'>
+        <div className='my-100px' id='member-plans'>
           <div className='mx-auto text-center'>
             <h2>Compare your benefits</h2>
             <p className='text-black-10'>

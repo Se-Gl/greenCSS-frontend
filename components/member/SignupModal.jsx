@@ -14,8 +14,8 @@ export default function SignupModal({ showModal, setShowModal }) {
   const router = useRouter()
 
   const [name, setName] = useState('SeGl')
-  const [email, setEmail] = useState('info@greencss.dev')
-  const [password, setPassword] = useState('123456')
+  const [email, setEmail] = useState('info@greencss.dev123')
+  const [password, setPassword] = useState('123456@aAbc')
   const [selectedCountry, setselectedCountry] = useState()
   const [selectedRegion, setselectedRegion] = useState()
   const [checkRegion, setcheckRegion] = useState(false)
@@ -56,7 +56,7 @@ export default function SignupModal({ showModal, setShowModal }) {
         setcheckError()
         setState(data)
         localStorage.setItem('auth', JSON.stringify(data))
-        router.push('/member')
+        router.push('/member#member-plans')
       }
     } catch (err) {
       // console.log(err)
