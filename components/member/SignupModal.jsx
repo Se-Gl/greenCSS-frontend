@@ -74,7 +74,7 @@ export default function SignupModal({ showModal, setShowModal }) {
   let checkValidPassword = /\d/.test(password)
   let checkValidPasswordTwo = /\W|_/g.test(password)
   let checkValidPasswordThree = /(?=.*[A-Z])(?=.*[a-z])/.test(password)
-  let passwordLengthRegex = password.length < 7 || password.length > 15
+  let passwordLengthRegex = password.length < 7 || password.length > 30
 
   let checkRegionOrCountry = selectedCountry || selectedRegion != null
 
@@ -124,7 +124,7 @@ export default function SignupModal({ showModal, setShowModal }) {
                   checkIsValidTwo={checkValidPasswordTwo}
                   thirdText='At least one lowercase and one uppercase character'
                   checkIsValidThree={checkValidPasswordThree}
-                  fourthText='Between 7 to 15 characters'
+                  fourthText='Between 7 to 30 characters'
                   checkIsValidFour={!passwordLengthRegex}
                 />
               )}
