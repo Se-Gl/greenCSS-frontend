@@ -360,6 +360,10 @@ input::-moz-focus-inner,
   background-color: #7cb3fc;
 }
 
+.bg-blue-8 {
+  background-color: #c3dcfe;
+}
+
 .bg-blue-9 {
   background-color: #dbeafe;
 }
@@ -613,6 +617,10 @@ input::-moz-focus-inner,
   background-color: #4d97fb;
 }
 
+.bg-blue-8 {
+  background-color: #c3dcfe;
+}
+
 .bg-blue-9 {
   background-color: #dbeafe;
 }
@@ -671,6 +679,10 @@ input::-moz-focus-inner,
 
 .focus\:bg-blue-7:focus {
   background-color: #accefd;
+}
+
+.bg-blue-8 {
+  background-color: #c3dcfe;
 }
 
 .bg-blue-9 {
@@ -3335,6 +3347,10 @@ input::-moz-focus-inner,
   background-color: #7cb3fc;
 }
 
+.bg-blue-8 {
+  background-color: #c3dcfe;
+}
+
 .bg-blue-9 {
   background-color: #dbeafe;
 }
@@ -3588,6 +3604,10 @@ input::-moz-focus-inner,
   background-color: #4d97fb;
 }
 
+.bg-blue-8 {
+  background-color: #c3dcfe;
+}
+
 .bg-blue-9 {
   background-color: #dbeafe;
 }
@@ -3646,6 +3666,10 @@ input::-moz-focus-inner,
 
 .focus\:bg-blue-7:focus {
   background-color: #accefd;
+}
+
+.bg-blue-8 {
+  background-color: #c3dcfe;
 }
 
 .bg-blue-9 {
@@ -3718,6 +3742,10 @@ input::-moz-focus-inner,
 
 .float-left {
   float: left;
+}
+
+.object-cover {
+  object-fit: cover;
 }
 
 .overflow-auto {
@@ -4831,6 +4859,11 @@ input::-moz-focus-inner,
   -webkit-transform: translateX(-50%);
 }
 
+.translate-y-neg-50per {
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
 .blur-20px {
   filter: blur(20px);
   -webkit-filter: blur(20px);
@@ -4976,6 +5009,10 @@ input::-moz-focus-inner,
 
   .sm\:text-50px {
     font-size: 50px;
+  }
+
+  .sm\:rel-text-7vw {
+    font-size: 7vw;
   }
 
   .sm\:display-none {
@@ -5159,6 +5196,10 @@ input::-moz-focus-inner,
     font-size: 20px;
   }
 
+  .md\:rel-text-7vw {
+    font-size: 7vw;
+  }
+
   .md\:display-none {
     display: none;
   }
@@ -5221,6 +5262,10 @@ input::-moz-focus-inner,
 
   .md\:w-100per {
     width: 100%;
+  }
+
+  .md\:max-w-30rem {
+    max-width: 30rem;
   }
 
   .md\:max-w-100per {
@@ -5322,6 +5367,10 @@ input::-moz-focus-inner,
 
   .lg\:text-45px {
     font-size: 45px;
+  }
+
+  .lg\:rel-text-7vw {
+    font-size: 7vw;
   }
 
   .lg\:block {
