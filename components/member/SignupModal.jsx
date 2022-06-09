@@ -87,6 +87,9 @@ export default function SignupModal({ showModal, setShowModal }) {
     !passwordLengthRegex &&
     checkRegionOrCountry
 
+  let checkLoginIsDisabled =
+    checkValidEmail && checkValidPassword && checkValidPasswordTwo && checkValidPasswordThree && !passwordLengthRegex
+
   return (
     <Modal
       onClose={() => setShowModal(false)}
@@ -176,8 +179,11 @@ export default function SignupModal({ showModal, setShowModal }) {
               </GreenButton>
             ) : (
               <GreenButton
+                isdisabled={!checkLoginIsDisabled}
                 id='login-button'
-                className='text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse bg-black'
+                className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
+                  !checkLoginIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
+                }`}
                 isOutline={true}
                 isDefault={false}
                 onClick={handleClick}>
