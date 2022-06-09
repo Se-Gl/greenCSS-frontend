@@ -41,10 +41,15 @@ export default function index({ stripeData }) {
             </p>
           </div>
           <div className='grid grid-col-12 gap-30px sm:grid-col-1 md:grid-col-1'>
-            <MemberTierCard title='' price='' isDescription={true} />
+            <MemberTierCard title='' price='' isDescription={true} handleSubscription={() => console.log('clicked')} />
 
             {stripeData.map((d, i) => (
-              <MemberTierCard key={i} title={d.nickname} price={d.unit_amount / 100} />
+              <MemberTierCard
+                key={i}
+                title={d.nickname}
+                price={d.unit_amount / 100}
+                handleSubscription={() => console.log('clicked')}
+              />
             ))}
           </div>
         </div>
@@ -54,7 +59,7 @@ export default function index({ stripeData }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`${process.env.PUBLIC_BACKEND_URL}/api/prices`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/prices`)
   const stripeData = await res.json()
 
   return { props: { stripeData } }

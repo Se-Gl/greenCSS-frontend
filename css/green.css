@@ -5131,6 +5131,10 @@ input::-moz-focus-inner,
     margin: 15px;
   }
 
+  .sm\:m-50px {
+    margin: 50px;
+  }
+
   .sm\:mt-10px {
     margin-top: 10px;
   }
@@ -5302,6 +5306,10 @@ input::-moz-focus-inner,
 
   .md\:m-10px {
     margin: 10px;
+  }
+
+  .md\:m-50px {
+    margin: 50px;
   }
 
   .md\:mt-0px {

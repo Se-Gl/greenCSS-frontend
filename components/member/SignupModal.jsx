@@ -2,12 +2,18 @@ import { useRouter } from 'next/router'
 import React, { useState, useContext } from 'react'
 import Select from 'react-select'
 import Image from 'next/image'
+import axios from 'axios'
+import { UserContext } from '@/utils/SubscriptionContext'
 import MemberInput from './MemberInput'
 import { countries, regions } from '@/data/countries'
 import Modal from '../modal/Modal'
 import { GreenButton } from '../reusable/Button'
+import { useToast } from '@/components/toast/hooks/useToast'
 
 export default function SignupModal({ showModal, setShowModal }) {
+  const toast = useToast()
+  const router = useRouter()
+
   const [name, setName] = useState('SeGl')
   const [email, setEmail] = useState('info@greencss.dev')
   const [password, setPassword] = useState('123456')
@@ -15,10 +21,51 @@ export default function SignupModal({ showModal, setShowModal }) {
   const [selectedRegion, setselectedRegion] = useState()
   const [checkRegion, setcheckRegion] = useState(false)
   const [checkMemberState, setCheckMemberState] = useState(false)
+  // context
+  const [state, setState] = useContext(UserContext)
 
   const onchangeSelect = (item) => {
     setselectedCountry(item) || setselectedRegion(item)
   }
+
+  const handleClick = async (e) => {
+    try {
+      e.preventDefault()
+      const { data } = await axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_API}/${checkMemberState ? 'register' : 'login'}`,
+        checkMemberState
+          ? {
+              name,
+              email,
+              password,
+              requestedCountry: selectedCountry.label || selectedRegion.label
+            }
+          : {
+              email,
+              password
+            }
+      )
+      if (data.error) {
+        // toast.error(data.error)
+        toast('error', `⚡ Oops! ${data.error}`)
+        // console.log(data.error)
+      } else {
+        checkMemberState && setName('')
+        setEmail('')
+        setPassword('')
+        checkMemberState && setselectedCountry(countries[0])
+        checkMemberState && setselectedRegion(regions[0])
+        toast('success', `🚀 Hey ${data.user.name}. Welcome to the greenCSS community.`)
+        setState(data)
+        localStorage.setItem('auth', JSON.stringify(data))
+        router.push('/member')
+      }
+    } catch (err) {
+      // console.log(err)
+      toast('error', '⚡Something went wrong. Try again')
+    }
+  }
+
   return (
     <Modal
       onClose={() => setShowModal(false)}
@@ -64,6 +111,14 @@ export default function SignupModal({ showModal, setShowModal }) {
                 </span>
               </>
             )}
+            <GreenButton
+              id='login-button'
+              className='text-white text-15px font-400 bg-black ml-0px mt-25px greencss-button-reverse'
+              isOutline={true}
+              isDefault={false}
+              onClick={handleClick}>
+              {checkMemberState ? 'Register' : 'Log In'}
+            </GreenButton>
           </div>
         </div>
 

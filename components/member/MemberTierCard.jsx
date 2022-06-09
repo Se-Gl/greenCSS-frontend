@@ -1,7 +1,8 @@
 import { smallScreenTier, tierDescription, tierList } from '@/data/member'
 import useWindowDimensions from '@/utils/WindowDimensions'
+import { GreenButton } from '../reusable/Button'
 
-export default function MemberTierCard({ title, price, isDescription = false }) {
+export default function MemberTierCard({ title, price, handleSubscription, isDescription = false }) {
   const { width } = useWindowDimensions()
 
   return (
@@ -15,7 +16,7 @@ export default function MemberTierCard({ title, price, isDescription = false }) 
             </div>
           </div>
         )}
-        <div className='my-50px bg-white rounded-10px shadow-small-gray'>
+        <div className='mt-50px mb-25px bg-white rounded-10px shadow-small-gray'>
           <ul className={`${isDescription ? 'font-600' : ''} p-20px`}>
             {width >= 768
               ? isDescription
@@ -36,6 +37,16 @@ export default function MemberTierCard({ title, price, isDescription = false }) 
                 ))}
           </ul>
         </div>
+        {isDescription ? null : (
+          <GreenButton
+            id='login-button'
+            className='text-white bg-black greencss-button-reverse sm:m-50px md:m-50px'
+            isOutline={true}
+            isDefault={false}
+            onClick={() => handleSubscription(price)}>
+            {`Get ${title}`}
+          </GreenButton>
+        )}
       </div>
     </div>
   )
