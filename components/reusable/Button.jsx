@@ -15,6 +15,7 @@ export function GreenButton({
   isDownload = false,
   isReverse = false,
   isOutline = false,
+  isdisabled = false,
   children
 }) {
   const [hover, setHover] = useState(false)
@@ -51,6 +52,7 @@ export function GreenButton({
       )}
       {isOutline && (
         <button
+          disabled={isdisabled}
           onClick={onClick}
           id={id}
           className={`greencss-button cursor-pointer flex py-10px px-25px min-w-50px font-bold transition-duration-200ms transition-all rounded-10px border-1px border-solid border-black my-auto text-center justify-center items-center m-auto ${className} text-black`}

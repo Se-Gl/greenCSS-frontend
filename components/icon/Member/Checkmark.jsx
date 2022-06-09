@@ -6,7 +6,7 @@ function Checkmark({ width = '20', height = '20', className }) {
       height={height}
       fill='none'
       viewBox='0 0 30 30'
-      className={className}>
+      className={`${className} min-w-20px min-h-20px`}>
       <path fill='#fdfdfd' d='M0 0H30V30H0z'></path>
       <path
         fill='#3e7a02'

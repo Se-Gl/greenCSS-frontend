@@ -1,17 +1,16 @@
 import { useRouter } from 'next/router'
 import React, { useState, useContext } from 'react'
 import Select from 'react-select'
-import Image from 'next/image'
 import axios from 'axios'
 import { UserContext } from '@/utils/SubscriptionContext'
 import MemberInput from './MemberInput'
 import { countries, regions } from '@/data/countries'
 import Modal from '../modal/Modal'
 import { GreenButton } from '../reusable/Button'
-import { useToast } from '@/components/toast/hooks/useToast'
+import CheckValidInput from './CheckValidInput'
+import SignUpModalImage from './SignUpModalImage'
 
 export default function SignupModal({ showModal, setShowModal }) {
-  const toast = useToast()
   const router = useRouter()
 
   const [name, setName] = useState('SeGl')
@@ -21,6 +20,7 @@ export default function SignupModal({ showModal, setShowModal }) {
   const [selectedRegion, setselectedRegion] = useState()
   const [checkRegion, setcheckRegion] = useState(false)
   const [checkMemberState, setCheckMemberState] = useState(false)
+  const [checkError, setcheckError] = useState()
   // context
   const [state, setState] = useContext(UserContext)
 
@@ -46,25 +46,46 @@ export default function SignupModal({ showModal, setShowModal }) {
             }
       )
       if (data.error) {
-        // toast.error(data.error)
-        toast('error', `⚡ Oops! ${data.error}`)
-        // console.log(data.error)
+        setcheckError(data.error)
       } else {
         checkMemberState && setName('')
         setEmail('')
         setPassword('')
-        checkMemberState && setselectedCountry(countries[0])
-        checkMemberState && setselectedRegion(regions[0])
-        toast('success', `🚀 Hey ${data.user.name}. Welcome to the greenCSS community.`)
+        checkMemberState && setselectedCountry()
+        checkMemberState && setselectedRegion()
+        setcheckError()
         setState(data)
         localStorage.setItem('auth', JSON.stringify(data))
         router.push('/member')
       }
     } catch (err) {
       // console.log(err)
-      toast('error', '⚡Something went wrong. Try again')
     }
   }
+
+  // form validator
+  let nameLengthMin = name.length >= 3
+
+  let checkValidEmail =
+    /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/.test(
+      email
+    )
+
+  let checkValidPassword = /\d/.test(password)
+  let checkValidPasswordTwo = /\W|_/g.test(password)
+  let checkValidPasswordThree = /(?=.*[A-Z])(?=.*[a-z])/.test(password)
+  let passwordLengthRegex = password.length < 7 || password.length > 15
+
+  let checkRegionOrCountry = selectedCountry || selectedRegion != null
+
+  let checkIsDisabled =
+    nameLengthMin &&
+    checkValidEmail &&
+    checkValidPassword &&
+    checkValidPasswordTwo &&
+    checkValidPasswordThree &&
+    !passwordLengthRegex &&
+    checkRegionOrCountry
 
   return (
     <Modal
@@ -82,25 +103,55 @@ export default function SignupModal({ showModal, setShowModal }) {
                 ? 'Sign up for free. And choose where you want your donations to go.'
                 : 'Check your current green state. Decide independently where your donations go.'}
             </p>
-            {checkMemberState && <MemberInput label='Name' type='text' value={name} setValue={setName} />}
-            <MemberInput label='Email' type='email' value={email} setValue={setEmail} />
-            <MemberInput label='Password' type='password' value={password} setValue={setPassword} />
+            {checkMemberState && (
+              <div className='flex sm:block md:block lg:block'>
+                <MemberInput label='Name' type='text' value={name} setValue={setName} />
+                {checkMemberState && <CheckValidInput checkIsValid={nameLengthMin} text='Name' />}
+              </div>
+            )}
+            <div className='flex sm:block md:block lg:block'>
+              <MemberInput label='Email' type='email' value={email} setValue={setEmail} />
+              {checkMemberState && <CheckValidInput checkIsValid={checkValidEmail} text='E-mail' />}
+            </div>
+
+            <div className='flex sm:block md:block lg:block'>
+              <MemberInput label='Password' type='password' value={password} setValue={setPassword} />
+              {checkMemberState && (
+                <CheckValidInput
+                  checkIsValid={checkValidPassword}
+                  text='At least one numeric digit'
+                  secondText='At least a special character'
+                  checkIsValidTwo={checkValidPasswordTwo}
+                  thirdText='At least one lowercase and one uppercase character'
+                  checkIsValidThree={checkValidPasswordThree}
+                  fourthText='Between 7 to 15 characters'
+                  checkIsValidFour={!passwordLengthRegex}
+                />
+              )}
+            </div>
 
             {checkMemberState && (
               <>
                 <p className='text-black text-15px font-600 mb-0px ml-10px' style={{ marginTop: '-22px' }}>
                   {checkRegion ? 'Region' : 'Country'}
                 </p>
-                <Select
-                  placeholder={`${checkRegion ? 'select your preferred region' : 'select your preferred country'}`}
-                  value={checkRegion ? selectedRegion : selectedCountry}
-                  onChange={onchangeSelect}
-                  options={checkRegion ? regions : countries}
-                  getOptionValue={(option) => option.value}
-                  getOptionLabel={(option) => option.label}
-                />
+                <div className='flex sm:block md:block lg:block'>
+                  <div className='block'>
+                    <Select
+                      placeholder={`${checkRegion ? 'select your preferred region' : 'select your preferred country'}`}
+                      value={checkRegion ? selectedRegion : selectedCountry}
+                      onChange={onchangeSelect}
+                      options={checkRegion ? regions : countries}
+                      getOptionValue={(option) => option.value}
+                      getOptionLabel={(option) => option.label}
+                    />
+                  </div>
+
+                  <CheckValidInput checkIsValid={checkRegionOrCountry} text='Select a region or country' />
+                </div>
+
                 <input
-                  className='mt-10px accent-greencss'
+                  className='accent-greencss'
                   type='checkbox'
                   value={checkRegion}
                   name='Do you not want to donate in your home country? Choose a region instead.'
@@ -111,48 +162,33 @@ export default function SignupModal({ showModal, setShowModal }) {
                 </span>
               </>
             )}
-            <GreenButton
-              id='login-button'
-              className='text-white text-15px font-400 bg-black ml-0px mt-25px greencss-button-reverse'
-              isOutline={true}
-              isDefault={false}
-              onClick={handleClick}>
-              {checkMemberState ? 'Register' : 'Log In'}
-            </GreenButton>
+            {checkMemberState ? (
+              <GreenButton
+                isdisabled={!checkIsDisabled}
+                id='login-button'
+                className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
+                  !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
+                }`}
+                isOutline={true}
+                isDefault={false}
+                onClick={handleClick}>
+                Register
+              </GreenButton>
+            ) : (
+              <GreenButton
+                id='login-button'
+                className='text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse bg-black'
+                isOutline={true}
+                isDefault={false}
+                onClick={handleClick}>
+                Log In
+              </GreenButton>
+            )}
+            <p className='text-red-5 text-15px mt-25px'>{checkError}</p>
           </div>
         </div>
 
-        <div
-          className={`col-span-4 sm:row-start-1 md:row-start-1 flex mx-0px ${
-            checkMemberState ? 'bg-blue-1' : 'bg-greencss-1'
-          }`}>
-          <div className='flex w-33per lg:block md:block sm:block absolute z-2 p-20px'>
-            <p className=' text-white mb-0px sm:min-w-35rem md:min-w-35rem'>
-              {checkMemberState ? 'Do you have an account?' : 'You do not have an account yet?'}
-            </p>
-            <GreenButton
-              id='login-button'
-              className='text-white border-white ml-auto lg:ml-0px md:ml-0px sm:ml-0px lg:mt-10px md:mt-10px sm:mt-10px'
-              isOutline={true}
-              isDefault={false}
-              onClick={() => setCheckMemberState(!checkMemberState)}>
-              {checkMemberState ? 'Log In' : 'Sign Up'}
-            </GreenButton>
-          </div>
-          <div className='relative h-100vh sm:h-50vh md:h-50vh w-100per overflow-hidden'>
-            <Image
-              quality={100}
-              layout='fill'
-              objectFit='contain'
-              src={`/images/member/signup-${checkMemberState ? 'blue' : 'green'}.webp`}
-              alt='greenCSS 3D nature'
-              placeholder='blur'
-              blurDataURL={`/_next/image?url=/images/member/signup-${
-                checkMemberState ? 'blue' : 'green'
-              }.webp&w=16&q=1`}
-            />
-          </div>
-        </div>
+        <SignUpModalImage checkMemberState={checkMemberState} setCheckMemberState={setCheckMemberState} />
       </div>
     </Modal>
   )
