@@ -5,7 +5,7 @@ import useWindowDimensions from '@/utils/WindowDimensions'
 import { GreenButton } from '../reusable/Button'
 import UserModal from './UserModal'
 
-export default function MemberTierCard({ title, price, handleSubscription, isDescription = false }) {
+export default function MemberTierCard({ title, price, id, handleSubscription, isDescription = false }) {
   const { width } = useWindowDimensions()
   const [showModal, setShowModal] = useState(false)
   // context
@@ -50,7 +50,7 @@ export default function MemberTierCard({ title, price, handleSubscription, isDes
               className='text-white bg-black greencss-button-reverse sm:m-50px md:m-50px'
               isOutline={true}
               isDefault={false}
-              onClick={() => handleSubscription(price)}>
+              onClick={(e) => handleSubscription(e, id)}>
               {`Get ${title}`}
             </GreenButton>
           )

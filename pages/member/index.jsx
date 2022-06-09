@@ -6,6 +6,12 @@ import MemberTierCard from '@/components/member/MemberTierCard'
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
 export default function index({ stripeData }) {
+  const handleClick = async (e, id) => {
+    e.preventDefault()
+    // console.log('all data:', stripeData)
+    // console.log('clicked id:', id)
+  }
+
   return (
     <SEO
       title='greenCSS member area'
@@ -48,7 +54,8 @@ export default function index({ stripeData }) {
                 key={i}
                 title={d.nickname}
                 price={d.unit_amount / 100}
-                handleSubscription={() => console.log('clicked')}
+                id={d.id}
+                handleSubscription={handleClick}
               />
             ))}
           </div>
