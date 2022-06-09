@@ -3035,6 +3035,10 @@ input::-moz-focus-inner,
   font-size: 65px;
 }
 
+.text-75px {
+  font-size: 75px;
+}
+
 .text-80px {
   font-size: 80px;
 }
@@ -5011,8 +5015,8 @@ input::-moz-focus-inner,
     font-size: 50px;
   }
 
-  .sm\:rel-text-7vw {
-    font-size: 7vw;
+  .sm\:rel-text-6vw {
+    font-size: 6vw;
   }
 
   .sm\:display-none {
@@ -5196,8 +5200,8 @@ input::-moz-focus-inner,
     font-size: 20px;
   }
 
-  .md\:rel-text-7vw {
-    font-size: 7vw;
+  .md\:rel-text-6vw {
+    font-size: 6vw;
   }
 
   .md\:display-none {
@@ -5369,8 +5373,8 @@ input::-moz-focus-inner,
     font-size: 45px;
   }
 
-  .lg\:rel-text-7vw {
-    font-size: 7vw;
+  .lg\:rel-text-6vw {
+    font-size: 6vw;
   }
 
   .lg\:block {

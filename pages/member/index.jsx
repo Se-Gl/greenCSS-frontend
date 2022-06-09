@@ -25,7 +25,7 @@ export default function index({ stripeData }) {
           />
           <div className='text-center absolute right-0per left-0per top-0per bottom-0per m-auto'>
             <div className='relative top-50per translate-y-neg-50per'>
-              <h1 className='sm:rel-text-7vw md:rel-text-7vw lg:rel-text-7vw text-80px'>Choose your plan</h1>
+              <h1 className='sm:rel-text-6vw md:rel-text-6vw lg:rel-text-6vw text-75px'>Support your world</h1>
               <p className='max-w-60rem sm:max-w-30rem md:max-w-30rem mx-auto'>
                 You decide where you donate. Compare plans, then choose the one just right for you.
               </p>
@@ -36,7 +36,9 @@ export default function index({ stripeData }) {
         <div className='my-100px'>
           <div className='mx-auto text-center'>
             <h2>Compare your benefits</h2>
-            <p className='text-black-10'>Not sure which plan to choose? Let us find the one just right for you</p>
+            <p className='text-black-10'>
+              With a monthly subscription you help us to continuously support and restore nature.
+            </p>
           </div>
           <div className='grid grid-col-12 gap-30px sm:grid-col-1 md:grid-col-1'>
             <MemberTierCard title='' price='' isDescription={true} />
