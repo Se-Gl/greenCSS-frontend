@@ -1,15 +1,30 @@
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+import React, { useContext } from 'react'
+import axios from 'axios'
 import SEO from '@/components/reusable/SEO'
 import MemberTierCard from '@/components/member/MemberTierCard'
+import { UserContext } from '@/utils/SubscriptionContext'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
 export default function index({ stripeData }) {
+  const router = useRouter()
+  // context
+  const [state, setState] = useContext(UserContext)
+
   const handleClick = async (e, id) => {
     e.preventDefault()
-    // console.log('all data:', stripeData)
-    // console.log('clicked id:', id)
+
+    if (state && state.token) {
+      const { data } = await axios.post('/create-subscription', {
+        priceId: id
+      })
+      window.open(data)
+    } else {
+      router.push('/register')
+    }
   }
 
   return (
