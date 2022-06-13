@@ -32,7 +32,7 @@ export default function stripeSuccess() {
         // update user in context
         setState(auth)
         setTimeout(() => {
-          router.push('/account')
+          router.push('/member/account')
         }, 1000)
       }
     }
@@ -47,7 +47,7 @@ export default function stripeSuccess() {
         description='greenCSS membership Payment - success.'
         url='/stripe/success'>
         <Layout className='container min-h-100vh relative z-2'>
-          <div className='flex h-100vh w-100vw overflow-hidden bg-green-10'>
+          <div className='flex h-100vh w-100per overflow-hidden bg-white'>
             <div className='m-auto'>
               <Loader />
             </div>
