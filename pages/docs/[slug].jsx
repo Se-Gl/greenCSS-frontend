@@ -29,7 +29,7 @@ export default function DocsPostPage({
 }) {
   return (
     <SEO
-      title={`How to use ${title} CSS class`}
+      title={`How to use ${title} CSS class - greenCSS`}
       hasCanonical={true}
       description={excerpt}
       image={cover_image}

@@ -22,7 +22,7 @@ export default function ReusableModal({ isSidebar, isHero }) {
       {isHero === true && <SearchBar setShowModal={() => setShowModal(true)} className='bg-white' />}
       <Modal onClose={() => setShowModal(false)} show={showModal}></Modal>
       {isSidebar === true && (
-        <div className='sticky top-0per z-2 bg-white'>
+        <div className='sticky top-0per z-2'>
           <SearchBar setShowModal={() => setShowModal(true)} className='mb-25px bg-white shadow-small-gray-9' />
         </div>
       )}

@@ -39,12 +39,12 @@ table {
   max-height: 25rem;
   scrollbar-width: thin;
   tr {
-    border-block: 1px solid $green;
+    border-block: 1px solid $greencss;
     background: $white;
     width: 100%;
     th {
       font-weight: 900;
-      border-inline: 1px solid $green;
+      border-inline: 1px solid $greencss;
     }
   }
 
@@ -52,7 +52,8 @@ table {
     tr {
       td {
         width: 33%;
-        border-inline: 1px solid $green;
+        border-inline: 1px solid $greencss;
+        border-radius: 10px;
       }
     }
   }

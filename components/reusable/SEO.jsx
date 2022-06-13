@@ -14,7 +14,7 @@ export default function SEO({ title, keywords, description, author, image, url, 
         <meta name='publisher' content={author} />
 
         {/* Search Engine Optimization Meta Tags */}
-        <title>{title} | greenCSS</title>
+        <title>{title}</title>
         <meta name='description' content={description} />
         <meta name='keywords' content={keywords} />
         <meta name='robots' content='index,follow' />
