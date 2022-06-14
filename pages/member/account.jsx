@@ -34,8 +34,8 @@ export default function account() {
 
   const CardContent = ({ description, fetchedValue }) => {
     return (
-      <p className='mb-0px font-500'>
-        {description} <span className='text-black-10 font-400'>{fetchedValue}</span>
+      <p className='mb-0px font-500 text-black text-15px'>
+        {description} <span className='text-white font-400'>{fetchedValue}</span>
       </p>
     )
   }
@@ -61,40 +61,42 @@ export default function account() {
             <div className='grid grid-col-2 gap-30px sm:grid-col-1 md:grid-col-1 my-50px'>
               {subscriptions &&
                 subscriptions.map((sub) => (
-                  <article className='col-span-1 bg-white rounded-20px p-20px shadow-small-black-10' key={sub.id}>
-                    <h4 className='fw-bold'>{sub.plan.nickname}</h4>
-                    <CardContent
-                      description={null}
-                      fetchedValue={(sub.plan.amount / 100).toLocaleString('en-US', {
-                        style: 'currency',
-                        currency: sub.plan.currency
-                      })}
-                    />
-                    <CardContent description='Status: ' fetchedValue={sub.status} />
-                    <CardContent
-                      description='Card last 4 digit: '
-                      fetchedValue={sub.default_payment_method.card.last4}
-                    />
-                    <CardContent
-                      description='Current period end: '
-                      fetchedValue={
-                        <>
-                          {new Date(sub.current_period_end * 1000).toDateString('en-GB')} -{' '}
-                          {new Date(sub.current_period_end * 1000).toLocaleTimeString('en-GB', { hour12: false })}
-                        </>
-                      }
-                    />
-                    <div className='flex sm:block md:block mt-25px'>
-                      <GreenButton
-                        className='sm:m-0px md:m-0px text-15px'
-                        isDefault={false}
-                        isOutline={true}
-                        onClick={() => router.push(`/${sub.plan.nickname.toLowerCase().replace(' ', '-')}`)}>
-                        Access
-                      </GreenButton>
-                      <GreenButton className='sm:m-0px md:m-0px sm:mt-25px md:mt-25px' onClick={manageSubscriptions}>
-                        Manage Subscription
-                      </GreenButton>
+                  <article className='col-span-1 bg-white rounded-20px p-50px shadow-small-black-10' key={sub.id}>
+                    <div className='p-25px bg-gray'>
+                      <h4 className='fw-bold'>{sub.plan.nickname}</h4>
+                      <CardContent
+                        description={null}
+                        fetchedValue={(sub.plan.amount / 100).toLocaleString('en-US', {
+                          style: 'currency',
+                          currency: sub.plan.currency
+                        })}
+                      />
+                      <CardContent description='Status: ' fetchedValue={sub.status} />
+                      <CardContent
+                        description='Card last 4 digit: '
+                        fetchedValue={sub.default_payment_method.card.last4}
+                      />
+                      <CardContent
+                        description='Current period end: '
+                        fetchedValue={
+                          <>
+                            {new Date(sub.current_period_end * 1000).toDateString('en-GB')} -{' '}
+                            {new Date(sub.current_period_end * 1000).toLocaleTimeString('en-GB', { hour12: false })}
+                          </>
+                        }
+                      />
+                      <div className='flex sm:block md:block mt-25px'>
+                        <GreenButton
+                          className='sm:m-0px md:m-0px text-10px font-500'
+                          isDefault={false}
+                          isOutline={true}
+                          onClick={() => router.push(`/${sub.plan.nickname.toLowerCase().replace(' ', '-')}`)}>
+                          Access
+                        </GreenButton>
+                        <GreenButton className='sm:m-0px md:m-0px sm:mt-25px md:mt-25px' onClick={manageSubscriptions}>
+                          <span className='text-10px font-500'>Manage Subscription</span>
+                        </GreenButton>
+                      </div>
                     </div>
                   </article>
                 ))}
