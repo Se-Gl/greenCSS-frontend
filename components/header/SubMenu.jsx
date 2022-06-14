@@ -1,12 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useGlobalContext } from '@/utils/NavContext'
+import ToggleMember from './ToggleMember'
 
 const SubMenu = () => {
   const {
     isSubmenuOpen,
     submenuPosition,
-    submenuItem: { page, pageLink, subtext, links, secondpage, secondpageLink, secondlinks, secondsubtext }
+    submenuItem: {
+      page,
+      pageLink,
+      subtext,
+      links,
+      secondpage,
+      secondpageLink,
+      secondlinks,
+      secondsubtext,
+      thirdpage,
+      thirdpageLink,
+      thirdlinks,
+      thirdsubtext
+    }
   } = useGlobalContext()
   const [columns, setColumns] = useState('grid-col-2')
   const container = useRef(null)
@@ -80,6 +94,37 @@ const SubMenu = () => {
                           {label}
                         </a>
                       </Link>
+                    </div>
+                  )
+                })}
+              </>
+            )}
+            {thirdlinks && (
+              <>
+                <div className='col-start-1 col-end-3 mt-25px'>
+                  <h4 className='mb-0px'>
+                    <Link href={`${thirdpageLink}`}>
+                      <a className='text-15px font-700 capitalize mt-0px mb-0px no-decoration cursor-pointer'>
+                        {thirdpage}
+                      </a>
+                    </Link>
+                  </h4>
+                  <p className='text-15px text-black-10 mb-0px'>{thirdsubtext}</p>
+                </div>
+                {thirdlinks.map((thirdlink, index) => {
+                  const { url, label } = thirdlink
+                  return (
+                    <div key={`${label}-${index}`}>
+                      <Link href={url}>
+                        <a className='capitalize my-0px no-decoration flex text-15px font-400 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
+                          {label.includes('Login') ? null : label}
+                        </a>
+                      </Link>
+                      {label.includes('Login') && (
+                        <div className='m-0px'>
+                          <ToggleMember />
+                        </div>
+                      )}
                     </div>
                   )
                 })}

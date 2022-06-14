@@ -5,7 +5,7 @@ export default function UserModal({
   buttonText,
   showModal,
   setShowModal,
-  buttonStyle = 'ml-auto bg-gray-9 border-none hover:border-solid'
+  buttonStyle = 'bg-gray-9 border-none hover:border-solid'
 }) {
   return (
     <>

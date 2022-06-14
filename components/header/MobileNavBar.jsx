@@ -7,6 +7,7 @@ import Modal from '../modal/Modal'
 import SearchBar from '../modal/SearchBar'
 import { GreenButton } from '../reusable/Button'
 import MobileGrid from './MobileGrid'
+import ToggleMember from './ToggleMember'
 
 export default function MobileNavBar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -42,14 +43,7 @@ export default function MobileNavBar() {
                 </a>
               </Link>
             </div>
-            <GreenButton
-              id='member-button'
-              className=''
-              isOutline={true}
-              isDefault={false}
-              onClick={() => setShowMemberModal(true)}>
-              Member
-            </GreenButton>
+            <ToggleMember />
             <SignupModal showModal={showMemberModal} setShowModal={setShowMemberModal} />
 
             {/* TODO add blog */}

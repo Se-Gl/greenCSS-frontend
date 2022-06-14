@@ -50,7 +50,7 @@ export default function account() {
           keywords='member, donation, green software, sustainable software'>
           <Layout className='container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
             {subscriptions.length == 0 && (
-              <div className='max-w-50rem p-50px bg-white shadow-small-black-10 mt-50px rounded-20px'>
+              <div className='animation-delay-500ms opacity-0per fade-in animation-duration-500ms animation-forwards max-w-50rem p-50px bg-white shadow-small-black-10 mt-50px rounded-20px'>
                 <h1>In the future you will see all your subscriptions here</h1>
                 <p className='text-black-10'>You will be able to update or delete your donations.</p>
                 <GreenButton hasLink={true} isDefault={false} href='/member#member-plans'>
@@ -85,18 +85,14 @@ export default function account() {
                           </>
                         }
                       />
-                      <div className='flex sm:block md:block mt-25px'>
-                        <GreenButton
-                          className='sm:m-0px md:m-0px text-10px font-500'
-                          isDefault={false}
-                          isOutline={true}
-                          onClick={() => router.push(`/${sub.plan.nickname.toLowerCase().replace(' ', '-')}`)}>
-                          Access
-                        </GreenButton>
-                        <GreenButton className='sm:m-0px md:m-0px sm:mt-25px md:mt-25px' onClick={manageSubscriptions}>
-                          <span className='text-10px font-500'>Manage Subscription</span>
-                        </GreenButton>
-                      </div>
+
+                      <GreenButton
+                        className='mt-25px sm:ml-0px md:ml-0px text-10px font-500'
+                        isDefault={false}
+                        isOutline={true}
+                        onClick={manageSubscriptions}>
+                        Manage Subscription
+                      </GreenButton>
                     </div>
                   </article>
                 ))}

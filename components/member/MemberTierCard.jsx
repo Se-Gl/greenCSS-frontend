@@ -57,7 +57,7 @@ export default function MemberTierCard({ title, price, id, handleSubscription, i
         ) : isDescription ? null : (
           <UserModal
             buttonText='Register'
-            buttonStyle='text-white bg-black greencss-button-reverse sm:m-50px md:m-50px'
+            buttonStyle='text-white bg-black greencss-button-reverse sm:ml-0px sm:mb-50px md:ml-0px md:mb-50px'
             showModal={showModal}
             setShowModal={setShowModal}
           />
