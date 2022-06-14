@@ -4416,8 +4416,8 @@ input::-moz-focus-inner,
   padding: 30px;
 }
 
-.pt-5px {
-  padding-top: 5px;
+.p-50px {
+  padding: 50px;
 }
 
 .pt-25px {

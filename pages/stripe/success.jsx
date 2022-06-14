@@ -26,7 +26,7 @@ export default function stripeSuccess() {
         router.push('/')
       } else {
         // update user in local storage
-        const auth = JSON.parse(localStorage.getItem('auth'))
+        // const auth = JSON.parse(localStorage.getItem('auth'))
         auth.user = data
         localStorage.setItem('auth', JSON.stringify(auth))
         // update user in context

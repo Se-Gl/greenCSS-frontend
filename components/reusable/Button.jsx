@@ -15,6 +15,7 @@ export function GreenButton({
   isDownload = false,
   isReverse = false,
   isOutline = false,
+  isLinkedOutline = false,
   isdisabled = false,
   children
 }) {
@@ -61,6 +62,18 @@ export function GreenButton({
           onMouseOut={handleMouseOut}>
           {children}
         </button>
+      )}
+      {isLinkedOutline && (
+        <Link href={href} passHref>
+          <button
+            disabled={isdisabled}
+            id={id}
+            className={`greencss-button cursor-pointer flex py-10px px-25px min-w-50px font-bold transition-duration-200ms transition-all rounded-10px border-1px border-solid border-black my-auto text-center justify-center items-center m-auto ${className} text-black`}
+            type={type}
+            href={href}>
+            {children}
+          </button>
+        </Link>
       )}
       {hasLink && (
         <Link href={href} passHref>

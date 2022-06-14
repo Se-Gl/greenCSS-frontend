@@ -1,15 +1,18 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { UserContext } from '@/utils/SubscriptionContext'
 import { useGlobalContext } from '@/utils/NavContext'
 import LogoDark from '../icon/Brand/LogoDark'
 import { navmenu } from '@/data/nav'
 import UserModal from '../member/UserModal'
+import { GreenButton } from '../reusable/Button'
 
 const Navbar = () => {
   const router = useRouter()
   const [showModal, setShowModal] = useState(false)
-
+  // context
+  const [state, setState] = useContext(UserContext)
   const { openSubmenu, closeSubmenu } = useGlobalContext()
   const handleSubmenu = (e) => {
     if (!e.target.classList.contains('map-link')) {
@@ -24,6 +27,12 @@ const Navbar = () => {
     const bottomPosition = bottom - 3
     const position = { leftPosition, bottomPosition }
     openSubmenu(text, position)
+  }
+
+  const logout = () => {
+    setState({ user: {}, token: '' })
+    localStorage.removeItem('auth')
+    router.push('/member')
   }
 
   return (
@@ -56,7 +65,23 @@ const Navbar = () => {
             )
           })}
         </ul>
-        <UserModal buttonText='Member' showModal={showModal} setShowModal={setShowModal} />
+        {state && state.token ? (
+          <div className='ml-auto flex'>
+            <GreenButton
+              href='/member/account'
+              className='mr-25px bg-gray-9 border-none hover:border-solid'
+              id='member-button'
+              isLinkedOutline={true}
+              isDefault={false}>
+              Profile
+            </GreenButton>
+            <GreenButton id='logout-button' onClick={logout} className='' isOutline={true} isDefault={false}>
+              Logout
+            </GreenButton>
+          </div>
+        ) : (
+          <UserModal buttonText='Login' showModal={showModal} setShowModal={setShowModal} />
+        )}
       </div>
     </nav>
   )

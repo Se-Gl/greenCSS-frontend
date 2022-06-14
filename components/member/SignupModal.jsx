@@ -99,8 +99,8 @@ export default function SignupModal({ showModal, setShowModal }) {
       modalStyle=''>
       <div className='m-auto grid grid-col-12 sm:grid-col-1 md:grid-col-1 overflow-hidden'>
         <div className='col-span-8 flex sm:mb-10rem md:mb-10rem mx-25px'>
-          <div className='my-auto sm:m-unset sm:max-w-30rem'>
-            <h1 className='pt-5px mb-0px capitalize'>{checkMemberState ? `Let's Get Started` : `Let's log in`}</h1>
+          <div className='my-auto pt-25px sm:m-unset sm:max-w-30rem'>
+            <h1 className='mb-0px capitalize'>{checkMemberState ? `Let's Get Started` : `Let's log in`}</h1>
             <p className='text-black-10'>
               {checkMemberState
                 ? 'Sign up for free. And choose where you want your donations to go.'

@@ -15,7 +15,7 @@ export default function account() {
   const [state] = useContext(UserContext)
   const [subscriptions, setSubscriptions] = useState([])
   const [isAuth, setIsAuth] = useState(null)
-  const [setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     const getSubscriptions = async () => {
@@ -49,6 +49,15 @@ export default function account() {
           url='member'
           keywords='member, donation, green software, sustainable software'>
           <Layout className='container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
+            {subscriptions.length == 0 && (
+              <div className='max-w-50rem p-50px bg-white shadow-small-black-10 mt-50px rounded-20px'>
+                <h1>In the future you will see all your subscriptions here</h1>
+                <p className='text-black-10'>You will be able to update or delete your donations.</p>
+                <GreenButton hasLink={true} isDefault={false} href='/member#member-plans'>
+                  Donate
+                </GreenButton>
+              </div>
+            )}
             <div className='grid grid-col-2 gap-30px sm:grid-col-1 md:grid-col-1 my-50px'>
               {subscriptions &&
                 subscriptions.map((sub) => (
