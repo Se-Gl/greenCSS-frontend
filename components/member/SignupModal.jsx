@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react'
 import Select from 'react-select'
 import axios from 'axios'
 import { UserContext } from '@/utils/SubscriptionContext'
-import MemberInput from './MemberInput'
+import { Input } from '../reusable/Input'
 import { countries, regions } from '@/data/countries'
 import Modal from '../modal/Modal'
 import { GreenButton } from '../reusable/Button'
@@ -108,17 +108,17 @@ export default function SignupModal({ showModal, setShowModal }) {
             </p>
             {checkMemberState && (
               <div className='flex sm:block md:block lg:block'>
-                <MemberInput label='Name' type='text' value={name} setValue={setName} />
+                <Input label='Name' type='text' value={name} setValue={setName} />
                 {checkMemberState && <CheckValidInput checkIsValid={nameLengthMin} text='Name' />}
               </div>
             )}
             <div className='flex sm:block md:block lg:block'>
-              <MemberInput label='Email' type='email' value={email} setValue={setEmail} />
+              <Input label='Email' type='email' value={email} setValue={setEmail} />
               {checkMemberState && <CheckValidInput checkIsValid={checkValidEmail} text='E-mail' />}
             </div>
 
             <div className='flex sm:block md:block lg:block'>
-              <MemberInput label='Password' type='password' value={password} setValue={setPassword} />
+              <Input label='Password' type='password' value={password} setValue={setPassword} />
               {checkMemberState && (
                 <CheckValidInput
                   checkIsValid={checkValidPassword}

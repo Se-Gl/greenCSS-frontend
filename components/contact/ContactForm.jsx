@@ -1,7 +1,9 @@
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 import { useState } from 'react'
 import { GreenButton } from '../reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
+import { Input } from '../reusable/Input'
 
 const CaptchaComponent = dynamic(() => import('../captcha/CaptchaComponent'), { ssr: false })
 
@@ -106,9 +108,7 @@ export default function ContactForm() {
       maxLength: 30,
       type: 'text',
       value: fullname,
-      onChange: (e) => {
-        setFullname(e.target.value)
-      }
+      onChange: setFullname
     },
     {
       htmlFor: 'email',
@@ -116,9 +116,7 @@ export default function ContactForm() {
       maxLength: 30,
       type: 'email',
       value: email,
-      onChange: (e) => {
-        setEmail(e.target.value)
-      }
+      onChange: setEmail
     },
     {
       htmlFor: 'subject',
@@ -126,72 +124,81 @@ export default function ContactForm() {
       maxLength: 30,
       type: 'text',
       value: subject,
-      onChange: (e) => {
-        setSubject(e.target.value)
-      }
+      onChange: setSubject
+    },
+    {
+      htmlFor: 'message',
+      label: 'Message',
+      maxLength: 500,
+      type: 'textarea',
+      value: message,
+      onChange: setMessage,
+      isTextArea: true
     }
   ]
 
   return (
-    <div className='mb-50px'>
-      <form
-        className='bg-white rounded-20px shadow-small-gray sm:shadow-transparent md:shadow-transparent'
-        onSubmit={handleSubmit}
-        id='contact-form'>
-        <div className='px-20px flex flex-col'>
-          <h3 className='pt-25px max-w-50per sm:max-w-100per md:max-w-100per'>
-            Get in Touch with Us! And send a message
-          </h3>
-          <p className='text-black-10 text-15px  max-w-50per sm:max-w-100per md:max-w-100per'>
-            Whether it is constructive feedback, negative experiences, gratitude, questions, suggestions, feature
-            requests or simply boredom.
-          </p>
-          {contactItems.sort().map((item, index) => {
-            return (
-              <div key={index} className='w-100per mb-25px'>
-                <label htmlFor={item.htmlFor} className='font-600 text-15px'>
-                  {item.label}
-                  <span className='text-red-2'>*</span>
-                </label>
-                <input
-                  maxLength={item.maxLength}
-                  type={item.type}
-                  id={item.htmlFor}
-                  className='border-solid border-1px border-greencss rounded-5px text-15px text-black-3 text-black font-600 py-10px w-100per'
-                  value={item.value}
-                  onChange={item.onChange}
-                />
+    <div className='mt-50px m-auto grid grid-col-12 sm:grid-col-1 md:grid-col-1 overflow-hidden' id='contact-index'>
+      <div className='mb-20px col-span-8 flex sm:mb-10rem md:mb-10rem'>
+        <form
+          className='bg-white rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px shadow-small-gray sm:shadow-transparent md:shadow-transparent'
+          onSubmit={handleSubmit}
+          id='contact-form'>
+          <div className='px-20px flex flex-col'>
+            <h3 className='pt-25px max-w-50per sm:max-w-100per md:max-w-100per'>
+              Get in Touch with Us! And send a message
+            </h3>
+            <p className='text-black-10 text-15px  max-w-50per sm:max-w-100per md:max-w-100per'>
+              Whether it is constructive feedback, negative experiences, gratitude, questions, suggestions, feature
+              requests or simply boredom.
+            </p>
+            {contactItems.sort().map((item, index) => {
+              return (
+                <div key={index} className='w-100per'>
+                  <Input
+                    maxLength={item.maxLength}
+                    id={item.htmlFor}
+                    label={item.label}
+                    type={item.type}
+                    value={item.value}
+                    setValue={item.onChange}
+                    htmlFor={item.htmlFor}
+                    isTextArea={item.isTextArea}
+                  />
+                </div>
+              )
+            })}
+
+            <CaptchaComponent
+              verifyCaptcha={verifyCaptcha}
+              setverifyCaptcha={setverifyCaptcha}
+              captcha={captcha}
+              setCaptcha={setCaptcha}
+            />
+
+            {buttonText == 'Send' && (
+              <div className='sm:mr-auto md:mr-auto my-25px'>
+                <GreenButton type='submit' id='submit-button'>
+                  {buttonText}
+                </GreenButton>
               </div>
-            )
-          })}
-          <label htmlFor='message' className='font-600 mb-5px text-15px'>
-            Message<span className='text-red-2'>*</span>
-          </label>
-          <textarea
-            maxLength='500'
-            id='message'
-            className='border-solid border-1px border-greencss rounded-5px text-15px text-black-3 text-black font-600 py-10px'
-            value={message}
-            onChange={(e) => {
-              setMessage(e.target.value)
-            }}></textarea>
-
-          <CaptchaComponent
-            verifyCaptcha={verifyCaptcha}
-            setverifyCaptcha={setverifyCaptcha}
-            captcha={captcha}
-            setCaptcha={setCaptcha}
+            )}
+          </div>
+        </form>
+      </div>
+      <div className='mb-20px sm:mb-0px md:mb-0px col-span-4 sm:row-start-1 md:row-start-1 flex mx-0px bg-blue rounded-right-radius-20px sm:rounded-bottom-radius-0px md:rounded-bottom-radius-0px sm:rounded-top-radius-20px md:rounded-top-radius-20px'>
+        <div className='relative h-100vh sm:h-50vh md:h-50vh w-100per overflow-hidden'>
+          <Image
+            quality={100}
+            layout='fill'
+            objectFit='contain'
+            src='/images/contact/jungle-contact.webp'
+            alt='greenCSS 3D nature'
+            placeholder='blur'
+            blurDataURL='/_next/image?url=/images/contact/jungle-contact.webp&w=16&q=1'
           />
-
-          {buttonText == 'Send' && (
-            <div className='flex flex-row items-center justify-start my-25px'>
-              <GreenButton type='submit' id='submit-button'>
-                {buttonText}
-              </GreenButton>
-            </div>
-          )}
         </div>
-      </form>
+      </div>
     </div>
   )
 }
