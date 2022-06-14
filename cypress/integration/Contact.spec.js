@@ -2,11 +2,8 @@ describe('Contact Index Unit test', () => {
   before(() => {
     cy.visit('http://localhost:3000/contact')
   })
-  it('renders the index page', () => {
-    cy.get('#contact-index')
-      .should('be.visible')
-      .should('exist')
-      .contains('Contact - the right way to get to know each other.', { matchCase: false })
+  it('renders the contact page', () => {
+    cy.get('#contact-index').should('be.visible').should('exist')
   })
   it('renders the contact form', () => {
     cy.get('#contact-form').should('be.visible').should('exist').contains('Send a message', { matchCase: false })
