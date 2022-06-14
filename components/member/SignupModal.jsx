@@ -56,7 +56,7 @@ export default function SignupModal({ showModal, setShowModal }) {
         setcheckError()
         setState(data)
         localStorage.setItem('auth', JSON.stringify(data))
-        router.push('/member#member-plans')
+        router.push('/member/account')
       }
     } catch (err) {
       // console.log(err)

@@ -380,6 +380,10 @@ input::-moz-focus-inner,
   background-color: #1c1c1c;
 }
 
+.hover\:bg-black-2:hover {
+  background-color: #282828;
+}
+
 .bg-black-5 {
   background-color: #4d4d4d;
 }
@@ -653,6 +657,10 @@ input::-moz-focus-inner,
   background-color: #4d4d4d;
 }
 
+.active\:bg-black-5:active {
+  background-color: #4d4d4d;
+}
+
 .active\:bg-black-9:active {
   background-color: #7d7d7d;
 }
@@ -718,6 +726,10 @@ input::-moz-focus-inner,
 }
 
 .bg-black-5 {
+  background-color: #4d4d4d;
+}
+
+.focus\:bg-black-5:focus {
   background-color: #4d4d4d;
 }
 
@@ -3395,6 +3407,10 @@ input::-moz-focus-inner,
   background-color: #1c1c1c;
 }
 
+.hover\:bg-black-2:hover {
+  background-color: #282828;
+}
+
 .bg-black-5 {
   background-color: #4d4d4d;
 }
@@ -3668,6 +3684,10 @@ input::-moz-focus-inner,
   background-color: #4d4d4d;
 }
 
+.active\:bg-black-5:active {
+  background-color: #4d4d4d;
+}
+
 .active\:bg-black-9:active {
   background-color: #7d7d7d;
 }
@@ -3733,6 +3753,10 @@ input::-moz-focus-inner,
 }
 
 .bg-black-5 {
+  background-color: #4d4d4d;
+}
+
+.focus\:bg-black-5:focus {
   background-color: #4d4d4d;
 }
 
@@ -5386,6 +5410,10 @@ input::-moz-focus-inner,
 
   .md\:mt-10px {
     margin-top: 10px;
+  }
+
+  .md\:mt-25px {
+    margin-top: 25px;
   }
 
   .md\:mt-50px {

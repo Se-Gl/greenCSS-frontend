@@ -32,7 +32,7 @@ export function GreenButton({
         <button
           onClick={onClick}
           id={id}
-          className={`greencss-button cursor-pointer flex py-10px px-50px font-bold bg-black hover:bg-greencss active:bg-greencss-9 focus:bg-greencss-8 transition-duration-200ms transition-all rounded-10px border-1px border-solid border-transparent hover:border-black my-auto text-center justify-center items-center m-auto text-15px ${className} text-white`}
+          className={`greencss-button cursor-pointer flex py-10px px-50px font-bold bg-black hover:bg-black-2 active:bg-black-5 focus:bg-black-5 transition-duration-200ms transition-all rounded-10px border-1px border-solid border-transparent hover:border-black my-auto text-center justify-center items-center m-auto text-15px ${className} text-white`}
           type={type}
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}>
