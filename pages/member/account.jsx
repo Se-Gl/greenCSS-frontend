@@ -1,17 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react'
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
 import axios from 'axios'
 import SEO from '@/components/reusable/SEO'
 import { UserContext } from '@/utils/SubscriptionContext'
 import CheckServerAuth from '@/components/auth/CheckServerAuth'
 import { GreenButton } from '@/components/reusable/Button'
 import SignupModal from '@/components/member/SignupModal'
+import MemberChart from './MemberChart'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
 export default function account() {
-  const router = useRouter()
   const [state] = useContext(UserContext)
   const [subscriptions, setSubscriptions] = useState([])
   const [isAuth, setIsAuth] = useState(null)
@@ -62,16 +61,15 @@ export default function account() {
               {subscriptions &&
                 subscriptions.map((sub) => (
                   <article className='col-span-1 bg-white rounded-20px p-50px shadow-small-black-10' key={sub.id}>
-                    <div className='p-25px bg-gray'>
+                    <div className='relative p-25px bg-gray'>
                       <h4 className='fw-bold'>{sub.plan.nickname}</h4>
                       <CardContent
                         description={null}
-                        fetchedValue={(sub.plan.amount / 100).toLocaleString('en-US', {
+                        fetchedValue={`${((sub.plan.amount / 100) * sub.quantity).toLocaleString('en-US', {
                           style: 'currency',
                           currency: sub.plan.currency
-                        })}
+                        })}/month`}
                       />
-                      <CardContent description='Status: ' fetchedValue={sub.status} />
                       <CardContent
                         description='Card last 4 digit: '
                         fetchedValue={sub.default_payment_method.card.last4}
@@ -85,6 +83,14 @@ export default function account() {
                           </>
                         }
                       />
+                      {sub.pause_collection != null ? (
+                        <CardContent
+                          description='Start pause: '
+                          fetchedValue={new Date(sub.pause_collection.resumes_at * 1000).toDateString('en-GB')}
+                        />
+                      ) : (
+                        <CardContent description='Status: ' fetchedValue={sub.status} />
+                      )}
 
                       <GreenButton
                         className='mt-25px sm:ml-0px md:ml-0px text-10px font-500'
@@ -94,6 +100,13 @@ export default function account() {
                         Manage Subscription
                       </GreenButton>
                     </div>
+                    <MemberChart
+                      chartData={Math.round(
+                        (new Date(sub.current_period_end * 1000).getMonth() -
+                          new Date(sub.current_period_start * 1000).getMonth()) *
+                          ((sub.plan.amount / 100) * sub.quantity)
+                      )}
+                    />
                   </article>
                 ))}
             </div>
