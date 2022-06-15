@@ -4300,6 +4300,10 @@ input::-moz-focus-inner,
   max-height: 75vh;
 }
 
+.max-h-100vh {
+  max-height: 100vh;
+}
+
 .min-h-20px {
   min-height: 20px;
 }

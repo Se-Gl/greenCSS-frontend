@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { GreenButton } from '../reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
 import { Input, TextArea } from '../reusable/Input'
+import CheckValidInput from '../member/CheckValidInput'
 
 const CaptchaComponent = dynamic(() => import('../captcha/CaptchaComponent'), { ssr: false })
 
@@ -21,9 +22,6 @@ export default function ContactForm() {
 
   //   Form validation
   const [errors, setErrors] = useState({})
-
-  //   Setting button text
-  const [buttonText, setButtonText] = useState('Send')
 
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const [showFailureMessage, setShowFailureMessage] = useState(false)
@@ -61,7 +59,6 @@ export default function ContactForm() {
     let isValidForm = handleValidation()
 
     if (isValidForm) {
-      setButtonText('disabled')
       const res = await fetch('/api/sendgrid', {
         body: JSON.stringify({
           email: email,
@@ -80,13 +77,11 @@ export default function ContactForm() {
         setShowSuccessMessage(false)
         setShowFailureMessage(true)
         toast('error', '⚡ Oops! Something went wrong, please try again later.')
-        setButtonText('Send')
         return
       }
       setShowSuccessMessage(true)
       toast('success', '🙏 Thank you! Your Message has been delivered.')
       setShowFailureMessage(false)
-      setButtonText('Send')
       // Reset form fields
       setFullname('')
       setEmail('')
@@ -103,7 +98,9 @@ export default function ContactForm() {
       maxLength: 30,
       type: 'text',
       value: fullname,
-      onChange: setFullname
+      onChange: setFullname,
+      checkFirst: fullname.length >= 3 || fullname.length > 30,
+      checkFirstDescription: 'Your name'
     },
     {
       htmlFor: 'email',
@@ -111,7 +108,12 @@ export default function ContactForm() {
       maxLength: 30,
       type: 'email',
       value: email,
-      onChange: setEmail
+      onChange: setEmail,
+      checkFirst:
+        /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/.test(
+          email
+        ),
+      checkFirstDescription: 'Your E-Mail'
     },
     {
       htmlFor: 'subject',
@@ -119,15 +121,19 @@ export default function ContactForm() {
       maxLength: 30,
       type: 'text',
       value: subject,
-      onChange: setSubject
+      onChange: setSubject,
+      checkFirst: subject.length >= 3 || subject.length > 30,
+      checkFirstDescription: 'Title'
     }
   ]
 
+  let checkIsDisabled = fullname && email && subject && verifyCaptcha === captcha
+
   return (
-    <div className='mt-50px m-auto grid grid-col-12 sm:grid-col-1 md:grid-col-1 overflow-hidden' id='contact-index'>
+    <div className='mt-50px grid grid-col-12 sm:grid-col-1 md:grid-col-1 overflow-hidden' id='contact-index'>
       <div className='mb-20px col-span-8 flex sm:mb-10rem md:mb-10rem'>
         <form
-          className='bg-white rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px shadow-small-gray sm:shadow-transparent md:shadow-transparent'
+          className='my-auto bg-white rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px shadow-small-gray sm:shadow-transparent md:shadow-transparent'
           onSubmit={handleSubmit}
           id='contact-form'>
           <div className='px-20px flex flex-col'>
@@ -138,7 +144,7 @@ export default function ContactForm() {
             </p>
             {contactItems.sort().map((item, index) => {
               return (
-                <div key={index} className='w-100per'>
+                <div className='flex sm:block md:block lg:block' key={index}>
                   <Input
                     maxLength={item.maxLength}
                     id={item.htmlFor}
@@ -149,18 +155,22 @@ export default function ContactForm() {
                     htmlFor={item.htmlFor}
                     isTextArea={item.isTextArea}
                   />
+                  <CheckValidInput checkIsValid={item.checkFirst} text={item.checkFirstDescription} />
                 </div>
               )
             })}
-            <TextArea
-              maxLength={500}
-              id='message'
-              label='Message'
-              type='text'
-              value={message}
-              setValue={setMessage}
-              htmlFor='message'
-            />
+            <div className='flex sm:block md:block lg:block'>
+              <TextArea
+                maxLength={500}
+                id='message'
+                label='Message'
+                type='text'
+                value={message}
+                setValue={setMessage}
+                htmlFor='message'
+              />
+              <CheckValidInput checkIsValid={message.length >= 3 || message.length > 30} text='Max 500 characters' />
+            </div>
 
             <CaptchaComponent
               verifyCaptcha={verifyCaptcha}
@@ -168,19 +178,24 @@ export default function ContactForm() {
               captcha={captcha}
               setCaptcha={setCaptcha}
             />
-
-            {buttonText == 'Send' && (
-              <div className='sm:mr-auto md:mr-auto my-25px'>
-                <GreenButton type='submit' id='submit-button'>
-                  {buttonText}
-                </GreenButton>
-              </div>
-            )}
+            <div className='sm:mr-auto md:mr-auto my-25px'>
+              <GreenButton
+                type='submit'
+                isdisabled={!checkIsDisabled}
+                id='contact-send-button'
+                className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
+                  !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
+                }`}
+                isOutline={true}
+                isDefault={false}>
+                Send
+              </GreenButton>
+            </div>
           </div>
         </form>
       </div>
       <div className='mb-20px sm:mb-0px md:mb-0px col-span-4 sm:row-start-1 md:row-start-1 flex mx-0px bg-blue rounded-right-radius-20px sm:rounded-bottom-radius-0px md:rounded-bottom-radius-0px sm:rounded-top-radius-20px md:rounded-top-radius-20px'>
-        <div className='relative h-100vh sm:h-50vh md:h-50vh w-100per overflow-hidden'>
+        <div className='relative max-h-100vh sm:h-50vh md:h-50vh w-100per overflow-hidden'>
           <Image
             quality={100}
             layout='fill'

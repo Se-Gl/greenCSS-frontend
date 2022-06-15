@@ -52,7 +52,7 @@ export function TextArea({ required, label, value, setValue, htmlFor, maxLength,
         type={type}
         onInput={(e) => setValue(e.currentTarget.textContent)}
         value={cleanValue}
-        className='membertextarea border-none bg-white rounded-10px shadow-small-gray pl-10px text-15px'
+        className='membertextarea border-none bg-white rounded-10px shadow-small-gray pl-10px text-15px w-40rem sm:max-w-75vw'
       />
 
       <label

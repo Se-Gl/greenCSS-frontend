@@ -8,7 +8,7 @@ export default function CaptchaComponent({ verifyCaptcha, setverifyCaptcha, setC
       <div className='display-block w-100per min-w-50px'>
         <Input
           required='required'
-          maxLength='30'
+          maxLength='4'
           type='password'
           id='password'
           label='Captcha'

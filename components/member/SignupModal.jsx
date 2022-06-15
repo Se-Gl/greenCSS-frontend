@@ -149,7 +149,6 @@ export default function SignupModal({ showModal, setShowModal }) {
                       getOptionLabel={(option) => option.label}
                     />
                   </div>
-
                   <CheckValidInput checkIsValid={checkRegionOrCountry} text='Select a region or country' />
                 </div>
 
