@@ -64,15 +64,16 @@ export default function index({ stripeData }) {
           <div className='grid grid-col-12 gap-30px sm:grid-col-1 md:grid-col-1'>
             <MemberTierCard title='' price='' isDescription={true} handleSubscription={() => console.log('clicked')} />
 
-            {stripeData.map((d, i) => (
-              <MemberTierCard
-                key={i}
-                title={d.nickname}
-                price={d.unit_amount / 100}
-                id={d.id}
-                handleSubscription={handleClick}
-              />
-            ))}
+            {stripeData &&
+              stripeData.map((d, i) => (
+                <MemberTierCard
+                  key={i}
+                  title={d.nickname}
+                  price={d.unit_amount / 100}
+                  id={d.id}
+                  handleSubscription={handleClick}
+                />
+              ))}
           </div>
         </div>
       </Layout>
