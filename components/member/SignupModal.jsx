@@ -64,19 +64,74 @@ export default function SignupModal({ showModal, setShowModal }) {
   }
 
   // form validator
-  let nameLengthMin = name.length >= 3
-
+  let nameLengthMin = name.length >= 3 || name.length > 30
   let checkValidEmail =
     /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/.test(
       email
     )
-
   let checkValidPassword = /\d/.test(password)
   let checkValidPasswordTwo = /\W|_/g.test(password)
   let checkValidPasswordThree = /(?=.*[A-Z])(?=.*[a-z])/.test(password)
-  let passwordLengthRegex = password.length < 7 || password.length > 30
-
+  let passwordLengthRegex = password.length >= 7 || password.length > 30
   let checkRegionOrCountry = selectedCountry || selectedRegion != null
+
+  const signUpItems = [
+    {
+      htmlFor: 'name',
+      label: 'Full name',
+      maxLength: 30,
+      type: 'text',
+      value: name,
+      onChange: setName,
+      checkFirst: nameLengthMin,
+      checkFirstDescription: 'Your name'
+    },
+    {
+      htmlFor: 'email',
+      label: 'E-mail',
+      maxLength: 30,
+      type: 'email',
+      value: email,
+      onChange: setEmail,
+      checkFirst: checkValidEmail,
+      checkFirstDescription: 'Your E-Mail'
+    },
+    {
+      htmlFor: 'password',
+      label: 'Password',
+      maxLength: 30,
+      type: 'password',
+      value: password,
+      onChange: setPassword,
+      checkFirst: checkValidPassword,
+      checkFirstDescription: 'At least one numeric digit',
+      checkIsSecondValid: checkValidPasswordTwo,
+      secondText: 'At least a special character',
+      checkIsThirdValid: checkValidPasswordThree,
+      thirdText: 'At least one lowercase and one uppercase character',
+      checkIsFourthValid: passwordLengthRegex,
+      fourthText: 'Between 7 to 30 characters'
+    }
+  ]
+
+  const loginItems = [
+    {
+      htmlFor: 'email',
+      label: 'E-mail',
+      maxLength: 30,
+      type: 'email',
+      value: email,
+      onChange: setEmail
+    },
+    {
+      htmlFor: 'password',
+      label: 'Password',
+      maxLength: 30,
+      type: 'password',
+      value: password,
+      onChange: setPassword
+    }
+  ]
 
   let checkIsDisabled =
     nameLengthMin &&
@@ -84,11 +139,11 @@ export default function SignupModal({ showModal, setShowModal }) {
     checkValidPassword &&
     checkValidPasswordTwo &&
     checkValidPasswordThree &&
-    !passwordLengthRegex &&
+    passwordLengthRegex &&
     checkRegionOrCountry
 
   let checkLoginIsDisabled =
-    checkValidEmail && checkValidPassword && checkValidPasswordTwo && checkValidPasswordThree && !passwordLengthRegex
+    checkValidEmail && checkValidPassword && checkValidPasswordTwo && checkValidPasswordThree && passwordLengthRegex
 
   return (
     <Modal
@@ -106,32 +161,35 @@ export default function SignupModal({ showModal, setShowModal }) {
                 ? 'Sign up for free. And choose where you want your donations to go.'
                 : 'Check your current green state. Decide independently where your donations go.'}
             </p>
-            {checkMemberState && (
-              <div className='flex sm:block md:block lg:block'>
-                <Input label='Name' type='text' value={name} setValue={setName} />
-                {checkMemberState && <CheckValidInput checkIsValid={nameLengthMin} text='Name' />}
-              </div>
-            )}
-            <div className='flex sm:block md:block lg:block'>
-              <Input label='Email' type='email' value={email} setValue={setEmail} />
-              {checkMemberState && <CheckValidInput checkIsValid={checkValidEmail} text='E-mail' />}
-            </div>
 
-            <div className='flex sm:block md:block lg:block'>
-              <Input label='Password' type='password' value={password} setValue={setPassword} />
-              {checkMemberState && (
-                <CheckValidInput
-                  checkIsValid={checkValidPassword}
-                  text='At least one numeric digit'
-                  secondText='At least a special character'
-                  checkIsValidTwo={checkValidPasswordTwo}
-                  thirdText='At least one lowercase and one uppercase character'
-                  checkIsValidThree={checkValidPasswordThree}
-                  fourthText='Between 7 to 30 characters'
-                  checkIsValidFour={!passwordLengthRegex}
-                />
-              )}
-            </div>
+            {(checkMemberState ? signUpItems : loginItems).sort().map((item, index) => {
+              return (
+                <div className='flex sm:block md:block lg:block' key={index}>
+                  <Input
+                    maxLength={item.maxLength}
+                    id={item.htmlFor}
+                    label={item.label}
+                    type={item.type}
+                    value={item.value}
+                    setValue={item.onChange}
+                    htmlFor={item.htmlFor}
+                    isTextArea={item.isTextArea}
+                  />
+                  {checkMemberState && (
+                    <CheckValidInput
+                      checkIsValid={item.checkFirst}
+                      text={item.checkFirstDescription}
+                      checkIsValidTwo={item.checkIsSecondValid}
+                      secondText={item.secondText}
+                      checkIsValidThree={item.checkIsThirdValid}
+                      thirdText={item.thirdText}
+                      checkIsValidFour={item.checkIsFourthValid}
+                      fourthText={item.fourthText}
+                    />
+                  )}
+                </div>
+              )
+            })}
 
             {checkMemberState && (
               <>

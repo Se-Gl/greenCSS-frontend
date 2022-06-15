@@ -182,7 +182,7 @@ export default function ContactForm() {
               <GreenButton
                 type='submit'
                 isdisabled={!checkIsDisabled}
-                id='contact-send-button'
+                id='submit-button'
                 className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
                   !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
                 }`}
