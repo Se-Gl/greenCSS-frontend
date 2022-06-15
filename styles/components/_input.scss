@@ -14,6 +14,32 @@
   color: $black;
   transform: translate(0, -150%);
 }
+
+#textarea {
+  -moz-appearance: textfield-multiline;
+  -webkit-appearance: textarea;
+  min-height: 100px;
+  max-width: 40rem;
+  overflow-x: hidden;
+  resize: both;
+  padding-top: 15px;
+}
+
+.membertextarea {
+  &:focus + .placeholder-text-textarea .membertext-textarea {
+    color: $black;
+  }
+}
+
+.membertextarea:focus + .placeholder-text-textarea .membertext-textarea,
+:not(.membertextarea[value='']) + .placeholder-text-textarea .membertext-textarea {
+  font-size: 15px;
+  font-weight: 600;
+  color: $black;
+  transform: translate(0, -150%);
+}
+
+// overwrite default react-select style
 .css-b62m3t-container {
   font-size: 15px;
   font-weight: 400;

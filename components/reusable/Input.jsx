@@ -31,3 +31,27 @@ export const Input = ({
     </label>
   </div>
 )
+
+export const TextArea = ({ required, label, value, setValue, htmlFor, maxLength, type = 'text' }) => (
+  <div className='relative my-25px'>
+    <div
+      spellCheck='false'
+      contentEditable='true'
+      required={required}
+      id='textarea'
+      maxLength={maxLength}
+      type={type}
+      onInput={(e) => setValue(e.currentTarget.textContent)}
+      value={value}
+      className='membertextarea border-none bg-white rounded-10px shadow-small-gray pl-10px text-15px'
+    />
+
+    <label
+      className='placeholder-text-textarea pl-10px absolute top-0per right-0per bottom-0per left-0per flex items-center pointer-events-none w-100px h-50px'
+      htmlFor={htmlFor}>
+      <div className='membertext-textarea translate-0per transition-all transition-duration-300ms text-black-7 text-15px'>
+        {label}
+      </div>
+    </label>
+  </div>
+)

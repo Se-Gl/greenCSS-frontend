@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { GreenButton } from '../reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
-import { Input } from '../reusable/Input'
+import { Input, TextArea } from '../reusable/Input'
 
 const CaptchaComponent = dynamic(() => import('../captcha/CaptchaComponent'), { ssr: false })
 
@@ -12,6 +12,7 @@ export default function ContactForm() {
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+
   // captcha
   const [verifyCaptcha, setverifyCaptcha] = useState('')
   const [captcha, setCaptcha] = useState([])
@@ -80,12 +81,6 @@ export default function ContactForm() {
         setShowFailureMessage(true)
         toast('error', '⚡ Oops! Something went wrong, please try again later.')
         setButtonText('Send')
-        // Reset form fields
-        setFullname('')
-        setEmail('')
-        setMessage('')
-        setSubject('')
-        setverifyCaptcha('')
         return
       }
       setShowSuccessMessage(true)
@@ -125,15 +120,6 @@ export default function ContactForm() {
       type: 'text',
       value: subject,
       onChange: setSubject
-    },
-    {
-      htmlFor: 'message',
-      label: 'Message',
-      maxLength: 500,
-      type: 'textarea',
-      value: message,
-      onChange: setMessage,
-      isTextArea: true
     }
   ]
 
@@ -145,9 +131,7 @@ export default function ContactForm() {
           onSubmit={handleSubmit}
           id='contact-form'>
           <div className='px-20px flex flex-col'>
-            <h3 className='pt-25px max-w-50per sm:max-w-100per md:max-w-100per'>
-              Get in Touch with Us! And send a message
-            </h3>
+            <h1 className='pt-25px'>Get in Touch with Us! And send a message</h1>
             <p className='text-black-10 text-15px  max-w-50per sm:max-w-100per md:max-w-100per'>
               Whether it is constructive feedback, negative experiences, gratitude, questions, suggestions, feature
               requests or simply boredom.
@@ -168,6 +152,15 @@ export default function ContactForm() {
                 </div>
               )
             })}
+            <TextArea
+              maxLength={500}
+              id='message'
+              label='Message'
+              type='text'
+              value={message}
+              setValue={setMessage}
+              htmlFor='message'
+            />
 
             <CaptchaComponent
               verifyCaptcha={verifyCaptcha}
