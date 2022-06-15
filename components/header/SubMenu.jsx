@@ -65,7 +65,7 @@ const SubMenu = () => {
                 return (
                   <li key={`${label}-${index}`} style={{ listStyleType: 'none' }}>
                     <Link href={url}>
-                      <a className='capitalize my-0px no-decoration flex text-15px font-400 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
+                      <a className='capitalize my-0px no-decoration flex text-15px font-500 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
                         {label}
                       </a>
                     </Link>
@@ -90,7 +90,7 @@ const SubMenu = () => {
                   return (
                     <div key={`${label}-${index}`}>
                       <Link href={url}>
-                        <a className='capitalize my-0px no-decoration flex text-15px font-400 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
+                        <a className='capitalize my-0px no-decoration flex text-15px font-500 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
                           {label}
                         </a>
                       </Link>
@@ -116,7 +116,7 @@ const SubMenu = () => {
                   return (
                     <div key={`${label}-${index}`}>
                       <Link href={url}>
-                        <a className='capitalize my-0px no-decoration flex text-15px font-400 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
+                        <a className='capitalize my-0px no-decoration flex text-15px font-500 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
                           {label.includes('Login') ? null : label}
                         </a>
                       </Link>
