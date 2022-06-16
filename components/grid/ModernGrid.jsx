@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function ModernGrid({ id, header, subheader, imageBg, imageUrl, imageAlt, children }) {
   return (
-    <div className='mt-50px grid grid-col-12 sm:grid-col-1 md:grid-col-1 sm:mx-0px md:mx-15px sm:max-w-40rem' id={id}>
+    <div className='my-50px grid grid-col-12 sm:grid-col-1 md:grid-col-1 sm:mx-0px md:mx-15px sm:max-w-40rem' id={id}>
       <div className='mb-20px col-span-8 sm:mb-10rem md:mb-10rem bg-white rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px shadow-small-gray sm:shadow-transparent'>
         <div className={`flex ${children ? '' : 'min-h-100vh'}`}>
           <div className='my-auto px-20px sm:px-5px md:px-5px max-w-75per'>
