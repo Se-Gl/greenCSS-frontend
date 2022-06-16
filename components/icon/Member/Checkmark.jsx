@@ -1,6 +1,7 @@
 function Checkmark({ width = '20', height = '20', className }) {
   return (
     <svg
+      id='checkmark'
       xmlns='http://www.w3.org/2000/svg'
       width={width}
       height={height}
