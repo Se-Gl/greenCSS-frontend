@@ -5,6 +5,7 @@ import { GreenButton } from '../reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
 import { Input, TextArea } from '../reusable/Input'
 import CheckValidInput from '../member/CheckValidInput'
+import ModernGrid from '../grid/ModernGrid'
 
 const CaptchaComponent = dynamic(() => import('../captcha/CaptchaComponent'), { ssr: false })
 
@@ -130,83 +131,67 @@ export default function ContactForm() {
   let checkIsDisabled = fullname && email && subject && verifyCaptcha === captcha
 
   return (
-    <div className='mt-50px grid grid-col-12 sm:grid-col-1 md:grid-col-1 overflow-hidden' id='contact-index'>
-      <div className='mb-20px col-span-8 flex sm:mb-10rem md:mb-10rem'>
-        <form
-          className='my-auto bg-white rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px shadow-small-gray sm:shadow-transparent md:shadow-transparent'
-          onSubmit={handleSubmit}
-          id='contact-form'>
-          <div className='px-20px flex flex-col'>
-            <h1 className='pt-25px'>Get in Touch with Us! And send a message</h1>
-            <p className='text-black-10 text-15px  max-w-50per sm:max-w-100per md:max-w-100per'>
-              Whether it is constructive feedback, negative experiences, gratitude, questions, suggestions, feature
-              requests or simply boredom.
-            </p>
-            {contactItems.sort().map((item, index) => {
-              return (
-                <div className='flex sm:block md:block lg:block' key={index}>
-                  <Input
-                    maxLength={item.maxLength}
-                    id={item.htmlFor}
-                    label={item.label}
-                    type={item.type}
-                    value={item.value}
-                    setValue={item.onChange}
-                    htmlFor={item.htmlFor}
-                    isTextArea={item.isTextArea}
-                  />
-                  <CheckValidInput checkIsValid={item.checkFirst} text={item.checkFirstDescription} />
-                </div>
-              )
-            })}
-            <div className='flex sm:block md:block lg:block'>
-              <TextArea
-                maxLength={500}
-                id='message'
-                label='Message'
-                type='text'
-                value={message}
-                setValue={setMessage}
-                htmlFor='message'
-              />
-              <CheckValidInput checkIsValid={message.length >= 3 || message.length > 30} text='Max 500 characters' />
-            </div>
-
-            <CaptchaComponent
-              verifyCaptcha={verifyCaptcha}
-              setverifyCaptcha={setverifyCaptcha}
-              captcha={captcha}
-              setCaptcha={setCaptcha}
+    <ModernGrid
+      id='contact-index'
+      header='Get in Touch with Us! And send a message'
+      subheader='Whether it is constructive feedback, negative experiences, gratitude, questions, suggestions, feature
+      requests or simply boredom.'
+      imageBg='bg-blue'
+      imageUrl='/images/contact/question-mark-plant.webp'
+      imageAlt='member section hero'>
+      <form className='my-auto' onSubmit={handleSubmit} id='contact-form'>
+        <div className='flex flex-col'>
+          {contactItems.sort().map((item, index) => {
+            return (
+              <div className='flex sm:block md:block lg:block' key={index}>
+                <Input
+                  maxLength={item.maxLength}
+                  id={item.htmlFor}
+                  label={item.label}
+                  type={item.type}
+                  value={item.value}
+                  setValue={item.onChange}
+                  htmlFor={item.htmlFor}
+                  isTextArea={item.isTextArea}
+                />
+                <CheckValidInput checkIsValid={item.checkFirst} text={item.checkFirstDescription} />
+              </div>
+            )
+          })}
+          <div className='flex sm:block md:block lg:block'>
+            <TextArea
+              maxLength={500}
+              id='message'
+              label='Message'
+              type='text'
+              value={message}
+              setValue={setMessage}
+              htmlFor='message'
             />
-            <div className='sm:mr-auto md:mr-auto my-25px'>
-              <GreenButton
-                type='submit'
-                isdisabled={!checkIsDisabled}
-                id='submit-button'
-                className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
-                  !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
-                }`}
-                isOutline={true}
-                isDefault={false}>
-                Send
-              </GreenButton>
-            </div>
+            <CheckValidInput checkIsValid={message.length >= 3 || message.length > 30} text='Max 500 characters' />
           </div>
-        </form>
-      </div>
-      <div className='mb-20px sm:mb-0px md:mb-0px col-span-4 sm:row-start-1 md:row-start-1 flex mx-0px bg-blue rounded-right-radius-20px sm:rounded-bottom-radius-0px md:rounded-bottom-radius-0px sm:rounded-top-radius-20px md:rounded-top-radius-20px'>
-        <div className='relative max-h-100vh sm:h-50vh md:h-50vh w-100per overflow-hidden'>
-          <Image
-            quality={100}
-            layout='fill'
-            objectFit='contain'
-            src='/images/contact/jungle-contact.webp'
-            alt='greenCSS 3D nature'
-            placeholder='blur'
-            blurDataURL='/_next/image?url=/images/contact/jungle-contact.webp&w=16&q=1'
+
+          <CaptchaComponent
+            verifyCaptcha={verifyCaptcha}
+            setverifyCaptcha={setverifyCaptcha}
+            captcha={captcha}
+            setCaptcha={setCaptcha}
           />
+          <div className='sm:mr-auto md:mr-auto my-25px'>
+            <GreenButton
+              type='submit'
+              isdisabled={!checkIsDisabled}
+              id='submit-button'
+              className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
+                !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
+              }`}
+              isOutline={true}
+              isDefault={false}>
+              Send
+            </GreenButton>
+          </div>
         </div>
-      </div>
-    </div>
+      </form>
+    </ModernGrid>
   )
 }

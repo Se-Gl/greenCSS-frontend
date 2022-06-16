@@ -3,7 +3,7 @@ import Captcha from './Captcha'
 
 export default function CaptchaComponent({ verifyCaptcha, setverifyCaptcha, setCaptcha }) {
   return (
-    <div className='flex min-h-50px'>
+    <div className='flex sm:block min-h-50px'>
       <Captcha setWord={setCaptcha} />
       <div className='display-block w-100per min-w-50px'>
         <Input

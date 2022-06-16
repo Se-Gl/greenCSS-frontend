@@ -4152,10 +4152,6 @@ input::-moz-focus-inner,
   max-width: 80rem;
 }
 
-.max-w-50per {
-  max-width: 50%;
-}
-
 .max-w-75per {
   max-width: 75%;
 }
@@ -4298,10 +4294,6 @@ input::-moz-focus-inner,
 
 .max-h-75vh {
   max-height: 75vh;
-}
-
-.max-h-100vh {
-  max-height: 100vh;
 }
 
 .min-h-20px {
@@ -5181,12 +5173,12 @@ input::-moz-focus-inner,
     max-width: 30rem;
   }
 
-  .sm\:max-w-100per {
-    max-width: 100%;
+  .sm\:max-w-40rem {
+    max-width: 40rem;
   }
 
-  .sm\:max-w-75vw {
-    max-width: 75vw;
+  .sm\:max-w-100per {
+    max-width: 100%;
   }
 
   .sm\:min-w-90px {
@@ -5211,6 +5203,10 @@ input::-moz-focus-inner,
 
   .sm\:pb-50px {
     padding-bottom: 50px;
+  }
+
+  .sm\:px-5px {
+    padding-inline: 5px;
   }
 
   .sm\:px-10px {
@@ -5422,6 +5418,10 @@ input::-moz-focus-inner,
     padding-bottom: 50px;
   }
 
+  .md\:px-5px {
+    padding-inline: 5px;
+  }
+
   .md\:px-25px {
     padding-inline: 25px;
   }
@@ -5470,6 +5470,10 @@ input::-moz-focus-inner,
     margin-inline: 0px;
   }
 
+  .md\:mx-15px {
+    margin-inline: 15px;
+  }
+
   .md\:my-0px {
     margin-block: 0px;
   }
@@ -5484,13 +5488,6 @@ input::-moz-focus-inner,
 
   .md\:mb-20rem {
     margin-bottom: 20rem;
-  }
-
-  .md\:shadow-transparent {
-    box-shadow: 10px 10px 20px -2.5px transparent;
-    -webkit-box-shadow: 10px 10px 20px -2.5px transparent;
-    -moz-box-shadow: 10px 10px 20px -2.5px transparent;
-    -ms-box-shadow: 10px 10px 20px -2.5px transparent;
   }
 
   .md\:border-green-9 {

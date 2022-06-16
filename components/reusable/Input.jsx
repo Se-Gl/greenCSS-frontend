@@ -1,17 +1,6 @@
 import xss from 'xss'
 
-export function Input({
-  required,
-  id,
-  label,
-  value,
-  setValue,
-  htmlFor,
-  maxLength,
-  type = 'text',
-  isTextArea = false,
-  isCaptcha = false
-}) {
+export function Input({ required, id, label, value, setValue, htmlFor, maxLength, type = 'text', isCaptcha = false }) {
   let cleanValue = xss(value)
 
   return (
@@ -23,9 +12,9 @@ export function Input({
         type={type}
         onChange={(e) => setValue(e.target.value)}
         value={cleanValue}
-        className={`memberinput border-none bg-white rounded-10px shadow-small-gray pl-10px text-15px ${
-          isTextArea ? 'h-75px overflow-hidden' : 'h-50px'
-        } ${isCaptcha ? '' : 'w-40rem sm:max-w-75vw'}`}
+        className={`memberinput border-none bg-white rounded-10px shadow-small-gray pl-10px text-15px h-50px ${
+          isCaptcha ? '' : 'w-40rem sm:w-100per md:w-100per'
+        }`}
       />
       <label
         className='placeholder-text pl-10px absolute top-0per right-0per bottom-0per left-0per flex items-center pointer-events-none w-100px h-50px'
@@ -52,7 +41,7 @@ export function TextArea({ required, label, value, setValue, htmlFor, maxLength,
         type={type}
         onInput={(e) => setValue(e.currentTarget.textContent)}
         value={cleanValue}
-        className='membertextarea border-none bg-white rounded-10px shadow-small-gray pl-10px text-15px w-40rem sm:max-w-75vw'
+        className='membertextarea border-none bg-white rounded-10px shadow-small-gray pl-10px text-15px w-40rem sm:w-100per md:w-100per'
       />
 
       <label
