@@ -7,6 +7,7 @@ import { Input } from '@/components/reusable/Input'
 import CheckValidInput from '@/components/member/CheckValidInput'
 import { GreenButton } from '@/components/reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
+import { checkValidEmail } from '@/data/validation'
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
 export default function forgotPasswordPage() {
@@ -26,11 +27,7 @@ export default function forgotPasswordPage() {
   }
 
   // validation
-  let checkValidEmail =
-    /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/.test(
-      email
-    )
-  let checkIsDisabled = checkValidEmail
+  let checkIsDisabled = checkValidEmail(email)
 
   return (
     <SEO
@@ -59,7 +56,7 @@ export default function forgotPasswordPage() {
                   htmlFor='email'
                   isTextArea={false}
                 />
-                <CheckValidInput checkIsValid={checkValidEmail} text='Your E-Mail' />
+                <CheckValidInput checkIsValid={checkValidEmail(email)} text='Your E-Mail' />
               </div>
 
               <GreenButton

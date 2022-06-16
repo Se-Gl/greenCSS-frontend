@@ -9,6 +9,14 @@ import Modal from '../modal/Modal'
 import { GreenButton } from '../reusable/Button'
 import CheckValidInput from './CheckValidInput'
 import SignUpModalImage from './SignUpModalImage'
+import {
+  checkNumber,
+  checkValidEmail,
+  checkValidPassword,
+  checkValidPasswordTwo,
+  checkValidPasswordThree,
+  checkRegionOrCountry
+} from '@/data/validation'
 
 export default function SignupModal({ showModal, setShowModal }) {
   const router = useRouter()
@@ -63,18 +71,6 @@ export default function SignupModal({ showModal, setShowModal }) {
     }
   }
 
-  // form validator
-  let nameLengthMin = name.length >= 3 || name.length > 30
-  let checkValidEmail =
-    /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/.test(
-      email
-    )
-  let checkValidPassword = /\d/.test(password)
-  let checkValidPasswordTwo = /\W|_/g.test(password)
-  let checkValidPasswordThree = /(?=.*[A-Z])(?=.*[a-z])/.test(password)
-  let passwordLengthRegex = password.length >= 7 || password.length > 30
-  let checkRegionOrCountry = selectedCountry || selectedRegion != null
-
   const signUpItems = [
     {
       htmlFor: 'name',
@@ -83,7 +79,7 @@ export default function SignupModal({ showModal, setShowModal }) {
       type: 'text',
       value: name,
       onChange: setName,
-      checkFirst: nameLengthMin,
+      checkFirst: checkNumber(name, 3, 32),
       checkFirstDescription: 'Your name'
     },
     {
@@ -93,7 +89,7 @@ export default function SignupModal({ showModal, setShowModal }) {
       type: 'email',
       value: email,
       onChange: setEmail,
-      checkFirst: checkValidEmail,
+      checkFirst: checkValidEmail(email),
       checkFirstDescription: 'Your E-Mail'
     },
     {
@@ -103,13 +99,13 @@ export default function SignupModal({ showModal, setShowModal }) {
       type: 'password',
       value: password,
       onChange: setPassword,
-      checkFirst: checkValidPassword,
+      checkFirst: checkValidPassword(password),
       checkFirstDescription: 'At least one numeric digit',
-      checkIsSecondValid: checkValidPasswordTwo,
+      checkIsSecondValid: checkValidPasswordTwo(password),
       secondText: 'At least a special character',
-      checkIsThirdValid: checkValidPasswordThree,
+      checkIsThirdValid: checkValidPasswordThree(password),
       thirdText: 'At least one lowercase and one uppercase character',
-      checkIsFourthValid: passwordLengthRegex,
+      checkIsFourthValid: checkNumber(password, 7, 64),
       fourthText: 'Between 7 to 64 characters'
     }
   ]
@@ -134,16 +130,20 @@ export default function SignupModal({ showModal, setShowModal }) {
   ]
 
   let checkIsDisabled =
-    nameLengthMin &&
+    checkNumber(name, 3, 30) &&
+    checkValidEmail(email) &&
+    checkValidPassword(password) &&
+    checkValidPasswordTwo(password) &&
+    checkValidPasswordThree(password) &&
+    checkNumber(password, 7, 64) &&
+    checkRegionOrCountry(selectedCountry, selectedRegion)
+
+  let checkLoginIsDisabled =
     checkValidEmail &&
     checkValidPassword &&
     checkValidPasswordTwo &&
     checkValidPasswordThree &&
-    passwordLengthRegex &&
-    checkRegionOrCountry
-
-  let checkLoginIsDisabled =
-    checkValidEmail && checkValidPassword && checkValidPasswordTwo && checkValidPasswordThree && passwordLengthRegex
+    checkNumber(password, 7, 64)
 
   return (
     <Modal
@@ -207,7 +207,10 @@ export default function SignupModal({ showModal, setShowModal }) {
                       getOptionLabel={(option) => option.label}
                     />
                   </div>
-                  <CheckValidInput checkIsValid={checkRegionOrCountry} text='Select a region or country' />
+                  <CheckValidInput
+                    checkIsValid={checkRegionOrCountry(selectedCountry, selectedRegion)}
+                    text='Select a region or country'
+                  />
                 </div>
 
                 <input

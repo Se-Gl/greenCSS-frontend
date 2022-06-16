@@ -1,11 +1,11 @@
 import dynamic from 'next/dynamic'
-import Image from 'next/image'
 import { useState } from 'react'
 import { GreenButton } from '../reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
 import { Input, TextArea } from '../reusable/Input'
 import CheckValidInput from '../member/CheckValidInput'
 import ModernGrid from '../grid/ModernGrid'
+import { checkNumber, checkValidEmail } from '@/data/validation'
 
 const CaptchaComponent = dynamic(() => import('../captcha/CaptchaComponent'), { ssr: false })
 
@@ -100,7 +100,7 @@ export default function ContactForm() {
       type: 'text',
       value: fullname,
       onChange: setFullname,
-      checkFirst: fullname.length >= 3 || fullname.length > 32,
+      checkFirst: checkNumber(fullname, 3, 32),
       checkFirstDescription: 'Your name'
     },
     {
@@ -110,25 +110,23 @@ export default function ContactForm() {
       type: 'email',
       value: email,
       onChange: setEmail,
-      checkFirst:
-        /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/.test(
-          email
-        ),
+      checkFirst: checkValidEmail(email),
       checkFirstDescription: 'Your E-Mail'
     },
     {
       htmlFor: 'subject',
       label: 'Subject',
-      maxLength: 32,
+      maxLength: 64,
       type: 'text',
       value: subject,
       onChange: setSubject,
-      checkFirst: subject.length >= 3 || subject.length > 32,
-      checkFirstDescription: 'Title'
+      checkFirst: checkNumber(subject, 3, 64),
+      checkFirstDescription: '3-64 characters'
     }
   ]
 
-  let checkIsDisabled = fullname && email && subject && verifyCaptcha === captcha
+  let checkIsDisabled =
+    checkNumber(fullname, 3, 32) && checkValidEmail(email) && checkNumber(subject, 3, 64) && verifyCaptcha === captcha
 
   return (
     <ModernGrid
