@@ -21,7 +21,6 @@ export default function MemberProfileCard() {
     const getSubscriptions = async () => {
       const { data } = await axios.get('/subscriptions')
       // console.log('subs => ', data)
-      setSubscriptions(data.data)
     }
 
     if (state && state.token) getSubscriptions()
@@ -50,6 +49,7 @@ export default function MemberProfileCard() {
             <article className='col-span-1 bg-white rounded-20px p-50px shadow-small-black-10' key={sub.id}>
               <div className='relative p-25px bg-gray'>
                 <h4 className='fw-bold'>{sub.plan.nickname}</h4>
+                <CardContent description='Region: ' fetchedValue={state.user.requestedCountry} />
                 <CardContent
                   description={null}
                   fetchedValue={`${((sub.plan.amount / 100) * sub.quantity).toLocaleString('en-US', {

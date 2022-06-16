@@ -96,17 +96,17 @@ export default function ContactForm() {
     {
       htmlFor: 'fullname',
       label: 'Full name',
-      maxLength: 30,
+      maxLength: 32,
       type: 'text',
       value: fullname,
       onChange: setFullname,
-      checkFirst: fullname.length >= 3 || fullname.length > 30,
+      checkFirst: fullname.length >= 3 || fullname.length > 32,
       checkFirstDescription: 'Your name'
     },
     {
       htmlFor: 'email',
       label: 'E-mail',
-      maxLength: 30,
+      maxLength: 32,
       type: 'email',
       value: email,
       onChange: setEmail,
@@ -119,11 +119,11 @@ export default function ContactForm() {
     {
       htmlFor: 'subject',
       label: 'Subject',
-      maxLength: 30,
+      maxLength: 32,
       type: 'text',
       value: subject,
       onChange: setSubject,
-      checkFirst: subject.length >= 3 || subject.length > 30,
+      checkFirst: subject.length >= 3 || subject.length > 32,
       checkFirstDescription: 'Title'
     }
   ]
@@ -168,7 +168,7 @@ export default function ContactForm() {
               setValue={setMessage}
               htmlFor='message'
             />
-            <CheckValidInput checkIsValid={message.length >= 3 || message.length > 30} text='Max 500 characters' />
+            <CheckValidInput checkIsValid={message.length >= 3 && message.length <= 500} text='Max 500 characters' />
           </div>
 
           <CaptchaComponent

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { UserContext } from '@/utils/SubscriptionContext'
 import { GreenButton } from '../reusable/Button'
 import UserModal from '../member/UserModal'

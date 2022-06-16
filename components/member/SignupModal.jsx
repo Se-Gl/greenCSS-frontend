@@ -79,7 +79,7 @@ export default function SignupModal({ showModal, setShowModal }) {
     {
       htmlFor: 'name',
       label: 'Full name',
-      maxLength: 30,
+      maxLength: 32,
       type: 'text',
       value: name,
       onChange: setName,
@@ -89,7 +89,7 @@ export default function SignupModal({ showModal, setShowModal }) {
     {
       htmlFor: 'email',
       label: 'E-mail',
-      maxLength: 30,
+      maxLength: 32,
       type: 'email',
       value: email,
       onChange: setEmail,
@@ -99,7 +99,7 @@ export default function SignupModal({ showModal, setShowModal }) {
     {
       htmlFor: 'password',
       label: 'Password',
-      maxLength: 30,
+      maxLength: 64,
       type: 'password',
       value: password,
       onChange: setPassword,
@@ -110,7 +110,7 @@ export default function SignupModal({ showModal, setShowModal }) {
       checkIsThirdValid: checkValidPasswordThree,
       thirdText: 'At least one lowercase and one uppercase character',
       checkIsFourthValid: passwordLengthRegex,
-      fourthText: 'Between 7 to 30 characters'
+      fourthText: 'Between 7 to 64 characters'
     }
   ]
 
@@ -118,7 +118,7 @@ export default function SignupModal({ showModal, setShowModal }) {
     {
       htmlFor: 'email',
       label: 'E-mail',
-      maxLength: 30,
+      maxLength: 32,
       type: 'email',
       value: email,
       onChange: setEmail
@@ -126,7 +126,7 @@ export default function SignupModal({ showModal, setShowModal }) {
     {
       htmlFor: 'password',
       label: 'Password',
-      maxLength: 30,
+      maxLength: 64,
       type: 'password',
       value: password,
       onChange: setPassword

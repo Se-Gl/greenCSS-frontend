@@ -21,7 +21,7 @@ export default function MemberProfileHero() {
   return (
     <ModernGrid
       header={`Good ${greetings}, ${state.user.name}`}
-      subheader='Welcome to your dashboard. Adjust your settings or your subscriptions in seconds'
+      subheader='Welcome to your dashboard. Adjust your settings or your subscriptions in seconds.'
       imageBg={`${
         (greetings == 'morning' && 'bg-orange') ||
         (greetings == 'afternoon' && 'bg-blue') ||

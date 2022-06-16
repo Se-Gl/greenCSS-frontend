@@ -41,7 +41,8 @@ export function TextArea({ required, label, value, setValue, htmlFor, maxLength,
         type={type}
         onInput={(e) => setValue(e.currentTarget.textContent)}
         value={cleanValue}
-        className='membertextarea border-none bg-white rounded-10px shadow-small-gray pl-10px text-15px w-40rem sm:w-100per md:w-100per'
+        className='membertextarea border-none bg-white rounded-10px shadow-small-gray pl-10px text-15px w-40rem sm:w-100per md:w-100per overflow-y-hidden p-5px'
+        style={{ wordWrap: 'break-word' }}
       />
 
       <label
