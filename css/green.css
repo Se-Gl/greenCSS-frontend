@@ -256,6 +256,10 @@ input::-moz-focus-inner,
   background-color: #066ef9;
 }
 
+.bg-purple {
+  background-color: #8006f9;
+}
+
 .bg-black {
   background-color: #101010;
 }
@@ -501,6 +505,10 @@ input::-moz-focus-inner,
   background-color: #066ef9;
 }
 
+.bg-purple {
+  background-color: #8006f9;
+}
+
 .bg-black {
   background-color: #101010;
 }
@@ -523,6 +531,10 @@ input::-moz-focus-inner,
 
 .bg-blue {
   background-color: #066ef9;
+}
+
+.bg-purple {
+  background-color: #8006f9;
 }
 
 .bg-black {
@@ -3279,6 +3291,10 @@ input::-moz-focus-inner,
   background-color: #066ef9;
 }
 
+.bg-purple {
+  background-color: #8006f9;
+}
+
 .bg-black {
   background-color: #101010;
 }
@@ -3524,6 +3540,10 @@ input::-moz-focus-inner,
   background-color: #066ef9;
 }
 
+.bg-purple {
+  background-color: #8006f9;
+}
+
 .bg-black {
   background-color: #101010;
 }
@@ -3546,6 +3566,10 @@ input::-moz-focus-inner,
 
 .bg-blue {
   background-color: #066ef9;
+}
+
+.bg-purple {
+  background-color: #8006f9;
 }
 
 .bg-black {

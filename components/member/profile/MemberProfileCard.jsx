@@ -12,7 +12,7 @@ const CardContent = ({ description, fetchedValue }) => {
   )
 }
 
-export default function MemberProfile() {
+export default function MemberProfileCard() {
   const [subscriptions, setSubscriptions] = useState([])
 
   const [state] = useContext(UserContext)
@@ -33,7 +33,8 @@ export default function MemberProfile() {
   }
 
   return (
-    <>
+    <div className='my-100px'>
+      <h2 className='max-w-50rem'>An overview of your subscriptions</h2>
       {subscriptions.length == 0 && (
         <div className='animation-delay-500ms opacity-0per fade-in animation-duration-500ms animation-forwards max-w-50rem p-50px bg-white shadow-small-black-10 mt-50px rounded-20px'>
           <h1>In the future you will see all your subscriptions here</h1>
@@ -93,6 +94,6 @@ export default function MemberProfile() {
             </article>
           ))}
       </div>
-    </>
+    </div>
   )
 }

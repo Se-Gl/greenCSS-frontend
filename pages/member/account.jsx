@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import SEO from '@/components/reusable/SEO'
 import CheckServerAuth from '@/components/auth/CheckServerAuth'
 import SignupModal from '@/components/member/SignupModal'
-import MemberProfile from '@/components/member/profile/MemberProfile'
+import MemberProfileCard from '@/components/member/profile/MemberProfileCard'
 import MemberProfileHero from '@/components/member/profile/MemberProfileHero'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
@@ -22,7 +22,7 @@ export default function account() {
           keywords='member, donation, green software, sustainable software'>
           <Layout className='container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
             <MemberProfileHero />
-            <MemberProfile />
+            <MemberProfileCard />
           </Layout>
         </SEO>
       ) : (
