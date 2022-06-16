@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import React, { useState, useContext } from 'react'
+import Link from 'next/link'
 import Select from 'react-select'
 import axios from 'axios'
 import { UserContext } from '@/utils/SubscriptionContext'
@@ -249,6 +250,15 @@ export default function SignupModal({ showModal, setShowModal }) {
                 onClick={handleClick}>
                 Log In
               </GreenButton>
+            )}
+            {!checkMemberState && (
+              <div className='my-25px'>
+                <Link href='/auth/password/forgot-password' passHref>
+                  <a className='text-black-10 hover:text-black transition-all transition-duration-300ms text-15px cursor-pointer no-decoration'>
+                    Forgot your password?
+                  </a>
+                </Link>
+              </div>
             )}
             <p className='text-red-5 text-15px mt-25px'>{checkError}</p>
           </div>
