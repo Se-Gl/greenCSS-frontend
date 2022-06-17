@@ -253,7 +253,7 @@ export default function SignupModal({ showModal, setShowModal }) {
             )}
             {!checkMemberState && (
               <div className='my-25px'>
-                <Link href='/auth/password/forgot-password' passHref>
+                <Link href='/member/forgot-password' passHref>
                   <a className='text-black-10 hover:text-black transition-all transition-duration-300ms text-15px cursor-pointer no-decoration'>
                     Forgot your password?
                   </a>

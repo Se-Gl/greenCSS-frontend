@@ -28,7 +28,7 @@ export const getServerSideProps = ({ res }) => {
     'stripe/success',
     'stripe/cancel',
     'member',
-    'auth/password/forgot-password'
+    'member/forgot-password'
   ]
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
