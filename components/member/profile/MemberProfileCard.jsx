@@ -3,6 +3,7 @@ import axios from 'axios'
 import { GreenButton } from '@/components/reusable/Button'
 import MemberChart from 'pages/member/MemberChart'
 import { UserContext } from '@/utils/SubscriptionContext'
+import { ModernRevertCard } from '@/components/reusable/ModernCard'
 
 const CardContent = ({ description, fetchedValue }) => {
   return (
@@ -33,15 +34,20 @@ export default function MemberProfileCard() {
 
   return (
     <div className='my-100px'>
-      <h2 className='max-w-50rem'>An overview of your subscriptions</h2>
+      <h2 className='w-50per sm:w-100per md:w-100per sm:text-40px'>An overview of your subscriptions</h2>
       {subscriptions.length == 0 && (
-        <div className='animation-delay-500ms opacity-0per fade-in animation-duration-500ms animation-forwards max-w-50rem p-50px bg-white shadow-small-black-10 mt-50px rounded-20px'>
-          <h1>In the future you will see all your subscriptions here</h1>
-          <p className='text-black-10'>You will be able to update or delete your donations.</p>
-          <GreenButton hasLink={true} isDefault={false} href='/member#member-plans'>
-            Donate
-          </GreenButton>
-        </div>
+        <>
+          <ModernRevertCard
+            header='In the future you will see all your subscriptions here'
+            subheader='You will be able to update or delete your donations.'
+            imageBg='purple'
+            imageUrl='/images/member/member-hand.webp'
+            imageAlt='member subscription coin with hand'>
+            <GreenButton hasLink={true} isDefault={false} href='/member#member-plans'>
+              Donate
+            </GreenButton>
+          </ModernRevertCard>
+        </>
       )}
       <div className='grid grid-col-2 gap-30px sm:grid-col-1 md:grid-col-1 my-50px'>
         {subscriptions &&
