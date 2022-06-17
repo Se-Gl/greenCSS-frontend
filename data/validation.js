@@ -23,3 +23,6 @@ export const checkValidPasswordThree = (key) => {
 export const checkRegionOrCountry = (key, keyTwo) => {
   return key || keyTwo != null
 }
+export const compareKey = (key, keyTwo) => {
+  return key == keyTwo
+}

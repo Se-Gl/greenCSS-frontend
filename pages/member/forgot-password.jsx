@@ -31,10 +31,10 @@ export default function forgotPasswordPage() {
 
   return (
     <SEO
-      title='greenCSS reset member password'
-      description='Check your current green state. Decide independently where your donations go.'
-      url='member'
-      keywords='member, donation, green software, sustainable software'>
+      title='greenCSS forgot your member password?'
+      description='Did you forgot your passowrd? Reset your passsword here.'
+      url='member/forgot-password'
+      keywords='member, forgot password, reset password'>
       <Layout className='container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
         <ModernGrid
           id='forgot-password'

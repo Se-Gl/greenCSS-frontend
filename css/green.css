@@ -41,6 +41,7 @@ img,
 q,
 s,
 small,
+strong,
 sub,
 b,
 i,
@@ -4542,6 +4543,10 @@ input::-moz-focus-inner,
 
 .m-30px {
   margin: 30px;
+}
+
+.mt-neg-30px {
+  margin-top: -30px;
 }
 
 .mt-0px {

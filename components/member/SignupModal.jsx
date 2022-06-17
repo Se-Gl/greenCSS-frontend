@@ -16,18 +16,21 @@ import {
   checkValidPassword,
   checkValidPasswordTwo,
   checkValidPasswordThree,
-  checkRegionOrCountry
+  checkRegionOrCountry,
+  compareKey
 } from '@/data/validation'
 
 export default function SignupModal({ showModal, setShowModal }) {
   const router = useRouter()
 
-  const [name, setName] = useState('SeGl')
-  const [email, setEmail] = useState('info@greencss.dev123')
-  const [password, setPassword] = useState('123456@aAbc')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [repeatPassword, setrepeatPassword] = useState(null)
   const [selectedCountry, setselectedCountry] = useState()
   const [selectedRegion, setselectedRegion] = useState()
   const [checkRegion, setcheckRegion] = useState(false)
+  // const [acceptToS, setacceptToS] = useState(false)
   const [checkMemberState, setCheckMemberState] = useState(false)
   const [checkError, setcheckError] = useState()
   // context
@@ -108,6 +111,16 @@ export default function SignupModal({ showModal, setShowModal }) {
       thirdText: 'At least one lowercase and one uppercase character',
       checkIsFourthValid: checkNumber(password, 7, 64),
       fourthText: 'Between 7 to 64 characters'
+    },
+    {
+      htmlFor: 'repeatpassword',
+      label: 'Repeat',
+      maxLength: 64,
+      type: 'password',
+      value: repeatPassword,
+      onChange: setrepeatPassword,
+      checkFirst: compareKey(password, repeatPassword),
+      checkFirstDescription: 'The same passwords'
     }
   ]
 
@@ -137,7 +150,9 @@ export default function SignupModal({ showModal, setShowModal }) {
     checkValidPasswordTwo(password) &&
     checkValidPasswordThree(password) &&
     checkNumber(password, 7, 64) &&
-    checkRegionOrCountry(selectedCountry, selectedRegion)
+    compareKey(password, repeatPassword) &&
+    checkRegionOrCountry(selectedCountry, selectedRegion) &&
+    setacceptToS(true)
 
   let checkLoginIsDisabled =
     checkValidEmail &&
@@ -163,9 +178,40 @@ export default function SignupModal({ showModal, setShowModal }) {
                 : 'Check your current green state. Decide independently where your donations go.'}
             </p>
 
+            {checkMemberState && (
+              <>
+                <p className='text-black text-15px font-600 mb-0px ml-10px'>{checkRegion ? 'Region' : 'Country'}</p>
+                <div className='flex sm:block md:block lg:block'>
+                  <div className='block'>
+                    <Select
+                      placeholder={`${checkRegion ? 'select your preferred region' : 'select your preferred country'}`}
+                      value={checkRegion ? selectedRegion : selectedCountry}
+                      onChange={onchangeSelect}
+                      options={checkRegion ? regions : countries}
+                      getOptionValue={(option) => option.value}
+                      getOptionLabel={(option) => option.label}
+                    />
+                    <p
+                      className='text-10px mb-10px text-black-10 cursor-pointer max-w-40rem mt-10px'
+                      onClick={() => setcheckRegion((checkRegion) => !checkRegion)}>
+                      Do not want to donate in your home country? Choose a region instead.
+                    </p>
+                  </div>
+                  <CheckValidInput
+                    checkIsValid={checkRegionOrCountry(selectedCountry, selectedRegion)}
+                    text='Choose a country or region where you want your future donations to go.'
+                  />
+                </div>
+              </>
+            )}
+
             {(checkMemberState ? signUpItems : loginItems).sort().map((item, index) => {
               return (
-                <div className='flex sm:block md:block lg:block' key={index}>
+                <div
+                  className={`flex sm:block md:block lg:block ${
+                    item.htmlFor.includes('repeatpassword') ? 'mt-neg-30px' : ''
+                  }`}
+                  key={index}>
                   <Input
                     maxLength={item.maxLength}
                     id={item.htmlFor}
@@ -193,39 +239,33 @@ export default function SignupModal({ showModal, setShowModal }) {
             })}
 
             {checkMemberState && (
-              <>
-                <p className='text-black text-15px font-600 mb-0px ml-10px' style={{ marginTop: '-22px' }}>
-                  {checkRegion ? 'Region' : 'Country'}
-                </p>
-                <div className='flex sm:block md:block lg:block'>
-                  <div className='block'>
-                    <Select
-                      placeholder={`${checkRegion ? 'select your preferred region' : 'select your preferred country'}`}
-                      value={checkRegion ? selectedRegion : selectedCountry}
-                      onChange={onchangeSelect}
-                      options={checkRegion ? regions : countries}
-                      getOptionValue={(option) => option.value}
-                      getOptionLabel={(option) => option.label}
-                    />
-                  </div>
-                  <CheckValidInput
-                    checkIsValid={checkRegionOrCountry(selectedCountry, selectedRegion)}
-                    text='Select a region or country'
+              <div className='flex sm:block md:block lg:block'>
+                <div className='my-auto w-40rem sm:w-100per md:w-100per'>
+                  <input
+                    checked
+                    className='accent-greencss'
+                    type='checkbox'
+                    value={true}
+                    name='Do you not want to donate in your home country? Choose a region instead.'
+                    onClick={null}
+                    onChange={null}
                   />
+                  <span className='text-black-10 text-10px ml-10px mb-0px my-auto'>
+                    Accept our{' '}
+                    <Link href='/privacy/terms'>
+                      <a className='text-black-10 text-10px my-0px' target='_blank'>
+                        terms of services
+                      </a>
+                    </Link>
+                    . This option is automatically selected. If you do not agree, you will not be allowed to create an
+                    account.
+                  </span>
                 </div>
 
-                <input
-                  className='accent-greencss'
-                  type='checkbox'
-                  value={checkRegion}
-                  name='Do you not want to donate in your home country? Choose a region instead.'
-                  onClick={() => setcheckRegion((checkRegion) => !checkRegion)}
-                />
-                <span className='text-black-10'>
-                  Do not want to donate in your home country? Choose a region instead.
-                </span>
-              </>
+                <CheckValidInput checkIsValid={true} text='You accept our Terms of Services' />
+              </div>
             )}
+
             {checkMemberState ? (
               <GreenButton
                 isdisabled={!checkIsDisabled}
