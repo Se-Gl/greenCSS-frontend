@@ -1,63 +1,79 @@
-import dynamic from 'next/dynamic'
-import Loader from '../../logo/Loader'
 import Section from '../../reusable/Section'
-
-const CompetitiveIcon = dynamic(() => import('@/components/icon/Service/Competitive'))
-const ResponsiveIcon = dynamic(() => import('@/components/icon/Service/Responsive'))
-const AnimatedIcon = dynamic(() => import('@/components/icon/Service/Animated'))
-
-const NutshellCard = dynamic(() => import('./NutshellCard'), { loading: () => <Loader /> })
-const ServicePlant = dynamic(() => import('@/components/icon/Service/Plant'))
-const ServiceWater = dynamic(() => import('@/components/icon/Service/Water'))
-const ServiceEnergy = dynamic(() => import('@/components/icon/Service/Energy'))
+import ModernCard from '@/components/reusable/ModernCard'
 
 export default function Service() {
   const nutshellCard = [
     {
-      title: 'Animated',
-      description:
+      header: 'Animated',
+      subheader:
         'Pure CSS animations work with vanilla HTML or with any web framework - from JavaScript over Python and even PHP.',
-      bgcolour: 'bg-green-9',
-      icon: <AnimatedIcon />
+      imageBg: 'black',
+      imageUrl: '/images/landingpage/service/animated-greencss.webp',
+      imageAlt: 'greencss animated card',
+      isRevert: false
     },
     {
-      title: 'Responsive',
-      description:
+      header: 'Responsive',
+      subheader:
         'Design your website for all users, whether desktop, laptop, tablet or smartphone. Comfortably and intuitively and easy to learn - like bulma or tailwindcss but for everyone.',
-      bgcolour: 'bg-yellow-9',
-      icon: <ResponsiveIcon />
+      imageBg: 'blue',
+      imageUrl: '/images/landingpage/service/responsive-greencss.webp',
+      imageAlt: 'greencss responsive card',
+      isRevert: true
     },
     {
-      title: 'Competitive',
-      description:
+      header: 'Competitive',
+      subheader:
         'Created like bulma with SASS (SCSS). Classic like tailwindcss, but more intuitive. For the environment and for yourself - do something good while you work.',
-      bgcolour: 'bg-blue-9',
-      icon: <CompetitiveIcon />
+      imageBg: 'magenta',
+      imageUrl: '/images/landingpage/service/competitive-greencss.webp',
+      imageAlt: 'greencss competitive card',
+      isRevert: false
     },
     {
-      title: 'Plant Trees',
-      description:
+      header: 'Plant Trees',
+      subheader:
         'Programming and climate protection should be coherent. So far, little or no importance has been given to this issue. The primary goal of greenCSS is to reduce carbon emissions. For this reason, the majority of donations will be used to plant trees.',
-      icon: <ServicePlant />
+      imageBg: 'green',
+      imageUrl: '/images/member/signup-green.webp',
+      imageAlt: 'greencss plant trees card',
+      isRevert: true
     },
     {
-      title: 'Water Refine',
-      description:
+      header: 'Water Refine',
+      subheader:
         'Reducing carbon is the primary goal. Another important goal is to provide access to water. We from greenCSS believe that every human deserves to have water.  Therefore, in the future, we want donations to support water refineries.',
-      icon: <ServiceWater />
+      imageBg: 'turquoise',
+      imageUrl: '/images/landingpage/service/water-greencss.webp',
+      imageAlt: 'greencss water drop card',
+      isRevert: false
     },
     {
-      title: 'Clean Energy',
-      description:
+      header: 'Clean Energy',
+      subheader:
         'A third goal for the future will be to invest and donate in sustainable energy. This is the only way to ensure that the CO2 limit can be effectively reduced in the long term.',
-      icon: <ServiceEnergy />
+      imageBg: 'purple',
+      imageUrl: '/images/landingpage/service/energy-greencss.webp',
+      imageAlt: 'greencss green energy card',
+      isRevert: true
     }
   ]
   return (
     <Section id='service'>
-      <h2 className='max-w-80rem'>Our Mission - Save the Programming Planet</h2>
-      <div className='m-auto grid grid-col-3 gap-30px sm:gap-0px sm:grid-col-1 md:grid-col-2 lg:grid-col-2'>
-        <NutshellCard data={nutshellCard} />
+      <h2 className='max-w-50per'>Our Mission - Save the Programming Planet</h2>
+      <div className='m-auto'>
+        {nutshellCard.sort().map((card, index) => (
+          <ModernCard
+            key={index}
+            id={`${card.header.toLowerCase()}`}
+            isRevert={card.isRevert}
+            header={card.header}
+            subheader={card.subheader}
+            imageBg={card.imageBg}
+            imageUrl={card.imageUrl}
+            imageAlt={card.imageAlt}
+          />
+        ))}
       </div>
     </Section>
   )
