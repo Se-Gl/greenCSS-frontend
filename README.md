@@ -58,6 +58,11 @@ npm run prettier
 Create a `.env.local` file. Sendgrid will be used for the contact features.
 
 ```env
+NODE_ENV=development
+PUBLIC_URL=http://localhost:3000
+NEXT_PUBLIC_BACKEND_API=http://localhost:8000/api
+NEXT_PUBLIC_API_URL=http://localhost:8000/api
+PUBLIC_API_URL=http://localhost:3000/api
 SENDGRID_API_KEY=YOUR-SENDGRID-API-KEY
 SENDGRID_MAILING_ID=YOUR-SENDGRID-CONTACT-LIST-ID
 SENDGRID_EMAIL=YOUR-SENDGRID-EMAIL
