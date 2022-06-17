@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import { withRouter } from 'next/router'
+import { withRouter, useRouter } from 'next/router'
 import { useState } from 'react'
 import { resetPassword } from '@/utils/Auth'
 import SEO from '@/components/reusable/SEO'
@@ -18,6 +18,7 @@ import {
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
 function ResetPassword({ router }) {
+  const redirectrouter = useRouter()
   const toast = useToast()
   const [newPassword, setnewPassword] = useState('')
   const [repeatPassword, setrepeatPassword] = useState(null)
@@ -33,6 +34,7 @@ function ResetPassword({ router }) {
       } else {
         setnewPassword('')
         toast('success', `🚀 ${data.message}`)
+        redirectrouter.push('/member/account')
       }
     })
   }
