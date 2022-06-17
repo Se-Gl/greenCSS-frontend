@@ -5117,6 +5117,10 @@ input::-moz-focus-inner,
 
 @media (max-width: 480px) {
 
+  .sm\:text-center {
+    text-align: center;
+  }
+
   .sm\:text-20px {
     font-size: 20px;
   }
@@ -5201,10 +5205,6 @@ input::-moz-focus-inner,
     max-width: 30rem;
   }
 
-  .sm\:max-w-40rem {
-    max-width: 40rem;
-  }
-
   .sm\:max-w-100per {
     max-width: 100%;
   }
@@ -5227,6 +5227,10 @@ input::-moz-focus-inner,
 
   .sm\:min-h-75vh {
     min-height: 75vh;
+  }
+
+  .sm\:p-25px {
+    padding: 25px;
   }
 
   .sm\:pb-50px {
@@ -5345,6 +5349,10 @@ input::-moz-focus-inner,
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
+
+  .md\:text-center {
+    text-align: center;
+  }
 
   .md\:text-20px {
     font-size: 20px;

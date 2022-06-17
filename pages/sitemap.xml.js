@@ -21,6 +21,7 @@ export const getServerSideProps = ({ res }) => {
     'privacy/cookies',
     'privacy/privacy-policy',
     'privacy/legal',
+    'privacy/terms',
     'examples',
     'examples/hero',
     'examples/animation',
