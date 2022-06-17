@@ -1,6 +1,16 @@
 import Image from 'next/image'
 
-export default function ModernCard({ id, header, subheader, imageBg, imageUrl, imageAlt, children, isRevert = false }) {
+export default function ModernCard({
+  id,
+  header,
+  subheader,
+  imageBg,
+  imageUrl,
+  imageAlt,
+  children,
+  isRevert = false,
+  isBlog = false
+}) {
   return (
     <div className='my-50px grid grid-col-12 sm:grid-col-1 md:grid-col-1 sm:mx-0px md:mx-15px' id={id}>
       {!isRevert ? (
@@ -20,11 +30,15 @@ export default function ModernCard({ id, header, subheader, imageBg, imageUrl, i
             <Image
               quality={100}
               layout='fill'
-              objectFit='contain'
+              objectFit={`${!isBlog ? 'contain' : 'cover'}`}
               src={`${imageUrl}`}
               alt={`${imageAlt}`}
               placeholder='blur'
               blurDataURL={`/_next/image?url=${imageUrl}&w=16&q=1`}
+              className={`${
+                isBlog &&
+                'rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px'
+              }`}
             />
           </div>
         </div>
@@ -37,11 +51,15 @@ export default function ModernCard({ id, header, subheader, imageBg, imageUrl, i
             <Image
               quality={100}
               layout='fill'
-              objectFit='contain'
+              objectFit={`${!isBlog ? 'contain' : 'cover'}`}
               src={`${imageUrl}`}
               alt={`${imageAlt}`}
               placeholder='blur'
               blurDataURL={`/_next/image?url=${imageUrl}&w=16&q=1`}
+              className={`${
+                isBlog &&
+                'rounded-right-radius-20px sm:rounded-bottom-radius-0px md:rounded-bottom-radius-0px sm:rounded-top-radius-20px md:rounded-top-radius-20px'
+              }`}
             />
           </div>
         </div>
