@@ -22,6 +22,7 @@ export default function MemberProfileCard() {
     const getSubscriptions = async () => {
       const { data } = await axios.get('/subscriptions')
       // console.log('subs => ', data)
+      setSubscriptions(data.data)
     }
 
     if (state && state.token) getSubscriptions()

@@ -19,14 +19,12 @@ export default function stripeSuccess() {
       const config = {
         headers: { Authorization: `Bearer ${auth.token}` }
       }
-      //   console.log(config)
       const { data } = await axios.get('/subscription-status', config)
-      //   console.log('SUBSCRIPTION STATUS => ', data)
       if (data && data.length === 0) {
         router.push('/')
       } else {
         // update user in local storage
-        // const auth = JSON.parse(localStorage.getItem('auth'))
+        const auth = JSON.parse(localStorage.getItem('auth'))
         auth.user = data
         localStorage.setItem('auth', JSON.stringify(auth))
         // update user in context
