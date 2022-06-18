@@ -19,6 +19,7 @@ export default function BlogCard({ post, index }) {
           <Link href={`${post.frontmatter.isBlog ? `/blog/${post.slug}` : `/docs/${post.slug}`}`} passHref>
             <a className='no-decoration'>
               <ModernCard
+                id='blog-card'
                 key={index}
                 isBlog={true}
                 isRevert={index % 2 === 0 ? false : true}
