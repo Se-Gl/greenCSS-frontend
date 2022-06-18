@@ -9,7 +9,7 @@ export default function Terms() {
         header='TERMS OF SERVICES'
         subheader='PLEASE READ THIS TERMS OF SERVICE AGREEMENT CAREFULLY, AS IT CONTAINS IMPORTANT INFORMATION REGARDING YOUR
           LEGAL RIGHTS AND REMEDIES.'
-        imageBg='bg-black'
+        imageBg='black'
         imageUrl='/images/terms/club-terms.webp'
         imageAlt='member terms of services'
       />

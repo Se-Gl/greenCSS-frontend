@@ -36,13 +36,15 @@ export default function DocsCategorySlugPage({ posts, categoryName, categories }
               <ModernGrid
                 header={`Browse by category: ${categoryName.replace('-', ' ')}`}
                 subheader={`Get an overview in the category \"${categoryName}\" and browse through all the documentation.`}
-                imageBg='bg-black'
+                imageBg='black'
                 imageUrl='/images/docs/books-greencss.webp'
                 imageAlt='greencss documentation book'
               />
               <BlogLayout>
                 {posts.map((post, index) => (
-                  <BlogCard key={index} post={post} index={index} isCategory={true} />
+                  <div className='my-30px' key={index}>
+                    <BlogCard post={post} index={index} isCategory={true} />
+                  </div>
                 ))}
               </BlogLayout>
             </div>

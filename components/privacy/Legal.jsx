@@ -7,7 +7,7 @@ export default function Legal() {
       <ModernGrid
         header='We reveal the cards - this imprint works for your work'
         subheader='Serious websites use a disclaimer. It states that we have nothing to hide. We publish the open source project to the best of our knowledge and judgement.'
-        imageBg='bg-black'
+        imageBg='black'
         imageUrl='/images/terms/cards-greencss.webp'
         imageAlt='member legal policy'
       />

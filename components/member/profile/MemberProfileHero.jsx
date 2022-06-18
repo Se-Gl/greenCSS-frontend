@@ -24,11 +24,11 @@ export default function MemberProfileHero() {
       header={`Good ${greetings}, ${state.user.name}`}
       subheader='Welcome to your dashboard. Adjust your settings or your subscriptions in seconds.'
       imageBg={`${
-        (greetings == 'morning' && 'bg-orange') ||
-        (greetings == 'afternoon' && 'bg-blue') ||
-        (greetings == 'evening' && 'bg-purple') ||
-        (greetings == 'night' && 'bg-black') ||
-        (greetings == 'day' && 'bg-blue')
+        (greetings == 'morning' && 'orange') ||
+        (greetings == 'afternoon' && 'blue') ||
+        (greetings == 'evening' && 'purple') ||
+        (greetings == 'night' && 'black') ||
+        (greetings == 'day' && 'blue')
       }`}
       imageUrl='/images/member/jungle-member-hero.webp'
       imageAlt='member section hero'

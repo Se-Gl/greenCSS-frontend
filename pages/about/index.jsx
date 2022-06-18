@@ -16,16 +16,18 @@ export default function AboutPage() {
           id='about-index'
           header='About greenCSS'
           subheader='You have already found the key to our heart. So we will gladly tell you a little bit more about us...'
-          imageBg='bg-greencss'
+          imageBg='greencss'
           imageUrl='/images/about/key-greencss.webp'
           imageAlt='greencss documentation book'
         />
         <ModernGrid
+          isHero={false}
+          isRevert={true}
           header='greenCSS is a sustainable open source cascade style sheet library'
           subheader='We love to work globally, sustainably, environmentally friendly and not politically. The vision of the
           non-profit organization is to make the programming world a better place and contribute for a more competitive
           webapplication development. Let us think and code outside the box together. '
-          imageBg='bg-black'
+          imageBg='black'
           imageUrl='/images/about/world-box-greencss.webp'
           imageAlt='greencss world box'
         />

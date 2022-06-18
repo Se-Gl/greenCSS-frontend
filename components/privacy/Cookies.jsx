@@ -6,7 +6,7 @@ export default function Cookies() {
       <ModernGrid
         header='Protect yourself - How to delete cookies from your computer'
         subheader='Privacy Policies should include information regarding a website`s use of cookies. Furthermore, out of fairness, it must be clarified how data can be deleted. That is why transparency is our credo.'
-        imageBg='bg-black'
+        imageBg='black'
         imageUrl='/images/terms/club-terms.webp'
         imageAlt='member terms of services'
       />

@@ -134,7 +134,7 @@ export default function ContactForm() {
       header='Get in Touch with Us! And send a message'
       subheader='Whether it is constructive feedback, negative experiences, gratitude, questions, suggestions, feature
       requests or simply boredom.'
-      imageBg='bg-blue'
+      imageBg='blue'
       imageUrl='/images/contact/question-mark-plant.webp'
       imageAlt='member section hero'>
       <form className='my-auto' onSubmit={handleSubmit} id='contact-form'>

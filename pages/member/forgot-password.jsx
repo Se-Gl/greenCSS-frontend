@@ -40,7 +40,7 @@ export default function forgotPasswordPage() {
           id='forgot-password'
           header='Forgot your password? No problem!'
           subheader='Create a new password within seconds. No problem, together we solve your puzzle - promised'
-          imageBg='bg-blue'
+          imageBg='blue'
           imageUrl='/images/member/puzzle-password.webp'
           imageAlt='member forgot password'>
           <>

@@ -58,7 +58,7 @@ function ResetPassword({ router }) {
           id='reset-password'
           header='Forgot your password? Reset it right away.'
           subheader='Create a new password within seconds. Choose your new and strong password. It should be between 7-64 characters long, have an upper and lower case letter and contain special characters.'
-          imageBg='bg-black'
+          imageBg='black'
           imageUrl='/images/member/puzzle-password.webp'
           imageAlt='member forgot password'>
           <>

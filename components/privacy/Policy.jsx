@@ -7,7 +7,7 @@ export default function Policy() {
       <ModernGrid
         header='We use technology - in order to enhance user experience'
         subheader='We have nothing to hide. Privacy Policies are not only a useful legal document - it`s a lifestyle.'
-        imageBg='bg-black'
+        imageBg='black'
         imageUrl='/images/terms/robot-greencss.webp'
         imageAlt='member privacy policy'
       />

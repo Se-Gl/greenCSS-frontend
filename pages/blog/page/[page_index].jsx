@@ -24,7 +24,7 @@ export default function BlogIndex({ posts, numPages, currentPage }) {
           <ModernGrid
             header='A Blog - the right way to write a story'
             subheader='Explore the blog posts, to learn more about the latest tips and tricks.'
-            imageBg='bg-purple'
+            imageBg='purple'
             imageUrl='/images/blog/pen-greencss.webp'
             imageAlt='greencss blog write pencil'
           />
