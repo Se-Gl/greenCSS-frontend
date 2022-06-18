@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import { NEXT_URL } from '@/config/index'
-import ReusableModal from '@/components/modal/ReusableModal'
 import { GreenButton } from '@/components/reusable/Button'
 import SEO from '@/components/reusable/SEO'
 import ModernGrid from '@/components/grid/ModernGrid'
@@ -27,10 +26,9 @@ export default function ForOhFor() {
             imageAlt='greencss 404 not found'
           />
           <div className='w-100per mb-50px'>
-            <div className='flex'>
-              <ReusableModal />
-              <GreenButton href='/'>Or Go back</GreenButton>
-            </div>
+            <GreenButton href='/' hasLink={true} isDefault={false}>
+              Or Go back
+            </GreenButton>
           </div>
         </div>
       </Layout>
