@@ -34,7 +34,6 @@ describe('Home Screen Unit test', () => {
   })
   it('render dummy blog post card', () => {
     cy.get('#recent-news').should('exist').scrollIntoView()
-    cy.get('#blog-card').should('exist').should('exist').should('have.attr', 'style')
   })
   it('render the testimonial section', () => {
     cy.get('#testimonial').should('exist')
