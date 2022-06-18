@@ -10,7 +10,7 @@ import SEO from '@/components/reusable/SEO'
 const SlugComponent = dynamic(() => import('@/components/reusable/SlugComponent'), {
   ssr: false,
   loading: () => (
-    <div className='flex h-100vh w-100vw overflow-hidden bg-green-10'>
+    <div className='flex h-100vh w-100vw overflow-hidden bg-white'>
       <div className='m-auto'>
         <Loader />
       </div>
