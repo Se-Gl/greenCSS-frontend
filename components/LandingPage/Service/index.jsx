@@ -60,7 +60,7 @@ export default function Service() {
   ]
   return (
     <Section id='service'>
-      <h2 className='max-w-50per'>Our Mission - Save the Programming Planet</h2>
+      <h2 className='max-w-50per sm:max-w-100per md:max-w-100per'>Our Mission - Save the Programming Planet</h2>
       <div className='m-auto'>
         {nutshellCard.sort().map((card, index) => (
           <ModernCard

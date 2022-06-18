@@ -140,9 +140,8 @@ const Sponsor = () => {
         header='Select your own amount'
         subheader='Choose your own amount to contribute. greenCSS supports worldwide projects. This is only possible with your help.'
         imageBg={ceiledPrice ? 'blue' : 'greencss'}
-        imageUrl='/images/landingpage/donation/individual-greencss.webp'
-        imageAlt='greencss tree card'
-        imageClass={ceiledPrice ? 'rotate-neg-90deg' : ''}>
+        imageUrl='/images/landingpage/donation/custom-amount-greencss.webp'
+        imageAlt='greencss tree card'>
         <Input
           label='Custom Amount'
           type='number'

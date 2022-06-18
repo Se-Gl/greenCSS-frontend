@@ -30,16 +30,17 @@ export default function Presentation() {
       <>
         {presentations.sort().map((presentation, index) => {
           return (
-            <ModernCard
-              key={index}
-              isRevert={presentation.isRevert}
-              header={presentation.header}
-              subheader={presentation.subheader}
-              imageBg={presentation.imageBg}
-              imageUrl={presentation.imageUrl}
-              imageAlt={presentation.imageAlt}
-              isBlog={presentation.isBlog}
-            />
+            <div className='mb-30px' key={index}>
+              <ModernCard
+                isRevert={presentation.isRevert}
+                header={presentation.header}
+                subheader={presentation.subheader}
+                imageBg={presentation.imageBg}
+                imageUrl={presentation.imageUrl}
+                imageAlt={presentation.imageAlt}
+                isBlog={presentation.isBlog}
+              />
+            </div>
           )
         })}
       </>
