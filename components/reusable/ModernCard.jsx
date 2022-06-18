@@ -1,7 +1,9 @@
 import Image from 'next/image'
+import isInView from '@/hooks/InView/scrollView'
 
 export default function ModernCard({
   id,
+  animation,
   header,
   headerclass,
   subheader,
@@ -13,9 +15,17 @@ export default function ModernCard({
   isBlog = false,
   imageClass
 }) {
+  const [ref, isVisible] = isInView({
+    threshold: 0.1,
+    unobserveOnEnter: true
+  })
+
   return (
     <div
-      className={`grid grid-col-12 sm:grid-col-1 md:grid-col-1 sm:mx-0px md:mx-15px ${isBlog ? '' : 'my-50px'}`}
+      ref={ref}
+      className={`grid grid-col-12 sm:grid-col-1 md:grid-col-1 sm:mx-0px md:mx-15px ${isBlog ? '' : 'my-50px'} ${
+        isVisible && animation ? `opacity-0per ${animation}` : ''
+      }`}
       id={id}>
       {!isRevert ? (
         <div

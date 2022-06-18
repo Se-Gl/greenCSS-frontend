@@ -10,7 +10,8 @@ export default function Service() {
       imageBg: 'black',
       imageUrl: '/images/landingpage/service/animated-greencss.webp',
       imageAlt: 'greencss animated card',
-      isRevert: false
+      isRevert: false,
+      animation: 'fade-in-left animation-duration-500ms animation-forwards'
     },
     {
       header: 'Responsive',
@@ -19,7 +20,8 @@ export default function Service() {
       imageBg: 'blue',
       imageUrl: '/images/landingpage/service/responsive-greencss.webp',
       imageAlt: 'greencss responsive card',
-      isRevert: true
+      isRevert: true,
+      animation: 'fade-in-right animation-duration-500ms animation-forwards'
     },
     {
       header: 'Competitive',
@@ -28,7 +30,8 @@ export default function Service() {
       imageBg: 'magenta',
       imageUrl: '/images/landingpage/service/competitive-greencss.webp',
       imageAlt: 'greencss competitive card',
-      isRevert: false
+      isRevert: false,
+      animation: 'fade-in-left animation-duration-500ms animation-forwards'
     },
     {
       header: 'Plant Trees',
@@ -37,7 +40,8 @@ export default function Service() {
       imageBg: 'green',
       imageUrl: '/images/member/signup-green.webp',
       imageAlt: 'greencss plant trees card',
-      isRevert: true
+      isRevert: true,
+      animation: 'fade-in-right animation-duration-500ms animation-forwards'
     },
     {
       header: 'Water Refine',
@@ -46,7 +50,8 @@ export default function Service() {
       imageBg: 'turquoise',
       imageUrl: '/images/landingpage/service/water-greencss.webp',
       imageAlt: 'greencss water drop card',
-      isRevert: false
+      isRevert: false,
+      animation: 'fade-in-left animation-duration-500ms animation-forwards'
     },
     {
       header: 'Clean Energy',
@@ -55,7 +60,8 @@ export default function Service() {
       imageBg: 'purple',
       imageUrl: '/images/landingpage/service/energy-greencss.webp',
       imageAlt: 'greencss green energy card',
-      isRevert: true
+      isRevert: true,
+      animation: 'fade-in-right animation-duration-500ms animation-forwards'
     }
   ]
   return (
@@ -65,6 +71,7 @@ export default function Service() {
         {nutshellCard.sort().map((card, index) => (
           <ModernCard
             key={index}
+            animation={card.animation}
             id={`${card.header.toLowerCase()}`}
             isRevert={card.isRevert}
             header={card.header}

@@ -7,6 +7,7 @@ import DonationContext from '@/utils/DonationContext'
 import ModernGrid from '@/components/grid/ModernGrid'
 import ModernCard from '@/components/reusable/ModernCard'
 import { Input } from '@/components/reusable/Input'
+import Section from '@/components/reusable/Section'
 
 const Sponsor = () => {
   const { amount, setAmount, finalPrize } = useContext(DonationContext)
@@ -71,6 +72,7 @@ const Sponsor = () => {
 
   const individualAmounts = [
     {
+      animation: `${ceiledPrice ? 'fade-in-right' : 'fade-in-left'} animation-duration-500ms animation-forwards`,
       isRevert: ceiledPrice ? true : false,
       header: 'Tier I',
       subheader: 'For the community.',
@@ -80,6 +82,7 @@ const Sponsor = () => {
       imageAlt: 'greencss tree card tier 1'
     },
     {
+      animation: `${ceiledPrice ? 'fade-in-left' : 'fade-in-right'} animation-duration-500ms animation-forwards`,
       isRevert: ceiledPrice ? false : true,
       header: 'Tier II',
       subheader: 'For the community And more',
@@ -89,6 +92,7 @@ const Sponsor = () => {
       imageAlt: 'greencss tree card tier 2'
     },
     {
+      animation: `${ceiledPrice ? 'fade-in-right' : 'fade-in-left'} animation-duration-500ms animation-forwards`,
       isRevert: ceiledPrice ? true : false,
       header: 'Tier III',
       subheader: 'For the community And beyond',
@@ -102,9 +106,8 @@ const Sponsor = () => {
   const checkPrediction = finalPrize >= 0.1
 
   return (
-    <>
+    <Section id='donation'>
       <ModernGrid
-        id='donation'
         header={`${
           checkPrediction
             ? `Minimize your personal emissions by donating USD ${checkPrediction ? ceiledPrice : amount}$.`
@@ -119,6 +122,7 @@ const Sponsor = () => {
       {checkPrediction && (
         <ModernCard
           isRevert={true}
+          animation=' fade-in-left animation-duration-500ms animation-forwards'
           header={`Individual - USD ${ceiledPrice}$`}
           subheader={`According to your statements about your consumption, we have calculated the following amount for you. Thereby you lower your emission to zero. Tailored for you - USD ${ceiledPrice}$.`}
           imageBg='greencss'
@@ -137,6 +141,7 @@ const Sponsor = () => {
       )}
       <ModernCard
         isRevert={ceiledPrice ? false : true}
+        animation={` ${ceiledPrice ? 'fade-in-right' : 'fade-in-left'} animation-duration-500ms animation-forwards`}
         header='Select your own amount'
         subheader='Choose your own amount to contribute. greenCSS supports worldwide projects. This is only possible with your help.'
         imageBg={ceiledPrice ? 'blue' : 'greencss'}
@@ -173,6 +178,7 @@ const Sponsor = () => {
       {individualAmounts.map((cart, index) => (
         <div onMouseEnter={() => setAmount(cart.amount)} key={index} onKeyDown={() => setAmount(cart.amount)}>
           <ModernCard
+            animation={cart.animation}
             isRevert={cart.isRevert}
             header={cart.header}
             subheader={cart.subheader}
@@ -190,7 +196,7 @@ const Sponsor = () => {
           </ModernCard>
         </div>
       ))}
-    </>
+    </Section>
   )
 }
 
