@@ -171,15 +171,14 @@ const Sponsor = () => {
       </ModernCard>
 
       {individualAmounts.map((cart, index) => (
-        <ModernCard
-          key={index}
-          isRevert={cart.isRevert}
-          header={cart.header}
-          subheader={cart.subheader}
-          imageBg={cart.imageBg}
-          imageUrl={cart.imageUrl}
-          imageAlt={cart.imageAlt}>
-          <div onMouseEnter={() => setAmount(cart.amount)} onMouseLeave={setAmount(10)}>
+        <div onMouseEnter={() => setAmount(cart.amount)} key={index} onKeyDown={() => setAmount(cart.amount)}>
+          <ModernCard
+            isRevert={cart.isRevert}
+            header={cart.header}
+            subheader={cart.subheader}
+            imageBg={cart.imageBg}
+            imageUrl={cart.imageUrl}
+            imageAlt={cart.imageAlt}>
             <GreenButton
               onClick={createCheckOutSession}
               isDefault={false}
@@ -188,8 +187,8 @@ const Sponsor = () => {
               className='text-15px font-500 border-solid border-white border-1px'>
               {`Donate USD ${cart.amount}$`}
             </GreenButton>
-          </div>
-        </ModernCard>
+          </ModernCard>
+        </div>
       ))}
     </>
   )
