@@ -17,7 +17,7 @@ export default function MobileNavBar() {
   return (
     <nav className='z-100 pt-100px display-none sm:block md:block' aria-label='header navigation mobile'>
       <div
-        className={`fixed top-0per right-0per z-99 m-30px hamburger w-50px h-50px rounded-50px bg-green-9 ${
+        className={`fixed top-0per right-0per z-99 m-30px hamburger w-50px h-50px rounded-20px bg-gray-8 ${
           isOpen && 'is-active'
         }`}
         id='hamburger-sm'

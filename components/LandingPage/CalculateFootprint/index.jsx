@@ -20,7 +20,7 @@ export default function index() {
             isVisible ? 'desktopScreenRotation opacity-100per' : 'opacity-1per'
           }`}
           ref={ref}
-          style={{ top: '4.5%', left: '10.3%', width: '79.2%', height: '72.5%' }}>
+          style={{ top: '4.5%', left: '10.25%', width: '79.4%', height: '73.4%' }}>
           <Image
             quality={100}
             className='select-none'
