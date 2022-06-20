@@ -38,7 +38,7 @@ export default function ModernCard({
             className={`flex sm:text-center md:text-center ${children ? '' : 'min-h-33vh'} ${
               imageUrl ? '' : 'sm:px-50px md:px-50px lg:px-25px'
             }`}>
-            <div className='m-auto'>
+            <div className='m-auto px-20px'>
               <h3 className={`pt-25px capitalize ${headerclass}`}>{header}</h3>
               <p className='text-black-10 text-15px'>{subheader}</p>
             </div>
@@ -102,7 +102,7 @@ export default function ModernCard({
             className={`flex sm:text-center md:text-center ${children ? '' : 'min-h-33vh'} ${
               imageUrl ? '' : 'sm:px-50px md:px-50px lg:px-25px'
             }`}>
-            <div className='m-auto'>
+            <div className='m-auto px-20px'>
               <h3 className={`pt-25px capitalize ${headerclass}`}>{header}</h3>
               <p className='text-black-10 text-15px'>{subheader}</p>
             </div>

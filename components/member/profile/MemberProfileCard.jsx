@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import Link from 'next/link'
 import axios from 'axios'
 import { GreenButton } from '@/components/reusable/Button'
 import MemberChart from 'pages/member/MemberChart'
@@ -15,6 +16,7 @@ const CardContent = ({ description, fetchedValue }) => {
 
 export default function MemberProfileCard() {
   const [subscriptions, setSubscriptions] = useState([])
+  const [userprofileUrl, setuserprofileUrl] = useState('')
 
   const [state] = useContext(UserContext)
 
@@ -28,6 +30,14 @@ export default function MemberProfileCard() {
     if (state && state.token) getSubscriptions()
   }, [state && state.token])
 
+  useEffect(() => {
+    const userProfileLink = async () => {
+      const auth = JSON.parse(localStorage.getItem('auth'))
+      setuserprofileUrl(auth.user._id)
+    }
+    userProfileLink()
+  }, [])
+
   const manageSubscriptions = async () => {
     const { data } = await axios.get('/customer-portal')
     window.open(data)
@@ -35,11 +45,27 @@ export default function MemberProfileCard() {
 
   return (
     <div className='my-100px'>
+      <div className='my-100px'>
+        <h2 className='w-50per sm:w-100per md:w-100per sm:text-40px'>Update your profile</h2>
+        <>
+          <ModernCard
+            isRevert={true}
+            header='Change your user details'
+            subheader='You are not happy with your username or want to change your email and location. Just update your settings with only a few clicks. '
+            imageBg='yellow'
+            imageUrl='/images/member/update-user-profile.webp'
+            imageAlt='update user profile'>
+            <GreenButton isLinkedOutline={true} isDefault={false} href={`/member/${userprofileUrl}`}>
+              Update
+            </GreenButton>
+          </ModernCard>
+        </>
+      </div>
       <h2 className='w-50per sm:w-100per md:w-100per sm:text-40px'>An overview of your subscriptions</h2>
       {subscriptions.length == 0 && (
         <>
           <ModernCard
-            isRevert={true}
+            isRevert={false}
             header='In the future you will see all your subscriptions here'
             subheader='You will be able to update or delete your donations.'
             imageBg='purple'

@@ -16,7 +16,7 @@ This is a tutorial to create landing page - to be more specific - a hero section
 
 ## Start Coding - HTML
 
-To get started you can [download the hero image here](https://greencss.dev/images/blog/blogcontent/Hero-Image.webp). The entire project is wrapped in a `container` class. For the responsive appearance a grid system will used. The setup is straightforward.
+To get started you can [download the hero image here](https://greencss.dev/images/blog/blogcontent/Hero-Image.webp). The entire project is wrapped in a `container` class. For the responsive appearance a grid system will be used. The setup is straightforward.
 
 ## The Hero Section Project
 
