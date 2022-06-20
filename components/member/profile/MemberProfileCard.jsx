@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Link from 'next/link'
 import axios from 'axios'
 import { GreenButton } from '@/components/reusable/Button'
 import MemberChart from 'pages/member/MemberChart'
@@ -50,7 +49,7 @@ export default function MemberProfileCard() {
         <>
           <ModernCard
             isRevert={true}
-            header='Change your user details'
+            header={`Hey ${state.user.name}, do you want to change your user details?`}
             subheader='You are not happy with your username or want to change your email and location. Just update your settings with only a few clicks. '
             imageBg='yellow'
             imageUrl='/images/member/update-user-profile.webp'
