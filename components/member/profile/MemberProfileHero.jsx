@@ -1,9 +1,11 @@
 import { useEffect, useState, useContext } from 'react'
 import ModernGrid from '@/components/grid/ModernGrid'
 import { UserContext } from '@/utils/SubscriptionContext'
+import { GreenButton } from '@/components/reusable/Button'
 
 export default function MemberProfileHero() {
   const [greetings, setGreetings] = useState('day')
+  const [isAdmin, setisAdmin] = useState(false)
   const [state] = useContext(UserContext)
 
   useEffect(() => {
@@ -19,10 +21,24 @@ export default function MemberProfileHero() {
     setGreetings(greet)
   }, [])
 
+  useEffect(() => {
+    const showDashboard = async () => {
+      const auth = JSON.parse(localStorage.getItem('auth'))
+      if (auth.user.role == 1) {
+        setisAdmin(true)
+      }
+    }
+    showDashboard()
+  }, [])
+
   return (
     <ModernGrid
       header={`Good ${greetings}, ${state.user.name}`}
-      subheader='Welcome to your dashboard. Adjust your settings or your subscriptions in seconds.'
+      subheader={`${
+        isAdmin
+          ? 'Continue to the user dashboard or check your subscriptions below.'
+          : 'Welcome to your dashboard. Adjust your settings or your subscriptions in seconds.'
+      }`}
       imageBg={`${
         (greetings == 'morning' && 'orange') ||
         (greetings == 'afternoon' && 'blue') ||
@@ -31,7 +47,12 @@ export default function MemberProfileHero() {
         (greetings == 'day' && 'blue')
       }`}
       imageUrl='/images/member/jungle-member-hero.webp'
-      imageAlt='member section hero'
-    />
+      imageAlt='member section hero'>
+      {isAdmin && (
+        <GreenButton isLinkedOutline={true} isDefault={false} href='/member/auth' className='font-500 text-15px'>
+          Dashboard
+        </GreenButton>
+      )}
+    </ModernGrid>
   )
 }

@@ -151,8 +151,7 @@ export default function SignupModal({ showModal, setShowModal }) {
     checkValidPasswordThree(password) &&
     checkNumber(password, 7, 64) &&
     compareKey(password, repeatPassword) &&
-    checkRegionOrCountry(selectedCountry, selectedRegion) &&
-    setacceptToS(true)
+    checkRegionOrCountry(selectedCountry, selectedRegion)
 
   let checkLoginIsDisabled =
     checkValidEmail &&

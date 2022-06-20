@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import { UserContext } from '@/utils/SubscriptionContext'
 import { GreenButton } from '../reusable/Button'
 import UserModal from '../member/UserModal'
@@ -15,6 +15,7 @@ export default function ToggleMember() {
     localStorage.removeItem('auth')
     router.push('/member')
   }
+
   return (
     <>
       {state && state.token ? (
