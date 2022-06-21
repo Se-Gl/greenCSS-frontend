@@ -116,14 +116,14 @@ const SubMenu = () => {
                   return (
                     <div key={`${label}-${index}`}>
                       <Link href={url}>
-                        <a className='capitalize my-0px no-decoration flex text-15px font-500 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
+                        <a className='capitalize my-auto no-decoration text-15px font-500 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
                           {label.includes('Login') ? null : label}
                         </a>
                       </Link>
                       {label.includes('Login') && (
-                        <div className='m-0px'>
+                        <>
                           <ToggleMember />
-                        </div>
+                        </>
                       )}
                     </div>
                   )

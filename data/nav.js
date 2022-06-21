@@ -35,7 +35,6 @@ export const mobileDocsMenu = [
 export const mobileContactMenu = [
   { label: 'about', url: '/about' },
   { label: 'newsletter', url: '/contact#footer-social' },
-  { label: 'Member', url: '/member/account' },
   { label: 'Subscription', url: '/member#member-plans' },
   { label: 'Login', url: '/member/account' }
 ]
@@ -98,7 +97,6 @@ export const navsublinks = [
     thirdsubtext:
       'You want to do a favour for the world and yourself? Subscribe to a monthly subscription and we will minimise CO2 emissions in your area.',
     thirdlinks: [
-      { label: 'Member', url: '/member/account' },
       { label: 'Subscription', url: '/member#member-plans' },
       { label: 'Login', url: '/member/account' }
     ]
