@@ -13,15 +13,9 @@ const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: fals
 
 export default function forgotPasswordPage() {
   // context
-  const [state, setState] = useContext(UserContext)
+  const [state] = useContext(UserContext)
   const toast = useToast()
-  const [email, setEmail] = useState(state.user.email)
-  console.log(state.user.email)
-  console.log('email', email)
-
-  useEffect(() => {
-    setEmail(state.user.email)
-  }, [state])
+  const [email, setEmail] = useState(state != null ? state.user.email : '')
 
   const handleSubmit = (e) => {
     e.preventDefault()
