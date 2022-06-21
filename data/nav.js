@@ -34,7 +34,9 @@ export const mobileDocsMenu = [
 
 export const mobileContactMenu = [
   { label: 'about', url: '/about' },
-  { label: 'newsletter', url: '/contact#footer-social' }
+  { label: 'newsletter', url: '/contact#footer-social' },
+  { label: 'Subscription', url: '/member#member-plans' },
+  { label: 'Login', url: '/member/account' }
 ]
 
 export const navsublinks = [
@@ -88,6 +90,15 @@ export const navsublinks = [
       { label: 'typography', url: '/brand/typography' },
       { label: 'colours', url: '/brand/colours' },
       { label: 'composition', url: '/brand/composition' }
+    ],
+
+    thirdpage: 'member',
+    thirdpageLink: '/member',
+    thirdsubtext:
+      'You want to do a favour for the world and yourself? Subscribe to a monthly subscription and we will minimise CO2 emissions in your area.',
+    thirdlinks: [
+      { label: 'Subscription', url: '/member#member-plans' },
+      { label: 'Login', url: '/member/account' }
     ]
   }
 ]

@@ -2,7 +2,7 @@ import isInView from '@/hooks/InView/scrollView'
 
 export default function Section({ id, background, additionalClassName, children }) {
   const [ref, isVisible] = isInView({
-    threshold: 0.25,
+    threshold: 0.05,
     unobserveOnEnter: true
   })
   return (

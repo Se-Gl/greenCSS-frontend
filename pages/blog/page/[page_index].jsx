@@ -6,10 +6,9 @@ import BlogCard from '@/components/blog/BlogCard'
 import { POSTS_PER_PAGE } from '@/config/index'
 import Pagination from '@/components/reusable/Pagination'
 import { getPosts } from '@/lib/posts'
-import BlogHero from '@/components/icon/Blog/BlogHero'
-import SubSectionHero from '@/components/grid/SubSectionHero'
 import { sortByDate } from '@/utils/SortBy'
 import SEO from '@/components/reusable/SEO'
+import ModernGrid from '@/components/grid/ModernGrid'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
@@ -22,10 +21,12 @@ export default function BlogIndex({ posts, numPages, currentPage }) {
       keywords='Blog, write, news, updates, css, greenCSS'>
       <Layout className='flex container sm:px-10px md:px-25px lg:px-50px min-h-100vh mb-10rem'>
         <div className='min-w-100per relative'>
-          <SubSectionHero
+          <ModernGrid
             header='A Blog - the right way to write a story'
             subheader='Explore the blog posts, to learn more about the latest tips and tricks.'
-            illustration={<BlogHero width='100%' height='100%' />}
+            imageBg='purple'
+            imageUrl='/images/blog/pen-greencss.webp'
+            imageAlt='greencss blog write pencil'
           />
           <BlogLayout>
             {posts.map((post, index) => (

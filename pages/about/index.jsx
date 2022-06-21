@@ -1,22 +1,8 @@
 import dynamic from 'next/dynamic'
 import SEO from '@/components/reusable/SEO'
-import DefaultHero from '@/components/grid/DefaultHero'
-import AboutTestimonial from '@/components/about/AboutTestimonial'
+import ModernGrid from '@/components/grid/ModernGrid'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
-
-const aboutImages = [
-  {
-    imageURL: '/images/about/wind.webp',
-    imageAlt: 'greenCSS wind nature',
-    dimensions: 250
-  },
-  {
-    imageURL: '/images/about/water-drop.webp',
-    imageAlt: 'greenCSS water drop nature',
-    dimensions: 250
-  }
-]
 
 export default function AboutPage() {
   return (
@@ -26,15 +12,25 @@ export default function AboutPage() {
       url='docs'
       keywords='about, sustainable open source, competitive development, sustainable programming'>
       <Layout>
-        <DefaultHero
+        <ModernGrid
           id='about-index'
           header='About greenCSS'
-          primaryImageURL='/images/about/footprint.webp'
-          primaryImageAlt='sustainable tomato plant'
-          primaryDimensions={300}
-          mapping={aboutImages}
+          subheader='You have already found the key to our heart. So we will gladly tell you a little bit more about us...'
+          imageBg='greencss'
+          imageUrl='/images/about/key-greencss.webp'
+          imageAlt='greencss documentation book'
         />
-        <AboutTestimonial />
+        <ModernGrid
+          isHero={false}
+          isRevert={true}
+          header='greenCSS is a sustainable open source cascade style sheet library'
+          subheader='We love to work globally, sustainably, environmentally friendly and not politically. The vision of the
+          non-profit organization is to make the programming world a better place and contribute for a more competitive
+          webapplication development. Let us think and code outside the box together. '
+          imageBg='black'
+          imageUrl='/images/about/world-box-greencss.webp'
+          imageAlt='greencss world box'
+        />
       </Layout>
     </SEO>
   )

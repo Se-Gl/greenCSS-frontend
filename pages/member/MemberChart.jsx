@@ -1,0 +1,42 @@
+import React, { useState, useEffect, useContext } from 'react'
+import axios from 'axios'
+import { UserContext } from '@/utils/SubscriptionContext'
+
+export default function MemberChart({ chartData }) {
+  const [income, setIncome] = useState(1000)
+
+  // context
+  const [state] = useContext(UserContext)
+  // initial values
+  const a = income ? income : 1000
+  let c = Math.round(Math.round(chartData))
+  let result = a + c
+  // percent values
+  const percenta = (a * 100) / result
+  const percentc = (c * 100) / result
+
+  useEffect(() => {
+    const getSubscriptions = async () => {
+      const { data } = await axios.get('/monthly-income')
+      setIncome(data.data.map((sub) => sub.amount).at(0) / 1000)
+      //   console.log(data)
+    }
+
+    if (state && state.token) getSubscriptions()
+  }, [state && state.token])
+
+  return (
+    <div className='flex'>
+      <div className='flex opacity-50per hover:opacity-100per transition-all transition-duration-200ms mt-25px'>
+        <dl className='w-30rem'>
+          <dd
+            title={`your contribution ${percentc.toFixed(2)}%`}
+            className={`w-${percentc <= 3 ? '3' : Math.round(percentc)}per bg-blue h-20px mt-10px`}></dd>
+          <dd
+            title={`greenCSS community ${percenta.toFixed(2)}%`}
+            className={`w-${Math.round(percenta)}per bg-green h-20px my-10px`}></dd>
+        </dl>
+      </div>
+    </div>
+  )
+}

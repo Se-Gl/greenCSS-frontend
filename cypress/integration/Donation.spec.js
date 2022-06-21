@@ -28,18 +28,4 @@ describe('Donation Section', () => {
         matchCase: false
       })
   })
-  it('selects a value and clicks the donate button and gets redirected to stripe', () => {
-    cy.get('#donate-amount').should('exist').focus().clear()
-    cy.get('#donate-button-disabled').should('exist')
-
-    cy.get('#donate-cart-amount-25').should('exist')
-
-    // cy.get('#donate-cart-amount-25').click({ force: true })
-    // cy.get('#donate-amount').invoke('val', 25).focus().clear()
-
-    // cy.get('#donate-amount').type('100 {enter}', { force: true })
-    // cy.get('#donate-button').should('exist').contains('donate', {
-    //   matchCase: false
-    // })
-  })
 })

@@ -6,10 +6,7 @@ describe('Brand Screen Unit test', () => {
     cy.get('#brand-intro')
       .should('be.visible')
       .should('exist')
-      .contains('A Brand Book - the right way to get to know a story', { matchCase: false })
-  })
-  it('renders the illustration', () => {
-    cy.get('#brand-hero-illustration').should('be.visible').should('exist')
+      .contains('A Brand Book - the right way to get to know the core of the box', { matchCase: false })
   })
   it('click buttons and redirect forwards', () => {
     cy.get('#brand-redirect-Logo').click({ force: true })

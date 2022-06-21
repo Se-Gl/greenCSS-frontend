@@ -2,7 +2,14 @@ import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import Search from '../search/Search'
 
-const Modal = ({ show, onClose, children }) => {
+const Modal = ({
+  show,
+  onClose,
+  showSearch = true,
+  modalSize = 'max-w-50rem w-50rem min-h-50rem sm:w-100per max-h-50rem sm:min-h-75vh',
+  modalStyle = 'px-25px sm:px-10px',
+  children
+}) => {
   const [isBrowser, setIsBrowser] = useState(false)
 
   useEffect(() => {
@@ -28,11 +35,12 @@ const Modal = ({ show, onClose, children }) => {
   const modalContent = show ? (
     <div
       className='fixed fade-in animation-duration-300ms animation-forwards absolute top-0per left-0per w-100per h-100per flex justify-center items-center'
-      style={{ backgroundColor: 'rgba(16,16,16,0.5)' }}>
+      style={{ backgroundColor: 'rgba(16,16,16,0.75)' }}>
       <div className='relative z-1 w-100vw h-100vh' onClick={handleCloseClick} id='backdrop-close' />
-      <div className='absolute z-2 bg-white max-w-50rem w-50rem sm:w-100per max-h-50rem sm:min-h-75vh rounded-10px overflow-scroll overflow-x-hidden min-h-50rem'>
-        <Search handleCloseClick={handleCloseClick} />
-        <div className='px-25px sm:px-10px'>{children}</div>
+      <div
+        className={`fade-in-bottom animation-duration-500ms animation-forwards absolute z-2 bg-white rounded-10px overflow-scroll overflow-x-hidden ${modalSize}`}>
+        {showSearch && <Search handleCloseClick={handleCloseClick} />}
+        <div className={`${modalStyle}`}>{children}</div>
       </div>
     </div>
   ) : null

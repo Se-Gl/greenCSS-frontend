@@ -4,6 +4,8 @@ import { useGlobalContext } from '@/utils/NavContext'
 import LogoDark from '../icon/Brand/LogoDark'
 import { navmenu } from '@/data/nav'
 
+import ToggleMember from './ToggleMember'
+
 const Navbar = () => {
   const router = useRouter()
 
@@ -53,6 +55,7 @@ const Navbar = () => {
             )
           })}
         </ul>
+        <ToggleMember />
       </div>
     </nav>
   )

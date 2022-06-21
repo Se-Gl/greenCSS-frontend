@@ -14,6 +14,9 @@ export function GreenButton({
   hasLink = false,
   isDownload = false,
   isReverse = false,
+  isOutline = false,
+  isLinkedOutline = false,
+  isdisabled = false,
   children
 }) {
   const [hover, setHover] = useState(false)
@@ -30,7 +33,7 @@ export function GreenButton({
         <button
           onClick={onClick}
           id={id}
-          className={`greencss-button cursor-pointer flex py-10px px-50px font-bold bg-black hover:bg-greencss active:bg-greencss-9 focus:bg-greencss-8 transition-duration-200ms transition-all rounded-10px border-1px border-solid border-transparent hover:border-black my-auto text-center justify-center items-center m-auto text-15px ${className} text-white`}
+          className={`greencss-button cursor-pointer flex py-10px px-50px font-bold bg-black hover:bg-black-2 active:bg-black-5 focus:bg-black-5 transition-duration-200ms transition-all rounded-10px border-1px border-solid border-transparent hover:border-black my-auto text-center justify-center items-center m-auto text-15px ${className} text-white`}
           type={type}
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}>
@@ -41,12 +44,36 @@ export function GreenButton({
         <button
           onClick={onClick}
           id={id}
-          className={`greencss-button-reverse cursor-pointer flex py-10px px-50px bg-greencss font-bold hover:bg-black active:bg-black-9 focus:bg-black-8 transition-duration-200ms transition-all rounded-10px border-1px border-solid hover:border-white border-transparent rounded-10px my-auto text-center justify-center items-center m-auto ${className} text-white`}
+          className={`greencss-button-reverse cursor-pointer flex py-10px px-50px bg-greencss font-bold hover:bg-black active:bg-black-9 focus:bg-black-8 transition-duration-200ms transition-all rounded-10px border-1px border-solid hover:border-white border-transparent my-auto text-center justify-center items-center m-auto ${className} text-white`}
           type={type}
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}>
           {children}
         </button>
+      )}
+      {isOutline && (
+        <button
+          disabled={isdisabled}
+          onClick={onClick}
+          id={id}
+          className={`greencss-button cursor-pointer flex py-10px px-25px min-w-50px font-bold transition-duration-200ms transition-all rounded-10px border-1px border-solid border-black my-auto text-center justify-center items-center m-auto ${className} text-black`}
+          type={type}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}>
+          {children}
+        </button>
+      )}
+      {isLinkedOutline && (
+        <Link href={href} passHref>
+          <button
+            disabled={isdisabled}
+            id={id}
+            className={`greencss-button cursor-pointer flex py-10px px-25px min-w-50px font-bold transition-duration-200ms transition-all rounded-10px border-1px border-solid border-black my-auto text-center justify-center items-center m-auto ${className} text-black`}
+            type={type}
+            href={href}>
+            {children}
+          </button>
+        </Link>
       )}
       {hasLink && (
         <Link href={href} passHref>

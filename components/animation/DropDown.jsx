@@ -40,7 +40,7 @@ export default function DropDown() {
         onAnimationEnd={triggerFade}
       />
       <div
-        className='mx-auto max-w-40rem relative text-black text-16px'
+        className='mx-auto max-w-40rem relative text-black text-16px z-3'
         style={{ cursor: 'pointer' }}
         id='enter-animation'>
         <Select
@@ -53,7 +53,7 @@ export default function DropDown() {
         />
       </div>
       <div
-        className='mx-auto my-20px max-w-40rem relative text-black text-16px'
+        className='mx-auto my-20px max-w-40rem relative text-black text-16px z-2'
         style={{ cursor: 'pointer' }}
         id='enter-timeduration'>
         <Select
@@ -66,7 +66,7 @@ export default function DropDown() {
         />
       </div>
       <div
-        className='mx-auto my-20px max-w-40rem relative text-black text-16px'
+        className='mx-auto my-20px max-w-40rem relative text-black text-16px z-1'
         style={{ cursor: 'pointer' }}
         id='enter-animationtype'>
         <Select

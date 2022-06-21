@@ -2,6 +2,10 @@ import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import { GreenButton } from '../reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
+import { Input, TextArea } from '../reusable/Input'
+import CheckValidInput from '../member/CheckValidInput'
+import ModernGrid from '../grid/ModernGrid'
+import { checkNumber, checkValidEmail } from '@/data/validation'
 
 const CaptchaComponent = dynamic(() => import('../captcha/CaptchaComponent'), { ssr: false })
 
@@ -10,6 +14,7 @@ export default function ContactForm() {
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+
   // captcha
   const [verifyCaptcha, setverifyCaptcha] = useState('')
   const [captcha, setCaptcha] = useState([])
@@ -18,9 +23,6 @@ export default function ContactForm() {
 
   //   Form validation
   const [errors, setErrors] = useState({})
-
-  //   Setting button text
-  const [buttonText, setButtonText] = useState('Send')
 
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const [showFailureMessage, setShowFailureMessage] = useState(false)
@@ -58,7 +60,6 @@ export default function ContactForm() {
     let isValidForm = handleValidation()
 
     if (isValidForm) {
-      setButtonText('disabled')
       const res = await fetch('/api/sendgrid', {
         body: JSON.stringify({
           email: email,
@@ -77,19 +78,11 @@ export default function ContactForm() {
         setShowSuccessMessage(false)
         setShowFailureMessage(true)
         toast('error', '⚡ Oops! Something went wrong, please try again later.')
-        setButtonText('Send')
-        // Reset form fields
-        setFullname('')
-        setEmail('')
-        setMessage('')
-        setSubject('')
-        setverifyCaptcha('')
         return
       }
       setShowSuccessMessage(true)
       toast('success', '🙏 Thank you! Your Message has been delivered.')
       setShowFailureMessage(false)
-      setButtonText('Send')
       // Reset form fields
       setFullname('')
       setEmail('')
@@ -103,78 +96,78 @@ export default function ContactForm() {
     {
       htmlFor: 'fullname',
       label: 'Full name',
-      maxLength: 30,
+      maxLength: 32,
       type: 'text',
       value: fullname,
-      onChange: (e) => {
-        setFullname(e.target.value)
-      }
+      onChange: setFullname,
+      checkFirst: checkNumber(fullname, 3, 32),
+      checkFirstDescription: 'Your name'
     },
     {
       htmlFor: 'email',
       label: 'E-mail',
-      maxLength: 30,
+      maxLength: 32,
       type: 'email',
       value: email,
-      onChange: (e) => {
-        setEmail(e.target.value)
-      }
+      onChange: setEmail,
+      checkFirst: checkValidEmail(email),
+      checkFirstDescription: 'Your E-Mail'
     },
     {
       htmlFor: 'subject',
       label: 'Subject',
-      maxLength: 30,
+      maxLength: 64,
       type: 'text',
       value: subject,
-      onChange: (e) => {
-        setSubject(e.target.value)
-      }
+      onChange: setSubject,
+      checkFirst: checkNumber(subject, 3, 64),
+      checkFirstDescription: '3-64 characters'
     }
   ]
 
+  let checkIsDisabled =
+    checkNumber(fullname, 3, 32) && checkValidEmail(email) && checkNumber(subject, 3, 64) && verifyCaptcha === captcha
+
   return (
-    <div className='mb-50px'>
-      <form
-        className='bg-white rounded-20px shadow-small-gray sm:shadow-transparent md:shadow-transparent'
-        onSubmit={handleSubmit}
-        id='contact-form'>
-        <div className='px-20px flex flex-col'>
-          <h3 className='pt-25px max-w-50per sm:max-w-100per md:max-w-100per'>
-            Get in Touch with Us! And send a message
-          </h3>
-          <p className='text-black-10 text-15px  max-w-50per sm:max-w-100per md:max-w-100per'>
-            Whether it is constructive feedback, negative experiences, gratitude, questions, suggestions, feature
-            requests or simply boredom.
-          </p>
+    <ModernGrid
+      id='contact-index'
+      header='Get in Touch with Us! And send a message'
+      subheader='Whether it is constructive feedback, negative experiences, gratitude, questions, suggestions, feature
+      requests or simply boredom.'
+      imageBg='blue'
+      imageUrl='/images/contact/question-mark-plant.webp'
+      imageAlt='member section hero'>
+      <form className='my-auto' onSubmit={handleSubmit} id='contact-form'>
+        <div className='flex flex-col'>
           {contactItems.sort().map((item, index) => {
             return (
-              <div key={index} className='w-100per mb-25px'>
-                <label htmlFor={item.htmlFor} className='font-600 text-15px'>
-                  {item.label}
-                  <span className='text-red-2'>*</span>
-                </label>
-                <input
+              <div className='flex sm:block md:block lg:block' key={index}>
+                <Input
                   maxLength={item.maxLength}
-                  type={item.type}
                   id={item.htmlFor}
-                  className='border-solid border-1px border-greencss rounded-5px text-15px text-black-3 text-black font-600 py-10px w-100per'
+                  label={item.label}
+                  type={item.type}
                   value={item.value}
-                  onChange={item.onChange}
+                  setValue={item.onChange}
+                  htmlFor={item.htmlFor}
+                  isTextArea={item.isTextArea}
                 />
+                <CheckValidInput checkIsValid={item.checkFirst} text={item.checkFirstDescription} />
               </div>
             )
           })}
-          <label htmlFor='message' className='font-600 mb-5px text-15px'>
-            Message<span className='text-red-2'>*</span>
-          </label>
-          <textarea
-            maxLength='500'
-            id='message'
-            className='border-solid border-1px border-greencss rounded-5px text-15px text-black-3 text-black font-600 py-10px'
-            value={message}
-            onChange={(e) => {
-              setMessage(e.target.value)
-            }}></textarea>
+          <div className='flex sm:block md:block lg:block'>
+            <TextArea
+              maxLength={500}
+              id='message'
+              label='Message'
+              type='text'
+              value={message}
+              setValue={setMessage}
+              htmlFor='message'
+            />
+            <CheckValidInput checkIsValid={message.length >= 3 && message.length <= 500} text='Max 500 characters' />
+          </div>
 
           <CaptchaComponent
             verifyCaptcha={verifyCaptcha}
@@ -182,16 +175,21 @@ export default function ContactForm() {
             captcha={captcha}
             setCaptcha={setCaptcha}
           />
-
-          {buttonText == 'Send' && (
-            <div className='flex flex-row items-center justify-start my-25px'>
-              <GreenButton type='submit' id='submit-button'>
-                {buttonText}
-              </GreenButton>
-            </div>
-          )}
+          <div className='sm:mr-auto md:mr-auto my-25px'>
+            <GreenButton
+              type='submit'
+              isdisabled={!checkIsDisabled}
+              id='submit-button'
+              className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
+                !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
+              }`}
+              isOutline={true}
+              isDefault={false}>
+              Send
+            </GreenButton>
+          </div>
         </div>
       </form>
-    </div>
+    </ModernGrid>
   )
 }

@@ -25,8 +25,7 @@ describe('Mobile Nav Screen Unit test', () => {
     cy.get('#hamburger-sm').should('be.visible').should('exist').click({ force: true })
   })
   it('renders and clicks the first nav item', () => {
-    cy.get(':nth-child(2) > .mb-5px > .no-decoration')
-      .eq(0)
+    cy.get(':nth-child(3) > .mb-5px > .no-decoration')
       .should('be.visible')
       .should('exist')
       .contains('brand', { matchCase: false })

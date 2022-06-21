@@ -7,10 +7,9 @@ import BlogCard from '@/components/blog/BlogCard'
 import BlogLayout from '@/components/blog/BlogLayout'
 import { BackButton } from '@/components/reusable/Button'
 import SideBar from '@/components/category/SideBar'
-import SubSectionHero from '@/components/grid/SubSectionHero'
-import SlugDocsHero from '@/components/icon/Docs/SlugDocsHero'
 import { sortAlphabetically } from '@/utils/SortBy'
 import SEO from '@/components/reusable/SEO'
+import ModernGrid from '@/components/grid/ModernGrid'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
@@ -34,14 +33,18 @@ export default function DocsCategorySlugPage({ posts, categoryName, categories }
           <div className='min-w-100per relative col-span-9 sm:col-span-12 md:col-span-12'>
             <BackButton>Back</BackButton>
             <div className='min-w-100per relative' id={`category-${categoryName}`}>
-              <SubSectionHero
+              <ModernGrid
                 header={`Browse by category: ${categoryName.replace('-', ' ')}`}
                 subheader={`Get an overview in the category \"${categoryName}\" and browse through all the documentation.`}
-                illustration={<SlugDocsHero width='100%' height='100%' />}
+                imageBg='black'
+                imageUrl='/images/docs/books-greencss.webp'
+                imageAlt='greencss documentation book'
               />
               <BlogLayout>
                 {posts.map((post, index) => (
-                  <BlogCard key={index} post={post} index={index} isCategory={true} />
+                  <div className='my-30px' key={index}>
+                    <BlogCard post={post} index={index} isCategory={true} />
+                  </div>
                 ))}
               </BlogLayout>
             </div>

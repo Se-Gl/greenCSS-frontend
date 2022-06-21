@@ -11,6 +11,7 @@ const startedLinks = [
 
 const privacyLinks = [
   { title: 'Privacy — Terms', path: '/privacy/privacy-policy' },
+  { title: 'Terms of services', path: '/privacy/terms' },
   { title: 'Cookies', path: '/privacy/cookies#cookie-policy' },
   { title: 'Legal Notice', path: '/privacy/legal' }
 ]
@@ -36,9 +37,10 @@ export default function Footer() {
             </Link>
 
             <div className='mt-25px'>
-              <p className='text-black-10 text-15px'>
+              <p className='text-black-10 text-15px mb-15px'>
                 A sustainable CSS library that is intuitive to use and absolutely emission-free.
               </p>
+              <span className='text-black-10 text-15px'>© MIT {new Date().getFullYear()}</span>
             </div>
           </div>
 
@@ -56,7 +58,6 @@ export default function Footer() {
                 </div>
               )
             })}
-            <span className='text-black-10 text-15px'>© MIT {new Date().getFullYear()}</span>
           </div>
 
           <div className='col-span-1 sm:mt-50px md:mt-20rem' id='footer-getting-started'>

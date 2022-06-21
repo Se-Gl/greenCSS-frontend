@@ -1,8 +1,7 @@
 import dynamic from 'next/dynamic'
 import BrandCard from '@/components/brand/BrandCard'
-import HandCrafted from '@/components/icon/Animation/Handcrafted'
-import SubSectionHero from '@/components/grid/SubSectionHero'
 import LayoutTitle from '@/components/reusable/SEO'
+import ModernGrid from '@/components/grid/ModernGrid'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
@@ -26,10 +25,12 @@ export default function ExamplesIndexPage() {
       keywords='Examples, Animation, handmade css animation, tutorial examples, green css'>
       <Layout className='container min-h-100vh relative z-2' id='examples-index'>
         <div id='examples-index'>
-          <SubSectionHero
+          <ModernGrid
             header='Handmade, crafted examples'
             subheader='Nowadays, a beautiful website is easy to create - if you use greenCSS. However, bringing a web application alive is more difficult.'
-            illustration={<HandCrafted />}
+            imageBg='yellow'
+            imageUrl='/images/examples/hammer-greencss.webp'
+            imageAlt='greencss hammer, construction'
           />
           <div className='pb-100px'>
             <p>

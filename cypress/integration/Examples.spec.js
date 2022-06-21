@@ -8,9 +8,6 @@ describe('Example Index Screen Unit test', () => {
       .should('exist')
       .contains('Handmade, crafted examples', { matchCase: false })
   })
-  it('renders the handcrafted svg', () => {
-    cy.get('#handcrafted-svg').should('be.visible').should('exist')
-  })
 })
 
 describe('Animation Example Screen Unit test', () => {
