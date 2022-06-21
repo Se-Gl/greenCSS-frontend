@@ -46,8 +46,6 @@
 }
 
 .css-1s2u09g-control {
-  z-index: 99999999 !important;
-  position: relative !important;
   background-color: $white !important;
   border-radius: 10px !important;
   height: 50px !important;
@@ -58,8 +56,6 @@
   -ms-box-shadow: 5px 5px 10px -1px #7d7d7d;
 }
 .css-1pahdxg-control {
-  z-index: 99999999 !important;
-  position: relative !important;
   background-color: $white !important;
   border-radius: 10px !important;
   min-height: 50px !important;
@@ -87,10 +83,13 @@
   width: 40rem !important;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .css-1pahdxg-control,
   .css-1s2u09g-control,
   #react-select-19-listbox {
-    max-width: 75vw !important;
+    width: 100% !important;
+  }
+  #react-select-2-listbox {
+    width: 100% !important;
   }
 }
