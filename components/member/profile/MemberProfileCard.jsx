@@ -4,11 +4,12 @@ import { GreenButton } from '@/components/reusable/Button'
 import MemberChart from 'pages/member/MemberChart'
 import { UserContext } from '@/utils/SubscriptionContext'
 import ModernCard from '@/components/reusable/ModernCard'
+import { calculateMonths } from '@/utils/calculateMonths'
 
 const CardContent = ({ description, fetchedValue }) => {
   return (
     <p className='mb-0px font-500 text-black text-15px'>
-      {description} <span className='text-white font-400'>{fetchedValue}</span>
+      {description} <span className='text-black-10 font-400'>{fetchedValue}</span>
     </p>
   )
 }
@@ -41,6 +42,15 @@ export default function MemberProfileCard() {
     const { data } = await axios.get('/customer-portal')
     window.open(data)
   }
+
+  const getTotalAmount = (sub) =>
+    calculateMonths(
+      sub.current_period_start,
+      sub.cancel_at ? sub.cancel_at : sub.current_period_end,
+      ((sub.plan.amount / 100) * sub.quantity).toLocaleString('en-US', {
+        currency: sub.plan.currency
+      })
+    )
 
   return (
     <div className='my-100px'>
@@ -80,16 +90,18 @@ export default function MemberProfileCard() {
         {subscriptions &&
           subscriptions.map((sub) => (
             <article className='col-span-1 bg-white rounded-20px p-50px shadow-small-black-10' key={sub.id}>
-              <div className='relative p-25px bg-gray'>
-                <h4 className='fw-bold'>{sub.plan.nickname}</h4>
+              <div className='relative p-25px bg-gray-9'>
+                <h4>{sub.plan.nickname}</h4>
                 <CardContent description='Region: ' fetchedValue={state.user.requestedCountry} />
                 <CardContent
-                  description={null}
+                  description='Monthly: '
                   fetchedValue={`${((sub.plan.amount / 100) * sub.quantity).toLocaleString('en-US', {
                     style: 'currency',
                     currency: sub.plan.currency
-                  })}/month`}
+                  })}`}
                 />
+                <CardContent description='Total: ' fetchedValue={`$${getTotalAmount(sub)}`} />
+
                 <CardContent description='Card last 4 digit: ' fetchedValue={sub.default_payment_method.card.last4} />
                 <CardContent
                   description='Current period end: '
@@ -117,13 +129,7 @@ export default function MemberProfileCard() {
                   Manage Subscription
                 </GreenButton>
               </div>
-              <MemberChart
-                chartData={Math.round(
-                  (new Date(sub.current_period_end * 1000).getMonth() -
-                    new Date(sub.current_period_start * 1000).getMonth()) *
-                    ((sub.plan.amount / 100) * sub.quantity)
-                )}
-              />
+              <MemberChart chartData={getTotalAmount(sub)} />
             </article>
           ))}
       </div>

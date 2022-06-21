@@ -42,11 +42,18 @@ export default function ToggleMember() {
                     <h4 className='mb-5px text-15px cursor-pointer'>Update Your Profile</h4>
                   </Link>
                   <p className='text-15px text-black-10 mb-10px'>Adjust your settings within seconds.</p>
-                  <Link href={`/member/${state.user._id}`}>
-                    <a className='capitalize my-0px no-decoration flex text-15px font-500 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
-                      Update
-                    </a>
-                  </Link>
+                  <div className='flex'>
+                    <Link href={`/member/${state.user._id}`}>
+                      <a className='capitalize my-0px no-decoration flex text-15px font-500 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
+                        Update
+                      </a>
+                    </Link>
+                    <Link href='/member/account'>
+                      <a className='mx-auto capitalize my-0px no-decoration flex text-15px font-500 items-center hover:text-greencss active:text-black-7 transition-all transition-duration-500ms'>
+                        Dashboard
+                      </a>
+                    </Link>
+                  </div>
                 </div>
               </>
             )}
