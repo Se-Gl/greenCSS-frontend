@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useContext, useEffect, useState } from 'react'
 import Select from 'react-select'
@@ -125,6 +126,16 @@ export default function UserUpdate() {
               imageBg='blue'
               imageUrl='/images/blog/pen-greencss.webp'
               imageAlt='update profile data'>
+              <div className='mb-50px'>
+                <GreenButton
+                  id='password-reset-button'
+                  className='font-500 text-15px'
+                  isLinkedOutline={true}
+                  isDefault={false}
+                  href='/member/forgot-password'>
+                  Change your password
+                </GreenButton>
+              </div>
               <p className='text-black text-15px font-600 mb-0px ml-10px'>{checkRegion ? 'Region' : 'Country'}</p>
               <div className='flex sm:block md:block lg:block'>
                 <div className='block'>

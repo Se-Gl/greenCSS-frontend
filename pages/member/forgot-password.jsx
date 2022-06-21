@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { forgotPassword } from '@/utils/Auth'
 import SEO from '@/components/reusable/SEO'
 import ModernGrid from '@/components/grid/ModernGrid'
@@ -8,11 +8,20 @@ import CheckValidInput from '@/components/member/CheckValidInput'
 import { GreenButton } from '@/components/reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
 import { checkValidEmail } from '@/data/validation'
+import { UserContext } from '@/utils/SubscriptionContext'
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
 export default function forgotPasswordPage() {
+  // context
+  const [state, setState] = useContext(UserContext)
   const toast = useToast()
-  const [email, setEmail] = useState()
+  const [email, setEmail] = useState(state.user.email)
+  console.log(state.user.email)
+  console.log('email', email)
+
+  useEffect(() => {
+    setEmail(state.user.email)
+  }, [state])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -31,15 +40,15 @@ export default function forgotPasswordPage() {
 
   return (
     <SEO
-      title='greenCSS forgot your member password?'
-      description='Did you forgot your passowrd? Reset your passsword here.'
+      title='greenCSS change your member password?'
+      description='Did you forgot your passowrd? Reset your password here.'
       url='member/forgot-password'
       keywords='member, forgot password, reset password'>
       <Layout className='container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
         <ModernGrid
           id='forgot-password'
-          header='Forgot your password? No problem!'
-          subheader='Create a new password within seconds. No problem, together we solve your puzzle - promised'
+          header='Let`s change your password - No problem!'
+          subheader='Create a new password within seconds. Together we solve your puzzle - promised.'
           imageBg='blue'
           imageUrl='/images/member/puzzle-password.webp'
           imageAlt='member forgot password'>

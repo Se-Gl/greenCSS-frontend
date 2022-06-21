@@ -56,7 +56,7 @@ function ResetPassword({ router }) {
       <Layout className='container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
         <ModernGrid
           id='reset-password'
-          header='Forgot your password? Reset it right away.'
+          header='Change your password? Reset it right away.'
           subheader='Create a new password within seconds. Choose your new and strong password. It should be between 7-64 characters long, have an upper and lower case letter and contain special characters.'
           imageBg='black'
           imageUrl='/images/member/puzzle-password.webp'
