@@ -4,10 +4,10 @@ import { useRouter } from 'next/router'
 import React, { useContext } from 'react'
 import axios from 'axios'
 import SEO from '@/components/reusable/SEO'
-import MemberTierCard from '@/components/member/MemberTierCard'
 import { UserContext } from '@/utils/SubscriptionContext'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
+const MemberTierCard = dynamic(() => import('@/components/member/MemberTierCard'))
 
 export default function index({ stripeData }) {
   const router = useRouter()

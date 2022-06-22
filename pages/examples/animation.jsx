@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic'
-import DropDown from '@/components/animation/DropDown'
 import { BackButton } from '@/components/reusable/Button'
 import SEO from '@/components/reusable/SEO'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
+const DropDown = dynamic(() => import('@/components/animation/DropDown'))
 
 export default function AnimationPage() {
   return (

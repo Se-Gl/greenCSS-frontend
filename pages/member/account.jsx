@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 import SEO from '@/components/reusable/SEO'
 import CheckServerAuth from '@/components/auth/CheckServerAuth'
-import SignupModal from '@/components/member/SignupModal'
-import MemberProfileCard from '@/components/member/profile/MemberProfileCard'
 import MemberProfileHero from '@/components/member/profile/MemberProfileHero'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
+const MemberProfileCard = dynamic(() => import('@/components/member/profile/MemberProfileCard'))
+const SignupModal = dynamic(() => import('@/components/member/SignupModal'))
 
 export default function account() {
   const [isAuth, setIsAuth] = useState(null)

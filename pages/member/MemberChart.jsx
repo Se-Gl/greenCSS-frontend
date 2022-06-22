@@ -19,7 +19,7 @@ export default function MemberChart({ chartData }) {
     const getSubscriptions = async () => {
       const { data } = await axios.get('/monthly-income')
       setIncome(data.data.map((sub) => sub.amount).at(0) / 1000)
-      //   console.log(data)
+      // console.log(data)
     }
 
     if (state && state.token) getSubscriptions()

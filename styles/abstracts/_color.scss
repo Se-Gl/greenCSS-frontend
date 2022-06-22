@@ -10,3 +10,138 @@ $magenta: #f906e8;
 $black: #101010;
 $transparent: transparent;
 $white: #fdfdfd;
+
+// card colors
+$black-5: #4d4d4d;
+$red-5: #fc7c7c;
+$orange-5: #fcc57c;
+$yellow-5: #fce67c;
+$green-5: #bcfc7c;
+$greencss-5: #7bf104;
+$blue-5: #7cb3fc;
+$turquoise-5: #7cfcfc;
+$purple-5: #bc7cfc;
+$magenta-5: #fc7cf3;
+/* purgecss start ignore */
+.bg-black {
+  background-color: $black;
+}
+.bg-black-5 {
+  background-color: $black-5;
+}
+.shadow-small-black-5 {
+  box-shadow: 5px 5px 10px -1px $black-5;
+  -webkit-box-shadow: 5px 5px 10px -1px $black-5;
+  -moz-box-shadow: 5px 5px 10px -1px $black-5;
+  -ms-box-shadow: 5px 5px 10px -1px $black-5;
+}
+.bg-red {
+  background-color: $red;
+}
+.bg-red-5 {
+  background-color: $red-5;
+}
+.shadow-small-red-5 {
+  box-shadow: 5px 5px 10px -1px $red-5;
+  -webkit-box-shadow: 5px 5px 10px -1px $red-5;
+  -moz-box-shadow: 5px 5px 10px -1px $red-5;
+  -ms-box-shadow: 5px 5px 10px -1px $red-5;
+}
+.bg-orange {
+  background-color: $orange;
+}
+.bg-orange-5 {
+  background-color: $orange-5;
+}
+.shadow-small-orange-5 {
+  box-shadow: 5px 5px 10px -1px $orange-5;
+  -webkit-box-shadow: 5px 5px 10px -1px $orange-5;
+  -moz-box-shadow: 5px 5px 10px -1px $orange-5;
+  -ms-box-shadow: 5px 5px 10px -1px $orange-5;
+}
+.bg-yellow {
+  background-color: $yellow;
+}
+.bg-yellow-5 {
+  background-color: $yellow-5;
+}
+.shadow-small-yellow-5 {
+  box-shadow: 5px 5px 10px -1px $yellow-5;
+  -webkit-box-shadow: 5px 5px 10px -1px $yellow-5;
+  -moz-box-shadow: 5px 5px 10px -1px $yellow-5;
+  -ms-box-shadow: 5px 5px 10px -1px $yellow-5;
+}
+.bg-green {
+  background-color: $green;
+}
+.bg-green-5 {
+  background-color: $green-5;
+}
+.shadow-small-green-5 {
+  box-shadow: 5px 5px 10px -1px $green-5;
+  -webkit-box-shadow: 5px 5px 10px -1px $green-5;
+  -moz-box-shadow: 5px 5px 10px -1px $green-5;
+  -ms-box-shadow: 5px 5px 10px -1px $green-5;
+}
+.bg-greencss {
+  background-color: $greencss;
+}
+.bg-greencss-5 {
+  background-color: $greencss-5;
+}
+.shadow-small-greencss-5 {
+  box-shadow: 5px 5px 10px -1px $greencss-5;
+  -webkit-box-shadow: 5px 5px 10px -1px $greencss-5;
+  -moz-box-shadow: 5px 5px 10px -1px $greencss-5;
+  -ms-box-shadow: 5px 5px 10px -1px $greencss-5;
+}
+.bg-blue {
+  background-color: $blue;
+}
+.bg-blue-5 {
+  background-color: $blue-5;
+}
+.shadow-small-blue-5 {
+  box-shadow: 5px 5px 10px -1px $blue-5;
+  -webkit-box-shadow: 5px 5px 10px -1px $blue-5;
+  -moz-box-shadow: 5px 5px 10px -1px $blue-5;
+  -ms-box-shadow: 5px 5px 10px -1px $blue-5;
+}
+.bg-turquoise {
+  background-color: $turquoise;
+}
+.bg-turquoise-5 {
+  background-color: $turquoise-5;
+}
+.shadow-small-turquoise-5 {
+  box-shadow: 5px 5px 10px -1px $turquoise-5;
+  -webkit-box-shadow: 5px 5px 10px -1px $turquoise-5;
+  -moz-box-shadow: 5px 5px 10px -1px $turquoise-5;
+  -ms-box-shadow: 5px 5px 10px -1px $turquoise-5;
+}
+.bg-purple {
+  background-color: $purple;
+}
+.bg-purple-5 {
+  background-color: $purple-5;
+}
+.shadow-small-purple-5 {
+  box-shadow: 5px 5px 10px -1px $purple-5;
+  -webkit-box-shadow: 5px 5px 10px -1px $purple-5;
+  -moz-box-shadow: 5px 5px 10px -1px $purple-5;
+  -ms-box-shadow: 5px 5px 10px -1px $purple-5;
+}
+.bg-magenta {
+  background-color: $magenta;
+}
+.bg-magenta-5 {
+  background-color: $magenta-5;
+}
+.shadow-small-magenta-5 {
+  box-shadow: 5px 5px 10px -1px $magenta-5;
+  -webkit-box-shadow: 5px 5px 10px -1px $magenta-5;
+  -moz-box-shadow: 5px 5px 10px -1px $magenta-5;
+  -ms-box-shadow: 5px 5px 10px -1px $magenta-5;
+}
+
+/* purgecss end ignore */

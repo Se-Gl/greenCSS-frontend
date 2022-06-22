@@ -1,21 +1,20 @@
 import dynamic from 'next/dynamic'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useContext, useEffect, useState } from 'react'
-import Select from 'react-select'
 import axios from 'axios'
 import { UserContext } from '@/utils/SubscriptionContext'
 import SEO from '@/components/reusable/SEO'
 import CheckServerAuth from '@/components/auth/CheckServerAuth'
 import { checkNumber, checkRegionOrCountry, checkValidEmail } from '@/data/validation'
 import { countries, regions } from '@/data/countries'
-import CheckValidInput from '@/components/member/CheckValidInput'
 import { Input } from '@/components/reusable/Input'
 import { GreenButton } from '@/components/reusable/Button'
-import ModernGrid from '@/components/grid/ModernGrid'
 import { useToast } from '@/components/toast/hooks/useToast'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
+const Select = dynamic(() => import('react-select'))
+const CheckValidInput = dynamic(() => import('@/components/member/CheckValidInput'))
+const ModernGrid = dynamic(() => import('@/components/grid/ModernGrid'))
 
 export default function UserUpdate() {
   const router = useRouter()
