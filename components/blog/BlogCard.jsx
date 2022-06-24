@@ -13,27 +13,29 @@ export default function BlogCard({ post, index }) {
     : 'opacity-0per'
 
   return (
-    <>
-      <div ref={ref} id={`${post.slug}`} className={animationStagger} style={{ opacity: 0 }}>
-        <>
-          <Link href={`${post.frontmatter.isBlog ? `/blog/${post.slug}` : `/docs/${post.slug}`}`} passHref>
-            <a className='no-decoration'>
-              <ModernCard
-                id='blog-card'
-                key={index}
-                isBlog={true}
-                isRevert={index % 2 === 0 ? false : true}
-                header={post.frontmatter.title}
-                headerclass='text-30px leading-100per'
-                subheader={post.frontmatter.excerpt}
-                imageBg='black'
-                imageUrl={post.frontmatter.cover_image}
-                imageAlt={post.frontmatter.title}
-              />
-            </a>
-          </Link>
-        </>
-      </div>
-    </>
+    <div
+      ref={ref}
+      id={`${post.slug}`}
+      className={`${animationStagger} sm:my-20px md:my-20px opacity-0per`}
+      style={{ opacity: 0 }}>
+      <>
+        <Link href={`${post.frontmatter.isBlog ? `/blog/${post.slug}` : `/docs/${post.slug}`}`} passHref>
+          <a className='no-decoration'>
+            <ModernCard
+              id='blog-card'
+              key={index}
+              isBlog={true}
+              isRevert={index % 2 === 0 ? false : true}
+              header={post.frontmatter.title}
+              headerclass='text-30px leading-100per'
+              subheader={post.frontmatter.excerpt}
+              imageBg='black'
+              imageUrl={post.frontmatter.cover_image}
+              imageAlt={post.frontmatter.title}
+            />
+          </a>
+        </Link>
+      </>
+    </div>
   )
 }
