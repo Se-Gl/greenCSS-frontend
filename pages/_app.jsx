@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV == 'production') {
   require('@/css/green.css')
 } else {
-  require('@/styles/greencss.css')
+  require('greencss/css/greencss.css')
 }
 require('@/styles/globals.scss')
 
