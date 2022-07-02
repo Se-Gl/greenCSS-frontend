@@ -6,6 +6,7 @@ import { getPosts } from '@/lib/posts'
 import SideBar from '@/components/category/SideBar'
 import { sortAlphabetically } from '@/utils/SortBy'
 import SEO from '@/components/reusable/SEO'
+import CodeSyntax from '@/components/markdown/CodeSyntax'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 const SyntaxComponent = dynamic(() => import('@/components/markdown/SyntaxComponent'))
@@ -15,14 +16,16 @@ const syntax = [
   {
     header: 'Quick Start | NPM',
     description:
-      'The simplest and fastest way to get up and running with greenCSS is to use NPM. This is the normal approach for all JavaScript frameworks like Angular, React or Vue. Here you can decide for yourself how to set up your code base for the production.',
-    markdown: 'npm i greenCSS'
+      "The simplest and fastest way to get up and running with greenCSS is to use NPM. This is the normal approach for all JavaScript frameworks like Angular, React or Vue. Here you can decide for yourself how to set up your code base for the production. Either import the entire css file: import 'greencss/css/greencss.css', or you can import a specific category. For example the animations: import 'greencss/css/classes/animation/animation.css'",
+    markdown:
+      "npm i greencss \n---\nimport 'greencss/css/greencss.css'\nimport 'greencss/css/classes/animation/animation.css'"
   },
   {
     header: 'Quick Start | CDN',
-    description: 'The most straightforward approach for non-JavaScript frameworks is to use CDN.',
+    description:
+      'The most straightforward approach for non-JavaScript frameworks is to use CDN. Importing the greencss.css file, means that you have access to every greenCSS class. If you just want to import specific categories, check the example below.',
     markdown:
-      '<head>\n  <title>Your awesome Website - designed with greenCSS</title>\n  <link rel="stylesheet" href="link-to-greenCSS-cdn" />\n</head>'
+      '<head>\n  <title>Your awesome Website - designed with greenCSS</title>\n  <link rel="stylesheet" href="https://unpkg.com/greencss/css/minified/greencss.css" />\n  <link rel="stylesheet" href="https://unpkg.com/greencss/css/minified/classes/animation/animation.css" />\n</head>'
   }
 ]
 
@@ -54,9 +57,67 @@ export default function DocsCategoryPage({ categories, posts }) {
                 {syn.markdown}
               </SyntaxComponent>
             ))}
+            <>
+              <h2 className='mt-10rem'>All available categories</h2>
+              <p className='mb-10px'>
+                If you just want to add a specific category, adjust the NPM Import{' '}
+                <span className='font-style-italic'>
+                  import &apos;greencss/css/classes/
+                  <span className='font-600'>ADJUST-YOUR-DESIRED-PATH</span>
+                  &apos;
+                </span>
+                .
+              </p>
+              <p>
+                If you want to add a specific category by using CDN, adjust the link{' '}
+                <span className='font-style-italic'>
+                  &quot;https://unpkg.com/greencss/css/minified/classes/
+                  <span className='font-600'>ADJUST-YOUR-DESIRED-PATH</span>&quot;
+                </span>
+                .
+              </p>
+              <h3 id='category-paths'>Applicable paths</h3>
+              <ol>
+                <li>animation/animation.css</li>
+                <li>background/background.css</li>
+                <li>borders/borders.css</li>
+                <li>color/color.css</li>
+                <li>effects/effects.css</li>
+                <li>filters/filters.css</li>
+                <li>flex-grow/flex-grow.css</li>
+                <li>interactivity/interactivity.css</li>
+                <li>layout/layout.css</li>
+                <li>sizing/sizing.css</li>
+                <li>spacing/spacing.css</li>
+                <li>svg/svg.css</li>
+                <li>tables/tables.css</li>
+                <li>transforms/transforms.css</li>
+                <li>typography/typography.css</li>
+              </ol>
+            </>
+            <>
+              <SyntaxComponent
+                header='Dark Mode'
+                description='Installing the dark mode is similar to the normal installation.'>
+                npm i @greencss/dark-mode
+              </SyntaxComponent>
+              <p className='mb-0px'>NPM import works the same way like the normal imports:</p>
+              <div className='mb-25px bg-white p-5px rounded-5px text-20px font-style-italic'>
+                import &apos;@greencss/dark-mode/css/minified/greencss-dark.css&apos;
+                <br />
+                import &apos;@greencss/dark-mode/css/minified/classes/PATH-TO-YOUR-CATEGORY&apos;
+              </div>
+
+              <p className='mb-0px'>CDN import works the same way like the normal imports, the URL looks like:</p>
+              <div className='bg-white p-5px rounded-5px text-20px font-style-italic'>
+                https://unpkg.com/@greencss/dark-mode/css/minified/greencss-dark.css
+                <br />
+                https://unpkg.com/@greencss/dark-mode/css/minified/classes/PATH-TO-YOUR-CATEGORY
+              </div>
+            </>
             <h2 className='mt-10rem'>The types</h2>
             <p className='mt-25px'>
-              greenCSS features 21 core elements. These in turn are filtered into over 250 subcategories. You are
+              greenCSS features 15 core elements. These in turn are filtered into over 250 subcategories. You are
               looking for a specific css class element? Use the search function instead, just press F3.
             </p>
             <div className='m-auto grid grid-col-2 gap-30px sm:gap-15px sm:grid-col-1 md:grid-col-1'>
