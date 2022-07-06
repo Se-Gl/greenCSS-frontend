@@ -62,11 +62,11 @@ Images are the biggest causes of carbon emissions on websites. However, this is 
 
 You should try to avoid to stream videos on your website if possible. After all, one second of film consumes more data than a single JPEG image in full-screen mode. If a background video is unavoidable, shorten it to only show the most important sequences. Avoid auto-playing films, not only are it is bad for the environment, it can also cause problems for users with sensory disturbances and motion sensitivity. Last but not least, you should always compress your video to the MP4 file format.
 
-### GIF Animations
+### GIF animations
 
 GIF animations are terribly inefficient. They may be funny for the showing latest memes, but they render each image as a separate GIF image and merge them into one big file. WEBP images are far more efficient and can support animation.
 
-### CSS and JavaScript Animations
+### CSS and JavaScript animations
 
 Use visual animations sparingly. Even simple effects have a significant impact on the CPU load of the devices. Enormous computing power is required, which in turn affects the battery life and the general power consumption of the consumer device.
 
@@ -109,13 +109,13 @@ If you want to make your website more eco-friendly, here is a summary to conside
 
 Responsive websites are designed to adapt to any device, so they require much less bandwidth than traditional websites. They also allow users to view the same content on multiple devices at once, saving them time and money. Additional consumers such as images or color choices should be carefully studied and adjusted over time.
 
-### Use greenCSS Instead of other CSS libraries
+### Use greenCSS instead of other CSS libraries
 
 In production, the software developers may use green technology for designing a web application. Suitable for this purpose is greenCSS. greenCSS is an open source library that allows web designers to make their sites more sustainable. The entire library was created in a climate-neutral manner.
 
 ![web design for sustainable brands {800x533} {caption: Working with a green software}](/images/blog/blogcontent/sustainable/work-green.webp)
 
-### web design for sustainable brands
+### Web design for sustainable brands
 
 A lot of people think that green websites come with a high price. This is not the case. However, there are also many benefits to using a green website. Especially if the development is based on an easy to learn and sustainable CSS library. Many customers or brands can additionally be boasting when working with sustainable software. This has even been proven to increase sales.
 
