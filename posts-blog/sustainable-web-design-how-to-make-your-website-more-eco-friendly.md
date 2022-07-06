@@ -3,7 +3,7 @@ isBlog: true
 title: 'Sustainable Web Design: How To Make Your Website More Eco-Friendly'
 date: 'Jul 06. 2022'
 excerpt: 'There are many ways to reduce the amount of energy used by a website. You can use less images, use fewer colors, or even use a responsive layout.'
-cover_image: '/images/blog/cover/green-door.webp'
+cover_image: '/images/blog/cover/celebrate-dark.webp'
 category: 'Sustainability'
 author: 'Severin Glaser'
 keywords: ['sustainable web design', 'sustainable design', 'web design principles 2021', 'eco friendly website']
