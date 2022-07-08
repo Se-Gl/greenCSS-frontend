@@ -162,7 +162,7 @@ const Sponsor = () => {
         <GreenButton
           id='donate-button'
           onClick={createIndividualCheckOutSession}
-          isdisabled={!individualAmount >= 1 && !individualAmount < 1000000}
+          isdisabled={individualAmount <= 0 || individualAmount >= 1000000 ? true : false}
           isOutline={true}
           type='submit'
           className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${

@@ -31,10 +31,12 @@ export default function MemberChart({ chartData }) {
         <dl className='w-30rem'>
           <dd
             title={`your contribution ${percentc.toFixed(2)}%`}
-            className={`w-${percentc <= 3 ? '3' : Math.round(percentc)}per bg-blue h-20px mt-10px`}></dd>
+            className='bg-blue h-20px mt-10px'
+            style={{ width: `${percentc <= 3 ? '3' : Math.round(percentc)}%` }}></dd>
           <dd
             title={`greenCSS community ${percenta.toFixed(2)}%`}
-            className={`w-${Math.round(percenta)}per bg-green h-20px my-10px`}></dd>
+            className='bg-green h-20px my-10px'
+            style={{ width: `${Math.round(percenta)}% ` }}></dd>
         </dl>
       </div>
     </div>
