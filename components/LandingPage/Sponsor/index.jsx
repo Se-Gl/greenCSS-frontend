@@ -166,12 +166,14 @@ const Sponsor = () => {
           isOutline={true}
           type='submit'
           className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
-            !individualAmount >= 1 && !individualAmount < 1000000
+            individualAmount <= 0 || individualAmount >= 1000000
               ? 'bg-gray-5 border-none cursor-not-allowed'
               : 'bg-black'
           }`}
           isDefault={false}>
-          {individualAmount <= 0 ? 'donate' : `donate ${individualAmount}$`}
+          {individualAmount <= 0 || individualAmount >= 1000000
+            ? 'Enter a valid amount'
+            : `donate ${individualAmount}$`}
         </GreenButton>
       </ModernCard>
 

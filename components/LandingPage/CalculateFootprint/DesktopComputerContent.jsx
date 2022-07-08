@@ -82,7 +82,7 @@ export default function DesktopComputerContent() {
             />
           </div>
         ) : (
-          <div className='opacity-33per min-w-80px absolute left-48per' style={{ top: '212%' }}>
+          <div className='opacity-33per min-w-80px absolute left-48per' style={{ top: '240%' }}>
             <div className='absolute z-10 fade-in animation-duration-500ms'>
               <Loader />
               <span className='text-black-10 text-center ml-neg-30px'>Waiting for your input</span>
