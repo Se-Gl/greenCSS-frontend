@@ -1,6 +1,10 @@
 name: Cypress Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
 
 jobs:
   cypress-run:
@@ -14,5 +18,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: npm install --legacy-peer-deps, npm run build
-          start: npm install --legacy-peer-deps, npm start
+          build: npm run build
+          start: npm start
