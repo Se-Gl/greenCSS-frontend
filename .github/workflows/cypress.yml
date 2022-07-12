@@ -14,6 +14,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          cmd: npm install --force
+          install: npm install --force
           build: npm run build
           start: npm start
