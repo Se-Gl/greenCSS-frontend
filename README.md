@@ -244,3 +244,4 @@ sass/
 - [Map Tile](https://wiki.openstreetmap.org/wiki/Tile_servers)
 - [ImageRenderer](https://amirardalan.com/blog/use-next-image-with-react-markdown)
 - [Navigation](https://github.com/gurhanalan/React-StripeNavbar-Component)
+- [Semantic Version](https://dev.to/amalv/how-to-setup-semantic-release-for-a-react-app-or-a-next-js-app-25c1)
