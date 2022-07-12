@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: npm install --force
     - name: Install semantic-release extra plugins
-      run: npm install --force --save-dev @semantic-release/changelog @semantic-release/git        
+      run: npm install --save-dev @semantic-release/changelog @semantic-release/git        
     - name: Release
       env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
