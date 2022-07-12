@@ -1,7 +1,8 @@
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import { useState } from 'react'
 import remarkGfm from 'remark-gfm'
-import { usePalette } from 'react-palette'
+import { FastAverageColor } from 'fast-average-color'
 import { BackButton } from '@/components/reusable/Button'
 import Loader from '@/components/logo/Loader'
 import { HeadingRenderer, LinkRenderer, CodeRenderer, ImageRenderer } from '@/utils/ElementRenderer'
@@ -36,8 +37,19 @@ export default function SlugComponent({
   categories,
   plainText
 }) {
-  const { data } = usePalette(cover_image)
-  const vibrantColor = data.vibrant
+  const [shadow, setShadow] = useState('')
+  const fac = new FastAverageColor()
+
+  fac
+    .getColorAsync(cover_image, {
+      ignoredColor: [[255, 0, 100, 255, 5]]
+    })
+    .then((color) => {
+      setShadow(color.hex)
+    })
+    .catch((e) => {
+      console.log(e)
+    })
 
   return (
     <div className={`grid grid-col-12 gap-30px ${isBlog === true && 'mx-auto'}`}>
@@ -70,7 +82,7 @@ export default function SlugComponent({
           {isBlog === false ? null : (
             <div
               className='relative h-50rem rounded-20px overflow-hidden mb-50px'
-              style={{ boxShadow: `5px 5px 10px -1px ${vibrantColor}` }}>
+              style={{ boxShadow: `5px 5px 10px -1px ${shadow}` }}>
               <Image
                 quality={100}
                 layout='fill'
