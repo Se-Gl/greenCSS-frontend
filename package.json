@@ -14,7 +14,7 @@
     "prettier": "prettier ./**/*.{js,jsx,ts,tsx,css,scss,md,json} --config ./.prettierrc.json --write",
     "cache": "node lib/cache.js && node lib/cacheBlogSitemap.js && node lib/cacheDocSitemap.js",
     "purgecss": "purgecss --config ./purgecss.config.js echo \n\n\n🏋️  Purge successful. 🏋️",
-    "success-message": "echo 🚀  Everything is awesome. 🚀...🖥️  Auto checking completed, ready to deploy.🖥️...☁️  Run: git push ☁️ \n\n\n\n",
+    "success-message": "echo 🚀 Everything is awesome. 🚀...🖥️  Auto checking completed, ready to deploy.🖥️...☁️  Run: git push ☁️ \n\n\n\n",
     "pre-deployment": "npm run cypress:run && npx update-badge && npm run prettier && npm run lint --fix",
     "pre-commit": "npm run prettier && npm run lint --fix && npm run cache && npm run purgecss && git add -A . && npm run success-message"
   },
@@ -23,6 +23,7 @@
     "@stripe/stripe-js": "^1.32.0",
     "@uiw/react-md-editor": "^3.14.5",
     "axios": "^0.27.2",
+    "fast-average-color": "^9.1.1",
     "gray-matter": "^4.0.3",
     "mapbox-gl": "^2.9.1",
     "next": "^12.2.2",
@@ -31,7 +32,6 @@
     "react-dom": "^18.2.0",
     "react-map-gl": "^7.0.17",
     "react-markdown": "^8.0.3",
-    "react-palette": "^1.0.2",
     "react-select": "^5.4.0",
     "react-syntax-highlighter": "^15.5.0",
     "rehype-sanitize": "^5.0.1",
@@ -42,10 +42,12 @@
     "xss": "^1.0.13"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@cypress/code-coverage": "^3.10.0",
     "babel-plugin-istanbul": "^6.1.1",
     "check-code-coverage": "^1.10.0",
-    "cypress": "^10.3.0",
+    "cypress": "^9.7.0",
     "eslint": "^8.19.0",
     "eslint-config-next": "^12.2.2",
     "eslint-config-prettier": "^8.5.0",
@@ -55,6 +57,7 @@
     "prettier": "^2.7.1",
     "purgecss": "^4.1.3",
     "sass": "^1.53.0",
+    "semantic-release": "^19.0.3",
     "start-server-and-test": "^1.14.0"
   },
   "nyc": {
