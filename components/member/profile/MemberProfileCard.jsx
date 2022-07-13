@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { GreenButton } from '@/components/reusable/Button'
-import MemberChart from 'pages/member/MemberChart'
+import MemberChart from '@/components/member/MemberChart'
 import { UserContext } from '@/utils/SubscriptionContext'
 import ModernCard from '@/components/reusable/ModernCard'
 import { calculateMonths } from '@/utils/calculateMonths'
