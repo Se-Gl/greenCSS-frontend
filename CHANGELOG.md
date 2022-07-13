@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.1.0...v1.1.1) (2022-07-13)
+
+
+### Performance Improvements
+
+* **re-design:** prepared repo for v2, deleted google analytics ([#6](https://github.com/Se-Gl/greenCSS-frontend/issues/6)) ([53531ec](https://github.com/Se-Gl/greenCSS-frontend/commit/53531ec19a98e2103c88c929f822beb0af5367b0))
+
 # [1.1.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.0.0...v1.1.0) (2022-07-12)
 
 ### Bug Fixes
