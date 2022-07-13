@@ -24,7 +24,7 @@ export default function BlogPostPage({
       url={`blog/${slug}`}
       keywords={`${category}, ${seoKeywords}, greenCSS, css, green css`}
       author={author}>
-      <Layout className='flex container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
+      <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
         <DevelopmentToClipboard content={content} />
         <SlugComponent
           title={title}

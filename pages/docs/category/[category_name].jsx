@@ -20,7 +20,7 @@ export default function DocsCategorySlugPage({ posts, categoryName, categories }
       description={`greenCSS documentation - get an overview about the category ${categoryName}, its css classes and how to apply them.`}
       url={`docs/category/${categoryName}`}
       keywords='docs, documentation, information, search, css'>
-      <Layout className='flex container sm:px-10px md:px-25px lg:px-50px min-h-100vh mb-10rem'>
+      <Layout className='flex sm:px-10px md:px-25px lg:px-50px min-h-100vh mb-10rem'>
         <div className='grid grid-col-12 gap-30px'>
           <div
             className='overflow-y-scroll sticky max-h-75vh col-span-3 sm:display-none md:display-none mb-50px'

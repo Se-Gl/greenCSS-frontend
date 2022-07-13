@@ -53,7 +53,7 @@ function ResetPassword({ router }) {
       description='Check your current green state. Decide independently where your donations go.'
       url={`member/reset/${router.query.id}`}
       keywords='member, forgot password, reset password'>
-      <Layout className='container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
+      <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
         <ModernGrid
           id='reset-password'
           header='Change your password? Reset it right away.'

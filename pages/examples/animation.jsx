@@ -12,7 +12,7 @@ export default function AnimationPage() {
       description='Explore the range of animations. Enter your preferred animation, the animation duration and the animation type.'
       url='docs/animation/example'
       keywords='Animation, css animation, reusable animation, green css'>
-      <Layout className='flex container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
+      <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
         <div className='mb-10rem min-w-100per relative'>
           <BackButton>Back</BackButton>
           <div className='m-auto max-w-60rem'>

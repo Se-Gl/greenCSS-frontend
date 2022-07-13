@@ -6,7 +6,6 @@ import { getPosts } from '@/lib/posts'
 import SideBar from '@/components/category/SideBar'
 import { sortAlphabetically } from '@/utils/SortBy'
 import SEO from '@/components/reusable/SEO'
-import CodeSyntax from '@/components/markdown/CodeSyntax'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 const SyntaxComponent = dynamic(() => import('@/components/markdown/SyntaxComponent'))
@@ -36,7 +35,7 @@ export default function DocsCategoryPage({ categories, posts }) {
       description='Docs - the right way to get to know the greenCSS by browsing the documentation. Search by categories. Get to know greenCSS and start writing design.'
       url='docs'
       keywords='docs, documentation, information, search, css'>
-      <Layout>
+      <Layout className='sm:px-10px md:px-25px lg:px-50px bg-gray-9'>
         <div className='grid grid-col-12 gap-30px'>
           <div
             className='overflow-y-scroll sticky max-h-75vh col-span-3 sm:display-none md:display-none mb-50px'

@@ -12,7 +12,7 @@ export default function stripeCancel() {
       keywords='membership, green software, pricing'
       description='greenCSS membership Payment - error.'
       url='/stripe/cancel'>
-      <Layout className='container min-h-100vh relative z-2'>
+      <Layout className='min-h-100vh relative z-2 bg-red-7'>
         <ModernGrid
           header='Oops! - Please forgive me!'
           subheader='Something has gone wrong. Please try again later or log in again.'

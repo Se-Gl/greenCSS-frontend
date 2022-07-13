@@ -116,7 +116,7 @@ export default function UserUpdate() {
         description='Update your name, email, password or favorite country.'
         url={`member/${userprofileUrl}`}
         keywords='member, donation, green software, sustainable software'>
-        <Layout className='container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
+        <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh bg-blue-7'>
           {isAuth && (
             <ModernGrid
               id='contact-index'

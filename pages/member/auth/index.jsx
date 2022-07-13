@@ -32,7 +32,7 @@ export default function Auth() {
   }, [])
 
   return (
-    <Layout className='container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
+    <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
       <div className='my-50px grid grid-col-2 gap-30px sm:gap-0px sm:grid-col-1 md:grid-col-1 max-h-40vh'>
         {auth &&
           allUsers.map((user, index) => (

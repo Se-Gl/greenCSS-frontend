@@ -5,7 +5,7 @@ import SubMenu from './SubMenu'
 
 export default function Header() {
   return (
-    <div className='w-100vw bg-white'>
+    <div className='w-100vw bg-transparent'>
       <div className='container'>
         <Navbar />
         <SubMenu />

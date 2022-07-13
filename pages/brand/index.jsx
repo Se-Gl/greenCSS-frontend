@@ -31,7 +31,7 @@ export default function BrandHome() {
       description='A Brand Book - the right way to get to know a story by exploring a style guide.'
       url='brand'
       keywords='Styleguide, Brand Book, greenCSS, Design, Corporate Identity, green css'>
-      <Layout className='flex container sm:px-10px md:px-25px lg:px-50px min-h-100vh mb-10rem'>
+      <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh mb-10rem bg-blue-7'>
         <div className='min-w-100per relative' id='brand-intro'>
           <ModernGrid
             header='A Brand Book - the right way to get to know the core of the box'

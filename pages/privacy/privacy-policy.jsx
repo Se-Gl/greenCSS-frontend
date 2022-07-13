@@ -11,7 +11,7 @@ export default function privacyPolicy() {
       keywords='privacy, cookies, tracker, fairness, guideline'
       description='Privacy Policies should any information about our best practices. We inform how your data is processed.'
       url='/privacy/privacy-policy'>
-      <Layout className='container min-h-100vh relative z-2'>
+      <Layout className='min-h-100vh relative z-2 bg-magenta-7'>
         <Policy />
       </Layout>
     </SEO>

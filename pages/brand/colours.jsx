@@ -14,7 +14,7 @@ export default function colours() {
       description='The brand system features four core elements - colours'
       url='brand/colours'
       keywords='Colours, brand color, Styleguide, Brand Book, greenCSS, Design, Corporate Identity'>
-      <Layout className='flex container sm:px-10px md:px-25px lg:px-50px min-h-100vh mb-10rem'>
+      <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh mb-10rem'>
         <div className='min-w-100per relative' id='brand-colour-page'>
           <BackButton className='mb-50px'>Back</BackButton>
           <div className='mb-10rem'>

@@ -48,7 +48,7 @@ export default function ModernCard({
       ) : (
         imageUrl && (
           <div
-            className={`overflow-hidden col-span-6 flex mx-0px bg-${imageBg} rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px shadow-small-${imageBg}-5`}>
+            className={`overflow-hidden col-span-6 flex mx-0px bg-${imageBg} rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px shadow-small-gray`}>
             <div className='relative min-h-33vh sm:h-25vh md:h-25vh w-100per'>
               <Image
                 quality={100}
@@ -72,7 +72,7 @@ export default function ModernCard({
       {!isRevert ? (
         imageUrl && (
           <div
-            className={`overflow-hidden col-span-6 sm:row-start-1 md:row-start-1 flex mx-0px bg-${imageBg} rounded-right-radius-20px sm:rounded-bottom-radius-0px md:rounded-bottom-radius-0px sm:rounded-top-radius-20px md:rounded-top-radius-20px shadow-small-${imageBg}-5 sm:shadow-small-transparent md:shadow-small-transparent`}>
+            className={`overflow-hidden col-span-6 sm:row-start-1 md:row-start-1 flex mx-0px bg-${imageBg} rounded-right-radius-20px sm:rounded-bottom-radius-0px md:rounded-bottom-radius-0px sm:rounded-top-radius-20px md:rounded-top-radius-20px shadow-small-gray sm:shadow-small-transparent md:shadow-small-transparent`}>
             <div className='relative min-h-33vh sm:h-25vh md:h-25vh w-100per'>
               <Image
                 quality={100}

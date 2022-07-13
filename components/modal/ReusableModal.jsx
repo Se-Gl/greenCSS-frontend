@@ -19,7 +19,9 @@ export default function ReusableModal({ isSidebar, isHero }) {
   }, [])
   return (
     <>
-      {isHero === true && <SearchBar setShowModal={() => setShowModal(true)} className='bg-white' />}
+      {isHero === true && (
+        <SearchBar setShowModal={() => setShowModal(true)} className='bg-transparent' isHero={true} />
+      )}
       <Modal onClose={() => setShowModal(false)} show={showModal}></Modal>
       {isSidebar === true && (
         <div className='sticky top-0per z-2'>

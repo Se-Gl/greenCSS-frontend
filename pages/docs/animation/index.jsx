@@ -12,7 +12,7 @@ export default function AnimationIndexPage() {
       description='The collaboration of design and code plays an important role, especially in web development. Check the full selection, including animation examples.'
       url='docs/animation'
       keywords='Animation, handmade css animation, reusable animation, green css'>
-      <Layout className='flex container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
+      <Layout className='flex sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
         <div id='animation-main'>
           <ModernGrid
             header='Handmade, crafted animations'

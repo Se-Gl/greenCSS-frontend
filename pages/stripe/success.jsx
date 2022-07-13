@@ -44,7 +44,7 @@ export default function stripeSuccess() {
         keywords='membership, green software, pricing'
         description='greenCSS membership Payment - success.'
         url='/stripe/success'>
-        <Layout className='container min-h-100vh relative z-2'>
+        <Layout className='min-h-100vh relative z-2 bg-blue-7'>
           <div className='flex h-100vh w-100per overflow-hidden bg-white'>
             <div className='m-auto'>
               <Loader />
