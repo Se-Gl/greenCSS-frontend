@@ -8,14 +8,12 @@ require('@/styles/globals.scss')
 import Progress from '@/components/progress/Progress'
 import { ToastProvider } from '@/components/toast/context/ToastContext'
 import ToastContainer from '@/components/toast/ToastContainer'
-import Google from '@/components/analytics/Google'
 import { NavProvider } from '@/utils/NavContext'
 import { UserProvider } from '@/utils/SubscriptionContext'
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      {process.env.NODE_ENV === 'production' && <Google />}
       <UserProvider>
         <NavProvider>
           <Progress />
