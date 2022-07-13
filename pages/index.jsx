@@ -19,7 +19,7 @@ export default function HomePage({ posts }) {
   return (
     <SEO>
       <div className='overflow-x-hidden'>
-        <Layout className='min-h-100vh relative z-2 bg-yellow'>
+        <Layout className='min-h-100vh relative z-2 bg-yellow-7'>
           <DonationProvider>
             {/* <div className='container'> */}
             <Hero />
