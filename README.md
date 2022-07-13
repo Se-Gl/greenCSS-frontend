@@ -94,51 +94,61 @@ Keeping the architecture consistent and meaningful is even more of a challenge.
 
 A common and effective modular method for structuring Sass projects is the 7-1 pattern. This approach will be used in the development process of this project.
 
-A possible structure could look as follows _(as of April 2022)_
+A possible structure could look as follows _(as of July 2022)_
 
 ```txt
 sass/
 |
 |– abstracts/
 |   |– _variables.scss    # Basic Project Variables
-|   |– _animations.scss   # Basic Project Animations
 |   |– _font.scss         # Font Related Files
 |   |– _color.scss        # Colour Mixins
-|   |– _mixins.scss       # Sass Mixins
 |   |– _index.scss        # Sass Index File
-|
-|– vendors/
-|   |– _index.scss        # 3rd Party Solutions
 |
 |– base/
 |   |– _reset.scss        # Reset/normalize
-|   |– _typography.scss   # Typography Rules
-|   |– _index.scss        # Sass Index File
-|
-|– layout/
-|   |– _utilities.scss    # Margin, Padding, Opacity
-|   |– _navigation.scss   # Navigation
-|   |– _grid.scss         # Grid System
-|   |– _header.scss       # Header
-|   |– _footer.scss       # Footer
 |   |– _index.scss        # Sass Index File
 |
 |– components/
+|   |– _animation.scss    # Animations
 |   |– _buttons.scss      # Buttons
-|   |– _carousel.scss     # Carousel
-|   |– _cards.scss        # Cards
+|   |– _input.scss        # Input
+|   |– _markdown.scss     # Markdown
+|   |– _modal.scss        # Modal
+|   |– _nav.scss          # Nav
+|   |– _slider.scss       # Range Slider
+|   |– _toast.scss        # Toast
+|   |– _index.scss        # Sass Index File
+|
+|– layout/
 |   |– _index.scss        # Sass Index File
 |
 |– pages/
+|   |– _brand.scss        # Custom Brand Styles
+|   |– _landing.scss      # Custom Landing Page Styles
 |   |– _index.scss        # Custom Page Styles
 |
 |– themes/
-|   |– _theme.scss        # Default Theme
-|   |– _dark.scss         # Dark Mode
 |   |– _index.scss        # Sass Index File
+|
+|– vendors/
+|   |– _leaflet.scss      # Leaflet addition
+|   |– _index.scss        # 3rd Party Solutions
 |
  – globals.scss              # Main Sass Input File
 ```
+
+## Contribute
+
+Check the [contributing file](/.github/contributing.md) for more details.
+
+1. Fork the repo and create your branch from `main`.
+2. If you've added code that should be tested, add tests.
+3. If you've changed APIs or added new dependencies, update the documentation.
+4. Ensure the test suite passes.
+5. Make sure your code lints.
+6. Use semantic versioning for commits.
+7. Issue a pull request!
 
 ### Basic Frontend Libraries
 
@@ -158,7 +168,7 @@ sass/
 | [@sendgrid/mail](https://www.npmjs.com/package/@sendgrid/mail)                     | ![GitHub stars](https://img.shields.io/github/stars/sendgrid/sendgrid-nodejs.svg?label=%F0%9F%8C%9F)              | [![Bundle size](https://badgen.net/bundlephobia/minzip/@sendgrid/mail?label=%F0%9F%92%BE)](https://bundlephobia.com/result?p=@sendgrid/mail)                     | ✅         | ✅        |
 | [remark-gfm](https://www.npmjs.com/package/remark-gfm)                             | ![GitHub stars](https://img.shields.io/github/stars/remarkjs/remark-gfm.svg?label=%F0%9F%8C%9F)                   | [![Bundle size](https://badgen.net/bundlephobia/minzip/remark-gfm?label=%F0%9F%92%BE)](https://bundlephobia.com/package/remark-gfm)                              | ✅         | ✅        |
 | [axios](https://www.npmjs.com/package/axios)                                       | ![GitHub stars](https://img.shields.io/github/stars/axios/axios.svg?label=%F0%9F%8C%9F)                           | [![Bundle size](https://badgen.net/bundlephobia/minzip/axios?label=%F0%9F%92%BE)](https://bundlephobia.com/package/axios)                                        | ✅         | ✅        |
-| [@stripe/stripe-js](https://www.npmjs.com/package/@stripe/stripe-js)               | ![GitHub stars](https://img.shields.io/github/stars/@stripe/stripe-js.svg?label=%F0%9F%8C%9F)                     | [![Bundle size](https://badgen.net/bundlephobia/minzip/@stripe/stripe-js?label=%F0%9F%92%BE)](https://bundlephobia.com/package/@stripe/stripe-js)                | ✅         | ✅        |
+| [@stripe/stripe-js](https://www.npmjs.com/package/@stripe/stripe-js)               | ![GitHub stars](https://img.shields.io/github/stars/stripe/stripe-js.svg?label=%F0%9F%8C%9F)                      | [![Bundle size](https://badgen.net/bundlephobia/minzip/@stripe/stripe-js?label=%F0%9F%92%BE)](https://bundlephobia.com/package/@stripe/stripe-js)                | ✅         | ✅        |
 | [stripe](https://www.npmjs.com/package/stripe)                                     | ![GitHub stars](https://img.shields.io/github/stars/stripe/stripe-node.svg?label=%F0%9F%8C%9F)                    | [![Bundle size](https://badgen.net/bundlephobia/minzip/stripe?label=%F0%9F%92%BE)](https://bundlephobia.com/package/stripe)                                      | ✅         | ✅        |
 | [mapbox-gl](https://www.npmjs.com/package/mapbox-gl)                               | ![GitHub stars](https://img.shields.io/github/stars/mapbox/mapbox-gl-js.svg?label=%F0%9F%8C%9F)                   | [![Bundle size](https://badgen.net/bundlephobia/minzip/mapbox-gl?label=%F0%9F%92%BE)](https://bundlephobia.com/result?p=mapbox-gl)                               | ✅         | ✅        |
 | [react-map-gl](https://www.npmjs.com/package/react-map-gl)                         | ![GitHub stars](https://img.shields.io/github/stars/visgl/react-map-gl.svg?label=%F0%9F%8C%9F)                    | [![Bundle size](https://badgen.net/bundlephobia/minzip/react-map-gl?label=%F0%9F%92%BE)](https://bundlephobia.com/result?p=react-map-gl)                         | ✅         | ✅        |
@@ -186,55 +196,37 @@ sass/
 
 ### Sources
 
-| Illustrations |                                                                                                                                                        |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| title         | design-thinking 1 / Coding 1 / bring-solutions-to-problems / Searching / Newsletter / protect-privacy / Virtual-reality 1 / office-desk / get-inspired |
-| source        | [Figma](https://www.figma.com/community/file/1071151296679851124)                                                                                      |
-| author        | [Streamline](https://www.figma.com/@05466272_9382_4)                                                                                                   |
-| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                                                                                               |
-| changes       | Changes were made to the fill- colours, added blob.                                                                                                    |
-| ----------    | ------------------------------------                                                                                                                   |
-| title         | Organic Elements Free Set                                                                                                                              |
-| source        | [Figma](https://www.figma.com/community/file/1085558998688071580/Organic-Elements-Free-Set)                                                            |
-| author        | [Streamline](https://www.figma.com/@05466272_9382_4)                                                                                                   |
-| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                                                                                               |
-| changes       | Changes were made to the fill- colours, moved and merged different illustartions.                                                                      |
-| ----------    | ------------------------------------                                                                                                                   |
-| title         | Leaf Illustration                                                                                                                                      |
-| source        | [Figma](https://www.figma.com/community/file/943843409604246251/Leaf-Illustration)                                                                     |
-| author        | [seda](https://www.figma.com/@seda)                                                                                                                    |
-| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                                                                                               |
-| changes       | Changes were made to the fill- colours, line & shadow adjustments.                                                                                     |
-| ----------    | ------------------------------------                                                                                                                   |
-| title         | Ruri – Artwork Generator                                                                                                                               |
-| source        | [Figma](https://www.figma.com/community/plugin/912763956481263896)                                                                                     |
-| author        | [waynedahlberg](https://www.figma.com/@waynedahlberg)                                                                                                  |
-| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                                                                                               |
-| changes       | Colors may change in order to preserve the brand identity                                                                                              |
-| ----------    | ------------------------------------                                                                                                                   |
-| title         | iOS 15 Status Bar                                                                                                                                      |
-| source        | [Figma](https://www.figma.com/community/file/904065746347450024/iOS-15-Status-Bar)                                                                     |
-| author        | [KB](https://www.figma.com/@klavs)                                                                                                                     |
-| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                                                                                               |
-| changes       | Changes were made to the background, resized illustration and adjusted colours                                                                         |
-| ----------    | ------------------------------------                                                                                                                   |
-| title         | MacBook-Pro-2021-Free-Figma-Mockups-BRIX-Templates-Community                                                                                           |
-| source        | [Figma](https://www.figma.com/community/file/1085600632685733875)                                                                                      |
-| author        | [BRIX Templates](https://www.figma.com/@brixtemplates)                                                                                                 |
-| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                                                                                               |
-| changes       | N/A                                                                                                                                                    |
-| ----------    | ------------------------------------                                                                                                                   |
-| title         | iPhone 12 Mockup (Community)                                                                                                                           |
-| source        | [Figma](https://www.figma.com/community/file/1108394705564103291)                                                                                      |
-| author        | [Jagdish Vavdiya](https://www.figma.com/@jagdish1242)                                                                                                  |
-| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                                                                                               |
-| changes       | Changes were made to the background                                                                                                                    |
-| ----------    | ------------------------------------                                                                                                                   |
-| title         | Financial Tech Landing Page                                                                                                                            |
-| source        | [Figma](https://www.figma.com/community/file/1110497789171535089)                                                                                      |
-| author        | [Ilham Meidi](https://www.figma.com/@ilhammeidi)                                                                                                       |
-| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                                                                                               |
-| changes       | Used light background for desktop inspiration                                                                                                          |
+| Illustrations |                                                                                    |
+| ------------- | ---------------------------------------------------------------------------------- |
+| title         | Leaf Illustration                                                                  |
+| source        | [Figma](https://www.figma.com/community/file/943843409604246251/Leaf-Illustration) |
+| author        | [seda](https://www.figma.com/@seda)                                                |
+| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
+| changes       | Changes were made to the fill- colours, line & shadow adjustments.                 |
+| ----------    | ------------------------------------                                               |
+| title         | iOS 15 Status Bar                                                                  |
+| source        | [Figma](https://www.figma.com/community/file/904065746347450024/iOS-15-Status-Bar) |
+| author        | [KB](https://www.figma.com/@klavs)                                                 |
+| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
+| changes       | Changes were made to the background, resized illustration and adjusted colours     |
+| ----------    | ------------------------------------                                               |
+| title         | MacBook-Pro-2021-Free-Figma-Mockups-BRIX-Templates-Community                       |
+| source        | [Figma](https://www.figma.com/community/file/1085600632685733875)                  |
+| author        | [BRIX Templates](https://www.figma.com/@brixtemplates)                             |
+| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
+| changes       | N/A                                                                                |
+| ----------    | ------------------------------------                                               |
+| title         | iPhone 12 Mockup (Community)                                                       |
+| source        | [Figma](https://www.figma.com/community/file/1108394705564103291)                  |
+| author        | [Jagdish Vavdiya](https://www.figma.com/@jagdish1242)                              |
+| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
+| changes       | Changes were made to the background                                                |
+| ----------    | ------------------------------------                                               |
+| title         | Financial Tech Landing Page                                                        |
+| source        | [Figma](https://www.figma.com/community/file/1110497789171535089)                  |
+| author        | [Ilham Meidi](https://www.figma.com/@ilhammeidi)                                   |
+| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
+| changes       | Used light background for desktop inspiration                                      |
 
 ### Ideas & Inspiration
 
@@ -247,4 +239,3 @@ sass/
 - [Map Tile](https://wiki.openstreetmap.org/wiki/Tile_servers)
 - [ImageRenderer](https://amirardalan.com/blog/use-next-image-with-react-markdown)
 - [Navigation](https://github.com/gurhanalan/React-StripeNavbar-Component)
-- [Semantic Version](https://dev.to/amalv/how-to-setup-semantic-release-for-a-react-app-or-a-next-js-app-25c1)

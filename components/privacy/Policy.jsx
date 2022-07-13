@@ -13,10 +13,7 @@ export default function Policy() {
       />
       <div className='bg-white px-25px py-50px rounded-50px shadow-small-gray'>
         <h1>Privacy Policy for greenCSS</h1>
-        <p>
-          The website is hosted on Vercel, it uses the Vercel analytics tool, Google analytics and additionally posthog
-          - an open source project.
-        </p>
+        <p>The website is hosted on Vercel, it may use various analytics tool.</p>
         <p>
           At greenCSS, accessible from www.greencss.dev, one of our main priorities is the privacy of our visitors. This
           Privacy Policy document contains types of information that is collected and recorded by greenCSS and how we

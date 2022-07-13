@@ -32,8 +32,8 @@ export default function Cookies() {
               <p className='text-15px text-black-10'>
                 Click “Accept” to enable greenCSS to use cookies in order to personalize this site for you. In this
                 process you agree to the storing of cookies and/or data in your local storage. You agree, that we use
-                google analytics to enhance site navigation and analyze site usage. It helps us to improve the UI/UX
-                experience for you.
+                analytics to enhance site navigation and analyze site usage. It helps us to improve the UI/UX experience
+                for you.
               </p>
               <>
                 <GreenButton onClick={cookie} id='close-cookie'>
