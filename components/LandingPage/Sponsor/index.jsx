@@ -78,7 +78,8 @@ const Sponsor = () => {
       isRevert: ceiledPrice ? true : false,
       header: 'Plus+',
       subheader:
-        'If you want to be conscientious, the best solution is a one-time plus+ amount. Alternatively, as a member you can conveniently choose monthly subscriptions to support our earth and greenCSS. With your contribution, around 250 kilograms of CO2 can be compensated. We thank you in advance for a donation of $10USD.',
+        'If you want to be conscientious, the best solution is a one-time plus+ amount. With your contribution, around 250 kilograms of CO2 can be compensated. We thank you in advance for a donation of $10USD. Alternatively, you can register as a member and comfortably arrange an automatic monthly subscription.',
+      price: '$10/once',
       amount: 10,
       imageBg: 'turquoise',
       imageUrl: '/images/landingpage/donation/tier-1.webp',
@@ -89,7 +90,8 @@ const Sponsor = () => {
       isRevert: ceiledPrice ? false : true,
       header: 'Premium',
       subheader:
-        'You are a passionate visionary - besides your emissions, you want to do more for the environment. Alternatively, as a member you can conveniently choose monthly subscriptions to support our earth and greenCSS. With your contribution, around 600 kilograms of CO2 can be compensated. We thank you in advance for a donation of $25USD.',
+        'You are a passionate visionary - besides your emissions, you want to do more for the environment. With your contribution, around 600 kilograms of CO2 can be compensated. We thank you in advance for a donation of $25USD. Alternatively, you can register as a member and comfortably arrange an automatic monthly subscription.',
+      price: '$25/once',
       amount: 25,
       imageBg: 'orange',
       imageUrl: '/images/landingpage/donation/tier-2.webp',
@@ -100,7 +102,8 @@ const Sponsor = () => {
       isRevert: ceiledPrice ? true : false,
       header: 'Community',
       subheader:
-        'You are an all-rounder - in addition to your emission, you want to return more than just a piece. Alternatively, as a member you can conveniently choose monthly subscriptions to support our earth and greenCSS. With your contribution, almost 2 tonnes of CO2 can be compensated. We thank you in advance for a donation of $100USD. ',
+        'You are an all-rounder - in addition to your emission, you want to return more than just a piece. With your contribution, almost 2 tonnes of CO2 can be compensated. We thank you in advance for a donation of $100USD. Alternatively, you can register as a member and comfortably arrange an automatic monthly subscription.',
+      price: '$100/once',
       amount: 100,
       imageBg: 'magenta',
       imageUrl: '/images/landingpage/donation/tier-3.webp',
