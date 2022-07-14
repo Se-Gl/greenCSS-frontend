@@ -38,7 +38,7 @@ export default function forgotPasswordPage() {
       description='Did you forgot your passowrd? Reset your password here.'
       url='member/forgot-password'
       keywords='member, forgot password, reset password'>
-      <Layout className='container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
+      <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh bg-purple-7'>
         <ModernGrid
           id='forgot-password'
           header='Let`s change your password - No problem!'

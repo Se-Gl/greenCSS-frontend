@@ -4,24 +4,14 @@ import ModernCard from '@/components/reusable/ModernCard'
 export default function Service() {
   const nutshellCard = [
     {
-      header: 'Animated',
-      subheader:
-        'Pure CSS animations work with vanilla HTML or with any web framework - from JavaScript over Python and even PHP.',
-      imageBg: 'black',
-      imageUrl: '/images/landingpage/service/animated-greencss.webp',
-      imageAlt: 'greencss animated card',
-      isRevert: false,
-      animation: 'fade-in-left animation-duration-500ms animation-forwards'
-    },
-    {
       header: 'Responsive',
       subheader:
         'Design your website for all users, whether desktop, laptop, tablet or smartphone. Comfortably and intuitively and easy to learn - like bulma or tailwindcss but for everyone.',
       imageBg: 'blue',
       imageUrl: '/images/landingpage/service/responsive-greencss.webp',
       imageAlt: 'greencss responsive card',
-      isRevert: true,
-      animation: 'fade-in-right animation-duration-500ms animation-forwards'
+      isRevert: false,
+      animation: 'fade-in-left animation-duration-500ms animation-forwards'
     },
     {
       header: 'Competitive',
@@ -30,51 +20,34 @@ export default function Service() {
       imageBg: 'magenta',
       imageUrl: '/images/landingpage/service/competitive-greencss.webp',
       imageAlt: 'greencss competitive card',
-      isRevert: false,
-      animation: 'fade-in-left animation-duration-500ms animation-forwards'
-    },
-    {
-      header: 'Plant Trees',
-      subheader:
-        'Programming and climate protection should be coherent. So far, little or no importance has been given to this issue. The primary goal of greenCSS is to reduce carbon emissions. For this reason, the majority of donations will be used to plant trees.',
-      imageBg: 'green',
-      imageUrl: '/images/member/signup-green.webp',
-      imageAlt: 'greencss plant trees card',
-      isRevert: true,
-      animation: 'fade-in-right animation-duration-500ms animation-forwards'
-    },
-    {
-      header: 'Water Refine',
-      subheader:
-        'Reducing carbon is the primary goal. Another important goal is to provide access to water. We from greenCSS believe that every human deserves to have water.  Therefore, in the future, we want donations to support water refineries.',
-      imageBg: 'turquoise',
-      imageUrl: '/images/landingpage/service/water-greencss.webp',
-      imageAlt: 'greencss water drop card',
-      isRevert: false,
-      animation: 'fade-in-left animation-duration-500ms animation-forwards'
-    },
-    {
-      header: 'Clean Energy',
-      subheader:
-        'A third goal for the future will be to invest and donate in sustainable energy. This is the only way to ensure that the CO2 limit can be effectively reduced in the long term.',
-      imageBg: 'purple',
-      imageUrl: '/images/landingpage/service/energy-greencss.webp',
-      imageAlt: 'greencss green energy card',
       isRevert: true,
       animation: 'fade-in-right animation-duration-500ms animation-forwards'
     }
   ]
   return (
-    <Section id='service'>
-      <h2 className='max-w-50per sm:max-w-100per md:max-w-100per'>Our Mission - Save the Programming Planet</h2>
-      <div className='m-auto'>
+    <Section id='service' header='Our Mission - Save the Programming Planet'>
+      <ModernCard
+        animation='fade-in animation-duration-500ms animation-forwards'
+        id='animated'
+        isRevert={false}
+        isFull={true}
+        header='Animated'
+        headerclass='text-white'
+        subheader='Pure CSS animations work with vanilla HTML or with any web framework - from JavaScript over Python and even PHP.'
+        imageBg='black'
+        imageUrl='/images/landingpage/service/animated-greencss.webp'
+        imageAlt='greencss animated card'
+      />
+      <div className='m-auto grid grid-col-2 gap-30px sm:gap-0px sm:grid-col-1 md:grid-col-1'>
         {nutshellCard.sort().map((card, index) => (
           <ModernCard
             key={index}
             animation={card.animation}
             id={`${card.header.toLowerCase()}`}
             isRevert={card.isRevert}
+            isFull={card.isFull}
             header={card.header}
+            headerclass={card.headerclass}
             subheader={card.subheader}
             imageBg={card.imageBg}
             imageUrl={card.imageUrl}

@@ -11,8 +11,10 @@ export default function terms() {
       keywords='tos, Terms of services, terms'
       description='Terms of Services - and you know what to expect from greenCSS'
       url='/privacy/terms'>
-      <Layout className='container min-h-100vh relative z-2 my-50px'>
-        <Terms />
+      <Layout className='min-h-100vh relative z-2 bg-green-7'>
+        <div className='py-50px'>
+          <Terms />
+        </div>
       </Layout>
     </SEO>
   )

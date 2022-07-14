@@ -7,7 +7,6 @@ import { DonationProvider } from '@/utils/DonationContext'
 import SEO from '@/components/reusable/SEO'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
-const Presentation = dynamic(() => import('@/components/LandingPage/Presentation'))
 const Service = dynamic(() => import('@/components/LandingPage/Service'))
 const CalculateFootprint = dynamic(() => import('@/components/LandingPage/CalculateFootprint'))
 const Sponsor = dynamic(() => import('@/components/LandingPage/Sponsor'))
@@ -20,18 +19,17 @@ export default function HomePage({ posts }) {
   return (
     <SEO>
       <div className='overflow-x-hidden'>
-        <Layout className='min-h-100vh relative z-2'>
+        <Layout className='min-h-100vh relative z-2 bg-yellow-7'>
           <DonationProvider>
+            {/* <div className='container'> */}
             <Hero />
-            <div className='container'>
-              <Presentation />
-              <Service />
-              {width >= 1000 && <CalculateFootprint />}
-              <Sponsor />
-              <News posts={posts} />
-              <Testimonial />
-              <Faq />
-            </div>
+            <Service />
+            {width >= 1000 && <CalculateFootprint />}
+            <Sponsor />
+            <News posts={posts} />
+            <Testimonial />
+            <Faq />
+            {/* </div> */}
           </DonationProvider>
         </Layout>
       </div>
@@ -42,7 +40,7 @@ export default function HomePage({ posts }) {
 export async function getStaticProps() {
   return {
     props: {
-      posts: getPosts(sortByDate, 'posts-blog').slice(0, 3)
+      posts: getPosts(sortByDate, 'posts-blog').slice(0, 4)
     }
   }
 }

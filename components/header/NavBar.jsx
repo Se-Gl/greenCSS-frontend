@@ -39,13 +39,15 @@ const Navbar = () => {
             </a>
           </Link>
         </div>
-        <ul className='grid grid-col-3 text-16px'>
+        <ul className='grid grid-col-3 text-15px'>
           {navmenu.map((item, index) => {
             return (
-              <li key={index} onMouseOver={displaySubmenu} className='h-100per flex h-50 justify-center items-center'>
+              <li key={index} onMouseOver={displaySubmenu} className='h-100per flex h-50 items-center'>
                 <Link href={item.path}>
                   <a
-                    className={`map-link text-15px font-400 no-decoration cursor-pointer capitalize pb-15px px-50px mt-15px mb-0px justify-center ${
+                    className={`map-link text-15px font-600 no-decoration cursor-pointer capitalize ${
+                      index === 1 ? 'px-0px' : ''
+                    } pb-15px mt-15px mb-0px ${
                       router.asPath.includes(item.path) ? 'text-greencss font-600' : 'text-black'
                     }`}>
                     {item.title}

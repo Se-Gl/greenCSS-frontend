@@ -11,7 +11,7 @@ export default function cookies() {
       keywords='privacy, cookies, tracker, fairness, delete cookie'
       description="Privacy Policies should include information regarding a website's use of cookies. We inform how your data can be deleted."
       url='/privacy/cookies'>
-      <Layout className='container min-h-100vh relative z-2'>
+      <Layout className='min-h-100vh relative z-2 bg-yellow-7'>
         <Cookies />
       </Layout>
     </SEO>

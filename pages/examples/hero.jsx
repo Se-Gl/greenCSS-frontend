@@ -12,7 +12,7 @@ export default function Hero() {
       keywords='hero, hero website, above the fold, hero section'
       description='Hero Section React Nextjs example - created with greenCSS.'
       url='/examples/hero'>
-      <Layout className='container bg-white sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
+      <Layout className='bg-white sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
         <div className='flex justify-between sm:mb-50px md:mb-50px'>
           <BackButton>Back</BackButton>
         </div>

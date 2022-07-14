@@ -11,7 +11,7 @@ export default function legal() {
       keywords='privacy, legal norice, imprint, berlin'
       description='Data protection is a top priority. For this reason, all legal imprint information can be accessed.'
       url='/privacy/legal'>
-      <Layout className='container min-h-100vh relative z-2'>
+      <Layout className='min-h-100vh relative z-2 bg-orange-7'>
         <Legal />
       </Layout>
     </SEO>

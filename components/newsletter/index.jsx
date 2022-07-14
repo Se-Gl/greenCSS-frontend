@@ -34,7 +34,7 @@ export default function Newsletter() {
   return (
     <div className='mt-25px'>
       {!loading ? (
-        <>
+        <form onSubmit={subscribe}>
           <input
             required
             onChange={(e) => {
@@ -44,12 +44,12 @@ export default function Newsletter() {
             type='email'
             id='email'
             placeholder='Your E-Mail'
-            className='border-none text-15px text-black bg-white rounded-5px p-10px w-100per'></input>
+            className='border-none text-15px text-white bg-black-3 rounded-5px p-10px w-100per'></input>
 
-          <GreenButton onClick={subscribe} isDefault={false} isReverse={true} className='px-0px mt-25px mx-0px'>
+          <GreenButton type='submit' isDefault={false} isReverse={true} className='px-0px mt-25px mx-0px'>
             Subscribe
           </GreenButton>
-        </>
+        </form>
       ) : (
         <p className='text-15px text-black-10'>Thank you for your subscription.</p>
       )}

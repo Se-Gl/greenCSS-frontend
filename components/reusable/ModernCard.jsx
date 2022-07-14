@@ -1,18 +1,21 @@
 import Image from 'next/image'
 import isInView from '@/hooks/InView/scrollView'
+import CtaButton from './CtaButton'
 
 export default function ModernCard({
   id,
   animation,
   header,
-  headerclass,
+  headerclass = 'text-black',
   subheader,
+  descriptionStyle = 'text-gray',
   imageBg,
   imageUrl,
   imageAlt,
   children,
   isRevert = false,
   isBlog = false,
+  isFull = false,
   imageClass
 }) {
   const [ref, isVisible] = isInView({
@@ -33,14 +36,14 @@ export default function ModernCard({
             imageUrl
               ? 'col-span-6 rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px'
               : 'col-span-12 rounded-20px'
-          } sm:max-w-100per p-50px sm:p-0px sm:py-50px md:p-0px md:py-50px lg:p-0px lg:py-50px bg-white shadow-small-gray sm:shadow-transparent`}>
+          } sm:max-w-100per ${isFull ? `bg-${imageBg}` : 'bg-white shadow-small-gray'} sm:shadow-transparent`}>
           <div
             className={`flex sm:text-center md:text-center ${children ? '' : 'min-h-33vh'} ${
               imageUrl ? '' : 'sm:px-50px md:px-50px lg:px-25px'
-            }`}>
+            } ${isBlog && 'min-h-50vh'}`}>
             <div className='m-auto px-20px'>
               <h3 className={`pt-25px capitalize ${headerclass}`}>{header}</h3>
-              <p className='text-black-10 text-15px'>{subheader}</p>
+              <p className={`text-15px ${descriptionStyle}`}>{subheader}</p>
             </div>
           </div>
           <div className='mx-20px sm:mx-5px md:mx-5px'>{children}</div>
@@ -48,7 +51,9 @@ export default function ModernCard({
       ) : (
         imageUrl && (
           <div
-            className={`overflow-hidden col-span-6 flex mx-0px bg-${imageBg} rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px shadow-small-${imageBg}-5`}>
+            className={`overflow-hidden col-span-6 flex mx-0px bg-${imageBg} rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px ${
+              isFull ? `bg-${imageBg}` : 'bg-white shadow-small-gray'
+            }`}>
             <div className='relative min-h-33vh sm:h-25vh md:h-25vh w-100per'>
               <Image
                 quality={100}
@@ -72,7 +77,9 @@ export default function ModernCard({
       {!isRevert ? (
         imageUrl && (
           <div
-            className={`overflow-hidden col-span-6 sm:row-start-1 md:row-start-1 flex mx-0px bg-${imageBg} rounded-right-radius-20px sm:rounded-bottom-radius-0px md:rounded-bottom-radius-0px sm:rounded-top-radius-20px md:rounded-top-radius-20px shadow-small-${imageBg}-5 sm:shadow-small-transparent md:shadow-small-transparent`}>
+            className={`overflow-hidden col-span-6 sm:row-start-1 md:row-start-1 flex mx-0px rounded-right-radius-20px sm:rounded-bottom-radius-0px md:rounded-bottom-radius-0px sm:rounded-top-radius-20px md:rounded-top-radius-20px ${
+              !isFull && 'shadow-small-gray sm:shadow-small-transparent md:shadow-small-transparent'
+            } bg-${imageBg}`}>
             <div className='relative min-h-33vh sm:h-25vh md:h-25vh w-100per'>
               <Image
                 quality={100}
@@ -97,14 +104,16 @@ export default function ModernCard({
             imageUrl
               ? 'col-span-6 sm:row-start-1 md:row-start-1 rounded-right-radius-20px sm:rounded-bottom-radius-0px md:rounded-bottom-radius-0px sm:rounded-top-radius-20px md:rounded-top-radius-20px'
               : 'col-span-12 rounded-20px'
-          } sm:max-w-100per p-50px sm:p-0px sm:py-50px md:p-0px md:py-50px lg:p-0px lg:py-50px bg-white shadow-small-gray sm:shadow-transparent md:shadow-transparent`}>
+          } sm:max-w-100per  ${
+            !isFull && 'shadow-small-gray sm:shadow-small-transparent md:shadow-small-transparent'
+          } ${isFull ? `bg-${imageBg}` : 'bg-white shadow-small-gray'}`}>
           <div
             className={`flex sm:text-center md:text-center ${children ? '' : 'min-h-33vh'} ${
               imageUrl ? '' : 'sm:px-50px md:px-50px lg:px-25px'
-            }`}>
+            } ${isBlog && 'min-h-50vh'}`}>
             <div className='m-auto px-20px'>
               <h3 className={`pt-25px capitalize ${headerclass}`}>{header}</h3>
-              <p className='text-black-10 text-15px'>{subheader}</p>
+              <p className={`text-15px ${descriptionStyle}`}>{subheader}</p>
             </div>
           </div>
           <div className='mx-20px sm:mx-5px md:mx-5px'>{children}</div>

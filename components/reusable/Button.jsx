@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import ChevronRight from '../icon/ChevronRight'
 import ChevronRightHover from '../icon/ChevronRightHover'
+import CtaButton from './CtaButton'
 
 export function GreenButton({
   href = '/',
@@ -105,88 +106,55 @@ export function GreenButton({
   )
 }
 
-export function LinkButton({ href = '/', className, type = 'button', onClick, id = 'linkedbutton', children }) {
-  const [hover, setHover] = useState(false)
-
-  function handleMouseOver() {
-    setHover(true)
-  }
-  function handleMouseOut() {
-    setHover(false)
-  }
-  return (
-    <Link href={href} passHref>
-      <div className='flex sm:min-w-90px sm:min-h-30px min-w-12rem min-h-50px responsive z-98'>
-        <button
-          onClick={onClick}
-          id={id}
-          className={`${className} flex my-auto text-center text-15px font-bold bg-transparent transition-duration-500ms hover:text-black-3 active:text-black-6 focus:text-black-6`}
-          style={{ border: 'none', cursor: 'pointer' }}
-          type={type}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}>
-          {children}
-          {!hover && <ChevronRight className='my-auto ml-5px' />}
-          {hover && <ChevronRightHover className='my-auto ml-5px' />}
-        </button>
-      </div>
-    </Link>
-  )
-}
-
-export function LinkButtonLeft({ href = '/', className, type = 'button', onClick, id = 'linkedbuttonleft', children }) {
-  const [hover, setHover] = useState(false)
-  function handleMouseOver() {
-    setHover(true)
-  }
-  function handleMouseOut() {
-    setHover(false)
-  }
-  return (
-    <Link href={href} passHref>
-      <div className='flex sm:min-w-90px sm:min-h-30px min-w-12rem min-h-50px responsive z-98'>
-        <button
-          onClick={onClick}
-          id={id}
-          className={`${className} flex my-auto text-center text-15px font-bold bg-transparent transition-duration-500ms hover:text-black-3 active:text-black-6 focus:text-black-6`}
-          style={{ border: 'none', cursor: 'pointer' }}
-          type={type}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}>
-          {!hover && <ChevronRight className='my-auto ml-0px rotate-180deg' />}
-          {hover && <ChevronRightHover className='my-auto ml-0px rotate-180deg' />}
-          <span style={hover ? { marginInline: '5.5px' } : { marginInline: '10px' }} />
-          {children}
-        </button>
-      </div>
-    </Link>
-  )
-}
-
-export function BackButton({ className, type = 'button', id = 'back-button', children }) {
+export function BackButton({ id, title = 'Back' }) {
   const router = useRouter()
   const [hover, setHover] = useState(false)
 
-  function handleMouseOver() {
-    setHover(true)
-  }
-  function handleMouseOut() {
-    setHover(false)
-  }
   return (
-    <div className='flex sm:min-w-90px sm:min-h-30px min-w-12rem min-h-50px responsive z-98'>
-      <button
-        onClick={() => router.back()}
-        id={id}
-        className={`${className} flex my-auto text-center text-15px font-bold bg-transparent transition-duration-500ms hover:text-black-3 active:text-black-6 focus:text-black-6`}
-        style={{ border: 'none', cursor: 'pointer' }}
-        type={type}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}>
-        {!hover && <ChevronRight className='my-auto mr-20px rotate-180deg' />}
-        {hover && <ChevronRightHover className='my-auto mr-11px rotate-180deg' />}
-        {children}
-      </button>
+    <div
+      onClick={() => router.back()}
+      id={id}
+      className='shadow-small-gray-5 max-h-50px flex relative bg-transparent py-10px rounded-10px cursor-pointer w-13rem'
+      onMouseEnter={() => {
+        setHover(1)
+      }}
+      onMouseLeave={() => setHover(-1)}>
+      <a className='min-w-13rem flex justify-between items-center no-decoration text-15px font-500 my-0px'>
+        <CtaButton hover={hover} index={1} className='h-25px rotate-180deg' />
+        <div className='pr-10px'>{title}</div>
+      </a>
+    </div>
+  )
+}
+
+export function PaginationButton({ id, hover, setHover, href, title, isRevert = false }) {
+  return (
+    <div
+      id={id}
+      className={`shadow-small-black max-h-50px flex relative bg-white py-10px rounded-10px cursor-pointer min-w-13rem ${
+        isRevert ? 'pr-10px' : 'pl-10px'
+      }`}
+      onMouseEnter={() => {
+        setHover(1)
+      }}
+      onMouseLeave={() => setHover(-1)}>
+      <Link href={href}>
+        <a className='min-w-13rem flex justify-between items-center no-decoration text-15px font-500 my-0px'>
+          {isRevert ? (
+            <>
+              <CtaButton hover={hover} index={1} className='h-25px rotate-180deg' />
+              <div>{title}</div>
+            </>
+          ) : (
+            <>
+              <div>{title}</div>
+              <div>
+                <CtaButton hover={hover} index={1} className='h-25px' />
+              </div>
+            </>
+          )}
+        </a>
+      </Link>
     </div>
   )
 }

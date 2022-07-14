@@ -14,7 +14,7 @@ export default function ContactPage() {
       description='Contact - the right way to get to know each other.'
       url='docs'
       keywords='contact, message, information, exchange'>
-      <Layout>
+      <Layout className='bg-orange-7'>
         <ContactForm />
         <ContactMap />
         <ContactDetails />

@@ -3,6 +3,7 @@ import SEO from '@/components/reusable/SEO'
 import ModernGrid from '@/components/grid/ModernGrid'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
+const Presentation = dynamic(() => import('@/components/LandingPage/Presentation'))
 
 export default function AboutPage() {
   return (
@@ -11,15 +12,16 @@ export default function AboutPage() {
       description='greenCSS is a global, environmental, sustainable open source, non-profit organization that works to make the world a better and more environmentally friendly way for nature'
       url='docs'
       keywords='about, sustainable open source, competitive development, sustainable programming'>
-      <Layout>
+      <Layout className='bg-red-7'>
         <ModernGrid
           id='about-index'
           header='About greenCSS'
           subheader='You have already found the key to our heart. So we will gladly tell you a little bit more about us...'
-          imageBg='greencss'
+          imageBg='blue'
           imageUrl='/images/about/key-greencss.webp'
           imageAlt='greencss documentation book'
         />
+        <Presentation />
         <ModernGrid
           isHero={false}
           isRevert={true}

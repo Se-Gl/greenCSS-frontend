@@ -33,8 +33,8 @@ export default function index({ stripeData }) {
       description='Check your current green state. Decide independently where your donations go.'
       url='member'
       keywords='member, donation, green software, sustainable software'>
-      <Layout className='container sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
-        <div className='relative h-100vh bg-blue-8'>
+      <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh bg-blue-7'>
+        <div className='relative h-100vh'>
           <Image
             layout='fill'
             objectFit='contain'
