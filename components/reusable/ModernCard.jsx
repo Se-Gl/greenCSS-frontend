@@ -35,9 +35,7 @@ export default function ModernCard({
             imageUrl
               ? 'col-span-6 rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px'
               : 'col-span-12 rounded-20px'
-          } sm:max-w-100per p-50px sm:p-0px sm:py-50px md:p-0px md:py-50px lg:p-0px lg:py-50px ${
-            isFull ? `bg-${imageBg}` : 'bg-white shadow-small-gray'
-          } sm:shadow-transparent`}>
+          } sm:max-w-100per ${isFull ? `bg-${imageBg}` : 'bg-white shadow-small-gray'} sm:shadow-transparent`}>
           <div
             className={`flex sm:text-center md:text-center ${children ? '' : 'min-h-33vh'} ${
               imageUrl ? '' : 'sm:px-50px md:px-50px lg:px-25px'
@@ -105,7 +103,7 @@ export default function ModernCard({
             imageUrl
               ? 'col-span-6 sm:row-start-1 md:row-start-1 rounded-right-radius-20px sm:rounded-bottom-radius-0px md:rounded-bottom-radius-0px sm:rounded-top-radius-20px md:rounded-top-radius-20px'
               : 'col-span-12 rounded-20px'
-          } sm:max-w-100per p-50px sm:p-0px sm:py-50px md:p-0px md:py-50px lg:p-0px lg:py-50px ${
+          } sm:max-w-100per  ${
             !isFull && 'shadow-small-gray sm:shadow-small-transparent md:shadow-small-transparent'
           } ${isFull ? `bg-${imageBg}` : 'bg-white shadow-small-gray'}`}>
           <div

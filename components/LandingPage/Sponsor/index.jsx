@@ -8,11 +8,13 @@ import ModernGrid from '@/components/grid/ModernGrid'
 import ModernCard from '@/components/reusable/ModernCard'
 import { Input } from '@/components/reusable/Input'
 import Section from '@/components/reusable/Section'
+import SponsorCard from './SponsorCard'
 
 const Sponsor = () => {
   const { amount, setAmount, finalPrize } = useContext(DonationContext)
   const [individualAmount, setIndividualAmount] = useState(10)
   const [loading, setLoading] = useState(false)
+  const [hover, setHover] = useState(false)
 
   let ceiledPrice = Math.ceil(finalPrize)
   const toast = useToast()
@@ -74,8 +76,9 @@ const Sponsor = () => {
     {
       animation: `${ceiledPrice ? 'fade-in-right' : 'fade-in-left'} animation-duration-500ms animation-forwards`,
       isRevert: ceiledPrice ? true : false,
-      header: 'Tier I',
-      subheader: 'For the community.',
+      header: 'Plus+',
+      subheader:
+        'If you want to be conscientious, the best solution is a one-time plus+ amount. Alternatively, as a member you can conveniently choose monthly subscriptions to support our earth and greenCSS. With your contribution, around 250 kilograms of CO2 can be compensated. We thank you in advance for a donation of $10USD.',
       amount: 10,
       imageBg: 'turquoise',
       imageUrl: '/images/landingpage/donation/tier-1.webp',
@@ -84,8 +87,9 @@ const Sponsor = () => {
     {
       animation: `${ceiledPrice ? 'fade-in-left' : 'fade-in-right'} animation-duration-500ms animation-forwards`,
       isRevert: ceiledPrice ? false : true,
-      header: 'Tier II',
-      subheader: 'For the community And more',
+      header: 'Premium',
+      subheader:
+        'You are a passionate visionary - besides your emissions, you want to do more for the environment. Alternatively, as a member you can conveniently choose monthly subscriptions to support our earth and greenCSS. With your contribution, around 600 kilograms of CO2 can be compensated. We thank you in advance for a donation of $25USD.',
       amount: 25,
       imageBg: 'orange',
       imageUrl: '/images/landingpage/donation/tier-2.webp',
@@ -94,8 +98,9 @@ const Sponsor = () => {
     {
       animation: `${ceiledPrice ? 'fade-in-right' : 'fade-in-left'} animation-duration-500ms animation-forwards`,
       isRevert: ceiledPrice ? true : false,
-      header: 'Tier III',
-      subheader: 'For the community And beyond',
+      header: 'Community',
+      subheader:
+        'You are an all-rounder - in addition to your emission, you want to return more than just a piece. Alternatively, as a member you can conveniently choose monthly subscriptions to support our earth and greenCSS. With your contribution, almost 2 tonnes of CO2 can be compensated. We thank you in advance for a donation of $100USD. ',
       amount: 100,
       imageBg: 'magenta',
       imageUrl: '/images/landingpage/donation/tier-3.webp',
@@ -122,10 +127,13 @@ const Sponsor = () => {
       {checkPrediction && (
         <ModernCard
           isRevert={true}
+          isFull={true}
           animation=' fade-in-left animation-duration-500ms animation-forwards'
           header={`Individual - USD ${ceiledPrice}$`}
+          headerclass='text-white'
           subheader={`According to your statements about your consumption, we have calculated the following amount for you. Thereby you lower your emission to zero. Tailored for you - USD ${ceiledPrice}$.`}
-          imageBg='greencss'
+          descriptionStyle='text-white'
+          imageBg='black'
           imageUrl='/images/landingpage/donation/individual-greencss.webp'
           imageAlt='greencss tree card'>
           <GreenButton
@@ -140,64 +148,65 @@ const Sponsor = () => {
         </ModernCard>
       )}
       <ModernCard
+        isFull={true}
         isRevert={ceiledPrice ? false : true}
         animation={` ${ceiledPrice ? 'fade-in-right' : 'fade-in-left'} animation-duration-500ms animation-forwards`}
         header='Select your own amount'
+        headerclass='text-white'
+        descriptionStyle='text-white'
         subheader='Choose your own amount to contribute. greenCSS supports worldwide projects. This is only possible with your help.'
         imageBg={ceiledPrice ? 'blue' : 'greencss'}
         imageUrl='/images/landingpage/donation/custom-amount-greencss.webp'
         imageAlt='greencss tree card'>
-        <Input
-          label='Custom Amount'
-          type='number'
-          id='donate-amount'
-          placeholder='Your own donation'
-          htmlFor='donate-amount'
-          value={individualAmount}
-          setValue={setIndividualAmount}
-          min='1'
-          max='999999'
-          onChange={(e) => setIndividualAmount(parseInt(e.target.value))}></Input>
+        <div className='mb-50px'>
+          <Input
+            label='Custom Amount'
+            type='number'
+            id='donate-amount'
+            placeholder='Your own donation'
+            htmlFor='donate-amount'
+            value={individualAmount}
+            setValue={setIndividualAmount}
+            min='1'
+            max='999999'
+            onChange={(e) => setIndividualAmount(parseInt(e.target.value))}></Input>
 
-        <GreenButton
-          id='donate-button'
-          onClick={createIndividualCheckOutSession}
-          isdisabled={individualAmount <= 0 || individualAmount >= 1000000 ? true : false}
-          isOutline={true}
-          type='submit'
-          className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
-            individualAmount <= 0 || individualAmount >= 1000000
-              ? 'bg-gray-5 border-none cursor-not-allowed'
-              : 'bg-black'
-          }`}
-          isDefault={false}>
-          {individualAmount <= 0 || individualAmount >= 1000000
-            ? 'Enter a valid amount'
-            : `donate ${individualAmount}$`}
-        </GreenButton>
+          <GreenButton
+            id='donate-button'
+            onClick={createIndividualCheckOutSession}
+            isdisabled={individualAmount <= 0 || individualAmount >= 1000000 ? true : false}
+            isOutline={true}
+            type='submit'
+            className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
+              individualAmount <= 0 || individualAmount >= 1000000
+                ? 'bg-gray-5 border-none cursor-not-allowed'
+                : 'bg-black'
+            }`}
+            isDefault={false}>
+            {individualAmount <= 0 || individualAmount >= 1000000
+              ? 'Enter a valid amount'
+              : `donate ${individualAmount}$`}
+          </GreenButton>
+        </div>
       </ModernCard>
 
-      {individualAmounts.map((cart, index) => (
-        <div onMouseEnter={() => setAmount(cart.amount)} key={index} onKeyDown={() => setAmount(cart.amount)}>
-          <ModernCard
-            animation={cart.animation}
-            isRevert={cart.isRevert}
-            header={cart.header}
-            subheader={cart.subheader}
-            imageBg={cart.imageBg}
-            imageUrl={cart.imageUrl}
-            imageAlt={cart.imageAlt}>
-            <GreenButton
-              onClick={createCheckOutSession}
-              isDefault={false}
-              isReverse={true}
-              id='donate-button'
-              className='text-15px font-500 border-solid border-white border-1px'>
-              {`Donate USD ${cart.amount}$`}
-            </GreenButton>
-          </ModernCard>
-        </div>
-      ))}
+      <div className='m-auto grid grid-col-3 gap-30px sm:gap-0px sm:grid-col-1 md:grid-col-1'>
+        {individualAmounts.map((cart, index) => (
+          <SponsorCard
+            key={index}
+            onClick={createCheckOutSession}
+            onMouseEnter={() => {
+              setAmount(cart.amount)
+              setHover(index)
+            }}
+            onMouseLeave={() => setHover(-1)}
+            onKeyDown={() => setAmount(cart.amount)}
+            cart={cart}
+            index={index}
+            hover={hover}
+          />
+        ))}
+      </div>
     </Section>
   )
 }

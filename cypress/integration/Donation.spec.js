@@ -10,8 +10,8 @@ describe('Calculation Section', () => {
   })
 
   it('changes the range slider input and gets a result', () => {
-    cy.get('#range-slider-W input').eq(1).as('range').invoke('val', 750).trigger('change', { force: true })
-    cy.get('#range-slider-h input').eq(1).as('range').invoke('val', 10).trigger('change', { force: true })
+    cy.get('#range-slider-W input').as('range').invoke('val', 750).trigger('change', { force: true })
+    cy.get('#range-slider-h input').as('range').invoke('val', 10).trigger('change', { force: true })
     cy.get('#calculation-result').should('not.be.empty')
   })
 })

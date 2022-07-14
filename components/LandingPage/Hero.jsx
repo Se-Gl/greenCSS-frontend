@@ -1,15 +1,9 @@
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { GreenButton } from '@/components/reusable/Button'
 import ReusableModal from '../modal/ReusableModal'
-import HeroPhone from './HeroPhone'
-import ResultHeroPhone from './HeroPhone/ResultHeroPhone'
-import useWindowDimensions from '@/utils/WindowDimensions'
 import ModernGrid from '../grid/ModernGrid'
 
 export default function Hero() {
-  const { width } = useWindowDimensions()
-
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -23,6 +17,7 @@ export default function Hero() {
       id='hero'
       className={`${loading === false ? 'fade-in animate animation-forwards opacity-100per' : 'opacity-0per'}`}>
       <ModernGrid
+        id='hero-section'
         isHero={true}
         isFull={true}
         imagePosition={true}
@@ -33,15 +28,15 @@ export default function Hero() {
   creativity and for your planet.'
         imageBg='blue'
         imageUrl='/images/landingpage/hero-image.webp'
-        imageAlt='macbook pro hero greencss'>
-        <div className='flex gap-10px'>
+        imageAlt='macbook painting hero greencss'>
+        <div className='flex sm:block gap-10px'>
           <ReusableModal isHero={true} />
           <GreenButton
             hasLink={true}
             isDefault={false}
             href='#calculate-footprint'
             id='linkedbutton'
-            className='text-white min-w-14rem font-500'>
+            className='text-white min-w-14rem font-500 sm:mt-10px'>
             Calculate Footprint
           </GreenButton>
         </div>
