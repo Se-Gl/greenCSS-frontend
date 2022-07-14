@@ -40,7 +40,7 @@ export default function HomePage({ posts }) {
 export async function getStaticProps() {
   return {
     props: {
-      posts: getPosts(sortByDate, 'posts-blog').slice(0, 3)
+      posts: getPosts(sortByDate, 'posts-blog').slice(0, 4)
     }
   }
 }

@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import isInView from '@/hooks/InView/scrollView'
 import ModernCard from '../reusable/ModernCard'
+import CtaButton from '../reusable/CtaButton'
+import { useState } from 'react'
 
 export default function BlogCard({ post, index }) {
+  const [hover, setHover] = useState(false)
   const [ref, isVisible] = isInView({
     threshold: 0.15,
     unobserveOnEnter: true
@@ -20,7 +23,12 @@ export default function BlogCard({ post, index }) {
       style={{ opacity: 0 }}>
       <>
         <Link href={`${post.frontmatter.isBlog ? `/blog/${post.slug}` : `/docs/${post.slug}`}`} passHref>
-          <a className='no-decoration'>
+          <a
+            className='no-decoration'
+            onMouseEnter={() => {
+              setHover(index)
+            }}
+            onMouseLeave={() => setHover(-1)}>
             <ModernCard
               id='blog-card'
               key={index}
@@ -31,8 +39,11 @@ export default function BlogCard({ post, index }) {
               subheader={post.frontmatter.excerpt}
               imageBg='black'
               imageUrl={post.frontmatter.cover_image}
-              imageAlt={post.frontmatter.title}
-            />
+              imageAlt={post.frontmatter.title}>
+              <div className='relative'>
+                <CtaButton className='absolute bottom-0per right-0per mb-10px' index={index} hover={hover} />
+              </div>
+            </ModernCard>
           </a>
         </Link>
       </>

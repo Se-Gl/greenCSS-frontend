@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import isInView from '@/hooks/InView/scrollView'
+import CtaButton from './CtaButton'
 
 export default function ModernCard({
   id,
@@ -39,7 +40,7 @@ export default function ModernCard({
           <div
             className={`flex sm:text-center md:text-center ${children ? '' : 'min-h-33vh'} ${
               imageUrl ? '' : 'sm:px-50px md:px-50px lg:px-25px'
-            }`}>
+            } ${isBlog && 'min-h-50vh'}`}>
             <div className='m-auto px-20px'>
               <h3 className={`pt-25px capitalize ${headerclass}`}>{header}</h3>
               <p className={`text-15px ${descriptionStyle}`}>{subheader}</p>
@@ -109,7 +110,7 @@ export default function ModernCard({
           <div
             className={`flex sm:text-center md:text-center ${children ? '' : 'min-h-33vh'} ${
               imageUrl ? '' : 'sm:px-50px md:px-50px lg:px-25px'
-            }`}>
+            } ${isBlog && 'min-h-50vh'}`}>
             <div className='m-auto px-20px'>
               <h3 className={`pt-25px capitalize ${headerclass}`}>{header}</h3>
               <p className={`text-15px ${descriptionStyle}`}>{subheader}</p>
