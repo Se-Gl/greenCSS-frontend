@@ -1,6 +1,6 @@
 import isInView from '@/hooks/InView/scrollView'
 
-export default function Section({ id, background, additionalClassName, children }) {
+export default function Section({ id, background, additionalClassName, header, children }) {
   const [ref, isVisible] = isInView({
     threshold: 0.05,
     unobserveOnEnter: true
@@ -15,6 +15,9 @@ export default function Section({ id, background, additionalClassName, children 
       }`}
       id={id}
       ref={ref}>
+      <h2 className='max-w-50per sm:max-w-100per md:max-w-100per lg:max-w-100per text-center mx-auto mb-100px sm:mb-50px md:mb-50px'>
+        {header}
+      </h2>
       {children}
     </section>
   )

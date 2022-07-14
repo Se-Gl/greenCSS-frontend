@@ -25,10 +25,7 @@ export default function Service() {
     }
   ]
   return (
-    <Section id='service'>
-      <h2 className='max-w-50per sm:max-w-100per md:max-w-100per lg:max-w-100per text-center mx-auto'>
-        Our Mission - Save the Programming Planet
-      </h2>
+    <Section id='service' header='Our Mission - Save the Programming Planet'>
       <ModernCard
         animation='fade-in animation-duration-500ms animation-forwards'
         id='animated'
