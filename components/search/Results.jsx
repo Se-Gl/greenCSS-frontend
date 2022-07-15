@@ -10,7 +10,7 @@ export default function Results({ results, searchTerm }) {
 
   return (
     <>
-      <div className='flex mx-20px my-10px text-15px'>
+      <div className='flex relative mx-20px my-10px text-15px'>
         <div
           className='cursor-pointer'
           onClick={() => {
@@ -21,7 +21,7 @@ export default function Results({ results, searchTerm }) {
           All <span className='bg-gray-9 text-blue text-10px p-2px rounded-3px'>{results.length}</span>
         </div>
         <div
-          className='cursor-pointer mx-20px'
+          className={`cursor-pointer mx-20px ${isDocSelected && 'font-500'}`}
           onClick={() => {
             setisBlogSelected(false)
             setisAllSelected(false)
@@ -30,7 +30,7 @@ export default function Results({ results, searchTerm }) {
           Docs
         </div>
         <div
-          className='cursor-pointer'
+          className={`cursor-pointer ${isBlogSelected && 'font-500'}`}
           onClick={() => {
             setisDocSelected(false)
             setisAllSelected(false)
@@ -38,6 +38,10 @@ export default function Results({ results, searchTerm }) {
           }}>
           Blog
         </div>
+        <hr
+          className='absolute bottom-neg-50per h-2px w-10per m-0px bg-blue border-none transition-all transition-duration-300ms ease ml-0px'
+          style={{ marginLeft: (isDocSelected && '12%') || (isBlogSelected && '24%') }}
+        />
       </div>
       <hr className='border-0px h-1px bg-gray-5' />
       {isDocSelected && (
