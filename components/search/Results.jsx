@@ -44,9 +44,9 @@ export default function Results({ results }) {
         />
       </div>
       <hr className='border-0px h-1px bg-gray-5' />
-      {isDocSelected && (
-        <>
-          <div className='mt-25px'>
+      <div className='mt-25px' id='search-results'>
+        {isDocSelected && (
+          <>
             {results.map(
               (result, index) =>
                 !result.frontmatter.isBlog && (
@@ -74,12 +74,10 @@ export default function Results({ results }) {
                   </div>
                 )
             )}
-          </div>
-        </>
-      )}
-      {isBlogSelected && (
-        <>
-          <div className='mt-25px'>
+          </>
+        )}
+        {isBlogSelected && (
+          <>
             {results.map(
               (result, index) =>
                 result.frontmatter.isBlog && (
@@ -107,13 +105,11 @@ export default function Results({ results }) {
                   </div>
                 )
             )}
-          </div>
-        </>
-      )}
+          </>
+        )}
 
-      {isAllSelected && (
-        <>
-          <div className='mt-25px'>
+        {isAllSelected && (
+          <>
             {results.map((result, index) => (
               <div
                 className='my-10px px-20px py-10px hover:bg-gray-9 transition-all transition-duration-500ms'
@@ -138,47 +134,9 @@ export default function Results({ results }) {
                 </Link>
               </div>
             ))}
-          </div>
-        </>
-      )}
-
-      {/* <div className='p-25px' id='search-results'>
-        {results.length <= 1 ? (
-          <h2 className='text-20px'>{results.length} Result</h2>
-        ) : (
-          <h2 className='text-20px'>{results.length} Results</h2>
+          </>
         )}
-        {results.map((result, index) => (
-          <div
-            className={`bg-green-9 hover:bg-greencss-5 transition-all transition-duration-500ms p-10px rounded-10px flex justify-between items-center mb-10px border-bottom-1px border-black border-solid clip-inset-in-left animate animation-forwards animation-delay-${
-              (index + 1) * 1
-            }00ms`}
-            key={index}>
-            <Link
-              passHref
-              href={{
-                pathname: `/${result.frontmatter.isBlog ? 'blog/[slug]' : 'docs/[slug]'}`,
-                query: { slug: `${result.slug}` }
-              }}>
-              <div className='flex w-100per cursor-pointer'>
-                {result.frontmatter.isBlog && <Blog className='my-auto' />}
-                {!result.frontmatter.isBlog && <Document className='my-auto' />}
-                <div className='ml-15px'>
-                  <div className='flex items-center'>
-                    <h3 className='transition-all transition-duration-500ms text-15px font-600 text-greencss hover:text-greencss-2 bg-green-5 hover:bg-greencss-9 rounded-20px py-5px px-10px mb-0px'>
-                      {result.frontmatter.category}
-                    </h3>
-                  </div>
-                  <p className='text-15px font-600 text-greencss mt-10px mb-0px capitalize'>
-                    {result.frontmatter.title}
-                  </p>
-                </div>
-                <ChevronRight className='ml-auto my-auto' />
-              </div>
-            </Link>
-          </div>
-        ))}
-      </div> */}
+      </div>
     </>
   )
 }
