@@ -3,6 +3,18 @@ import SearchIcon from '../icon/Search/SearchIcon'
 import Results from './Results'
 
 export default function Search({ handleCloseClick }) {
+  useEffect(() => {
+    const getPreviousSearchResult = async () => {
+      const getItem = JSON.parse(localStorage.getItem('search-results'))
+      if (getItem == null) {
+        return
+      } else {
+        setSearchTerm(getItem)
+      }
+    }
+    getPreviousSearchResult()
+  }, [])
+
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState([])
 
@@ -13,8 +25,8 @@ export default function Search({ handleCloseClick }) {
       } else {
         const res = await fetch(`/api/search?q=${searchTerm}`)
         const results = await res.json()
-        // console.log(results);
         setSearchResults(results)
+        localStorage.setItem('search-results', JSON.stringify(searchTerm))
       }
     }
     getResults()

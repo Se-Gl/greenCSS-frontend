@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-export default function Results({ results, searchTerm }) {
+export default function Results({ results }) {
   if (results.length === 0) return <></>
 
   const [isAllSelected, setisAllSelected] = useState(true)
