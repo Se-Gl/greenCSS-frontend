@@ -35,7 +35,11 @@ export default function Search({ handleCloseClick }) {
   return (
     <>
       <div className='flex bg-white my-20px'>
-        <form className='flex w-92per'>
+        <form
+          className='flex w-92per'
+          onKeyPress={(e) => {
+            e.key === 'Enter' && e.preventDefault()
+          }}>
           <div type='submit' className='flex items-center justify-center text-black mx-20px'>
             <SearchIcon width='30px' height='30px' />
           </div>
