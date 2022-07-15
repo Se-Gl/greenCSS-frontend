@@ -1,9 +1,8 @@
 ## [1.2.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.2.0...v1.2.1) (2022-07-14)
 
-
 ### Bug Fixes
 
-* **purgecss:** fixed purgecss path to greencss module ([739d6f0](https://github.com/Se-Gl/greenCSS-frontend/commit/739d6f0ad02c8f70a7fbb444fcef30bb096f8ec0))
+- **purgecss:** fixed purgecss path to greencss module ([739d6f0](https://github.com/Se-Gl/greenCSS-frontend/commit/739d6f0ad02c8f70a7fbb444fcef30bb096f8ec0))
 
 # [1.2.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.1.1...v1.2.0) (2022-07-14)
 

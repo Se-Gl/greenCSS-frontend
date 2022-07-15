@@ -22,9 +22,9 @@ export default function Search({ handleCloseClick }) {
 
   return (
     <>
-      <div className='flex bg-white max-w-50rem rounded-5px shadow-black py-25px'>
+      <div className='flex bg-white my-20px'>
         <form className='flex max-w-40rem'>
-          <div type='submit' className='flex items-center bg-transparent justify-center text-black mx-25px'>
+          <div type='submit' className='flex items-center justify-center text-black mx-20px'>
             <SearchIcon width='30px' height='30px' />
           </div>
           <div className='w-50rem my-auto'>
@@ -49,6 +49,7 @@ export default function Search({ handleCloseClick }) {
           ESC
         </a>
       </div>
+      <hr className='border-0px h-1px bg-gray-5' />
       <Results results={searchResults} searchTerm={searchTerm} />
     </>
   )
