@@ -1,3 +1,19 @@
+# [1.3.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.2.1...v1.3.0) (2022-07-15)
+
+
+### Bug Fixes
+
+* **search-bar:** added localstorage to display last search result ([4a07dbe](https://github.com/Se-Gl/greenCSS-frontend/commit/4a07dbe1473c9774dafdd94b87405cc51d6e9b8b))
+* **search-bar:** added new close svg ([96633ec](https://github.com/Se-Gl/greenCSS-frontend/commit/96633ec3df2e4fc61c20b80792f889d788d1b449))
+* **search-bar:** fixed search test ([6e13632](https://github.com/Se-Gl/greenCSS-frontend/commit/6e136320f2f86c7e016de20f56f92a6fb6126e66))
+* **search-bar:** prevent form submission when pushing enter while searching ([1d79cff](https://github.com/Se-Gl/greenCSS-frontend/commit/1d79cffc1313c21651c37b08fd36a572adf24483))
+* **search-bar:** updated search modal to match new design ([45165f4](https://github.com/Se-Gl/greenCSS-frontend/commit/45165f4ade8f6006424d4161efca6ba90eb6d998))
+
+
+### Features
+
+* **search-bar:** added better ux for search results ([d346126](https://github.com/Se-Gl/greenCSS-frontend/commit/d346126f63750f9fa477f60ea276d732a64f729c))
+
 ## [1.2.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.2.0...v1.2.1) (2022-07-14)
 
 ### Bug Fixes
