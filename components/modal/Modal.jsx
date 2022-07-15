@@ -38,7 +38,7 @@ const Modal = ({
       style={{ backgroundColor: 'rgba(16,16,16,0.75)' }}>
       <div className='relative z-1 w-100vw h-100vh' onClick={handleCloseClick} id='backdrop-close' />
       <div
-        className={`fade-in-bottom animation-duration-500ms animation-forwards absolute z-2 bg-white rounded-10px overflow-scroll overflow-x-hidden ${modalSize}`}>
+        className={`fade-in-bottom animation-duration-500ms animation-forwards absolute z-2 bg-white rounded-20px overflow-scroll overflow-x-hidden ${modalSize}`}>
         {showSearch && <Search handleCloseClick={handleCloseClick} />}
         <div className={`${modalStyle}`}>{children}</div>
       </div>
