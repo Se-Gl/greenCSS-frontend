@@ -15,9 +15,11 @@ export default function Section({ id, background, additionalClassName, header, c
       }`}
       id={id}
       ref={ref}>
-      <h2 className='max-w-50per sm:max-w-100per md:max-w-100per lg:max-w-100per text-center mx-auto mb-100px sm:mb-50px md:mb-50px'>
-        {header}
-      </h2>
+      {header && (
+        <h2 className='max-w-50per sm:max-w-100per md:max-w-100per lg:max-w-100per text-center mx-auto mb-100px sm:mb-50px md:mb-50px'>
+          {header}
+        </h2>
+      )}
       {children}
     </section>
   )

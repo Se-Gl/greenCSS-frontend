@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import isInView from '@/hooks/InView/scrollView'
-import CtaButton from './CtaButton'
 
 export default function ModernCard({
   id,

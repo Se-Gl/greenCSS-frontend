@@ -1,9 +1,10 @@
 import dynamic from 'next/dynamic'
 import SEO from '@/components/reusable/SEO'
 import ModernGrid from '@/components/grid/ModernGrid'
+import AboutPresentation from '@/components/about/AboutPresentation'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
-const Presentation = dynamic(() => import('@/components/LandingPage/Presentation'))
+const Story = dynamic(() => import('@/components/about/Story'))
 
 export default function AboutPage() {
   return (
@@ -21,13 +22,14 @@ export default function AboutPage() {
           imageUrl='/images/about/key-greencss.webp'
           imageAlt='greencss documentation book'
         />
-        <Presentation />
+        <AboutPresentation />
+        <Story />
         <ModernGrid
           isHero={false}
           isRevert={true}
           header='greenCSS is a sustainable open source cascade style sheet library'
           subheader='We love to work globally, sustainably, environmentally friendly and not politically. The vision of the
-          non-profit organization is to make the programming world a better place and contribute for a more competitive
+          non-profit project is to make the programming world a better place and contribute for a more competitive
           webapplication development. Let us think and code outside the box together. '
           imageBg='black'
           imageUrl='/images/about/world-box-greencss.webp'

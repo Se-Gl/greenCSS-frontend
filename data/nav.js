@@ -34,7 +34,7 @@ export const mobileDocsMenu = [
 
 export const mobileContactMenu = [
   { label: 'about', url: '/about' },
-  { label: 'newsletter', url: '/contact#footer-social' },
+  { label: 'newsletter', url: '#footer-social' },
   { label: 'Subscription', url: '/member#member-plans' },
   { label: 'Login', url: '/member/account' }
 ]
@@ -79,7 +79,7 @@ export const navsublinks = [
     subtext: 'About greenCSS - the right way to get to know each other.',
     links: [
       { label: 'contact', url: '/contact' },
-      { label: 'newsletter', url: '/contact#footer-social' }
+      { label: 'newsletter', url: '#footer-social' }
     ],
     secondpage: 'brand',
     secondpageLink: '/brand',
