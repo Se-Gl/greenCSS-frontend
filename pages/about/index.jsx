@@ -1,9 +1,10 @@
 import dynamic from 'next/dynamic'
 import SEO from '@/components/reusable/SEO'
 import ModernGrid from '@/components/grid/ModernGrid'
+import AboutPresentation from '@/components/about/AboutPresentation'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
-const Presentation = dynamic(() => import('@/components/LandingPage/Presentation'))
+const Story = dynamic(() => import('@/components/about/Story'))
 
 export default function AboutPage() {
   return (
@@ -21,7 +22,8 @@ export default function AboutPage() {
           imageUrl='/images/about/key-greencss.webp'
           imageAlt='greencss documentation book'
         />
-        <Presentation />
+        <AboutPresentation />
+        <Story />
         <ModernGrid
           isHero={false}
           isRevert={true}

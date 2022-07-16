@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import ChevronRight from '../icon/ChevronRight'
-import ChevronRightHover from '../icon/ChevronRightHover'
 import CtaButton from './CtaButton'
 
 export function GreenButton({

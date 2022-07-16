@@ -5,7 +5,6 @@ import LogoDark from '../icon/Brand/LogoDark'
 import SignupModal from '../member/SignupModal'
 import Modal from '../modal/Modal'
 import SearchBar from '../modal/SearchBar'
-import { GreenButton } from '../reusable/Button'
 import MobileGrid from './MobileGrid'
 import ToggleMember from './ToggleMember'
 

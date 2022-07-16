@@ -8,7 +8,10 @@ describe('Blog Screen Unit test', () => {
   it('renders the header', () => {
     cy.get('h1').should('be.visible').should('exist').contains('About greenCSS', { matchCase: false })
   })
-  it('reveals presentation section with animation', () => {
+  it('reveals presentation section', () => {
     cy.get('#presentation').should('exist')
+  })
+  it('reveals story section with animation', () => {
+    cy.get('#story').should('exist')
   })
 })
