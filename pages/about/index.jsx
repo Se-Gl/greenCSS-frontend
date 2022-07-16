@@ -29,7 +29,7 @@ export default function AboutPage() {
           isRevert={true}
           header='greenCSS is a sustainable open source cascade style sheet library'
           subheader='We love to work globally, sustainably, environmentally friendly and not politically. The vision of the
-          non-profit organization is to make the programming world a better place and contribute for a more competitive
+          non-profit project is to make the programming world a better place and contribute for a more competitive
           webapplication development. Let us think and code outside the box together. '
           imageBg='black'
           imageUrl='/images/about/world-box-greencss.webp'
