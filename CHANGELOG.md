@@ -1,16 +1,14 @@
 ## [1.3.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.3.0...v1.3.1) (2022-07-16)
 
-
 ### Bug Fixes
 
-* **about:** added animations to about-presentation section ([d8a0aca](https://github.com/Se-Gl/greenCSS-frontend/commit/d8a0aca230dab9461db1052b3c8fe393be17a24c))
-* **about:** added more performant images ([0ef3907](https://github.com/Se-Gl/greenCSS-frontend/commit/0ef3907543359e7c4d8846b15b70317414a85112))
-* **about:** fixed newsletter link ([c2a12ed](https://github.com/Se-Gl/greenCSS-frontend/commit/c2a12ede8dc18b297310f11da349274ff42d7c24))
-
+- **about:** added animations to about-presentation section ([d8a0aca](https://github.com/Se-Gl/greenCSS-frontend/commit/d8a0aca230dab9461db1052b3c8fe393be17a24c))
+- **about:** added more performant images ([0ef3907](https://github.com/Se-Gl/greenCSS-frontend/commit/0ef3907543359e7c4d8846b15b70317414a85112))
+- **about:** fixed newsletter link ([c2a12ed](https://github.com/Se-Gl/greenCSS-frontend/commit/c2a12ede8dc18b297310f11da349274ff42d7c24))
 
 ### Performance Improvements
 
-* **about:** created about presentation section, updated story component ([29ffd99](https://github.com/Se-Gl/greenCSS-frontend/commit/29ffd999d5b9cc481659c5284cb06a66d483c34d))
+- **about:** created about presentation section, updated story component ([29ffd99](https://github.com/Se-Gl/greenCSS-frontend/commit/29ffd999d5b9cc481659c5284cb06a66d483c34d))
 
 # [1.3.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.2.1...v1.3.0) (2022-07-15)
 
