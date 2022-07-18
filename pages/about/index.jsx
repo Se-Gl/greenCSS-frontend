@@ -1,10 +1,39 @@
 import dynamic from 'next/dynamic'
 import SEO from '@/components/reusable/SEO'
 import ModernGrid from '@/components/grid/ModernGrid'
-import AboutPresentation from '@/components/about/AboutPresentation'
+import Presentation from '@/components/reusable/Presentation'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 const Story = dynamic(() => import('@/components/about/Story'))
+
+const aboutImages = [
+  {
+    path: 'about/zurich-sunset',
+    alt: 'Zurich sunset by greenCSS',
+    additionalStyle: 'mt-50px',
+    width: 500,
+    height: 747
+  },
+  {
+    path: 'about/switzerland-nature',
+    alt: 'Switzerland nature sunset by greenCSS',
+    width: 500,
+    height: 747
+  },
+  {
+    path: 'about/germany-sunset',
+    alt: 'Germany sunset nature by greenCSS',
+    additionalStyle: 'mt-50px',
+    width: 500,
+    height: 747
+  },
+  {
+    path: 'about/berlin',
+    alt: 'Berlin sunset by greenCSS',
+    width: 500,
+    height: 747
+  }
+]
 
 export default function AboutPage() {
   return (
@@ -22,7 +51,14 @@ export default function AboutPage() {
           imageUrl='/images/about/key-greencss.webp'
           imageAlt='greencss documentation book'
         />
-        <AboutPresentation />
+        <Presentation
+          backgroundColor='bg-black'
+          headline='Unique sustainable open-source software supported from all over the world'
+          imagesInfo={aboutImages}
+          hasButton={true}
+          buttonText='Become a supporter'
+          buttonLink='/member/account'
+        />
         <Story />
         <ModernGrid
           isHero={false}
