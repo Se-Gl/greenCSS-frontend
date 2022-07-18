@@ -1,12 +1,7 @@
 import { GreenButton } from '../reusable/Button'
 import SignupModal from './SignupModal'
 
-export default function UserModal({
-  buttonText,
-  showModal,
-  setShowModal,
-  buttonStyle = 'bg-gray-9 border-none hover:border-solid'
-}) {
+export default function UserModal({ buttonText, showModal, setShowModal, buttonStyle = 'bg-gray-9' }) {
   return (
     <>
       <GreenButton

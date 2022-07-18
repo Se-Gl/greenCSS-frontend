@@ -18,7 +18,9 @@ export default function logo() {
         <div className='min-w-100per relative' id='brand-logo-page'>
           <BackButton className='mb-50px'>Back</BackButton>
           <div className='mb-10rem'>
-            <h1 className='text-80px sm:text-50px mb-100px'>greenCSS brand identity: the logo</h1>
+            <h1 className='text-80px sm:text-50px mb-100px text-center max-w-50per mx-auto'>
+              greenCSS brand identity: the logo
+            </h1>
             {brandLogoSections.sort().map((section, index) => (
               <BrandSection
                 key={index}

@@ -42,12 +42,10 @@ const Navbar = () => {
         <ul className='grid grid-col-3 text-15px'>
           {navmenu.map((item, index) => {
             return (
-              <li key={index} onMouseOver={displaySubmenu} className='h-100per flex h-50 items-center'>
+              <li key={index} onMouseOver={displaySubmenu} className='h-100per flex h-50 items-center justify-center'>
                 <Link href={item.path}>
                   <a
-                    className={`map-link text-15px font-600 no-decoration cursor-pointer capitalize ${
-                      index === 1 ? 'px-0px' : ''
-                    } pb-15px mt-15px mb-0px ${
+                    className={`map-link text-15px font-600 no-decoration cursor-pointer capitalize px-50px pb-15px mt-15px mb-0px ${
                       router.asPath.includes(item.path) ? 'text-greencss font-600' : 'text-black'
                     }`}>
                     {item.title}
@@ -57,7 +55,9 @@ const Navbar = () => {
             )
           })}
         </ul>
-        <ToggleMember />
+        <div className='ml-auto flex justify-center'>
+          <ToggleMember />
+        </div>
       </div>
     </nav>
   )
