@@ -36,7 +36,7 @@ export default function Presentation({
                 width={image.width}
                 height={image.height}
                 placeholder='blur'
-                blurDataURL={`/_next/image?url=/images/about/${image.path}.webp&w=16&q=1`}
+                blurDataURL={`/_next/image?url=/images/${image.path}.webp&w=16&q=1`}
               />
             </div>
           ))}
