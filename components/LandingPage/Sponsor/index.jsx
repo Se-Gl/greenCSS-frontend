@@ -77,37 +77,47 @@ const Sponsor = () => {
       animation: `${ceiledPrice ? 'fade-in-right' : 'fade-in-left'} animation-duration-500ms animation-forwards`,
       isRevert: ceiledPrice ? true : false,
       header: 'Plus+',
-      subheader:
-        'If you want to be conscientious, the best solution is a one-time plus+ amount. With your contribution, around 250 kilograms of CO2 can be compensated. We thank you in advance for a donation of $10USD. Alternatively, you can register as a member and comfortably arrange an automatic monthly subscription.',
+      subheader: 'Be conscientious and save around 200 kilograms of CO2.',
       price: '$10/once',
       amount: 10,
       imageBg: 'turquoise',
-      imageUrl: '/images/landingpage/donation/tier-1.webp',
-      imageAlt: 'greencss tree card tier 1'
+      imageUrl: '/images/landingpage/donation/planet-01.webp',
+      imageAlt: 'greencss 3d planet',
+      priceClass: 'text-greencss',
+      fillOne: 'fill-white',
+      fillTwo: 'fill-greencss'
     },
     {
       animation: `${ceiledPrice ? 'fade-in-left' : 'fade-in-right'} animation-duration-500ms animation-forwards`,
       isRevert: ceiledPrice ? false : true,
       header: 'Premium',
-      subheader:
-        'You are a passionate visionary - besides your emissions, you want to do more for the environment. With your contribution, around 600 kilograms of CO2 can be compensated. We thank you in advance for a donation of $25USD. Alternatively, you can register as a member and comfortably arrange an automatic monthly subscription.',
+      subheader: 'Be passionate and save around 500 kilograms of CO2.',
       price: '$25/once',
       amount: 25,
       imageBg: 'orange',
-      imageUrl: '/images/landingpage/donation/tier-2.webp',
-      imageAlt: 'greencss tree card tier 2'
+      imageUrl: '/images/landingpage/donation/planet-02.webp',
+      imageAlt: 'greencss 3d planet',
+      bgColor: 'bg-blue',
+      headerClass: 'text-white',
+      priceClass: 'text-white',
+      descriptionClass: 'text-white',
+      fillOne: 'fill-white',
+      fillTwo: 'fill-white'
     },
     {
       animation: `${ceiledPrice ? 'fade-in-right' : 'fade-in-left'} animation-duration-500ms animation-forwards`,
       isRevert: ceiledPrice ? true : false,
       header: 'Community',
-      subheader:
-        'You are an all-rounder - in addition to your emission, you want to return more than just a piece. With your contribution, almost 2 tonnes of CO2 can be compensated. We thank you in advance for a donation of $100USD. Alternatively, you can register as a member and comfortably arrange an automatic monthly subscription.',
+      subheader: 'Be visionary and save around 2000 kilograms of CO2.',
       price: '$100/once',
       amount: 100,
       imageBg: 'magenta',
-      imageUrl: '/images/landingpage/donation/tier-3.webp',
-      imageAlt: 'greencss tree card tier 3'
+      imageUrl: '/images/landingpage/donation/planet-03.webp',
+      imageAlt: 'greencss 3d planet',
+      bgColor: 'bg-black-3',
+      headerClass: 'text-white',
+      priceClass: 'text-gray',
+      descriptionClass: 'text-white'
     }
   ]
 
@@ -204,6 +214,14 @@ const Sponsor = () => {
             }}
             onMouseLeave={() => setHover(-1)}
             onKeyDown={() => setAmount(cart.amount)}
+            bgColor={cart.bgColor}
+            imageUrl={cart.imageUrl}
+            imageAlt={cart.imageAlt}
+            headerClass={cart.headerClass}
+            priceClass={cart.priceClass}
+            descriptionClass={cart.descriptionClass}
+            fillOne={cart.fillOne}
+            fillTwo={cart.fillTwo}
             cart={cart}
             index={index}
             hover={hover}
