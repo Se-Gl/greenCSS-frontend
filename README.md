@@ -204,29 +204,29 @@ Check the [contributing file](/.github/contributing.md) for more details.
 | license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
 | changes       | Changes were made to the fill- colours, line & shadow adjustments.                 |
 | ----------    | ------------------------------------                                               |
-| title         | iOS 15 Status Bar                                                                  |
-| source        | [Figma](https://www.figma.com/community/file/904065746347450024/iOS-15-Status-Bar) |
-| author        | [KB](https://www.figma.com/@klavs)                                                 |
-| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
-| changes       | Changes were made to the background, resized illustration and adjusted colours     |
-| ----------    | ------------------------------------                                               |
 | title         | MacBook-Pro-2021-Free-Figma-Mockups-BRIX-Templates-Community                       |
 | source        | [Figma](https://www.figma.com/community/file/1085600632685733875)                  |
 | author        | [BRIX Templates](https://www.figma.com/@brixtemplates)                             |
 | license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
 | changes       | N/A                                                                                |
 | ----------    | ------------------------------------                                               |
-| title         | iPhone 12 Mockup (Community)                                                       |
-| source        | [Figma](https://www.figma.com/community/file/1108394705564103291)                  |
-| author        | [Jagdish Vavdiya](https://www.figma.com/@jagdish1242)                              |
-| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
-| changes       | Changes were made to the background                                                |
-| ----------    | ------------------------------------                                               |
 | title         | Financial Tech Landing Page                                                        |
 | source        | [Figma](https://www.figma.com/community/file/1110497789171535089)                  |
 | author        | [Ilham Meidi](https://www.figma.com/@ilhammeidi)                                   |
 | license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
 | changes       | Used light background for desktop inspiration                                      |
+| ----------    | ------------------------------------                                               |
+| title         | Miniverse 3D illustrations                                                         |
+| source        | [Figma](https://www.figma.com/community/file/1086469618136183011)                  |
+| author        | [Dddkit](https://www.figma.com/@dddkit)                                            |
+| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
+| changes       | -                                                                                  |
+| ----------    | ------------------------------------                                               |
+| title         | 3dicons                                                                            |
+| source        | [Figma](https://www.figma.com/community/plugin/1107546399747513238)                |
+| author        | [vijay verma](https://www.figma.com/@realvjy)                                      |
+| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
+| changes       | -                                                                                  |
 
 ### Ideas & Inspiration
 
