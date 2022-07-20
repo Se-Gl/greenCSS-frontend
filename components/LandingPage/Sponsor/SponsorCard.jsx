@@ -10,10 +10,13 @@ export default function SponsorCard({
   imageAlt,
   onClick,
   headerClass,
+  header,
   priceClass,
+  price,
   descriptionClass = 'text-gray',
   fillOne,
   fillTwo,
+  subheader,
   cart,
   index,
   hover
@@ -37,10 +40,10 @@ export default function SponsorCard({
           </div>
         )}
 
-        <div className='px-25px pb-50px'>
-          <h3 className={`mb-10px ${headerClass}`}>{cart.header}</h3>
-          <h4 className={`text-20px font-500 ${priceClass}`}>{cart.price}</h4>
-          <p className={`text-15px mb-0px ${descriptionClass}`}>{cart.subheader}</p>
+        <div className='px-25px py-50px'>
+          <h3 className={`mb-10px ${headerClass}`}>{cart ? cart.header : header}</h3>
+          <h4 className={`text-20px font-500 ${priceClass}`}>{cart ? cart.price : price}</h4>
+          <p className={`text-15px mb-0px ${descriptionClass}`}>{cart ? cart.subheader : subheader}</p>
           <CtaButton
             index={index}
             hover={hover}
