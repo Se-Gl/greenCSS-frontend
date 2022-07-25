@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.3.1...v1.3.2) (2022-07-25)
+
+
+### Bug Fixes
+
+* **visual-chart:** fixed chart bar not displaying correct amount in production ([a29fc4f](https://github.com/Se-Gl/greenCSS-frontend/commit/a29fc4fd427df3d62cf45c5db134a83ac9dd67b6))
+
 ## [1.3.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.3.0...v1.3.1) (2022-07-16)
 
 ### Bug Fixes
