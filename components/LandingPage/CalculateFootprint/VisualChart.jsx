@@ -40,9 +40,9 @@ export default function VisualChart({
         }`}>
         {!isHero && (
           <dl className='w-30rem'>
-            <dd className={`w-${Math.round(percentc)}per bg-blue h-20px mt-10px`}></dd>
-            <dd className={`w-${Math.round(percenta)}per bg-green h-20px my-10px`}></dd>
-            <dd className={`w-${Math.round(percentb)}per bg-orange h-20px`}></dd>
+            <dd className={`bg-blue h-20px mt-10px`} style={{ width: Math.round(percentc) + '%' }}></dd>
+            <dd className={`bg-green h-20px my-10px`} style={{ width: Math.round(percenta) + '%' }}></dd>
+            <dd className={`bg-orange h-20px`} style={{ width: Math.round(percentb) + '%' }}></dd>
           </dl>
         )}
         <div
