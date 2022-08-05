@@ -50,7 +50,7 @@ export default function ModernGrid({
               {imagePosition ? (
                 <div className='absolute' style={{ top: 0, right: 0, bottom: 0, left: 0 }}>
                   <Image
-                    quality={100}
+                    quality={80}
                     layout='fill'
                     objectFit='contain'
                     src={`${imageUrl}`}
@@ -61,7 +61,7 @@ export default function ModernGrid({
                 </div>
               ) : (
                 <Image
-                  quality={100}
+                  quality={80}
                   layout='fill'
                   objectFit='contain'
                   src={`${imageUrl}`}
@@ -85,7 +85,7 @@ export default function ModernGrid({
               {imagePosition && width >= 768 ? (
                 <div className='absolute' style={{ top: 0, right: -50, bottom: 0, left: 0 }}>
                   <Image
-                    quality={100}
+                    quality={80}
                     layout='fill'
                     objectFit='contain'
                     src={`${imageUrl}`}
@@ -96,7 +96,7 @@ export default function ModernGrid({
                 </div>
               ) : (
                 <Image
-                  quality={100}
+                  quality={80}
                   layout='fill'
                   objectFit='contain'
                   src={`${imageUrl}`}
