@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ReusableModal from '../modal/ReusableModal'
-import Tilt from '../tilt/Tilt'
 import Arrow from '../icon/Arrow'
 
 export default function Hero() {
+  const card = useRef(0)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -13,6 +13,15 @@ export default function Hero() {
       window.onload = setLoading(false)
     }
   }, [])
+
+  const handleMouse = (e) => {
+    if (typeof window !== 'undefined') {
+      const x_axis = (window.innerWidth / 1.75 - e.pageX) / 25
+      const y_axis = (window.innerHeight / 1.5 - e.pageY) / 50
+
+      card.current.style.transform = `rotateY(${x_axis}deg) rotateX(${y_axis}deg)`
+    }
+  }
 
   return (
     <section
@@ -73,7 +82,7 @@ export default function Hero() {
             className='absolute top-50per left-60per sm:h-50vh md:h-70vh h-100vh w-100per'
             style={{ transform: 'translate(-50%, -50%)' }}>
             <>
-              <Tilt max={5} scale={1.05} speed={800}>
+              <div ref={card} onMouseMove={handleMouse} className='w-100per h-100per'>
                 <div className='w-20rem h-20rem rounded-50per sphere top-10per' style={{ left: '30rem' }} />
                 <div
                   className='w-100px h-100px rounded-50per sphereThree top-30per sm:top-10per'
@@ -83,7 +92,7 @@ export default function Hero() {
                   className='w-100px h-100px rounded-50per sphereTwo bottom-25per sm:bottom-60per md:bottom-55per'
                   style={{ left: 0 }}
                 />
-              </Tilt>
+              </div>
             </>
 
             <div className='pointer-events-none'>
