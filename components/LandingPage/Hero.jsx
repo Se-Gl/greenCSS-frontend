@@ -85,12 +85,12 @@ export default function Hero() {
               <div ref={card} onMouseMove={handleMouse} className='w-100per h-100per'>
                 <div className='w-20rem h-20rem rounded-50per sphere top-10per' style={{ left: '30rem' }} />
                 <div
-                  className='w-100px h-100px rounded-50per sphereThree top-30per sm:top-10per'
-                  style={{ left: '15rem' }}
+                  className='w-100px h-100px rounded-50per sphereTwo bottom-25per sm:bottom-60per md:bottom-55per sm:top-70per md:top-70per'
+                  style={{ left: 0 }}
                 />
                 <div
-                  className='w-100px h-100px rounded-50per sphereTwo bottom-25per sm:bottom-60per md:bottom-55per'
-                  style={{ left: 0 }}
+                  className='w-100px h-100px rounded-50per sphereThree top-30per sm:top-10per'
+                  style={{ left: '15rem' }}
                 />
               </div>
             </>
