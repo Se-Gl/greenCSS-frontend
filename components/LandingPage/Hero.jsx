@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react'
-import { GreenButton } from '@/components/reusable/Button'
-import ReusableModal from '../modal/ReusableModal'
-import ModernGrid from '../grid/ModernGrid'
 import Image from 'next/image'
-import Tilt from '../tilt/Tilt'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import ReusableModal from '../modal/ReusableModal'
+import Tilt from '../tilt/Tilt'
 import Arrow from '../icon/Arrow'
 
 export default function Hero() {
@@ -29,12 +27,14 @@ export default function Hero() {
               creativity and for your planet.
             </p> */}
             <div className='flex sm:block gap-10px sm:gap-0px'>
-              <div className='max-w-25rem sm:max-w-100per border-1px border-solid border-magenta p-10px rounded-10px hover:shadow-small-magenta transition-all transition-duration-300ms'>
-                <h2 className='text-white text-30px'>Sustainable React Components</h2>
+              <div className='relative max-w-25rem sm:max-w-100per md:max-w-100per border-1px border-solid border-magenta p-10px rounded-10px hover:shadow-small-magenta transition-all transition-duration-300ms'>
+                <h2 className='text-white text-30px'>Green React Components</h2>
                 <p className='text-gray text-15px'>
                   Check green react components, based on the greenCSS brand guidelines.
                 </p>
-                <button className='text-black bg-white hover:bg-gray-7 active:bg-gray-9 rounded-10px transition-all transition-duration-300ms'>
+                <button
+                  className='absolute text-black bg-white hover:bg-gray-7 active:bg-gray-9 rounded-10px transition-all transition-duration-300ms'
+                  style={{ bottom: '10px' }}>
                   <a className='m-0px text-10px no-decoration p-10px flex items-center' href='https://www.codn.dev/'>
                     codn{' '}
                     <span className='ml-10px'>
@@ -43,12 +43,12 @@ export default function Hero() {
                   </a>
                 </button>
               </div>
-              <div className='max-w-25rem sm:max-w-100per border-1px border-solid border-purple p-10px rounded-10px sm:mt-10px hover:shadow-small-purple transition-all transition-duration-300ms'>
+              <div className='max-w-25rem sm:max-w-100per md:max-w-100per border-1px border-solid border-purple p-10px rounded-10px sm:mt-10px hover:shadow-small-purple transition-all transition-duration-300ms'>
                 <h2 className='text-white text-30px'>Sustainable Software for everyone</h2>
                 <p className='text-gray text-15px'>
                   A CSS library for the Web 2.0 and 3.0. Completely climate neutral - without greenwashing.
                 </p>
-                <div className='flex sm:block gap-10px'>
+                <div className='flex sm:block gap-10px max-w-23rem'>
                   <ReusableModal isHero={true} />
                   <button className='text-black bg-white hover:bg-gray-7 active:bg-gray-9 rounded-10px flex items-center transition-all transition-duration-300ms sm:mt-10px'>
                     <Link href='/docs'>
