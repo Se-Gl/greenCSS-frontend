@@ -12,7 +12,7 @@ import AuthorInformation from '../blog/AuthorInformation'
 const ReactMarkdown = dynamic(() => import('react-markdown').then((mod) => mod.default), {
   ssr: false,
   loading: () => (
-    <div className='flex h-100vh w-100vw overflow-hidden bg-green-10'>
+    <div className='flex h-100per w-100per overflow-hidden'>
       <div className='m-auto'>
         <Loader />
       </div>
