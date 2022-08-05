@@ -16,7 +16,7 @@ export default function SearchBar({ setShowModal, className, isHero }) {
         className={`flex bg-transparent justify-center w-100per ${
           isHero ? 'text-white' : 'text-black'
         } border-none text-10px`}
-        placeholder={`${isHero ? 'Check the docs' : 'Rapid Search'}`}
+        placeholder={`${isHero ? 'Search' : 'Rapid Search'}`}
       />
       <p className='text-10px font-600 bg-black p-10px rounded-5px my-auto mx-5px text-white' id='close-modal'>
         F3
