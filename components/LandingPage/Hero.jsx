@@ -73,8 +73,12 @@ export default function Hero() {
             className='absolute top-50per left-60per sm:h-50vh md:h-70vh h-100vh w-100per'
             style={{ transform: 'translate(-50%, -50%)' }}>
             <>
-              <Tilt perspective={1000} max={2}>
+              <Tilt max={5} scale={1.05} speed={800}>
                 <div className='w-20rem h-20rem rounded-50per sphere top-10per' style={{ left: '30rem' }} />
+                <div
+                  className='w-100px h-100px rounded-50per sphereThree top-30per sm:top-10per'
+                  style={{ left: '15rem' }}
+                />
                 <div
                   className='w-100px h-100px rounded-50per sphereTwo bottom-25per sm:bottom-60per md:bottom-55per'
                   style={{ left: 0 }}
