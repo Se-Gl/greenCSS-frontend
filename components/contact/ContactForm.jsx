@@ -132,7 +132,7 @@ export default function ContactForm() {
       subheader='Whether it is constructive feedback, negative experiences, gratitude, questions, suggestions, feature
       requests or simply boredom.'
       imageBg='blue'
-      imageUrl='/images/contact/question-mark-plant.webp'
+      imageUrl='/images/contact/contact-hero.png'
       imageAlt='member section hero'>
       <form className='my-auto' onSubmit={handleSubmit} id='contact-form'>
         <div className='flex flex-col'>
