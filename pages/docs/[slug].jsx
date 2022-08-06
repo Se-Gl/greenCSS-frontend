@@ -17,7 +17,7 @@ const SlugComponent = dynamic(() => import('@/components/reusable/SlugComponent'
     </div>
   )
 })
-const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
+const SideBarlayout = dynamic(() => import('@/components/reusable/SideBarlayout'), { ssr: false })
 const DevelopmentToClipboard = dynamic(() => import('@/utils/DevelopmentToClipboard'))
 
 export default function DocsPostPage({
@@ -36,24 +36,31 @@ export default function DocsPostPage({
       url={`docs/${slug}`}
       keywords={`${category}, ${keywords} greenCSS, css, green css`}
       author={author}>
-      <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh bg-gray-9'>
-        <DevelopmentToClipboard content={content} />
-        <SlugComponent
-          title={title}
-          excerpt={excerpt}
-          category={category}
-          keywords={keywords}
-          date={date}
-          cover_image={cover_image}
-          author={author}
-          content={content}
-          slug={slug}
-          isBlog={isBlog}
-          posts={posts}
-          categories={categories}
-          plainText={plainText}
-        />
-      </Layout>
+      <SideBarlayout
+        categories={categories}
+        posts={posts}
+        hasSubcategory={true}
+        content={
+          <>
+            <DevelopmentToClipboard content={content} />
+            <SlugComponent
+              title={title}
+              excerpt={excerpt}
+              category={category}
+              keywords={keywords}
+              date={date}
+              cover_image={cover_image}
+              author={author}
+              content={content}
+              slug={slug}
+              isBlog={isBlog}
+              posts={posts}
+              categories={categories}
+              plainText={plainText}
+            />
+          </>
+        }
+      />
     </SEO>
   )
 }
