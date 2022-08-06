@@ -29,7 +29,7 @@ export default function ToggleMember() {
             onMouseLeave={() => setToggle((toggle) => !toggle)}>
             <GreenButton
               href='/member/account'
-              className='mr-25px bg-gray-9 border-none hover:border-solid'
+              className='bg-gray-9'
               id='member-button'
               isLinkedOutline={true}
               isDefault={false}>
@@ -58,7 +58,12 @@ export default function ToggleMember() {
               </>
             )}
           </div>
-          <GreenButton id='logout-button' onClick={logout} className='' isOutline={true} isDefault={false}>
+          <GreenButton
+            id='logout-button'
+            onClick={logout}
+            isOutline={true}
+            isDefault={false}
+            className='bg-white ml-25px '>
             Logout
           </GreenButton>
         </div>

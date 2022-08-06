@@ -33,7 +33,6 @@ export default function BlogCard({ post, index }) {
               id='blog-card'
               key={index}
               isBlog={true}
-              isRevert={index % 2 === 0 ? false : true}
               header={post.frontmatter.title}
               headerclass='text-30px leading-100per'
               subheader={post.frontmatter.excerpt}

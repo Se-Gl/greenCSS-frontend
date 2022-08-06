@@ -1,4 +1,10 @@
-export default function CtaButton({ hover, index, className = 'absolute bottom-5per right-5per' }) {
+export default function CtaButton({
+  hover,
+  index,
+  className = 'absolute bottom-5per right-5per',
+  fillOne = 'fill-white',
+  fillTwo = 'fill-gray'
+}) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -31,7 +37,8 @@ export default function CtaButton({ hover, index, className = 'absolute bottom-5
       </mask>
       <g mask='url(#mask0_516384_1156)'>
         <path
-          fill={`${hover === index ? '#FDFDFD' : '#7D7D7D'}`}
+          className={`${hover === index ? fillOne : fillTwo}`}
+          // fill={`${hover === index ? '#FDFDFD' : '#7D7D7D'}`}
           d='M37 37H62V62H37z'
           transform='rotate(180 37 37)'></path>
       </g>

@@ -6,12 +6,11 @@ import { getPosts } from '@/lib/posts'
 import BlogCard from '@/components/blog/BlogCard'
 import BlogLayout from '@/components/blog/BlogLayout'
 import { BackButton } from '@/components/reusable/Button'
-import SideBar from '@/components/category/SideBar'
 import { sortAlphabetically } from '@/utils/SortBy'
 import SEO from '@/components/reusable/SEO'
 import ModernGrid from '@/components/grid/ModernGrid'
 
-const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
+const SideBarlayout = dynamic(() => import('@/components/reusable/SideBarlayout'), { ssr: false })
 
 export default function DocsCategorySlugPage({ posts, categoryName, categories }) {
   return (
@@ -20,17 +19,12 @@ export default function DocsCategorySlugPage({ posts, categoryName, categories }
       description={`greenCSS documentation - get an overview about the category ${categoryName}, its css classes and how to apply them.`}
       url={`docs/category/${categoryName}`}
       keywords='docs, documentation, information, search, css'>
-      <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh mb-10rem'>
-        <div className='grid grid-col-12 gap-30px'>
-          <div
-            className='overflow-y-scroll sticky max-h-75vh col-span-3 sm:display-none md:display-none mb-50px'
-            style={{ scrollbarWidth: 'thin', scrollbarColor: '#898989 #fdfdfd', top: '75px' }}
-            id='sidebar'>
-            <ul>
-              <SideBar categories={categories} posts={posts} hasSubcategory={true} />
-            </ul>
-          </div>
-          <div className='min-w-100per relative col-span-9 sm:col-span-12 md:col-span-12'>
+      <SideBarlayout
+        categories={categories}
+        posts={posts}
+        hasSubcategory={true}
+        content={
+          <>
             <BackButton>Back</BackButton>
             <div className='min-w-100per relative' id={`category-${categoryName}`}>
               <ModernGrid
@@ -48,9 +42,9 @@ export default function DocsCategorySlugPage({ posts, categoryName, categories }
                 ))}
               </BlogLayout>
             </div>
-          </div>
-        </div>
-      </Layout>
+          </>
+        }
+      />
     </SEO>
   )
 }

@@ -16,7 +16,7 @@ export default function ForOhFor() {
       description='It seems that this page has been lost somewhere in the WWW. Maybe you should use the search function.'
       url={NEXT_URL + asPath}
       keywords='404, not found, error, sorry'>
-      <Layout>
+      <Layout className='min-h-100vh relative z-2 bg-blue-7'>
         <div id='404'>
           <ModernGrid
             header='Something has gone terribly wrong - Please forgive me!'

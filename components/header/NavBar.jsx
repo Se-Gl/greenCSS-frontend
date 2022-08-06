@@ -32,22 +32,19 @@ const Navbar = () => {
       style={{ maxWidth: '110rem' }}
       onMouseOver={handleSubmenu}>
       <div className='w-100per grid grid-col-3'>
-        <div className='my-auto'>
-          <Link href='/'>
-            <a>
-              <LogoDark width='50px' height='50px' />
-            </a>
-          </Link>
-        </div>
+        <Link href='/'>
+          <a className='w-50px my-auto'>
+            <LogoDark width='50px' height='50px' />
+          </a>
+        </Link>
+
         <ul className='grid grid-col-3 text-15px'>
           {navmenu.map((item, index) => {
             return (
-              <li key={index} onMouseOver={displaySubmenu} className='h-100per flex h-50 items-center'>
+              <li key={index} onMouseOver={displaySubmenu} className='h-100per flex h-50 items-center justify-center'>
                 <Link href={item.path}>
                   <a
-                    className={`map-link text-15px font-600 no-decoration cursor-pointer capitalize ${
-                      index === 1 ? 'px-0px' : ''
-                    } pb-15px mt-15px mb-0px ${
+                    className={`map-link text-15px font-600 no-decoration cursor-pointer capitalize px-50px pb-15px mt-15px mb-0px ${
                       router.asPath.includes(item.path) ? 'text-greencss font-600' : 'text-black'
                     }`}>
                     {item.title}
@@ -57,7 +54,9 @@ const Navbar = () => {
             )
           })}
         </ul>
-        <ToggleMember />
+        <div className='ml-auto flex justify-center'>
+          <ToggleMember />
+        </div>
       </div>
     </nav>
   )

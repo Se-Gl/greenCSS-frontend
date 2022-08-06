@@ -1,22 +1,19 @@
 # [1.4.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.3.2...v1.4.0) (2022-08-05)
 
-
 ### Bug Fixes
 
-* **hero:** adjusted responsive sphere values ([7abd85d](https://github.com/Se-Gl/greenCSS-frontend/commit/7abd85d6fbf1bb3e9b85465a352e7060b7ed855a))
-* **hero:** adjusted sizing ([bacb91c](https://github.com/Se-Gl/greenCSS-frontend/commit/bacb91cfc4770ed90b85127f760ad5d451b0378f))
-* **hero:** adjusted tilt values ([13ae943](https://github.com/Se-Gl/greenCSS-frontend/commit/13ae9439c5ea5f5425e4e6d50e83fce30b5bfe7a))
-* **hero:** deleted old tilt component, re-generated tilt ([5d2f904](https://github.com/Se-Gl/greenCSS-frontend/commit/5d2f904a6a384711aa8a712c2461e2ab20045887))
-
+- **hero:** adjusted responsive sphere values ([7abd85d](https://github.com/Se-Gl/greenCSS-frontend/commit/7abd85d6fbf1bb3e9b85465a352e7060b7ed855a))
+- **hero:** adjusted sizing ([bacb91c](https://github.com/Se-Gl/greenCSS-frontend/commit/bacb91cfc4770ed90b85127f760ad5d451b0378f))
+- **hero:** adjusted tilt values ([13ae943](https://github.com/Se-Gl/greenCSS-frontend/commit/13ae9439c5ea5f5425e4e6d50e83fce30b5bfe7a))
+- **hero:** deleted old tilt component, re-generated tilt ([5d2f904](https://github.com/Se-Gl/greenCSS-frontend/commit/5d2f904a6a384711aa8a712c2461e2ab20045887))
 
 ### Features
 
-* **hero:** updated hero section, deleted unused images, created tilt component ([f463a80](https://github.com/Se-Gl/greenCSS-frontend/commit/f463a80461572b73e7675466339e2d2db0c73286))
-
+- **hero:** updated hero section, deleted unused images, created tilt component ([f463a80](https://github.com/Se-Gl/greenCSS-frontend/commit/f463a80461572b73e7675466339e2d2db0c73286))
 
 ### Performance Improvements
 
-* **hero:** deleted unused snippets ([aadf615](https://github.com/Se-Gl/greenCSS-frontend/commit/aadf615e356be0582c3cbb568dabbcb9e69bcc35))
+- **hero:** deleted unused snippets ([aadf615](https://github.com/Se-Gl/greenCSS-frontend/commit/aadf615e356be0582c3cbb568dabbcb9e69bcc35))
 
 ## [1.3.2](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.3.1...v1.3.2) (2022-07-25)
 
