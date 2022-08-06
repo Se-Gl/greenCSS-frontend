@@ -134,8 +134,11 @@ const Sponsor = () => {
         subheader='In cooperation with greenCSS partners, global projects are supported in order to minimize the CO2 emissions. Every cent goes directly to a green project. You want to learn more? Subscribe to the newsletter and receive in real time which projects are currently supported.'
         imageBg='orange'
         imageUrl='/images/member/member-hand.webp'
-        imageAlt='greencss donation'
-      />
+        imageAlt='greencss donation'>
+        <GreenButton isDefault={false} isLinkedOutline={true} href='/member'>
+          Or Become A Member
+        </GreenButton>
+      </ModernGrid>
 
       {checkPrediction && (
         <ModernCard
@@ -203,7 +206,7 @@ const Sponsor = () => {
         </div>
       </ModernCard>
 
-      <div className='m-auto grid grid-col-3 gap-30px sm:gap-0px sm:grid-col-1 md:grid-col-1'>
+      {/* <div className='m-auto grid grid-col-3 gap-30px sm:gap-0px sm:grid-col-1 md:grid-col-1'>
         {individualAmounts.map((cart, index) => (
           <SponsorCard
             key={index}
@@ -227,7 +230,7 @@ const Sponsor = () => {
             hover={hover}
           />
         ))}
-      </div>
+      </div> */}
     </Section>
   )
 }

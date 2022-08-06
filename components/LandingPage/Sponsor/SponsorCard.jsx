@@ -6,7 +6,7 @@ export default function SponsorCard({
   onMouseLeave,
   onKeyDown,
   bgColor = 'bg-white',
-  imageUrl,
+  imageUrl = '/images/landingpage/donation/planet-01.webp',
   imageAlt,
   onClick,
   headerClass,
@@ -21,6 +21,7 @@ export default function SponsorCard({
   index,
   hover
 }) {
+  console.log(index)
   return (
     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} key={index} onKeyDown={onKeyDown}>
       <div
@@ -32,8 +33,18 @@ export default function SponsorCard({
               quality={100}
               layout='fill'
               objectFit='cover'
-              src={imageUrl}
-              alt={imageAlt}
+              src={
+                (index === 0 && '/images/landingpage/donation/planet-01.webp') ||
+                (index === 1 && '/images/landingpage/donation/planet-02.webp') ||
+                (index === 2 && '/images/landingpage/donation/planet-03.webp') ||
+                (imageUrl && imageUrl)
+              }
+              alt={
+                (index === 0 && 'greenCSS 3D planet green') ||
+                (index === 1 && 'greenCSS 3D planet blue') ||
+                (index === 2 && 'greenCSS 3D planet purple') ||
+                (imageAlt && imageAlt)
+              }
               placeholder='blur'
               blurDataURL={`/_next/image?url=${imageUrl}&w=16&q=1`}
             />
