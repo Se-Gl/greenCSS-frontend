@@ -32,13 +32,12 @@ const Navbar = () => {
       style={{ maxWidth: '110rem' }}
       onMouseOver={handleSubmenu}>
       <div className='w-100per grid grid-col-3'>
-        <div className='my-auto'>
-          <Link href='/'>
-            <a>
-              <LogoDark width='50px' height='50px' />
-            </a>
-          </Link>
-        </div>
+        <Link href='/'>
+          <a className='w-50px my-auto'>
+            <LogoDark width='50px' height='50px' />
+          </a>
+        </Link>
+
         <ul className='grid grid-col-3 text-15px'>
           {navmenu.map((item, index) => {
             return (
