@@ -1,10 +1,10 @@
+import 'codn/dist/style/green.css'
 if (process.env.NODE_ENV == 'production') {
   require('@/css/green.css')
 } else {
   require('greencss/css/greencss.css')
 }
 require('@/styles/globals.scss')
-require('codn/dist/style/input.css')
 
 import Progress from '@/components/progress/Progress'
 import { ToastProvider } from '@/components/toast/context/ToastContext'
