@@ -40,7 +40,6 @@ export default function index({ stripeData }) {
       <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh bg-blue-7'>
         <>
           <ModernGrid
-            id='member-plans'
             header='Support your world'
             subheader='100% not greenwashing! You decide where you donate. Compare plans, then choose the one just right for you. With a monthly
             subscription you help us to continuously support and restore nature.'
@@ -48,7 +47,7 @@ export default function index({ stripeData }) {
             imageUrl='/images/member/member-hero.png'
             imageAlt='memmber 3d wolf hero'
           />
-          <div className='relative min-h-100vh'>
+          <div className='relative min-h-100vh' id='member-plans'>
             <div className='grid grid-col-3 gap-30px sm:grid-col-1 md:grid-col-1 z-2'>
               {stripeData &&
                 stripeData.map((d, i) => (

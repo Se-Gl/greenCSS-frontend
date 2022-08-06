@@ -22,7 +22,7 @@ export default function index() {
           ref={ref}
           style={{ top: '4.5%', left: '10.25%', width: '79.4%', height: '73.4%' }}>
           <Image
-            quality={100}
+            quality={80}
             className='select-none'
             src='/images/landingpage/Landing-desktop-bg.webp'
             alt='greenCSS MacBook donation section'

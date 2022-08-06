@@ -35,7 +35,7 @@ export default function SponsorCard({
         {imageUrl && (
           <div className='relative min-h-25rem sm:h-25per md:h-25per w-100per'>
             <Image
-              quality={100}
+              quality={80}
               layout='fill'
               objectFit='cover'
               src={

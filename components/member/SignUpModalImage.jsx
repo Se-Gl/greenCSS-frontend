@@ -22,7 +22,7 @@ export default function SignUpModalImage({ checkMemberState, setCheckMemberState
       </div>
       <div className='relative h-100vh sm:h-50vh md:h-50vh w-100per overflow-hidden'>
         <Image
-          quality={100}
+          quality={80}
           layout='fill'
           objectFit='contain'
           src={`/images/member/signup-${checkMemberState ? 'blue' : 'green'}.webp`}

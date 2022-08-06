@@ -64,7 +64,7 @@ export default function SlugComponent({
               className='relative h-50rem rounded-20px overflow-hidden mb-50px'
               style={{ boxShadow: `5px 5px 10px -1px ${shadow}` }}>
               <Image
-                quality={100}
+                quality={80}
                 layout='fill'
                 objectFit='cover'
                 src={cover_image}

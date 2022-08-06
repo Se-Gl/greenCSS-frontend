@@ -55,7 +55,7 @@ export default function ModernCard({
             }`}>
             <div className='relative min-h-33vh sm:h-25vh md:h-25vh w-100per'>
               <Image
-                quality={100}
+                quality={80}
                 layout='fill'
                 objectFit={`${!isBlog ? 'contain' : 'cover'}`}
                 src={`${imageUrl}`}
@@ -81,7 +81,7 @@ export default function ModernCard({
             } bg-${imageBg}`}>
             <div className='relative min-h-33vh sm:h-25vh md:h-25vh w-100per'>
               <Image
-                quality={100}
+                quality={80}
                 layout='fill'
                 objectFit={`${!isBlog ? 'contain' : 'cover'}`}
                 src={`${imageUrl}`}

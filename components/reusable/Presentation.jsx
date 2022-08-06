@@ -30,7 +30,7 @@ export default function Presentation({
               }`}>
               <Image
                 className='rounded-20px transition-transform transition-duration-700ms hover:scale-105'
-                quality={100}
+                quality={80}
                 src={`/images/${image.path}.webp`}
                 alt={image.alt}
                 width={image.width}
