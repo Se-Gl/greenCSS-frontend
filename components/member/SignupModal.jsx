@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Select from 'react-select'
 import axios from 'axios'
 import { UserContext } from '@/utils/SubscriptionContext'
-import { Input } from '../reusable/Input'
+import { Input } from 'codn'
 import { countries, regions } from '@/data/countries'
 import Modal from '../modal/Modal'
 import { GreenButton } from '../reusable/Button'
@@ -213,16 +213,17 @@ export default function SignupModal({ showModal, setShowModal }) {
                       item.htmlFor.includes('repeatpassword') ? 'mt-neg-30px' : ''
                     }`}
                     key={index}>
-                    <Input
-                      maxLength={item.maxLength}
-                      id={item.htmlFor}
-                      label={item.label}
-                      type={item.type}
-                      value={item.value}
-                      setValue={item.onChange}
-                      htmlFor={item.htmlFor}
-                      isTextArea={item.isTextArea}
-                    />
+                    <div className='w-100per min-w-30rem max-w-40rem my-20px'>
+                      <Input
+                        maxLength={item.maxLength}
+                        id={item.htmlFor}
+                        label={item.label}
+                        type={item.type}
+                        value={item.value}
+                        setValue={item.onChange}
+                        htmlFor={item.htmlFor}
+                      />
+                    </div>
                     {checkMemberState && (
                       <CheckValidInput
                         checkIsValid={item.checkFirst}
@@ -272,8 +273,8 @@ export default function SignupModal({ showModal, setShowModal }) {
                   type='submit'
                   isdisabled={!checkIsDisabled}
                   id='login-button'
-                  className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
-                    !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
+                  className={`text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
+                    !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : ''
                   }`}
                   isOutline={true}
                   isDefault={false}>

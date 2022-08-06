@@ -1,13 +1,13 @@
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import React, { useContext, useEffect, useState } from 'react'
+import { Input } from 'codn'
 import axios from 'axios'
 import { UserContext } from '@/utils/SubscriptionContext'
 import SEO from '@/components/reusable/SEO'
 import CheckServerAuth from '@/components/auth/CheckServerAuth'
 import { checkNumber, checkRegionOrCountry, checkValidEmail } from '@/data/validation'
 import { countries, regions } from '@/data/countries'
-import { Input } from '@/components/reusable/Input'
 import { GreenButton } from '@/components/reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
 
@@ -165,16 +165,17 @@ export default function UserUpdate() {
                       item.htmlFor.includes('repeatpassword') ? 'mt-neg-30px' : ''
                     }`}
                     key={index}>
-                    <Input
-                      maxLength={item.maxLength}
-                      id={item.htmlFor}
-                      label={item.label}
-                      type={item.type}
-                      value={item.value}
-                      setValue={item.onChange}
-                      htmlFor={item.htmlFor}
-                      isTextArea={item.isTextArea}
-                    />
+                    <div className='w-100per min-w-30rem max-w-40rem my-20px'>
+                      <Input
+                        maxLength={item.maxLength}
+                        id={item.htmlFor}
+                        label={item.label}
+                        type={item.type}
+                        value={item.value}
+                        setValue={item.onChange}
+                        htmlFor={item.htmlFor}
+                      />
+                    </div>
 
                     <CheckValidInput
                       checkIsValid={item.checkFirst}

@@ -1,13 +1,10 @@
-import dynamic from 'next/dynamic'
 import { useState } from 'react'
+import { Input, TextArea, Captcha } from 'codn'
 import { GreenButton } from '../reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
-import { Input, TextArea } from '../reusable/Input'
 import CheckValidInput from '../member/CheckValidInput'
 import ModernGrid from '../grid/ModernGrid'
 import { checkNumber, checkValidEmail } from '@/data/validation'
-
-const CaptchaComponent = dynamic(() => import('../captcha/CaptchaComponent'), { ssr: false })
 
 export default function ContactForm() {
   const [fullname, setFullname] = useState('')
@@ -142,46 +139,50 @@ export default function ContactForm() {
           {contactItems.sort().map((item, index) => {
             return (
               <div className='flex sm:block md:block lg:block' key={index}>
-                <Input
-                  maxLength={item.maxLength}
-                  id={item.htmlFor}
-                  label={item.label}
-                  type={item.type}
-                  value={item.value}
-                  setValue={item.onChange}
-                  htmlFor={item.htmlFor}
-                  isTextArea={item.isTextArea}
-                />
+                <div className='w-100per min-w-35rem max-w-45rem'>
+                  <Input
+                    maxLength={item.maxLength}
+                    id={item.htmlFor}
+                    label={item.label}
+                    type={item.type}
+                    value={item.value}
+                    setValue={item.onChange}
+                    htmlFor={item.htmlFor}
+                    isTextArea={item.isTextArea}
+                  />
+                </div>
                 <CheckValidInput checkIsValid={item.checkFirst} text={item.checkFirstDescription} />
               </div>
             )
           })}
           <div className='flex sm:block md:block lg:block'>
-            <TextArea
-              maxLength={500}
-              id='message'
-              label='Message'
-              type='text'
-              value={message}
-              setValue={setMessage}
-              htmlFor='message'
-            />
+            <div className='w-100per min-w-35rem max-w-45rem'>
+              <TextArea
+                maxLength={500}
+                id='message'
+                label='Message'
+                type='text'
+                value={message}
+                setValue={setMessage}
+                htmlFor='message'
+              />
+            </div>
             <CheckValidInput checkIsValid={message.length >= 3 && message.length <= 500} text='Max 500 characters' />
           </div>
 
-          <CaptchaComponent
-            verifyCaptcha={verifyCaptcha}
-            setverifyCaptcha={setverifyCaptcha}
-            captcha={captcha}
-            setCaptcha={setCaptcha}
-          />
+          <div className='flex sm:block md:block lg:block my-10px gap-25px'>
+            <Captcha setWord={setCaptcha} />
+            <div className='sm:my-25px'>
+              <Input label='captcha' type='text' value={verifyCaptcha} setValue={setverifyCaptcha} htmlFor='captcha' />
+            </div>
+          </div>
           <div className='sm:mr-auto md:mr-auto my-25px'>
             <GreenButton
               type='submit'
               isdisabled={!checkIsDisabled}
               id='submit-button'
-              className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
-                !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
+              className={`text-15px font-400 ml-0px mt-25px ${
+                !checkIsDisabled ? 'cursor-not-allowed bg-gray-5 border-none' : ''
               }`}
               isOutline={true}
               isDefault={false}>

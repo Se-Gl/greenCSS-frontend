@@ -1,10 +1,10 @@
 import dynamic from 'next/dynamic'
 import { withRouter, useRouter } from 'next/router'
 import { useState } from 'react'
+import { Input } from 'codn'
 import { resetPassword } from '@/utils/Auth'
 import SEO from '@/components/reusable/SEO'
 import ModernGrid from '@/components/grid/ModernGrid'
-import { Input } from '@/components/reusable/Input'
 import CheckValidInput from '@/components/member/CheckValidInput'
 import { GreenButton } from '@/components/reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
@@ -15,6 +15,7 @@ import {
   checkValidPasswordThree,
   compareKey
 } from '@/data/validation'
+
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
 function ResetPassword({ router }) {
@@ -64,16 +65,17 @@ function ResetPassword({ router }) {
           <>
             <form onSubmit={handleSubmit}>
               <div className='flex sm:block md:block lg:block'>
-                <Input
-                  maxLength={64}
-                  id='newPassword'
-                  label='Password'
-                  type='password'
-                  value={newPassword}
-                  setValue={setnewPassword}
-                  htmlFor='newPassword'
-                  isTextArea={false}
-                />
+                <div className='w-100per min-w-30rem max-w-40rem my-20px'>
+                  <Input
+                    maxLength={64}
+                    id='newPassword'
+                    label='Password'
+                    type='password'
+                    value={newPassword}
+                    setValue={setnewPassword}
+                    htmlFor='newPassword'
+                  />
+                </div>
                 <CheckValidInput
                   maxLength={64}
                   text='At least one numeric digit'
@@ -87,16 +89,17 @@ function ResetPassword({ router }) {
                 />
               </div>
               <div className='flex sm:block md:block lg:block'>
-                <Input
-                  maxLength={64}
-                  id='repeatPassword'
-                  label='Repeat'
-                  type='password'
-                  value={repeatPassword}
-                  setValue={setrepeatPassword}
-                  htmlFor='repeatPassword'
-                  isTextArea={false}
-                />
+                <div className='w-100per min-w-30rem max-w-40rem my-20px'>
+                  <Input
+                    maxLength={64}
+                    id='repeatPassword'
+                    label='Repeat'
+                    type='password'
+                    value={repeatPassword}
+                    setValue={setrepeatPassword}
+                    htmlFor='repeatPassword'
+                  />
+                </div>
                 <CheckValidInput
                   maxLength={64}
                   text='The same password'

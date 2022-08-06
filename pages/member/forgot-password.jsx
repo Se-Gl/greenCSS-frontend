@@ -1,14 +1,15 @@
 import dynamic from 'next/dynamic'
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
+import { Input } from 'codn'
 import { forgotPassword } from '@/utils/Auth'
 import SEO from '@/components/reusable/SEO'
 import ModernGrid from '@/components/grid/ModernGrid'
-import { Input } from '@/components/reusable/Input'
 import CheckValidInput from '@/components/member/CheckValidInput'
 import { GreenButton } from '@/components/reusable/Button'
 import { useToast } from '@/components/toast/hooks/useToast'
 import { checkValidEmail } from '@/data/validation'
 import { UserContext } from '@/utils/SubscriptionContext'
+
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
 export default function forgotPasswordPage() {
@@ -49,24 +50,25 @@ export default function forgotPasswordPage() {
           <>
             <form onSubmit={handleSubmit}>
               <div className='flex sm:block md:block lg:block'>
-                <Input
-                  maxLength={32}
-                  id='email'
-                  label='email'
-                  type='email'
-                  value={email}
-                  setValue={setEmail}
-                  htmlFor='email'
-                  isTextArea={false}
-                />
+                <div className='w-100per min-w-30rem max-w-40rem my-20px'>
+                  <Input
+                    maxLength={32}
+                    id='email'
+                    label='email'
+                    type='email'
+                    value={email}
+                    setValue={setEmail}
+                    htmlFor='email'
+                  />
+                </div>
                 <CheckValidInput checkIsValid={checkValidEmail(email)} text='Your E-Mail' />
               </div>
 
               <GreenButton
                 isdisabled={!checkIsDisabled}
                 id='login-button'
-                className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
-                  !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
+                className={`text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
+                  !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : ''
                 }`}
                 isOutline={true}
                 isDefault={false}
