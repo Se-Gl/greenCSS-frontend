@@ -30,8 +30,7 @@ export default function SlugComponent({
   authorImage,
   content,
   slug,
-  isBlog,
-  plainText
+  isBlog
 }) {
   const [shadow, setShadow] = useState('')
   const fac = new FastAverageColor()
@@ -90,10 +89,6 @@ export default function SlugComponent({
             remarkPlugins={[remarkGfm]}
           />
           {/* eslint-enable */}
-        </div>
-        {/* TODO: SEO experiment */}
-        <div className='absolute bottom-5per z-neg-1 opacity-1per' id='seo-experiment'>
-          {plainText}
         </div>
       </div>
     </>

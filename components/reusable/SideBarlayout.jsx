@@ -14,10 +14,10 @@ export default function SideBarlayout({ categories, posts, hasSubcategory, conte
       <div className={`fade-in animation-duration-100ms animation-forwards overflow-hidden ${className}`}>
         <main>
           <div className='h-100per w-30rem lg:w-25rem fixed left-0per top-0per bg-gray-9 min-h-100vh sm:display-none md:display-none'>
-            <div className='mt-75px border-1px border-solid border-gray-7 p-10px'>
+            <div className='mt-75px p-10px' style={{ borderRight: '1px solid #d2d2d2' }}>
               <div
                 className='overflow-y-scroll sticky max-h-100vh'
-                style={{ scrollbarWidth: 'thin', scrollbarColor: '#898989 #fdfdfd', top: '75px' }}
+                style={{ scrollbarWidth: 'thin', scrollbarColor: '#d2d2d2 #fdfdfd', top: '75px' }}
                 id='sidebar'>
                 <ul>
                   <SideBar categories={categories} posts={posts} hasSubcategory={hasSubcategory} />
@@ -31,7 +31,7 @@ export default function SideBarlayout({ categories, posts, hasSubcategory, conte
             {content}
           </div>
         </main>
-        <div className='ml-30rem lg:ml-25rem sm:ml-0px md:ml-0px'>
+        <div className='px-10px ml-30rem lg:ml-25rem sm:ml-0px md:ml-0px'>
           <Footer />
         </div>
       </div>

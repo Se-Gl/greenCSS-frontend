@@ -24,7 +24,7 @@ export default function DocsCategorySlugPage({ posts, categoryName, categories }
         posts={posts}
         hasSubcategory={true}
         content={
-          <div className='min-w-100per relative col-span-9 sm:col-span-12 md:col-span-12'>
+          <>
             <BackButton>Back</BackButton>
             <div className='min-w-100per relative' id={`category-${categoryName}`}>
               <ModernGrid
@@ -42,7 +42,7 @@ export default function DocsCategorySlugPage({ posts, categoryName, categories }
                 ))}
               </BlogLayout>
             </div>
-          </div>
+          </>
         }
       />
     </SEO>
