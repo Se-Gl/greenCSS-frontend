@@ -10,14 +10,17 @@ require('@/styles/globals.scss')
 import Progress from '@/components/progress/Progress'
 import { NavProvider } from '@/utils/NavContext'
 import { UserProvider } from '@/utils/SubscriptionContext'
+import { ModalProvider } from '@/utils/ModalContext'
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <UserProvider>
         <NavProvider>
-          <Progress />
-          <Component {...pageProps} />
+          <ModalProvider>
+            <Progress />
+            <Component {...pageProps} />
+          </ModalProvider>
         </NavProvider>
       </UserProvider>
     </>

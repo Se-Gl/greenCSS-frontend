@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
-import ReusableModal from '../modal/ReusableModal'
+import { useEffect, useRef, useState, useContext } from 'react'
 import Arrow from '../icon/Arrow'
+import SearchBar from '../modal/SearchBar'
+import ModalContext from '@/utils/ModalContext'
 
 export default function Hero() {
+  const { handleSearchBar } = useContext(ModalContext)
   const card = useRef(0)
   const [loading, setLoading] = useState(true)
 
@@ -58,11 +60,11 @@ export default function Hero() {
                   A CSS library for the Web 2.0 and 3.0. Completely climate neutral - without greenwashing.
                 </p>
                 <div className='flex sm:block gap-10px max-w-23rem'>
-                  <ReusableModal isHero={true} />
+                  <SearchBar setShowModal={handleSearchBar} isHero={true} />
                   <button className='text-black bg-white hover:bg-gray-7 active:bg-gray-9 rounded-10px flex items-center transition-all transition-duration-300ms sm:mt-10px'>
                     <Link href='/docs'>
                       <a className='m-0px text-10px no-decoration p-10px flex items-center'>
-                        documentation{' '}
+                        docs{' '}
                         <span className='ml-10px min-w-9px'>
                           <Arrow />
                         </span>

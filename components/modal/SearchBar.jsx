@@ -8,7 +8,9 @@ export default function SearchBar({ setShowModal, className, isHero }) {
       } rounded-10px ${className}`}
       onClick={setShowModal}
       style={{ cursor: 'pointer' }}>
-      <SearchIcon width='25px' height='25px' className='my-auto mx-10px' fillColor={isHero ? '#fdfdfd' : '#0D0D0D'} />
+      <div className='min-w-15px my-auto'>
+        <SearchIcon width='15px' height='15px' className='my-auto' fillColor={isHero ? '#fdfdfd' : '#0D0D0D'} />
+      </div>
       <input
         type='search'
         name='modal-search'
@@ -18,8 +20,12 @@ export default function SearchBar({ setShowModal, className, isHero }) {
         } border-none text-10px`}
         placeholder={`${isHero ? 'Search' : 'Rapid Search'}`}
       />
-      <p className='text-10px font-600 bg-black p-10px rounded-5px my-auto mx-5px text-white' id='close-modal'>
-        F3
+      <p
+        className={`text-10px font-600 bg-black rounded-5px my-auto mx-5px text-white ${
+          isHero ? 'text-white min-w-50px' : 'p-10px min-w-62px'
+        }`}
+        id='close-modal'>
+        CTRL + k
       </p>
     </div>
   )

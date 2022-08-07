@@ -1,16 +1,16 @@
-import { mobileBrandMenu, mobileContactMenu, mobileDocsMenu } from '@/data/nav'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import LogoDark from '../icon/Brand/LogoDark'
 import SignupModal from '../member/SignupModal'
-import Modal from '../modal/Modal'
 import SearchBar from '../modal/SearchBar'
 import MobileGrid from './MobileGrid'
 import ToggleMember from './ToggleMember'
+import { mobileBrandMenu, mobileContactMenu, mobileDocsMenu } from '@/data/nav'
+import ModalContext from '@/utils/ModalContext'
 
 export default function MobileNavBar() {
+  const { handleSearchBar } = useContext(ModalContext)
   const [isOpen, setIsOpen] = useState(false)
-  const [showModal, setShowModal] = useState(false)
   const [showMemberModal, setShowMemberModal] = useState(false)
 
   return (
@@ -50,8 +50,7 @@ export default function MobileNavBar() {
             <MobileGrid mapping={mobileDocsMenu} header='documentation' headerLink='/docs' />
             <MobileGrid mapping={mobileContactMenu} header='contact' headerLink='/contact' />
             <div className='bg-white md:mt-50px'>
-              <SearchBar setShowModal={() => setShowModal(true)} className='mb-25px bg-white shadow-green-10' />
-              <Modal onClose={() => setShowModal(false)} show={showModal}></Modal>
+              <SearchBar setShowModal={handleSearchBar} className='mb-25px bg-white shadow-green-10' />
             </div>
           </div>
         </div>

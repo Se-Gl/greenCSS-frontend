@@ -13,7 +13,7 @@ describe('Contact Index Unit test', () => {
     cy.get('#checkmark').should('be.visible').should('exist')
     cy.get('#email').type('john.doe@email.com {enter}', { force: true })
     cy.get('#subject').type('Test Title {enter}', { force: true })
-    cy.get('#textarea').type('tba... {enter}', { force: true })
+    // cy.get('#textarea').type('tba... {enter}', { force: true })
     cy.get('#password').type('t {enter}', { force: true })
 
     cy.get('#submit-button').click({ force: true })

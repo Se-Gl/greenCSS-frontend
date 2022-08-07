@@ -8,7 +8,7 @@ export default function SignUpModalImage({ checkMemberState, setCheckMemberState
         checkMemberState ? 'bg-blue-1' : 'bg-greencss-1'
       }`}>
       <div className='flex w-33per lg:block md:block sm:block absolute z-2 p-25px'>
-        <p className=' text-white mb-0px sm:min-w-35rem md:min-w-35rem'>
+        <p className=' text-white mb-0px sm:min-w-35rem md:min-w-35rem mt-50px'>
           {checkMemberState ? 'Do you have an account?' : 'You do not have an account yet?'}
         </p>
         <GreenButton

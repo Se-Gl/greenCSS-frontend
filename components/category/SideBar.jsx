@@ -1,12 +1,20 @@
 import Link from 'next/link'
-import ReusableModal from '../modal/ReusableModal'
+import { useContext } from 'react'
+import ModalContext from '@/utils/ModalContext'
+import SearchBar from '../modal/SearchBar'
 
 export default function SideBar({ categories, posts, hasSubcategory = false, showSearch = true }) {
+  const { handleSearchBar } = useContext(ModalContext)
+
   return (
     <>
-      {showSearch === true && <ReusableModal isSidebar={true} />}
+      {showSearch === true && (
+        <div className='fixed top-8per'>
+          <SearchBar setShowModal={handleSearchBar} isHero={false} className='bg-gray-10' />
+        </div>
+      )}
       {categories.sort().map((category, index) => (
-        <div key={index} className='whitespace-nowrap overflow-x-hidden mt-25px'>
+        <div key={index} className='whitespace-nowrap overflow-x-hidden mt-50px'>
           <li>
             <Link href={`/docs/category/${category.toLowerCase()}`} passRef>
               <a className='font-600 text-15px text-black-3 mb-0px no-decoration'>{category.replace('-', ' ')}</a>
