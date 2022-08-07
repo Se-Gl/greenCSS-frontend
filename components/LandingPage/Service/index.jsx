@@ -1,60 +1,49 @@
 import Section from '../../reusable/Section'
-import ModernCard from '@/components/reusable/ModernCard'
+import Presentation from '@/components/reusable/Presentation'
 
 export default function Service() {
-  const nutshellCard = [
+  const aboutImages = [
     {
-      header: 'Responsive',
-      subheader:
-        'Design your website for all users, whether desktop, laptop, tablet or smartphone. Comfortably and intuitively and easy to learn - like bulma or tailwindcss but for everyone.',
-      imageBg: 'blue',
-      imageUrl: '/images/landingpage/service/responsive-greencss.webp',
-      imageAlt: 'greencss responsive card',
-      isRevert: false,
-      animation: 'fade-in-left animation-duration-500ms animation-forwards'
+      path: 'landingpage/service/asian_girl',
+      alt: '3D asian girl by greenCSS',
+      additionalStyle: 'mt-50px bg-blue flex justify-center items-end',
+      width: 545,
+      height: 500
     },
     {
-      header: 'Competitive',
-      subheader:
-        'Created like bulma with SASS (SCSS). Classic like tailwindcss, but more intuitive. For the environment and for yourself - do something good while you work.',
-      imageBg: 'magenta',
-      imageUrl: '/images/landingpage/service/competitive-greencss.webp',
-      imageAlt: 'greencss competitive card',
-      isRevert: true,
-      animation: 'fade-in-right animation-duration-500ms animation-forwards'
+      path: 'landingpage/service/designer_man',
+      alt: '3D designer man by greenCSS',
+      additionalStyle: 'bg-turquoise mb-50px flex justify-center items-end',
+      width: 545,
+      height: 500
+    },
+    {
+      path: 'landingpage/service/student_boy',
+      alt: '3D student boy by greenCSS',
+      additionalStyle: 'mt-50px bg-red flex justify-center items-end',
+      width: 545,
+      height: 500
+    },
+    {
+      path: 'landingpage/service/muslim_girl',
+      alt: '3D muslim girl by greenCSS',
+      additionalStyle: 'bg-orange mb-50px flex justify-center items-end',
+      width: 545,
+      height: 500
     }
   ]
+
   return (
     <Section id='service' header='Our Mission - Save the Programming Planet'>
-      <ModernCard
-        animation='fade-in animation-duration-500ms animation-forwards'
-        id='animated'
-        isRevert={false}
-        isFull={true}
-        header='Animated'
-        headerclass='text-white'
-        subheader='Pure CSS animations work with vanilla HTML or with any web framework - from JavaScript over Python and even PHP.'
-        imageBg='black'
-        imageUrl='/images/landingpage/service/animated-greencss.webp'
-        imageAlt='greencss animated card'
+      <Presentation
+        fileformat='.png'
+        backgroundColor='bg-black'
+        headline='Start to code with zero emissions: Unique, Open-Source,  Lightweight, Animated and Responsive'
+        imagesInfo={aboutImages}
+        hasButton={true}
+        buttonText='Install now'
+        buttonLink='/docs/activate-getting-started'
       />
-      <div className='m-auto grid grid-col-2 gap-30px sm:gap-0px sm:grid-col-1 md:grid-col-1'>
-        {nutshellCard.sort().map((card, index) => (
-          <ModernCard
-            key={index}
-            animation={card.animation}
-            id={`${card.header.toLowerCase()}`}
-            isRevert={card.isRevert}
-            isFull={card.isFull}
-            header={card.header}
-            headerclass={card.headerclass}
-            subheader={card.subheader}
-            imageBg={card.imageBg}
-            imageUrl={card.imageUrl}
-            imageAlt={card.imageAlt}
-          />
-        ))}
-      </div>
     </Section>
   )
 }

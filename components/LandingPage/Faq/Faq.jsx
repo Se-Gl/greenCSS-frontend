@@ -63,7 +63,7 @@ export default function Faq() {
             ))}
           </div>
         </div>
-        <div className='col-span-4 max-w-30rem sm:max-w-100per sm:mt-50px md:max-w-100per md:mt-50px m-auto'>
+        <div className='col-span-4 max-w-30rem sm:max-w-100per sm:mt-50px md:max-w-100per md:mt-50px sm:py-50px md:p-50px my-auto'>
           <div className='bg-white p-15px border-1px border-solid border-black-10 rounded-20px shadow-small-gray'>
             <ContactEmail className='fill-green-9 mx-auto mb-15px' />
             <h2 className='text-30px mb-5px'>Do you have more questions?</h2>

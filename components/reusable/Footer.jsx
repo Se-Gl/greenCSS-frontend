@@ -27,7 +27,7 @@ export default function Footer() {
   }
   return (
     <section className='container overflow-hidden py-20rem' id='footer'>
-      <div className='w-100per flex justify-center min-h-75vh bg-black rounded-50px'>
+      <div className='w-100per flex justify-center min-h-75vh bg-black rounded-50px sm:rounded-20px md:rounded-20px px-50px sm:px-auto md:px-25px'>
         <div className='mx-30px m-auto grid gap-30px grid-col-4 sm:grid-col-1 md:grid-col-3'>
           <div className='sm:mt-50px md:mt-0px sm:mb-20rem md:mb-20rem col-span-1 md:mx-auto sm:col-span-full sm:row-start-4 sm:col-end-1 md:col-span-full md:row-start-3 md:col-end-1'>
             <Link href='/' passHref>

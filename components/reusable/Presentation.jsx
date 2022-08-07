@@ -10,6 +10,7 @@ export default function Presentation({
   headline,
   buttonLink,
   buttonText,
+  fileformat = '.webp',
   hasButton = false
 }) {
   const [ref, isVisible] = isInView({
@@ -19,7 +20,7 @@ export default function Presentation({
 
   return (
     <Section id={id} additionalClassName={`${backgroundColor} rounded-20px my-100px shadow-small-gray`}>
-      <div className='m-auto grid grid-col-2 gap-30px sm:gap-0px sm:grid-col-1 md:grid-col-1 mx-20px'>
+      <div className='m-auto grid grid-col-2 gap-30px sm:gap-0px sm:grid-col-1 md:grid-col-1 px-20px'>
         <div className='grid grid-row-2 grid-col-2 gap-30px text-white' ref={ref}>
           {imagesInfo.map((image, index) => (
             <div
@@ -31,17 +32,17 @@ export default function Presentation({
               <Image
                 className='rounded-20px transition-transform transition-duration-700ms hover:scale-105'
                 quality={80}
-                src={`/images/${image.path}.webp`}
+                src={`/images/${image.path}${fileformat}`}
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
                 placeholder='blur'
-                blurDataURL={`/_next/image?url=/images/${image.path}.webp&w=16&q=1`}
+                blurDataURL={`/_next/image?url=/images/${image.path}${fileformat}&w=16&q=1`}
               />
             </div>
           ))}
         </div>
-        <div className='m-auto sm:text-center md:text-center'>
+        <div className='m-auto sm:text-center md:text-center sm:pt-50px md:pt-50px'>
           <h2 className='text-white'>{headline}</h2>
           {hasButton && (
             <div className='sm:flex md:flex'>
