@@ -1,3 +1,19 @@
+# [1.5.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.4.1...v1.5.0) (2022-08-07)
+
+
+### Bug Fixes
+
+* **codn:** updated codn, updated contact and member image ([7b7da16](https://github.com/Se-Gl/greenCSS-frontend/commit/7b7da167c2da49baa0cb2d7e91efc4966d8a1e21))
+* **cookie:** added smooth loading cookie banner ([4cc4a3a](https://github.com/Se-Gl/greenCSS-frontend/commit/4cc4a3a0e096d4475a119f54bc425ea86a6a9415))
+* **import:** fixed codn import ([e197a6d](https://github.com/Se-Gl/greenCSS-frontend/commit/e197a6d9eacd2fa977c24f2443c2a879fff1ffb9))
+* **input:** refactored input and textarea ([c30924e](https://github.com/Se-Gl/greenCSS-frontend/commit/c30924e5ab5e4d78bd093a505353ad0b1ce35275))
+* **search:** added conditional OS detection command for search bar ([3caf43f](https://github.com/Se-Gl/greenCSS-frontend/commit/3caf43f3e835a566265b522f02158becb5c8c9af))
+
+
+### Features
+
+* **codn:** installed package ([5e3a235](https://github.com/Se-Gl/greenCSS-frontend/commit/5e3a235b76af9e2a92bdc6b0847be981b021d9de))
+
 ## [1.4.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.4.0...v1.4.1) (2022-08-06)
 
 
