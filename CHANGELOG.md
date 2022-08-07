@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.0...v1.5.1) (2022-08-07)
+
+
+### Bug Fixes
+
+* **service:** updated service component w. new images ([eb95a14](https://github.com/Se-Gl/greenCSS-frontend/commit/eb95a144b1600401e65f6a446a403e37546a7d93))
+
 # [1.5.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.4.1...v1.5.0) (2022-08-07)
 
 ### Bug Fixes
