@@ -78,11 +78,9 @@ export default function Hero() {
         </div>
 
         <div
-          className='col-span-6 flex h-100vh sm:h-40vh md:h-50vh sm:row-start-1 md:row-start-1 relative w-100per h-100per'
+          className='hero-height col-span-6 flex h-100vh sm:row-start-1 md:row-start-1 relative w-100per h-100per'
           id='hero-section'>
-          <div
-            className='absolute top-50per left-60per sm:h-50vh md:h-70vh h-100vh w-100per'
-            style={{ transform: 'translate(-50%, -50%)' }}>
+          <div className='normal-transform mobile-transform absolute top-50per left-60per sm:relative md:relative sm:h-50vh md:h-70vh h-100vh w-100per'>
             <>
               <div ref={card} onMouseMove={handleMouse} className='w-100per h-100per'>
                 <div className='w-20rem h-20rem rounded-50per sphere top-10per' style={{ left: '30rem' }} />

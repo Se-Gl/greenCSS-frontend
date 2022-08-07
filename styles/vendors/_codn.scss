@@ -1,0 +1,23 @@
+// fixes
+
+.normal-transform {
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 768px) {
+  .hide-desktop-nav {
+    display: none !important;
+  }
+  .hero-height {
+    min-height: 50vh;
+  }
+  .shadow-side {
+    box-shadow: 5px 0px 10px -1px #7d7d7d !important;
+    -webkit-box-shadow: 5px 0px 10px -1px #7d7d7d !important;
+    -moz-box-shadow: 5px 0px 10px -1px #7d7d7d !important;
+    -ms-box-shadow: 5px 0px 10px -1px #7d7d7d !important;
+  }
+  .mobile-transform {
+    transform: translate(-60%, -50%);
+  }
+}

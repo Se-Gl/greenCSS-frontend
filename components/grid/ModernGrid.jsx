@@ -79,7 +79,7 @@ export default function ModernGrid({
         imageUrl && (
           <div
             className={`col-span-4 sm:row-start-1 md:row-start-1 flex mx-0px bg-${imageBg} rounded-right-radius-20px sm:rounded-bottom-radius-0px md:rounded-bottom-radius-0px sm:rounded-top-radius-20px md:rounded-top-radius-20px ${
-              !isFull && 'shadow-small-gray sm:shadow-small-transparent md:shadow-small-transparent'
+              !isFull && 'shadow-small-gray shadow-side'
             }`}>
             <div className='relative sm:h-50vh md:h-50vh w-100per'>
               {imagePosition && width >= 768 ? (

@@ -51,7 +51,7 @@ export default function ModernCard({
         imageUrl && (
           <div
             className={`overflow-hidden col-span-6 flex mx-0px bg-${imageBg} rounded-left-radius-20px sm:rounded-top-radius-0px md:rounded-top-radius-0px sm:rounded-bottom-radius-20px md:rounded-bottom-radius-20px ${
-              isFull ? `bg-${imageBg}` : 'bg-white shadow-small-gray'
+              isFull ? `bg-${imageBg}` : 'shadow-small-gray'
             }`}>
             <div className='relative min-h-33vh sm:h-25vh md:h-25vh w-100per'>
               <Image

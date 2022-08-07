@@ -298,8 +298,8 @@ export default function SignupModal({ toggleModal, setToggleModal }) {
                   type='submit'
                   isdisabled={!checkLoginIsDisabled}
                   id='login-button'
-                  className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
-                    !checkLoginIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
+                  className={`text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
+                    !checkLoginIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : ''
                   }`}
                   isOutline={true}
                   isDefault={false}>
