@@ -1,3 +1,29 @@
+## [1.4.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.4.0...v1.4.1) (2022-08-06)
+
+
+### Bug Fixes
+
+* **404:** fixed 404 layout ([faac8f1](https://github.com/Se-Gl/greenCSS-frontend/commit/faac8f17653d20e7c93937d3d44cc2ae8b898142))
+* **css:** fixed example animations not showing in production ([f760244](https://github.com/Se-Gl/greenCSS-frontend/commit/f760244d881eee3148ddfa17b76a3fb3626f4b16))
+* **doc:** redesign table, border and blog card ([c7334d8](https://github.com/Se-Gl/greenCSS-frontend/commit/c7334d8c2a19c4487eab178562b3f9855a48e53f))
+* **header:** fixed header logo link ([6fefdb7](https://github.com/Se-Gl/greenCSS-frontend/commit/6fefdb7a5c2a617680712c63da37bfbc2eabf33c))
+* **image:** adjusted image quality ([8f6c020](https://github.com/Se-Gl/greenCSS-frontend/commit/8f6c020c4df508abffd8b8ed489ad3d95cbecaac))
+* **loader:** adjusted loader behaviour ([26fba50](https://github.com/Se-Gl/greenCSS-frontend/commit/26fba50119bf8a7fadfa56559a8b35db0ba1f4c2))
+* **loader:** updated loader behaviour ([3095329](https://github.com/Se-Gl/greenCSS-frontend/commit/30953298910eb0043bf940b30237c12907bd1a83))
+* **member:** adjusted member index page ([54bce92](https://github.com/Se-Gl/greenCSS-frontend/commit/54bce92d26c68de70f2baea45bf5bfdec9355c79))
+* **merge:** merged origin ([d8154ac](https://github.com/Se-Gl/greenCSS-frontend/commit/d8154ac1d60049afa39a4eb1dae3a11b03616803))
+
+
+### Performance Improvements
+
+* **brand:** added brand card bg color ([6f296c6](https://github.com/Se-Gl/greenCSS-frontend/commit/6f296c6b6e39df4ab5d45b256f0b3ef8aca88042))
+* **brand:** fixed blur data url ([45ccf37](https://github.com/Se-Gl/greenCSS-frontend/commit/45ccf3779d50f6b2277a10cff36402fb8e1537a8))
+* **brand:** refactored presentation component, adjusted about and brand pages ([023551e](https://github.com/Se-Gl/greenCSS-frontend/commit/023551e48db79b329c8a9c298b39ced94b0bf27d))
+* **brand:** updated readme ([dfabc2e](https://github.com/Se-Gl/greenCSS-frontend/commit/dfabc2ee93ee4c05c97dbfe1b20a24fb78a73a34))
+* **nav:** adjusted nav bar style ([f57835a](https://github.com/Se-Gl/greenCSS-frontend/commit/f57835a9200f8b50b5d4d50782a272c746e287c1))
+* **sponsor-card:** adjusted sponsor card to match new design ([23362e3](https://github.com/Se-Gl/greenCSS-frontend/commit/23362e3d399a54dc5831965e4738f988505e6cdd))
+* **sponsor-card:** updated member index page ([4aec3ba](https://github.com/Se-Gl/greenCSS-frontend/commit/4aec3babbabb3fc2e9b1056b1c3a1f8c4984400f))
+
 # [1.4.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.3.2...v1.4.0) (2022-08-05)
 
 ### Bug Fixes
