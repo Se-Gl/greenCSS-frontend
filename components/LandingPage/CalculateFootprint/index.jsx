@@ -22,14 +22,14 @@ export default function index() {
           ref={ref}
           style={{ top: '4.5%', left: '10.25%', width: '79.4%', height: '73.4%' }}>
           <Image
-            quality={80}
+            quality={90}
             className='select-none'
-            src='/images/landingpage/Landing-desktop-bg.webp'
+            src='/images/landingpage/Landing-desktop-bg.png'
             alt='greenCSS MacBook donation section'
             width={874}
             height={2087}
             placeholder='blur'
-            blurDataURL='/_next/image?url=/images/landingpage/Landing-desktop-bg.webp&w=16&q=1'
+            blurDataURL='/_next/image?url=/images/landingpage/Landing-desktop-bg.png&w=16&q=1'
           />
           <DesktopComputerContent />
         </div>
