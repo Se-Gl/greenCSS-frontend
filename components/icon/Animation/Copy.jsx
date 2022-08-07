@@ -1,20 +1,9 @@
-import { useToast } from '@/components/toast/hooks/useToast'
-
 function CopyIcon({
   width = '30',
   height = '30',
-  copy,
+  handleCopy,
   className = 'fill-black-10 hover:fill-white transition-all transition-duration-500ms'
 }) {
-  const toast = useToast()
-
-  const copyContent = JSON.stringify(copy).replace(/\"/g, '')
-
-  const handleToast = () => {
-    toast('success', `🚀 ${copyContent.slice(0, 20)}... has been copied to clipboard`)
-    navigator.clipboard.writeText(copyContent)
-  }
-
   return (
     <svg
       id='copy-animation-to-clipboard'
@@ -24,8 +13,8 @@ function CopyIcon({
       height={height}
       fill='none'
       viewBox='0 0 40 40'
-      onClick={handleToast}>
-      <mask id='path-1-inside-1_267_2028' fill='#fff'>
+      onClick={handleCopy}>
+      <mask id='path-1-inside-1_267_2028' fill='#FDFDFD'>
         <path d='M0 5a5 5 0 015-5h30a5 5 0 015 5v30a5 5 0 01-5 5H5a5 5 0 01-5-5V5z'></path>
       </mask>
       <path

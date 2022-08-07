@@ -1,3 +1,5 @@
+import 'codn/dist/style/green.css'
+import 'codn/dist/style/input.css'
 if (process.env.NODE_ENV == 'production') {
   require('@/css/green.css')
 } else {
@@ -6,21 +8,19 @@ if (process.env.NODE_ENV == 'production') {
 require('@/styles/globals.scss')
 
 import Progress from '@/components/progress/Progress'
-import { ToastProvider } from '@/components/toast/context/ToastContext'
-import ToastContainer from '@/components/toast/ToastContainer'
 import { NavProvider } from '@/utils/NavContext'
 import { UserProvider } from '@/utils/SubscriptionContext'
+import { ModalProvider } from '@/utils/ModalContext'
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <UserProvider>
         <NavProvider>
-          <Progress />
-          <ToastProvider>
+          <ModalProvider>
+            <Progress />
             <Component {...pageProps} />
-            <ToastContainer />
-          </ToastProvider>
+          </ModalProvider>
         </NavProvider>
       </UserProvider>
     </>

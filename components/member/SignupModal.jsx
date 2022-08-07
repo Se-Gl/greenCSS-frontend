@@ -1,12 +1,11 @@
 import { useRouter } from 'next/router'
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Link from 'next/link'
 import Select from 'react-select'
 import axios from 'axios'
+import { Input, Modal } from 'codn'
 import { UserContext } from '@/utils/SubscriptionContext'
-import { Input } from '../reusable/Input'
 import { countries, regions } from '@/data/countries'
-import Modal from '../modal/Modal'
 import { GreenButton } from '../reusable/Button'
 import CheckValidInput from './CheckValidInput'
 import SignUpModalImage from './SignUpModalImage'
@@ -20,7 +19,7 @@ import {
   compareKey
 } from '@/data/validation'
 
-export default function SignupModal({ showModal, setShowModal }) {
+export default function SignupModal({ toggleModal, setToggleModal }) {
   const router = useRouter()
 
   const [name, setName] = useState('')
@@ -30,9 +29,11 @@ export default function SignupModal({ showModal, setShowModal }) {
   const [selectedCountry, setselectedCountry] = useState()
   const [selectedRegion, setselectedRegion] = useState()
   const [checkRegion, setcheckRegion] = useState(false)
-  // const [acceptToS, setacceptToS] = useState(false)
   const [checkMemberState, setCheckMemberState] = useState(false)
   const [checkError, setcheckError] = useState()
+  // // modal
+  // const [toggleModal, setToggleModal] = useState(false)
+
   // context
   const [state, setState] = useContext(UserContext)
 
@@ -160,13 +161,25 @@ export default function SignupModal({ showModal, setShowModal }) {
     checkValidPasswordThree &&
     checkNumber(password, 7, 64)
 
+  //   ESC key to close the modal
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        setToggleModal()
+      }
+    }
+    window.addEventListener('keydown', close)
+    return () => window.removeEventListener('keydown', close)
+  }, [])
+
   return (
     <Modal
-      onClose={() => setShowModal(false)}
-      show={showModal}
-      showSearch={false}
-      modalSize='w-90vw min-h-95vh max-h-50rem rounded-50px'
-      modalStyle=''>
+      toggle={toggleModal}
+      setToggle={setToggleModal}
+      className='w-90vw h-90vh container'
+      iconColor='fill-white'
+      useKeyInput={false}
+      modalPadding={false}>
       <div className='m-auto grid grid-col-12 sm:grid-col-1 md:grid-col-1 overflow-hidden'>
         <div className='col-span-8 flex sm:mb-10rem md:mb-10rem mx-25px'>
           <div className='my-auto pt-25px sm:m-unset sm:max-w-30rem'>
@@ -213,16 +226,17 @@ export default function SignupModal({ showModal, setShowModal }) {
                       item.htmlFor.includes('repeatpassword') ? 'mt-neg-30px' : ''
                     }`}
                     key={index}>
-                    <Input
-                      maxLength={item.maxLength}
-                      id={item.htmlFor}
-                      label={item.label}
-                      type={item.type}
-                      value={item.value}
-                      setValue={item.onChange}
-                      htmlFor={item.htmlFor}
-                      isTextArea={item.isTextArea}
-                    />
+                    <div className='w-100per min-w-30rem max-w-40rem my-20px'>
+                      <Input
+                        maxLength={item.maxLength}
+                        id={item.htmlFor}
+                        label={item.label}
+                        type={item.type}
+                        value={item.value}
+                        setValue={item.onChange}
+                        htmlFor={item.htmlFor}
+                      />
+                    </div>
                     {checkMemberState && (
                       <CheckValidInput
                         checkIsValid={item.checkFirst}
@@ -272,8 +286,8 @@ export default function SignupModal({ showModal, setShowModal }) {
                   type='submit'
                   isdisabled={!checkIsDisabled}
                   id='login-button'
-                  className={`text-white text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
-                    !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : 'bg-black'
+                  className={`text-15px font-400 ml-0px mt-25px greencss-button-reverse ${
+                    !checkIsDisabled ? 'bg-gray-5 border-none cursor-not-allowed' : ''
                   }`}
                   isOutline={true}
                   isDefault={false}>

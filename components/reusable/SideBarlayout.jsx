@@ -3,7 +3,7 @@ import SideBar from '../category/SideBar'
 
 const Header = dynamic(() => import('../header'))
 const Footer = dynamic(() => import('./Footer'))
-const Cookies = dynamic(() => import('./Cookies'))
+const CookieBanner = dynamic(() => import('../cookieBanner/CookieBanner'))
 
 export default function SideBarlayout({ categories, posts, hasSubcategory, content, className = 'bg-white' }) {
   return (
@@ -35,7 +35,7 @@ export default function SideBarlayout({ categories, posts, hasSubcategory, conte
           <Footer />
         </div>
       </div>
-      <Cookies />
+      <CookieBanner />
     </>
   )
 }

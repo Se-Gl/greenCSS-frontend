@@ -39,8 +39,8 @@ export default function Results({ results }) {
           Blog
         </div>
         <hr
-          className='absolute bottom-neg-50per h-2px w-10per m-0px bg-blue border-none transition-all transition-duration-300ms ease ml-0px'
-          style={{ marginLeft: (isDocSelected && '12%') || (isBlogSelected && '24%') }}
+          className='absolute bottom-neg-50per h-2px w-40px m-0px bg-blue border-none transition-all transition-duration-300ms ease ml-0px'
+          style={{ marginLeft: (isAllSelected && '0px') || (isDocSelected && '50px') || (isBlogSelected && '110px') }}
         />
       </div>
       <hr className='border-0px h-1px bg-gray-5' />

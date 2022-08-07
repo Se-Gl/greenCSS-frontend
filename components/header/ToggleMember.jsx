@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useState, useContext } from 'react'
 import { UserContext } from '@/utils/SubscriptionContext'
 import { GreenButton } from '../reusable/Button'
-import UserModal from '../member/UserModal'
+import SignupModal from '../member/SignupModal'
 
 export default function ToggleMember() {
   const router = useRouter()
@@ -68,7 +68,17 @@ export default function ToggleMember() {
           </GreenButton>
         </div>
       ) : (
-        <UserModal buttonText='Login' showModal={showModal} setShowModal={setShowModal} />
+        <>
+          <GreenButton
+            id='member-button'
+            className='bg-gray-9'
+            isOutline={true}
+            isDefault={false}
+            onClick={() => setShowModal((prev) => !prev)}>
+            Login
+          </GreenButton>
+          <SignupModal toggleModal={showModal} setToggleModal={setShowModal} />
+        </>
       )}
     </>
   )

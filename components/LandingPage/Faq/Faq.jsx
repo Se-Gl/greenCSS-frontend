@@ -1,5 +1,5 @@
+import { Accordion } from 'codn'
 import Section from '@/components/reusable/Section'
-import FaqQuestions from './Questions'
 import { GreenButton } from '@/components/reusable/Button'
 import ContactEmail from '@/components/icon/Contact/ContactEmail'
 
@@ -8,6 +8,11 @@ const questions = [
     title: 'What is greenCSS?',
     description:
       'greenCSS is an MIT licensed CSS library. It uses the same technology like bulma, but with a class based system similar to tailwindcss. The difference is that greenCSS additionally aims to provide a green fingerprint for the earth. You can develop beautiful websites and code emission-free at the same time.'
+  },
+  {
+    title: 'Are you greenwashing?',
+    description:
+      'Greenwashing, also known as "green sheen", is a method of advertising or marketing. It involves the deceptive use of green PR to convince the public that an organizations products, goals and strategies are environmentally friendly. greenCSS is committed to preventing greenwashing - we only work with organizations that share the same values as we do. For this reason: a clear NO, because we do not want to harm our planet!'
   },
   {
     title: 'How does it work?',
@@ -45,7 +50,16 @@ export default function Faq() {
         <div className='col-span-8 flex sm:mb-0px md:mb-0px'>
           <div className='m-auto sm:m-unset max-w-100per'>
             {questions.map((question, index) => (
-              <FaqQuestions question={question} key={index} />
+              <Accordion
+                boxStyle={true}
+                expand={question.title}
+                collapse={question.description}
+                key={index}
+                className='bg-yellow-9'
+                headerStyleExpanded='text-15px font-600 text-black pb-10px'
+                circleExpand='bg-gray-10 rotate-90deg'
+                iconColorExpanded='stroke-black'
+              />
             ))}
           </div>
         </div>

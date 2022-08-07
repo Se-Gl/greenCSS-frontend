@@ -1,13 +1,12 @@
 import dynamic from 'next/dynamic'
 import { withRouter, useRouter } from 'next/router'
 import { useState } from 'react'
+import { handleShowToast, Input, Toast } from 'codn'
 import { resetPassword } from '@/utils/Auth'
 import SEO from '@/components/reusable/SEO'
 import ModernGrid from '@/components/grid/ModernGrid'
-import { Input } from '@/components/reusable/Input'
 import CheckValidInput from '@/components/member/CheckValidInput'
 import { GreenButton } from '@/components/reusable/Button'
-import { useToast } from '@/components/toast/hooks/useToast'
 import {
   checkNumber,
   checkValidPassword,
@@ -15,13 +14,16 @@ import {
   checkValidPasswordThree,
   compareKey
 } from '@/data/validation'
+
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
 function ResetPassword({ router }) {
   const redirectrouter = useRouter()
-  const toast = useToast()
+
   const [newPassword, setnewPassword] = useState('')
   const [repeatPassword, setrepeatPassword] = useState(null)
+  // toast
+  const [toastList, setToastList] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -30,11 +32,13 @@ function ResetPassword({ router }) {
       resetPasswordLink: router.query.id
     }).then((data) => {
       if (data.error) {
-        toast('error', `⚡ Oops! ${data.error}`)
+        handleShowToast('error', 'Error', `⚡ Oops! ${data.error}`, setToastList)
       } else {
         setnewPassword('')
-        toast('success', `🚀 ${data.message}`)
-        redirectrouter.push('/member/account')
+        handleShowToast('success', 'Success', `🚀 ${data.message}`, setToastList)
+        setTimeout(function () {
+          redirectrouter.push('/member/account')
+        }, 10000)
       }
     })
   }
@@ -54,6 +58,7 @@ function ResetPassword({ router }) {
       url={`member/reset/${router.query.id}`}
       keywords='member, forgot password, reset password'>
       <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh'>
+        <Toast toastList={toastList} setToastList={setToastList} duration={10000} position='top-right' />
         <ModernGrid
           id='reset-password'
           header='Change your password? Reset it right away.'
@@ -64,16 +69,17 @@ function ResetPassword({ router }) {
           <>
             <form onSubmit={handleSubmit}>
               <div className='flex sm:block md:block lg:block'>
-                <Input
-                  maxLength={64}
-                  id='newPassword'
-                  label='Password'
-                  type='password'
-                  value={newPassword}
-                  setValue={setnewPassword}
-                  htmlFor='newPassword'
-                  isTextArea={false}
-                />
+                <div className='w-100per min-w-30rem max-w-40rem my-20px'>
+                  <Input
+                    maxLength={64}
+                    id='newPassword'
+                    label='Password'
+                    type='password'
+                    value={newPassword}
+                    setValue={setnewPassword}
+                    htmlFor='newPassword'
+                  />
+                </div>
                 <CheckValidInput
                   maxLength={64}
                   text='At least one numeric digit'
@@ -87,16 +93,17 @@ function ResetPassword({ router }) {
                 />
               </div>
               <div className='flex sm:block md:block lg:block'>
-                <Input
-                  maxLength={64}
-                  id='repeatPassword'
-                  label='Repeat'
-                  type='password'
-                  value={repeatPassword}
-                  setValue={setrepeatPassword}
-                  htmlFor='repeatPassword'
-                  isTextArea={false}
-                />
+                <div className='w-100per min-w-30rem max-w-40rem my-20px'>
+                  <Input
+                    maxLength={64}
+                    id='repeatPassword'
+                    label='Repeat'
+                    type='password'
+                    value={repeatPassword}
+                    setValue={setrepeatPassword}
+                    htmlFor='repeatPassword'
+                  />
+                </div>
                 <CheckValidInput
                   maxLength={64}
                   text='The same password'

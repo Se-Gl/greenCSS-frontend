@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { handleShowToast, Toast } from 'codn'
 import { VsStyle } from '@/data/SynatxStyle'
 import { HashLink } from './HashLink'
 import CopyIcon from '@/components/icon/Animation/Copy'
@@ -28,25 +29,46 @@ export function LinkRenderer({ node, ...props }) {
 
 export function CodeRenderer({ node, inline, className, children, ...props }) {
   const match = /language-(\w+)/.exec(className || '')
+  // toast
+  const [toastList, setToastList] = useState([])
+
+  const copyContent = JSON.stringify(
+    children
+      .toString()
+      .replace(/(?:\\[rn]|[\r\n]+)+/g, ' ')
+      .replace(/\"/g, "'")
+      .replace(/\  /g, '')
+  )
+
+  const handleToast = () => {
+    handleShowToast('success', 'Success', '🚀 code snippet has been copied to your clipboard.', setToastList)
+    navigator.clipboard.writeText(copyContent)
+  }
   return !inline && match ? (
-    <div className='relative'>
-      <div className='absolute right-0per mt-0px cursor-copy'>
-        <CopyIcon
-          copy={children
-            .toString()
-            .replace(/(?:\\[rn]|[\r\n]+)+/g, ' ')
-            .replace(/\"/g, "'")
-            .replace(/\  /g, '')}
+    <>
+      <div style={{ fontFamily: 'Basier Circle' }}>
+        <Toast toastList={toastList} setToastList={setToastList} position='top-right' />
+      </div>
+      <div className='relative'>
+        <div className='absolute right-0per mt-0px cursor-copy'>
+          <CopyIcon
+            handleCopy={handleToast}
+            copy={children
+              .toString()
+              .replace(/(?:\\[rn]|[\r\n]+)+/g, ' ')
+              .replace(/\"/g, "'")
+              .replace(/\  /g, '')}
+          />
+        </div>
+        <SyntaxHighlighter
+          children={String(children).replace(/\n$/, '')}
+          style={VsStyle}
+          language={match[1]}
+          PreTag='div'
+          {...props}
         />
       </div>
-      <SyntaxHighlighter
-        children={String(children).replace(/\n$/, '')}
-        style={VsStyle}
-        language={match[1]}
-        PreTag='div'
-        {...props}
-      />
-    </div>
+    </>
   ) : (
     <code className={className} {...props}>
       {children}
