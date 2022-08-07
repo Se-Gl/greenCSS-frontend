@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.1...v1.5.2) (2022-08-07)
+
+
+### Bug Fixes
+
+* **codn:** fixed style issues caused by codn ([80a3d86](https://github.com/Se-Gl/greenCSS-frontend/commit/80a3d862a8133b32e1a56985e147ad91682a6868))
+
 ## [1.5.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.0...v1.5.1) (2022-08-07)
 
 ### Bug Fixes
