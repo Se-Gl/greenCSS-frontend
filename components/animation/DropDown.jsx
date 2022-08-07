@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Select from 'react-select'
+import { handleShowToast, Toast } from 'codn'
 import { animations, fillmode, time } from '@/data/animations'
 import { GreenButton } from '@/components/reusable/Button'
 import CopyIcon from '../icon/Animation/Copy'
@@ -9,6 +10,8 @@ export default function DropDown() {
   const [selectedTime, setSelectedTime] = useState(time[0])
   const [selectedFillMode, setSelectedFillMode] = useState(fillmode[0])
   const [showAgain, setShowAgain] = useState(false)
+  // toast
+  const [toastList, setToastList] = useState([])
 
   let csscode = `${selectedItem.value} ${selectedTime.value} ${selectedFillMode.value}`
 
@@ -27,8 +30,14 @@ export default function DropDown() {
   const onFillModechangeSelect = (item) => {
     setSelectedFillMode(item)
   }
+
+  const handleToast = () => {
+    handleShowToast('success', 'Success', '🚀 code snippet has been copied to your clipboard.', setToastList)
+    navigator.clipboard.writeText(csscode)
+  }
   return (
     <>
+      <Toast toastList={toastList} setToastList={setToastList} position='top-right' />
       <div
         id={`animation-${selectedItem.value}`}
         style={{ borderRadius: '10px' }}
@@ -90,7 +99,7 @@ export default function DropDown() {
           <div
             className='absolute top-50per right-0per pr-15px my-auto cursor-copy'
             style={{ transform: 'translate(0%, -60%)' }}>
-            <CopyIcon copy={csscode} />
+            <CopyIcon copy={csscode} handleCopy={handleToast} />
           </div>
         </pre>
       </div>

@@ -1,12 +1,11 @@
 import dynamic from 'next/dynamic'
 import { useState, useContext } from 'react'
-import { Input } from 'codn'
+import { handleShowToast, Input, Toast } from 'codn'
 import { forgotPassword } from '@/utils/Auth'
 import SEO from '@/components/reusable/SEO'
 import ModernGrid from '@/components/grid/ModernGrid'
 import CheckValidInput from '@/components/member/CheckValidInput'
 import { GreenButton } from '@/components/reusable/Button'
-import { useToast } from '@/components/toast/hooks/useToast'
 import { checkValidEmail } from '@/data/validation'
 import { UserContext } from '@/utils/SubscriptionContext'
 
@@ -15,17 +14,18 @@ const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: fals
 export default function forgotPasswordPage() {
   // context
   const [state] = useContext(UserContext)
-  const toast = useToast()
   const [email, setEmail] = useState(state != null ? state.user.email : '')
+  // toast
+  const [toastList, setToastList] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault()
     forgotPassword({ email }).then((data) => {
       if (data.error) {
-        toast('error', `⚡ Oops! ${data.error}`)
+        handleShowToast('error', 'Error', `⚡ Oops! ${data.error}`, setToastList)
       } else {
         setEmail('')
-        toast('success', `🚀 ${data.message}`)
+        handleShowToast('success', 'Success', `🚀 ${data.message}`, setToastList)
       }
     })
   }
@@ -40,6 +40,7 @@ export default function forgotPasswordPage() {
       url='member/forgot-password'
       keywords='member, forgot password, reset password'>
       <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh bg-purple-7'>
+        <Toast toastList={toastList} setToastList={setToastList} duration={10000} position='top-right' />
         <ModernGrid
           id='forgot-password'
           header='Let`s change your password - No problem!'

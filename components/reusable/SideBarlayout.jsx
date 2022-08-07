@@ -1,9 +1,9 @@
 import dynamic from 'next/dynamic'
+import { CookieBanner } from 'codn'
 import SideBar from '../category/SideBar'
 
 const Header = dynamic(() => import('../header'))
 const Footer = dynamic(() => import('./Footer'))
-const Cookies = dynamic(() => import('./Cookies'))
 
 export default function SideBarlayout({ categories, posts, hasSubcategory, content, className = 'bg-white' }) {
   return (
@@ -35,7 +35,13 @@ export default function SideBarlayout({ categories, posts, hasSubcategory, conte
           <Footer />
         </div>
       </div>
-      <Cookies />
+      <CookieBanner header='🍪 Our website uses cookies' className='max-w-35rem'>
+        <p className='text-gray text-15px mb-0px'>
+          Click “Accept” to enable greenCSS to use cookies in order to personalize this site for you. In this process
+          you agree to the storing of cookies and/or data in your local storage. You agree, that we use analytics to
+          enhance site navigation and analyze site usage. It helps us to improve the UI/UX experience for you.
+        </p>
+      </CookieBanner>
     </>
   )
 }

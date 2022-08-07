@@ -1,4 +1,5 @@
 import 'codn/dist/style/green.css'
+import 'codn/dist/style/input.css'
 if (process.env.NODE_ENV == 'production') {
   require('@/css/green.css')
 } else {
@@ -7,8 +8,6 @@ if (process.env.NODE_ENV == 'production') {
 require('@/styles/globals.scss')
 
 import Progress from '@/components/progress/Progress'
-import { ToastProvider } from '@/components/toast/context/ToastContext'
-import ToastContainer from '@/components/toast/ToastContainer'
 import { NavProvider } from '@/utils/NavContext'
 import { UserProvider } from '@/utils/SubscriptionContext'
 
@@ -18,10 +17,7 @@ function MyApp({ Component, pageProps }) {
       <UserProvider>
         <NavProvider>
           <Progress />
-          <ToastProvider>
-            <Component {...pageProps} />
-            <ToastContainer />
-          </ToastProvider>
+          <Component {...pageProps} />
         </NavProvider>
       </UserProvider>
     </>

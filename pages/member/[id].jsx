@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import React, { useContext, useEffect, useState } from 'react'
-import { Input } from 'codn'
+import { handleShowToast, Input, Toast } from 'codn'
 import axios from 'axios'
 import { UserContext } from '@/utils/SubscriptionContext'
 import SEO from '@/components/reusable/SEO'
@@ -9,7 +9,6 @@ import CheckServerAuth from '@/components/auth/CheckServerAuth'
 import { checkNumber, checkRegionOrCountry, checkValidEmail } from '@/data/validation'
 import { countries, regions } from '@/data/countries'
 import { GreenButton } from '@/components/reusable/Button'
-import { useToast } from '@/components/toast/hooks/useToast'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 const Select = dynamic(() => import('react-select'))
@@ -18,7 +17,7 @@ const ModernGrid = dynamic(() => import('@/components/grid/ModernGrid'))
 
 export default function UserUpdate() {
   const router = useRouter()
-  const toast = useToast()
+
   // context
   const [state, setState] = useContext(UserContext)
   // states
@@ -30,6 +29,9 @@ export default function UserUpdate() {
   const [selectedRegion, setselectedRegion] = useState()
   const [userprofileUrl, setuserprofileUrl] = useState('')
   const [earlierCountry, setearlierCountry] = useState()
+
+  // toast
+  const [toastList, setToastList] = useState([])
 
   const onchangeSelect = (item) => {
     setselectedCountry(item) || setselectedRegion(item)
@@ -86,11 +88,6 @@ export default function UserUpdate() {
       if (data.error) {
         setcheckError(data.error)
       } else {
-        setName('')
-        setEmail('')
-        setselectedCountry()
-        setselectedRegion()
-
         // set states
         state.user.name = name
         state.user.email = email
@@ -100,12 +97,14 @@ export default function UserUpdate() {
         updatedUser.user.email = email
         updatedUser.user.requestedCountry = selectedCountry.label || selectedRegion.label
         localStorage.setItem('auth', JSON.stringify(updatedUser))
+        handleShowToast('success', 'Success', '🚀 Your credentials have successfully been modified.', setToastList)
 
-        toast('success', '🚀 Your credentials have successfully been modified.')
-        router.push('/member/account')
+        setTimeout(function () {
+          router.push('/member/account')
+        }, 10000)
       }
     } catch (err) {
-      toast('error', `⚡ Oops! Something went wrong: ${err}`)
+      handleShowToast('error', 'Error', `⚡ Oops! Something went wrong: ${err}`, setToastList)
     }
   }
 
@@ -118,100 +117,103 @@ export default function UserUpdate() {
         keywords='member, donation, green software, sustainable software'>
         <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh bg-blue-7'>
           {isAuth && (
-            <ModernGrid
-              id='contact-index'
-              header='Update Your Profile'
-              subheader='Update your name, email, password or favorite country. Make sure you fill out all fields.'
-              imageBg='blue'
-              imageUrl='/images/blog/pen-greencss.webp'
-              imageAlt='update profile data'>
-              <div className='mb-50px'>
-                <GreenButton
-                  id='password-reset-button'
-                  className='font-500 text-15px'
-                  isLinkedOutline={true}
-                  isDefault={false}
-                  href='/member/forgot-password'>
-                  Change your password
-                </GreenButton>
-              </div>
-              <p className='text-black text-15px font-600 mb-0px ml-10px'>{checkRegion ? 'Region' : 'Country'}</p>
-              <div className='flex sm:block md:block lg:block'>
-                <div className='block'>
-                  <Select
-                    placeholder={`${checkRegion ? 'select your preferred region' : 'select your preferred country'}`}
-                    value={selectedCountry}
-                    onChange={onchangeSelect}
-                    options={checkRegion ? regions : countries}
-                    getOptionValue={(option) => option.value}
-                    getOptionLabel={(option) => option.label}
-                  />
-                  <p
-                    className='text-10px mb-10px text-black-10 cursor-pointer max-w-40rem mt-10px'
-                    onClick={() => setcheckRegion((checkRegion) => !checkRegion)}>
-                    Do not want to donate in your home country? Choose a region instead.
-                  </p>
+            <>
+              <Toast toastList={toastList} setToastList={setToastList} duration={10000} position='top-right' />
+              <ModernGrid
+                id='contact-index'
+                header='Update Your Profile'
+                subheader='Update your name, email, password or favorite country. Make sure you fill out all fields.'
+                imageBg='blue'
+                imageUrl='/images/blog/pen-greencss.webp'
+                imageAlt='update profile data'>
+                <div className='mb-50px'>
+                  <GreenButton
+                    id='password-reset-button'
+                    className='font-500 text-15px'
+                    isLinkedOutline={true}
+                    isDefault={false}
+                    href='/member/forgot-password'>
+                    Change your password
+                  </GreenButton>
                 </div>
-                <CheckValidInput
-                  checkIsValid={checkRegionOrCountry(selectedCountry, selectedRegion)}
-                  text={`Choose a country or region where you want your future donations to go. Your last choice was ${earlierCountry}.`}
-                />
-              </div>
+                <p className='text-black text-15px font-600 mb-0px ml-10px'>{checkRegion ? 'Region' : 'Country'}</p>
+                <div className='flex sm:block md:block lg:block'>
+                  <div className='block'>
+                    <Select
+                      placeholder={`${checkRegion ? 'select your preferred region' : 'select your preferred country'}`}
+                      value={selectedCountry}
+                      onChange={onchangeSelect}
+                      options={checkRegion ? regions : countries}
+                      getOptionValue={(option) => option.value}
+                      getOptionLabel={(option) => option.label}
+                    />
+                    <p
+                      className='text-10px mb-10px text-black-10 cursor-pointer max-w-40rem mt-10px'
+                      onClick={() => setcheckRegion((checkRegion) => !checkRegion)}>
+                      Do not want to donate in your home country? Choose a region instead.
+                    </p>
+                  </div>
+                  <CheckValidInput
+                    checkIsValid={checkRegionOrCountry(selectedCountry, selectedRegion)}
+                    text={`Choose a country or region where you want your future donations to go. Your last choice was ${earlierCountry}.`}
+                  />
+                </div>
 
-              {updateItems.sort().map((item, index) => {
-                return (
-                  <div
-                    className={`flex sm:block md:block lg:block ${
-                      item.htmlFor.includes('repeatpassword') ? 'mt-neg-30px' : ''
-                    }`}
-                    key={index}>
-                    <div className='w-100per min-w-30rem max-w-40rem my-20px'>
-                      <Input
-                        maxLength={item.maxLength}
-                        id={item.htmlFor}
-                        label={item.label}
-                        type={item.type}
-                        value={item.value}
-                        setValue={item.onChange}
-                        htmlFor={item.htmlFor}
+                {updateItems.sort().map((item, index) => {
+                  return (
+                    <div
+                      className={`flex sm:block md:block lg:block ${
+                        item.htmlFor.includes('repeatpassword') ? 'mt-neg-30px' : ''
+                      }`}
+                      key={index}>
+                      <div className='w-100per min-w-30rem max-w-40rem my-20px'>
+                        <Input
+                          maxLength={item.maxLength}
+                          id={item.htmlFor}
+                          label={item.label}
+                          type={item.type}
+                          value={item.value}
+                          setValue={item.onChange}
+                          htmlFor={item.htmlFor}
+                        />
+                      </div>
+
+                      <CheckValidInput
+                        checkIsValid={item.checkFirst}
+                        text={item.checkFirstDescription}
+                        checkIsValidTwo={item.checkIsSecondValid}
+                        secondText={item.secondText}
+                        checkIsValidThree={item.checkIsThirdValid}
+                        thirdText={item.thirdText}
+                        checkIsValidFour={item.checkIsFourthValid}
+                        fourthText={item.fourthText}
                       />
                     </div>
-
-                    <CheckValidInput
-                      checkIsValid={item.checkFirst}
-                      text={item.checkFirstDescription}
-                      checkIsValidTwo={item.checkIsSecondValid}
-                      secondText={item.secondText}
-                      checkIsValidThree={item.checkIsThirdValid}
-                      thirdText={item.thirdText}
-                      checkIsValidFour={item.checkIsFourthValid}
-                      fourthText={item.fourthText}
-                    />
-                  </div>
-                )
-              })}
-              <div className='flex my-50px'>
-                <GreenButton
-                  id='back-button'
-                  className='font-500 text-15px'
-                  isLinkedOutline={true}
-                  isDefault={false}
-                  href='/member/account'>
-                  Go Back
-                </GreenButton>
-                <GreenButton
-                  isdisabled={!checkIsDisabled}
-                  id='update-profile-button'
-                  className={`${
-                    !checkIsDisabled
-                      ? 'bg-gray-5 hover:bg-gray-5 focus:bg-gray-5 border-none cursor-not-allowed font-400'
-                      : 'font-500'
-                  }`}
-                  onClick={handleClick}>
-                  Update Profile Data
-                </GreenButton>
-              </div>
-            </ModernGrid>
+                  )
+                })}
+                <div className='flex my-50px'>
+                  <GreenButton
+                    id='back-button'
+                    className='font-500 text-15px'
+                    isLinkedOutline={true}
+                    isDefault={false}
+                    href='/member/account'>
+                    Go Back
+                  </GreenButton>
+                  <GreenButton
+                    isdisabled={!checkIsDisabled}
+                    id='update-profile-button'
+                    className={`${
+                      !checkIsDisabled
+                        ? 'bg-gray-5 hover:bg-gray-5 focus:bg-gray-5 border-none cursor-not-allowed font-400'
+                        : 'font-500'
+                    }`}
+                    onClick={handleClick}>
+                    Update Profile Data
+                  </GreenButton>
+                </div>
+              </ModernGrid>
+            </>
           )}
         </Layout>
       </SEO>

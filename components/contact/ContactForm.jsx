@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { Input, TextArea, Captcha } from 'codn'
+import { Input, TextArea, Captcha, handleShowToast, Toast } from 'codn'
 import { GreenButton } from '../reusable/Button'
-import { useToast } from '@/components/toast/hooks/useToast'
 import CheckValidInput from '../member/CheckValidInput'
 import ModernGrid from '../grid/ModernGrid'
 import { checkNumber, checkValidEmail } from '@/data/validation'
@@ -12,11 +11,12 @@ export default function ContactForm() {
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
 
+  // toast
+  const [toastList, setToastList] = useState([])
+
   // captcha
   const [verifyCaptcha, setverifyCaptcha] = useState('')
   const [captcha, setCaptcha] = useState([])
-
-  const toast = useToast()
 
   //   Form validation
   const [errors, setErrors] = useState({})
@@ -31,11 +31,11 @@ export default function ContactForm() {
     if (fullname.length <= 0 || subject.length <= 0 || message.length <= 0) {
       tempErrors['fullname' || 'subject' || 'message'] = true
       isValid = false
-      toast('warning', '☝️ An error has occurred. Please check your input.')
+      handleShowToast('warning', 'Warning', '☝️ An error has occurred. Please check your input.', setToastList)
     }
     if (verifyCaptcha != captcha) {
       isValid = false
-      toast('warning', '🤔 Are you human? Please verify your captcha')
+      handleShowToast('warning', 'Warning', '🤔 Are you human? Please verify your captcha', setToastList)
     }
     if (
       !email.match(
@@ -44,7 +44,7 @@ export default function ContactForm() {
     ) {
       tempErrors['email'] = true
       isValid = false
-      toast('warning', '☝️ Please provide a valid email address.')
+      handleShowToast('warning', 'Warning', '☝️ Please provide a valid email address.', setToastList)
     }
 
     setErrors({ ...tempErrors })
@@ -74,11 +74,11 @@ export default function ContactForm() {
       if (error) {
         setShowSuccessMessage(false)
         setShowFailureMessage(true)
-        toast('error', '⚡ Oops! Something went wrong, please try again later.')
+        handleShowToast('error', 'Warning', '⚡ Oops! Something went wrong, please try again later.', setToastList)
         return
       }
       setShowSuccessMessage(true)
-      toast('success', '🙏 Thank you! Your Message has been delivered.')
+      handleShowToast('success', 'Success', '🙏 Thank you! Your Message has been delivered.', setToastList)
       setShowFailureMessage(false)
       // Reset form fields
       setFullname('')
@@ -134,6 +134,7 @@ export default function ContactForm() {
       imageBg='blue'
       imageUrl='/images/contact/contact-hero.png'
       imageAlt='member section hero'>
+      <Toast toastList={toastList} setToastList={setToastList} duration={10000} position='top-right' />
       <form className='my-auto' onSubmit={handleSubmit} id='contact-form'>
         <div className='flex flex-col'>
           {contactItems.sort().map((item, index) => {
