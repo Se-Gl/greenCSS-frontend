@@ -1,6 +1,18 @@
+import { useEffect, useState } from 'react'
 import SearchIcon from '../icon/Search/SearchIcon'
 
 export default function SearchBar({ setShowModal, className, isHero }) {
+  const [osName, setosName] = useState('')
+
+  useEffect(() => {
+    {
+      navigator.userAgent.indexOf('Win') != -1 && setosName('Windows')
+    }
+    {
+      navigator.userAgent.indexOf('Mac') != -1 && setosName('MacOS')
+    }
+  }, [])
+
   return (
     <div
       className={`flex w-100per min-h-40px border-1px border-solid ${
@@ -25,7 +37,7 @@ export default function SearchBar({ setShowModal, className, isHero }) {
           isHero ? 'text-white min-w-50px' : 'p-10px min-w-62px'
         }`}
         id='close-modal'>
-        CTRL + k
+        {osName == 'MacOS' ? 'CMD + k' : 'CTRL + k'}
       </p>
     </div>
   )
