@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
-import { useEffect, useRef, useState, useContext } from 'react'
+import { useContext } from 'react'
 import { NEXT_URL } from '@/config/index'
 import { GreenButton } from '@/components/reusable/Button'
 import SEO from '@/components/reusable/SEO'
@@ -19,6 +19,34 @@ export default function ForOhFor() {
     setIsModalOpen(true)
   }
 
+  const checkOS = [
+    {
+      system: 'MacOS',
+      command: 'CMD + k',
+      describe: 'on your keyboard.'
+    },
+    {
+      system: 'Windows',
+      command: 'CTRL + k',
+      describe: 'on your keyboard.'
+    },
+    {
+      system: 'iOS',
+      command: 'here',
+      describe: 'to open the search modal.'
+    },
+    {
+      system: 'Android',
+      command: 'here',
+      describe: 'to open the search modal.'
+    },
+    {
+      system: 'Linux',
+      command: 'CTRL + k',
+      describe: 'on your keyboard.'
+    }
+  ]
+
   return (
     <SEO
       title='greenCSS 404 - Something has gone terribly wrong'
@@ -32,40 +60,27 @@ export default function ForOhFor() {
             imageBg='blue'
             imageUrl='/images/404/404-greencss.webp'
             imageAlt='greencss 404 not found'>
-            <p className='text-gray text-15px'>
-              It seems that this page has been lost somewhere in the WWW. Maybe you should use the search function.{' '}
-              <>
-                {getOS() == 'MacOS' && (
-                  <>
-                    <span>Press </span>
-                    <span className='font-600 cursor-pointer' onClick={(e) => handleSearch(e)}>
-                      CMD + k
-                    </span>
-                    <span> on your keyboard.</span>
-                  </>
-                )}
-                {getOS() == 'Windows' && (
-                  <>
-                    <span>Press </span>
-                    <span className='font-600 cursor-pointer' onClick={(e) => handleSearch(e)}>
-                      CTRL + k
-                    </span>
-                    <span> on your keyboard.</span>
-                  </>
-                )}
-                {getOS() != 'MacOS' ||
-                  (getOS() != 'Windows' && (
-                    <>
-                      <span>Click </span>
-                      <span className='font-600 cursor-pointer' onClick={(e) => handleSearch(e)}>
-                        here
-                      </span>
-                      <span> to open the search modal.</span>
-                    </>
-                  ))}
-              </>
-            </p>
-            <div className='w-100per mb-50px'>
+            <div className='text-gray text-15px'>
+              <span>
+                It seems that this page has been lost somewhere in the WWW. Maybe you should use the search function.{' '}
+              </span>
+              {checkOS.map((os, index) => {
+                return (
+                  <span key={index}>
+                    {getOS() == `${os.system}` && (
+                      <>
+                        <span>Press </span>
+                        <span className='font-600 cursor-pointer' onClick={(e) => handleSearch(e)}>
+                          {os.command}
+                        </span>
+                        <span> {os.describe}</span>
+                      </>
+                    )}
+                  </span>
+                )
+              })}
+            </div>
+            <div className='w-100per my-50px'>
               <GreenButton href='/' hasLink={true} isDefault={false}>
                 Or Go back
               </GreenButton>
