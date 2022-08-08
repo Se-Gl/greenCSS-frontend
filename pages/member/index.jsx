@@ -12,6 +12,7 @@ import { handleShowToast, Toast } from 'codn'
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
 export default function index({ stripeData }) {
+  const [hover, setHover] = useState(false)
   // context
   const [state, setState] = useContext(UserContext)
   // toast
@@ -63,6 +64,11 @@ export default function index({ stripeData }) {
                     header={d.nickname}
                     subheader='The simplest way to protect the environment with a monthly contribution allowing you to compensate CO2 on a regular basis. We thank you in advance for your donations.'
                     price={`$` + d.unit_amount / 100 + '/month'}
+                    hover={hover}
+                    onMouseLeave={() => setHover(-1)}
+                    onMouseEnter={() => {
+                      setHover(i)
+                    }}
                   />
                 ))}
             </div>
