@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.3...v1.5.4) (2022-08-08)
+
+
+### Bug Fixes
+
+* **minor:** fixed member subscription, fixed 404 page, added getOS function ([7dd4b6d](https://github.com/Se-Gl/greenCSS-frontend/commit/7dd4b6df73a598365035df66d10fab654f9d0ec5))
+
 ## [1.5.3](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.2...v1.5.3) (2022-08-07)
 
 
