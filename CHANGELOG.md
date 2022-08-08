@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.4...v1.5.5) (2022-08-08)
+
+
+### Bug Fixes
+
+* **404:** created checkOS map function ([fec8bf6](https://github.com/Se-Gl/greenCSS-frontend/commit/fec8bf6814e3e6ececfcb54db105b48dc03acc41))
+
 ## [1.5.4](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.3...v1.5.4) (2022-08-08)
 
 
