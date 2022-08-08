@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.2...v1.5.3) (2022-08-07)
+
+
+### Bug Fixes
+
+* **footprint:** updated laptop bg, deleted unused images ([dd40181](https://github.com/Se-Gl/greenCSS-frontend/commit/dd40181823dd49b87182092c8a5339a40a525675))
+
 ## [1.5.2](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.1...v1.5.2) (2022-08-07)
 
 ### Bug Fixes
