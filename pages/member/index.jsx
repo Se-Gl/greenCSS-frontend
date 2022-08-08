@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
 import React, { useContext, useState } from 'react'
 import axios from 'axios'
 import SEO from '@/components/reusable/SEO'
@@ -8,15 +7,15 @@ import { UserContext } from '@/utils/SubscriptionContext'
 import SponsorCard from '@/components/LandingPage/Sponsor/SponsorCard'
 import Checkmark from '@/components/icon/Member/Checkmark'
 import ModernGrid from '@/components/grid/ModernGrid'
+import { handleShowToast, Toast } from 'codn'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 
 export default function index({ stripeData }) {
-  const router = useRouter()
   // context
   const [state, setState] = useContext(UserContext)
-
-  const [hover, setHover] = useState(false)
+  // toast
+  const [toastList, setToastList] = useState([])
 
   const handleClick = async (e, id) => {
     e.preventDefault()
@@ -27,7 +26,12 @@ export default function index({ stripeData }) {
       })
       window.open(data)
     } else {
-      router.push('/register')
+      handleShowToast(
+        'warning',
+        'User profile missing',
+        '⚠️ Please log in or create a profile to proceed.',
+        setToastList
+      )
     }
   }
 
@@ -38,6 +42,7 @@ export default function index({ stripeData }) {
       url='member'
       keywords='member, donation, green software, sustainable software'>
       <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh bg-blue-7'>
+        <Toast toastList={toastList} setToastList={setToastList} duration={10000} position='top-right' />
         <>
           <ModernGrid
             header='Support your world'
@@ -53,16 +58,11 @@ export default function index({ stripeData }) {
                 stripeData.map((d, i) => (
                   <SponsorCard
                     key={i}
-                    onClick={handleClick}
+                    index={i}
+                    onClick={(e) => handleClick(e, d.id)}
                     header={d.nickname}
                     subheader='The simplest way to protect the environment with a monthly contribution allowing you to compensate CO2 on a regular basis. We thank you in advance for your donations.'
                     price={`$` + d.unit_amount / 100 + '/month'}
-                    onMouseEnter={() => {
-                      setHover(i)
-                    }}
-                    onMouseLeave={() => setHover(-1)}
-                    index={i}
-                    hover={hover}
                   />
                 ))}
             </div>

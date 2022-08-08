@@ -6,7 +6,7 @@ export default function SponsorCard({
   onMouseLeave,
   onKeyDown,
   bgColor = 'bg-white',
-  imageUrl = '/images/landingpage/donation/planet-01.webp',
+  imageUrl = '/images/landingpage/donation/planet-01.png',
   imageAlt,
   onClick,
   headerClass,
@@ -21,7 +21,6 @@ export default function SponsorCard({
   index,
   hover
 }) {
-  console.log(index)
   return (
     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} key={index} onKeyDown={onKeyDown}>
       <div
