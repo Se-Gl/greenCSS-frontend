@@ -1,3 +1,10 @@
+## [1.5.9](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.8...v1.5.9) (2022-08-11)
+
+
+### Bug Fixes
+
+* **income:** fixed income to never be below 1000 ([9b74668](https://github.com/Se-Gl/greenCSS-frontend/commit/9b7466829d9f6055eeed78c7a561c2b9f3fd51f6))
+
 ## [1.5.8](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.7...v1.5.8) (2022-08-11)
 
 ### Bug Fixes
