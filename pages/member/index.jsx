@@ -9,13 +9,14 @@ import SponsorCard from '@/components/LandingPage/Sponsor/SponsorCard'
 import Checkmark from '@/components/icon/Member/Checkmark'
 import ModernGrid from '@/components/grid/ModernGrid'
 import { handleShowToast, Toast } from 'codn'
-// import MemberSponsor from '@/components/LandingPage/Sponsor/MemberSponsor'
+import SignupModal from '@/components/member/SignupModal'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 const MemberSponsor = dynamic(() => import('@/components/LandingPage/Sponsor/MemberSponsor'), { ssr: false })
 
 export default function index({ stripeData }) {
   const [hover, setHover] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   // context
   const [state, setState] = useContext(UserContext)
   // toast
@@ -25,17 +26,13 @@ export default function index({ stripeData }) {
     e.preventDefault()
 
     if (state && state.token) {
+      handleShowToast('info', 'Information', '🙏 You will be forwarded shortly.', setToastList)
       const { data } = await axios.post('/create-subscription', {
         priceId: id
       })
       window.open(data)
     } else {
-      handleShowToast(
-        'warning',
-        'User profile missing',
-        '⚠️ Please log in or create a profile to proceed.',
-        setToastList
-      )
+      setShowModal(!showModal)
     }
   }
 
@@ -47,7 +44,9 @@ export default function index({ stripeData }) {
       keywords='member, donation, green software, sustainable software'>
       <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh bg-blue-7'>
         <DonationProvider>
-          <Toast toastList={toastList} setToastList={setToastList} duration={10000} position='top-right' />
+          <div className='relative' style={{ zIndex: 99999999 }}>
+            <Toast toastList={toastList} setToastList={setToastList} duration={10000} position='top-right' />
+          </div>
           <>
             <ModernGrid
               header='Support your world'
@@ -91,6 +90,9 @@ export default function index({ stripeData }) {
               </div>
             </div>
           </>
+          <div className='relative' style={{ zIndex: 99999998 }}>
+            <SignupModal toggleModal={showModal} setToggleModal={setShowModal} />
+          </div>
         </DonationProvider>
       </Layout>
     </SEO>

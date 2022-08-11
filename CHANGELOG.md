@@ -1,9 +1,8 @@
 ## [1.5.7](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.6...v1.5.7) (2022-08-11)
 
-
 ### Bug Fixes
 
-* **sponsor:** moved sponsor content to member page to avoid early api calls to stripe ([d347c68](https://github.com/Se-Gl/greenCSS-frontend/commit/d347c688e795de92c53439b457eaf98c41273ae2))
+- **sponsor:** moved sponsor content to member page to avoid early api calls to stripe ([d347c68](https://github.com/Se-Gl/greenCSS-frontend/commit/d347c688e795de92c53439b457eaf98c41273ae2))
 
 ## [1.5.6](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.5...v1.5.6) (2022-08-08)
 

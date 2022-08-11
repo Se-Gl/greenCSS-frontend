@@ -34,11 +34,6 @@ export default function MemberProfileHero() {
   return (
     <ModernGrid
       header={`Good ${greetings}, ${state.user.name}`}
-      subheader={`${
-        isAdmin
-          ? 'Continue to the user dashboard or check your subscriptions below.'
-          : 'Welcome to your dashboard. Adjust your settings or your subscriptions in seconds.'
-      }`}
       imageBg={`${
         (greetings == 'morning' && 'orange') ||
         (greetings == 'afternoon' && 'blue') ||
@@ -48,10 +43,31 @@ export default function MemberProfileHero() {
       }`}
       imageUrl='/images/member/jungle-member-hero.webp'
       imageAlt='member section hero'>
-      {isAdmin && (
-        <GreenButton isLinkedOutline={true} isDefault={false} href='/member/auth' className='font-500 text-15px'>
-          Dashboard
-        </GreenButton>
+      {isAdmin ? (
+        <>
+          <p className='text-gray'>Continue to the user dashboard or check your subscriptions below.</p>
+          <GreenButton isLinkedOutline={true} isDefault={false} href='/member/auth' className='font-500 text-15px'>
+            Dashboard
+          </GreenButton>
+        </>
+      ) : (
+        <>
+          <p className='text-gray text-15px'>
+            {state.user.subscriptions.length <= 0
+              ? 'Create your first sustainable subscription.'
+              : 'Create a new subscription. Or manage your donations.'}
+          </p>
+          <div className='flex sm:block'>
+            <GreenButton isLinkedOutline={true} isDefault={false} href='/member#member-plans'>
+              Donate now
+            </GreenButton>
+            <div className='sm:mt-20px md:ml-20px'>
+              <GreenButton hasLink={true} isDefault={false} href='#subscription-overview'>
+                Manage Subscription
+              </GreenButton>
+            </div>
+          </div>
+        </>
       )}
     </ModernGrid>
   )

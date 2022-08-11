@@ -31,8 +31,6 @@ export default function SignupModal({ toggleModal, setToggleModal }) {
   const [checkRegion, setcheckRegion] = useState(false)
   const [checkMemberState, setCheckMemberState] = useState(false)
   const [checkError, setcheckError] = useState()
-  // // modal
-  // const [toggleModal, setToggleModal] = useState(false)
 
   // context
   const [state, setState] = useContext(UserContext)

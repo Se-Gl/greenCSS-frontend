@@ -13,7 +13,7 @@ const MemberSponsor = () => {
   const [individualAmount, setIndividualAmount] = useState(10)
 
   let ceiledPrice = Math.ceil(finalPrize)
-  console.log(ceiledPrice)
+  //   console.log(ceiledPrice)
   // toast
   const [toastList, setToastList] = useState([])
 

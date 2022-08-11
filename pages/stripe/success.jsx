@@ -30,7 +30,7 @@ export default function stripeSuccess() {
         // update user in context
         setState(auth)
         setTimeout(() => {
-          router.push('/member/account')
+          router.push('/member/account#subscription-overview')
         }, 1000)
       }
     }
