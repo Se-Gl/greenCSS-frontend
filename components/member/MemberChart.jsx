@@ -8,7 +8,10 @@ export default function MemberChart({ chartData }) {
   // context
   const [state] = useContext(UserContext)
   // initial values
-  const a = income ? income : 1000
+
+  let checkIncome = income < 1000 ? 1000 : income
+
+  const a = income ? checkIncome : 1000
   let c = Math.round(Math.round(chartData))
   let result = a + c
   // percent values
