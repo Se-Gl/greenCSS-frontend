@@ -9,9 +9,7 @@ export default function MemberChart({ chartData }) {
   const [state] = useContext(UserContext)
   // initial values
 
-  let checkIncome = income < 1000 ? 1000 : income
-
-  const a = income ? checkIncome : 1000
+  const a = income ? income : 1000
   let c = Math.round(Math.round(chartData))
   let result = a + c
   // percent values
@@ -21,7 +19,10 @@ export default function MemberChart({ chartData }) {
   useEffect(() => {
     const getSubscriptions = async () => {
       const { data } = await axios.get('/monthly-income')
-      setIncome(data.data.map((sub) => sub.amount).at(0) / 1000)
+      let getArrayOfIncome = data.data.map((sub) => sub.amount)
+      let setUpdatedIncome = getArrayOfIncome.reduce((partialSum, a) => partialSum + a, 0) / 1000
+
+      setIncome(setUpdatedIncome)
       // console.log(data)
     }
 
