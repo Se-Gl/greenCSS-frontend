@@ -1,9 +1,8 @@
 ## [1.5.6](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.5...v1.5.6) (2022-08-08)
 
-
 ### Bug Fixes
 
-* **member:** re-added hover effect for sponsor card ([0b347fa](https://github.com/Se-Gl/greenCSS-frontend/commit/0b347fac9f7fecd5e4236abc84fb41db3b525467))
+- **member:** re-added hover effect for sponsor card ([0b347fa](https://github.com/Se-Gl/greenCSS-frontend/commit/0b347fac9f7fecd5e4236abc84fb41db3b525467))
 
 ## [1.5.5](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.4...v1.5.5) (2022-08-08)
 

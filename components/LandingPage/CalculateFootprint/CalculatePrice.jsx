@@ -11,7 +11,7 @@ export default function CalculatePrice({ data }) {
 
   return (
     <>
-      <span className='text-20px font-600 text-white'>USD {Math.ceil(ceiledPrice)}$ </span>{' '}
+      <span className='text-20px font-600'>USD {Math.ceil(ceiledPrice)}$ </span>{' '}
     </>
   )
 }

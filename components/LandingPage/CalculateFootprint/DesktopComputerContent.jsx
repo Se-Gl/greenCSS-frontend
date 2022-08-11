@@ -19,29 +19,29 @@ export default function DesktopComputerContent() {
           Calculate your digital footprint quickly and efficiently. It won&apos;t take you a minute.
         </p>
       </div>
-      <div className=''>
+      <>
         <div className='absolute left-45per' style={{ top: '135%' }}>
           <DisplayRangeSlider />
         </div>
         {finalPrize >= 0.01 && (
           <div className='fade-in animate animation-forwards'>
             <div className='absolute left-45per' style={{ top: '160%' }}>
-              <GreenButton href='#donation' hasLink={true} isDefault={false}>
-                Donate
+              <GreenButton href='/member#member-prediction' hasLink={true} isDefault={false}>
+                Be emission free
               </GreenButton>
             </div>
 
-            <div className='absolute left-25per text-white' style={{ top: '115%' }}>
+            <div className='absolute left-55per' style={{ top: '115%' }}>
               <span className={`text-20px font-600`} id='calculation-result'>
                 {calculate}kg
               </span>
               <br />
-              CO2 per year
+              <span className='text-gray'>CO2 per year</span>
             </div>
-            <div className='absolute left-10per text-white' style={{ top: '115%' }}>
+            <div className='absolute left-45per' style={{ top: '115%' }}>
               <CalculatePrice />
               <br />
-              to compensate
+              <span className='text-gray'>to compensate</span>
             </div>
           </div>
         )}
@@ -101,7 +101,7 @@ export default function DesktopComputerContent() {
             and energy.
           </p>
         </div>
-      </div>
+      </>
     </div>
   )
 }
