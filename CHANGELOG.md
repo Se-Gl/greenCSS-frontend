@@ -1,3 +1,10 @@
+## [1.5.8](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.7...v1.5.8) (2022-08-11)
+
+
+### Bug Fixes
+
+* **subscription:** adjusted member index site, added better ux for subscription journey ([36b4646](https://github.com/Se-Gl/greenCSS-frontend/commit/36b4646cd839658e8f67e8891810e9d63e6d7675))
+
 ## [1.5.7](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.6...v1.5.7) (2022-08-11)
 
 ### Bug Fixes
