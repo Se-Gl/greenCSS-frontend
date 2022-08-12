@@ -1,3 +1,10 @@
+## [1.5.12](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.11...v1.5.12) (2022-08-12)
+
+
+### Bug Fixes
+
+* **signup:** fixed signup console error ([d25cece](https://github.com/Se-Gl/greenCSS-frontend/commit/d25cecee9f28a230550912bb35fdd0beadd50ae4))
+
 ## [1.5.11](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.10...v1.5.11) (2022-08-12)
 
 
