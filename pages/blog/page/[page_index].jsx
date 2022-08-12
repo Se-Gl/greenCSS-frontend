@@ -19,7 +19,7 @@ export default function BlogIndex({ posts, numPages, currentPage }) {
       description='Explore the blog posts, to learn more about the latest tips and tricks.'
       url='blog'
       keywords='Blog, write, news, updates, css, greenCSS'>
-      <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh mb-10rem bg-orange-7'>
+      <Layout className='sm:px-10px md:px-25px lg:px-50px min-h-100vh pb-10rem bg-orange-7'>
         <div className='min-w-100per relative'>
           <ModernGrid
             header='A Blog - the right way to write a story'
