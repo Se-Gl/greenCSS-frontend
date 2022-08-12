@@ -1,3 +1,10 @@
+## [1.5.13](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.12...v1.5.13) (2022-08-12)
+
+
+### Bug Fixes
+
+* **terms:** fixed quotations ([299953a](https://github.com/Se-Gl/greenCSS-frontend/commit/299953a5061e78647468494cf0688587c7e8e535))
+
 ## [1.5.12](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.11...v1.5.12) (2022-08-12)
 
 ### Bug Fixes
