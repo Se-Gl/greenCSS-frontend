@@ -1,3 +1,10 @@
+## [1.5.11](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.10...v1.5.11) (2022-08-12)
+
+
+### Bug Fixes
+
+* **signup:** updated signup modal image and text for better readability ([36fe374](https://github.com/Se-Gl/greenCSS-frontend/commit/36fe3747208345a3850fbf19fa582e75da62a08c))
+
 ## [1.5.10](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.9...v1.5.10) (2022-08-11)
 
 ### Bug Fixes
