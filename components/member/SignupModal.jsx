@@ -25,7 +25,7 @@ export default function SignupModal({ toggleModal, setToggleModal }) {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [repeatPassword, setrepeatPassword] = useState(null)
+  const [repeatPassword, setrepeatPassword] = useState('')
   const [selectedCountry, setselectedCountry] = useState()
   const [selectedRegion, setselectedRegion] = useState()
   const [checkRegion, setcheckRegion] = useState(false)
@@ -256,6 +256,7 @@ export default function SignupModal({ toggleModal, setToggleModal }) {
                   <div className='my-auto w-40rem sm:w-100per md:w-100per'>
                     <input
                       checked
+                      readOnly
                       className='accent-greencss'
                       type='checkbox'
                       value={true}
