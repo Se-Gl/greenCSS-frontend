@@ -1,9 +1,8 @@
 ## [1.5.10](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.9...v1.5.10) (2022-08-11)
 
-
 ### Bug Fixes
 
-* **income:** get correct amount of total income if amount is available ([3a88fa5](https://github.com/Se-Gl/greenCSS-frontend/commit/3a88fa5890e61c7ecc5bd20cc6634bf766f244a2))
+- **income:** get correct amount of total income if amount is available ([3a88fa5](https://github.com/Se-Gl/greenCSS-frontend/commit/3a88fa5890e61c7ecc5bd20cc6634bf766f244a2))
 
 ## [1.5.9](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.8...v1.5.9) (2022-08-11)
 
