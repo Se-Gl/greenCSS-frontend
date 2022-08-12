@@ -18,23 +18,23 @@ export default function Terms() {
         <div>
           <h3>1. OVERVIEW</h3>
           <p>
-            This Terms of Service Agreement (&quotAgreement&quot) is entered into by and between greenCSS, registered
-            address NA, Switzerland (&quotCompany&quot) and you, and is made effective as of the date of your use of
-            this website https://www.greenCSS.dev (&quotSite&quot) or the date of electronic acceptance.
+            This Terms of Service Agreement (&quot;Agreement&quot;) is entered into by and between greenCSS, registered
+            address NA, Switzerland (&quot;Company&quot;) and you, and is made effective as of the date of your use of
+            this website https://www.greenCSS.dev (&quot;Site&quot;) or the date of electronic acceptance.
           </p>
           <p>
             This Agreement sets forth the general terms and conditions of your use of the https://www.greenCSS.dev as
             well as the products and/or services purchased or accessed through this Site (the
-            &quotServices&quot).Whether you are simply browsing or using this Site or purchase Services, your use of
+            &quot;Services&quot;).Whether you are simply browsing or using this Site or purchase Services, your use of
             this Site and your electronic acceptance of this Agreement signifies that you have read, understand,
             acknowledge and agree to be bound by this Agreement our{' '}
             <Link href='/privacy/privacy-policy'>
               <a target='_blank'>Privacy policy</a>
             </Link>
-            . The terms &quotwe&quot, &quotus&quot or &quotour&quot shall refer to Company. The terms &quotyou&quot,
-            &quotyour&quot, &quotUser&quot or &quotcustomer&quot shall refer to any individual or entity who accepts
-            this Agreement, uses our Site, has access or uses the Services. Nothing in this Agreement shall be deemed to
-            confer any third-party rights or benefits.
+            . The terms &quot;we&quot;, &quot;us&quot; or &quot;our&quot; shall refer to Company. The terms
+            &quot;you&quot;, &quot;your&quot;, &quot;User&quot; or &quot;customer&quot; shall refer to any individual or
+            entity who accepts this Agreement, uses our Site, has access or uses the Services. Nothing in this Agreement
+            shall be deemed to confer any third-party rights or benefits.
           </p>
           <p>
             Company may, in its sole and absolute discretion, change or modify this Agreement, and any policies or
@@ -59,8 +59,8 @@ export default function Terms() {
           <p>
             If you are entering into this Agreement on behalf of a company or any corporate entity, you represent and
             warrant that you have the legal authority to bind such corporate entity to the terms and conditions
-            contained in this Agreement, in which case the terms &quotyou&quot, &quotyour&quot, &quotUser&quot or
-            &quotcustomer&quot shall refer to such corporate entity. If, after your electronic acceptance of this
+            contained in this Agreement, in which case the terms &quot;you&quot;, &quot;your&quot;, &quot;User&quot; or
+            &quot;customer&quot; shall refer to such corporate entity. If, after your electronic acceptance of this
             Agreement, Company finds that you do not have the legal authority to bind such corporate entity, you will be
             personally responsible for the obligations contained in this Agreement.
           </p>
@@ -123,15 +123,15 @@ export default function Terms() {
             In addition to the general rules above, the provisions in this Section apply specifically to your use of
             Companies Content posted to Site. Companies Content on this Site, including without limitation the text,
             software, scripts, source code, API, graphics, photos, sounds, music, videos and interactive features and
-            the trademarks, service marks and logos contained therein (&quotCompanies Content&quot), are owned by or
+            the trademarks, service marks and logos contained therein (&quot;Companies Content&quot;), are owned by or
             licensed to greenCSS in perpetuity, and are subject to copyright, trademark, and/or patent protection.
           </p>
           <p>
-            Companies Content is provided to you &quotas is&quot, &quotas available&quot and &quotwith all faults&quot
-            for your information and personal, non-commercial use only and may not be downloaded, copied, reproduced,
-            distributed, transmitted, broadcast, displayed, sold, licensed, or otherwise exploited for any purposes
-            whatsoever without the express prior written consent of Company. No right or license under any copyright,
-            trademark, patent, or other proprietary right or license is granted by this Agreement.
+            Companies Content is provided to you &quot;as is&quot;, &quot;as available&quot; and &quot;with all
+            faults&quot; for your information and personal, non-commercial use only and may not be downloaded, copied,
+            reproduced, distributed, transmitted, broadcast, displayed, sold, licensed, or otherwise exploited for any
+            purposes whatsoever without the express prior written consent of Company. No right or license under any
+            copyright, trademark, patent, or other proprietary right or license is granted by this Agreement.
           </p>
         </div>
         <div>
@@ -150,7 +150,7 @@ export default function Terms() {
           <h3>6. DISCLAIMER OF REPRESENTATIONS AND WARRANTIES</h3>
           <p>
             YOU SPECIFICALLY ACKNOWLEDGE AND AGREE THAT YOUR USE OF THIS SITE SHALL BE AT YOUR OWN RISK AND THAT THIS
-            SITE ARE PROVIDED &quotAS IS&quot, &quotAS AVAILABLE&quot AND &quotWITH ALL FAULTS&quot. COMPANY, ITS
+            SITE ARE PROVIDED &quot;AS IS&quot;, &quot;AS AVAILABLE&quot; AND &quot;WITH ALL FAULTS&quot;. COMPANY, ITS
             OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, DISCLAIM ALL WARRANTIES, STATUTORY, EXPRESS OR IMPLIED, INCLUDING,
             BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
             NON-INFRINGEMENT. COMPANY, ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS MAKE NO REPRESENTATIONS OR
@@ -185,7 +185,7 @@ export default function Terms() {
             ADVERTISING OR OTHERWISE) TO THIS SITE, (VII) ANY VIRUSES, WORMS, BUGS, TROJAN HORSES, OR THE LIKE, WHICH
             MAY BE TRANSMITTED TO OR FROM THIS SITE OR ANY SITES LINKED (THROUGH HYPERLINKS, BANNER ADVERTISING OR
             OTHERWISE) TO THIS SITE, (VIII) ANY USER CONTENT OR CONTENT THAT IS DEFAMATORY, HARASSING, ABUSIVE, HARMFUL
-            TO MINORS OR ANY PROTECTED CLASS, PORNOGRAPHIC, &quotX-RATED&quot, OBSCENE OR OTHERWISE OBJECTIONABLE,
+            TO MINORS OR ANY PROTECTED CLASS, PORNOGRAPHIC, &quot;X-RATED&quot;, OBSCENE OR OTHERWISE OBJECTIONABLE,
             AND/OR (IX) ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF YOUR USE OF THIS SITE OR THE SERVICES
             FOUND AT THIS SITE, WHETHER BASED ON WARRANTY, CONTRACT, TORT, OR ANY OTHER LEGAL OR EQUITABLE THEORY, AND
             WHETHER OR NOT COMPANY IS ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
