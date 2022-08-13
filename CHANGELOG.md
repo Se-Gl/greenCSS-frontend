@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.1...v1.6.2) (2022-08-13)
+
+
+### Bug Fixes
+
+* **layout:** fixed footer position in side bar layout ([c25a57a](https://github.com/Se-Gl/greenCSS-frontend/commit/c25a57a97a6fc151c134ba14aac48ac22276a7ed))
+
 ## [1.6.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.0...v1.6.1) (2022-08-13)
 
 ### Bug Fixes
