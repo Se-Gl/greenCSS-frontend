@@ -1,9 +1,8 @@
 ## [1.6.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.0...v1.6.1) (2022-08-13)
 
-
 ### Bug Fixes
 
-* **landingpage:** updated landingpage sections ([229fcf0](https://github.com/Se-Gl/greenCSS-frontend/commit/229fcf0550446ed4cbf3eabff3b7338af82d28a2))
+- **landingpage:** updated landingpage sections ([229fcf0](https://github.com/Se-Gl/greenCSS-frontend/commit/229fcf0550446ed4cbf3eabff3b7338af82d28a2))
 
 # [1.6.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.14...v1.6.0) (2022-08-13)
 

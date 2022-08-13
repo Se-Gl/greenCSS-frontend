@@ -31,7 +31,7 @@ export default function SideBarlayout({ categories, posts, hasSubcategory, conte
             {content}
           </div>
         </main>
-        <div className='px-10px ml-30rem lg:ml-25rem sm:ml-0px md:ml-0px'>
+        <div className='px-10px ml-30rem lg:ml-25rem sm:ml-0px md:ml-0px container'>
           <Footer />
         </div>
       </div>
