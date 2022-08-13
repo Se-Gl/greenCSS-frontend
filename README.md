@@ -172,6 +172,7 @@ Check the [contributing file](/.github/contributing.md) for more details.
 | [stripe](https://www.npmjs.com/package/stripe)                                     | ![GitHub stars](https://img.shields.io/github/stars/stripe/stripe-node.svg?label=%F0%9F%8C%9F)                    | [![Bundle size](https://badgen.net/bundlephobia/minzip/stripe?label=%F0%9F%92%BE)](https://bundlephobia.com/package/stripe)                                      | ✅         | ✅        |
 | [mapbox-gl](https://www.npmjs.com/package/mapbox-gl)                               | ![GitHub stars](https://img.shields.io/github/stars/mapbox/mapbox-gl-js.svg?label=%F0%9F%8C%9F)                   | [![Bundle size](https://badgen.net/bundlephobia/minzip/mapbox-gl?label=%F0%9F%92%BE)](https://bundlephobia.com/result?p=mapbox-gl)                               | ✅         | ✅        |
 | [react-map-gl](https://www.npmjs.com/package/react-map-gl)                         | ![GitHub stars](https://img.shields.io/github/stars/visgl/react-map-gl.svg?label=%F0%9F%8C%9F)                    | [![Bundle size](https://badgen.net/bundlephobia/minzip/react-map-gl?label=%F0%9F%92%BE)](https://bundlephobia.com/result?p=react-map-gl)                         | ✅         | ✅        |
+| [isbot](https://www.npmjs.com/package/isbot)                                       | ![GitHub stars](https://img.shields.io/github/stars/omrilotan/isbot.svg?label=%F0%9F%8C%9F)                       | [![Bundle size](https://badgen.net/bundlephobia/minzip/isbot?label=%F0%9F%92%BE)](https://bundlephobia.com/result?p=isbot)                                       | ✅         | ✅        |
 
 ### Testing Libraries
 
@@ -222,9 +223,15 @@ Check the [contributing file](/.github/contributing.md) for more details.
 | license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
 | changes       | -                                                                                  |
 | ----------    | ------------------------------------                                               |
-| title         | 3dicons                                                                            |
-| source        | [Figma](https://www.figma.com/community/plugin/1107546399747513238)                |
-| author        | [vijay verma](https://www.figma.com/@realvjy)                                      |
+| title         | People 3D Avatar                                                                   |
+| source        | [Figma](https://www.figma.com/community/file/1123564098205454830)                  |
+| author        | [Spectrum UI](https://www.figma.com/@SpectrumUI)                                   |
+| license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
+| changes       | -                                                                                  |
+| ----------    | ------------------------------------                                               |
+| title         | Wolf 3D Character                                                                  |
+| source        | [Figma](https://www.figma.com/community/file/1087594340256737579)                  |
+| author        | [BLRDY](https://www.figma.com/@blrdystudio)                                        |
 | license       | [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)                           |
 | changes       | -                                                                                  |
 

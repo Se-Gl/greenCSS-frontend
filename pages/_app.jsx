@@ -7,23 +7,43 @@ if (process.env.NODE_ENV == 'production') {
 }
 require('@/styles/globals.scss')
 
-import Progress from '@/components/progress/Progress'
-import { NavProvider } from '@/utils/NavContext'
+import { BotProvider } from '@/utils/BotContext'
 import { UserProvider } from '@/utils/SubscriptionContext'
+import { NavProvider } from '@/utils/NavContext'
 import { ModalProvider } from '@/utils/ModalContext'
+import Progress from '@/components/progress/Progress'
+import VerifyBot from '@/components/bot/VerifyBot'
+import { useEffect, useState } from 'react'
 
 function MyApp({ Component, pageProps }) {
+  const [isBotLocalstorage, setIsBotLocalstorage] = useState(
+    useEffect(() => {
+      const interval = setInterval(() => {
+        const checkBotState = JSON.parse(localStorage.getItem('protection-required'))
+        setIsBotLocalstorage(checkBotState)
+      }, 2000)
+
+      return () => clearInterval(interval)
+    }, [])
+  )
+
   return (
-    <>
-      <UserProvider>
-        <NavProvider>
-          <ModalProvider>
-            <Progress />
-            <Component {...pageProps} />
-          </ModalProvider>
-        </NavProvider>
-      </UserProvider>
-    </>
+    <BotProvider>
+      {isBotLocalstorage ? (
+        <VerifyBot />
+      ) : (
+        <>
+          <UserProvider>
+            <NavProvider>
+              <ModalProvider>
+                <Progress />
+                <Component {...pageProps} />
+              </ModalProvider>
+            </NavProvider>
+          </UserProvider>
+        </>
+      )}
+    </BotProvider>
   )
 }
 

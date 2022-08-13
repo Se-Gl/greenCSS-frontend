@@ -1,9 +1,8 @@
 ## [1.5.14](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.13...v1.5.14) (2022-08-12)
 
-
 ### Bug Fixes
 
-* **blog:** fixed blog margin vs. padding and added shadow to toc ([3111483](https://github.com/Se-Gl/greenCSS-frontend/commit/311148358d784830b9250cca93aba08ec30ca7dd))
+- **blog:** fixed blog margin vs. padding and added shadow to toc ([3111483](https://github.com/Se-Gl/greenCSS-frontend/commit/311148358d784830b9250cca93aba08ec30ca7dd))
 
 ## [1.5.13](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.12...v1.5.13) (2022-08-12)
 
