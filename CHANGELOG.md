@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.14...v1.6.0) (2022-08-13)
+
+
+### Features
+
+* **bot:** added basic bot detection, updated readme ([7493010](https://github.com/Se-Gl/greenCSS-frontend/commit/7493010e325269a2ebb60db3f5e08bbfd6425954))
+
 ## [1.5.14](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.5.13...v1.5.14) (2022-08-12)
 
 ### Bug Fixes
