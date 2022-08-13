@@ -43,41 +43,29 @@ const questions = [
 
 export default function Faq() {
   return (
-    <Section id='faq' header='There’s more to know about greenCSS'>
-      <div
-        className='m-auto px-5px grid grid-col-12 gap-25px sm:gap-0px md:gap-0px sm:grid-col-1 md:grid-col-1 min-h-66vh overflow-hidden'
-        style={{ maxWidth: '110rem' }}>
-        <div className='col-span-8 flex sm:mb-0px md:mb-0px'>
-          <div className='m-auto sm:m-unset max-w-100per'>
-            {questions.map((question, index) => (
-              <Accordion
-                boxStyle={true}
-                expand={question.title}
-                collapse={question.description}
-                key={index}
-                className='bg-yellow-9'
-                headerStyleExpanded='text-15px font-600 text-black pb-10px'
-                circleExpand='bg-gray-10 rotate-90deg'
-                iconColorExpanded='stroke-black'
-              />
-            ))}
-          </div>
+    <Section
+      id='faq'
+      background='from-blue-9 to-orange-9 gradient-to-right sm:gradient-to-bottom md:gradient-to-bottom rounded-20px shadow-small-yellow-5'>
+      <>
+        <div className='mx-50px sm:mx-25px md:mx-25px'>
+          <h2 className='w-66per sm:w-100per md:w-100per mb-50px sm:mb-25px md:mb-25px'>
+            FAQ - There’s more to know about greenCSS
+          </h2>
+          {questions.map((question, index) => (
+            <Accordion
+              boxStyle={true}
+              expand={question.title}
+              collapse={question.description}
+              key={index}
+              className='bg-white hover:opacity-75per'
+              headerStyleExpanded='text-20px font-600 text-black pb-10px'
+              headerStyle='text-20px font-600 text-black'
+              circleExpand='bg-gray-10 rotate-90deg'
+              iconColorExpanded='stroke-blue'
+            />
+          ))}
         </div>
-        <div className='col-span-4 max-w-30rem sm:max-w-100per sm:mt-50px md:max-w-100per md:mt-50px sm:py-50px md:p-50px my-auto'>
-          <div className='bg-white p-15px border-1px border-solid border-black-10 rounded-20px shadow-small-gray'>
-            <ContactEmail className='fill-green-9 mx-auto mb-15px' />
-            <h2 className='text-30px mb-5px'>Do you have more questions?</h2>
-            <p className='text-15px text-black-10 mb-25px'>
-              Sometimes not all questions have been answered or new questions have arisen. Transparency remains the most
-              important factor and represents our credo. If you have any further inquiries, please feel free to send us
-              a message.
-            </p>
-            <GreenButton hasLink={true} isDefault={false} href='/contact' className='font-400'>
-              Shoot a Direct Message
-            </GreenButton>
-          </div>
-        </div>
-      </div>
+      </>
     </Section>
   )
 }

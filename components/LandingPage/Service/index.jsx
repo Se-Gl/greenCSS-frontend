@@ -37,7 +37,7 @@ export default function Service() {
     <Section id='service' header='Our Mission - Save the Programming Planet'>
       <Presentation
         fileformat='.png'
-        backgroundColor='bg-black'
+        backgroundColor='from-blue-7 to-blue gradient-to-right sm:gradient-to-bottom md:gradient-to-bottom'
         headline='Start to code with zero emissions: Unique, Open-Source,  Lightweight, Animated and Responsive'
         imagesInfo={aboutImages}
         hasButton={true}
