@@ -15,54 +15,24 @@ const MemberSponsor = () => {
   const [individualAmount, setIndividualAmount] = useState(10)
 
   let ceiledPrice = Math.ceil(finalPrize)
-  //   console.log(ceiledPrice)
   // toast
   const [toastList, setToastList] = useState([])
 
-  // TODO refactor both stripe functions into one reusable
-  // stripe default
-  const createCheckOutSession = async () => {
+  // stripe
+  const createCheckOutSession = async ({ individual = false }) => {
     handleShowToast('info', 'Information', '🙏 You will be forwarded shortly.', setToastList)
-    if (amount <= 1 && amount > 1000000) {
+    if (individual ? amount <= 1 && amount > 1000000 : individualAmount <= 1 && individualAmount > 1000000) {
       handleShowToast('error', 'Error', '⚡ Please provide a valid donation.', setToastList)
     } else {
       const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY)
       const stripe = await stripePromise
       const checkoutSession = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/prepare-stripe-payment`, {
-        amount: amount
+        amount: individual ? amount : individualAmount
       })
 
       const result = await stripe?.redirectToCheckout({
         sessionId: checkoutSession.data.id
       })
-
-      // setLoading(false)
-      if (result?.error) {
-        handleShowToast('error', 'Error', `⚡ ${error.message}`, setToastList)
-      }
-      if (result.status === 500) {
-        handleShowToast('error', 'Error', `⚡ ${error.message}`, setToastList)
-      }
-    }
-  }
-
-  // individual stripe
-  const createIndividualCheckOutSession = async () => {
-    handleShowToast('info', 'Information', '🙏 You will be forwarded shortly.', setToastList)
-    if (individualAmount <= 1 && individualAmount > 1000000) {
-      handleShowToast('error', 'Error', '⚡ Please provide a valid donation.', setToastList)
-    } else {
-      const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY)
-      const stripe = await stripePromise
-      const checkoutSession = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/prepare-stripe-payment`, {
-        amount: individualAmount
-      })
-
-      const result = await stripe?.redirectToCheckout({
-        sessionId: checkoutSession.data.id
-      })
-
-      // setLoading(false)
       if (result?.error) {
         handleShowToast('error', 'Error', `⚡ ${error.message}`, setToastList)
       }
@@ -92,7 +62,7 @@ const MemberSponsor = () => {
             imageAlt='greencss tree card'>
             <GreenButton
               onMouseEnter={() => setAmount(ceiledPrice)}
-              onClick={createCheckOutSession}
+              onClick={createCheckOutSession((individual = true))}
               isDefault={false}
               isReverse={true}
               id='donate-button'
@@ -131,7 +101,7 @@ const MemberSponsor = () => {
 
             <GreenButton
               id='donate-button'
-              onClick={createIndividualCheckOutSession}
+              onClick={createCheckOutSession}
               isdisabled={individualAmount <= 0 || individualAmount >= 1000000 ? true : false}
               isOutline={true}
               type='submit'
