@@ -1,3 +1,10 @@
+## [1.6.4](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.3...v1.6.4) (2022-08-14)
+
+
+### Bug Fixes
+
+* **presentation:** adjusted presentation styling ([402128e](https://github.com/Se-Gl/greenCSS-frontend/commit/402128ea3b516eb5a104bab04a80f7e9dc8cb827))
+
 ## [1.6.3](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.2...v1.6.3) (2022-08-14)
 
 ### Bug Fixes
