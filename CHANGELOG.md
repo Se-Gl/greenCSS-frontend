@@ -1,3 +1,10 @@
+## [1.6.12](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.11...v1.6.12) (2022-08-14)
+
+
+### Performance Improvements
+
+* **member:** adjusted lazy loading component, updated image quality to 80 ([29b705d](https://github.com/Se-Gl/greenCSS-frontend/commit/29b705db74aed4ef48cf6fa74e11490cc795ccfb))
+
 ## [1.6.11](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.10...v1.6.11) (2022-08-14)
 
 
