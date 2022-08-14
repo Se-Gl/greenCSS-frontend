@@ -12,7 +12,7 @@ import SignupModal from '@/components/member/SignupModal'
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 const MemberSponsor = dynamic(() => import('@/components/LandingPage/Sponsor/MemberSponsor'), { ssr: false })
 
-export default function index({ stripeData }) {
+export default function index({ sliceStripeData }) {
   const [hover, setHover] = useState(false)
   const [showModal, setShowModal] = useState(false)
   // context
@@ -57,8 +57,8 @@ export default function index({ stripeData }) {
             <MemberSponsor />
             <>
               <div className='relative grid grid-col-3 gap-30px sm:grid-col-1 md:grid-col-1 z-2' id='member-plans'>
-                {stripeData &&
-                  stripeData.map((d, i) => (
+                {sliceStripeData &&
+                  sliceStripeData.map((d, i) => (
                     <SponsorCard
                       key={i}
                       index={i}
@@ -88,6 +88,8 @@ export default function index({ stripeData }) {
 export async function getServerSideProps() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/prices`)
   const stripeData = await res.json()
+  // only get the latest 3 stripe entries to avoid having archieved products online
+  let sliceStripeData = stripeData.slice(-3)
 
-  return { props: { stripeData } }
+  return { props: { sliceStripeData } }
 }
