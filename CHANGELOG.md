@@ -1,3 +1,10 @@
+## [1.6.9](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.8...v1.6.9) (2022-08-14)
+
+
+### Bug Fixes
+
+* **member:** adjusted subscription card height ([4354214](https://github.com/Se-Gl/greenCSS-frontend/commit/435421420a37f65f06275bb2de0cce06f44d1e83))
+
 ## [1.6.8](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.7...v1.6.8) (2022-08-14)
 
 ### Performance Improvements
