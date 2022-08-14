@@ -6,7 +6,7 @@ export default function SponsorCard({
   onMouseLeave,
   onKeyDown,
   bgColor = 'bg-white',
-  imageUrl = '/images/landingpage/donation/planet-01.png',
+  imageUrl = '/images/landingpage/donation/subscription-01.png',
   imageAlt,
   onClick,
   headerClass,
@@ -34,13 +34,13 @@ export default function SponsorCard({
         {imageUrl && (
           <div className='relative min-h-25rem sm:h-25per md:h-25per w-100per'>
             <Image
-              quality={80}
+              quality={100}
               layout='fill'
-              objectFit='cover'
+              objectFit='contain'
               src={
-                (index === 0 && '/images/landingpage/donation/planet-01.png') ||
-                (index === 1 && '/images/landingpage/donation/planet-02.png') ||
-                (index === 2 && '/images/landingpage/donation/planet-03.png') ||
+                (index === 0 && '/images/landingpage/donation/subscription-01.png') ||
+                (index === 1 && '/images/landingpage/donation/subscription-02.png') ||
+                (index === 2 && '/images/landingpage/donation/subscription-03.png') ||
                 (imageUrl && imageUrl)
               }
               alt={
