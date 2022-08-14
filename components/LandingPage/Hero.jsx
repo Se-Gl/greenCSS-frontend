@@ -125,7 +125,7 @@ export default function Hero() {
               <div ref={card} onMouseMove={handleMouse} className='w-100per h-100per'>
                 <div className='w-20rem h-20rem rounded-50per sphere top-10per' style={{ left: '30rem' }} />
                 <div
-                  className='w-12rem h-12rem rounded-50per sphereTwo bottom-22per sm:bottom-60per md:bottom-55per sm:top-70per md:top-70per flex justify-center items-center overflow-hidden'
+                  className='pointer-events-none w-12rem h-12rem rounded-50per sphereTwo bottom-22per sm:bottom-60per md:bottom-55per sm:top-70per md:top-70per flex justify-center items-center overflow-hidden'
                   style={{ left: 0 }}>
                   {isShowingData && (
                     <span
@@ -140,7 +140,7 @@ export default function Hero() {
                     </span>
                   )}
                 </div>
-                <div className='w-15rem h-15rem rounded-50per sphereThree top-25per sm:top-10per left-15per sm:left-5per md:left-10per flex justify-center items-center overflow-hidden'>
+                <div className='pointer-events-none w-15rem h-15rem rounded-50per sphereThree top-25per sm:top-10per left-15per sm:left-5per md:left-10per flex justify-center items-center overflow-hidden'>
                   {isShowingData && (
                     <span
                       className={`px-10px gradient-to-right from-blue-10 to-gray-2 text-transparent bg-clip-text text-center rotate-neg-5deg fade-in-left animation-duration-300ms ease animation-forwards ${
@@ -150,7 +150,7 @@ export default function Hero() {
                         {carbonData.c}g
                       </span>
                       <br />
-                      Was produced while you were loading the page
+                      CO&#x2082; was produced while you were loading the page
                     </span>
                   )}
                 </div>

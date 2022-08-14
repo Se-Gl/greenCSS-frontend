@@ -20,7 +20,7 @@ const Sponsor = () => {
               ? `Minimize your personal emissions by donating USD ${checkPrediction ? ceiledPrice : amount}$.`
               : 'Change the world. Even a small donation does a lot.'
           }`}
-          subheader='In cooperation with greenCSS partners, global projects are supported in order to minimize the CO2 emissions. Every cent goes directly to a green project. You want to learn more? Subscribe to the newsletter and receive in real time which projects are currently supported.'
+          subheader='In cooperation with greenCSS partners, global projects are supported in order to minimize the CO&#x2082; emissions. Every cent goes directly to a green project. You want to learn more? Subscribe to the newsletter and receive in real time which projects are currently supported.'
           imageBg='orange'
           imageUrl='/images/member/member-hand.webp'
           imageAlt='greencss donation'>

@@ -66,7 +66,7 @@ export default function index({ stripeData }) {
                       index={i}
                       onClick={(e) => handleClick(e, d.id)}
                       header={d.nickname}
-                      subheader='The simplest way to protect the environment with a monthly contribution allowing you to compensate CO2 on a regular basis. We thank you in advance for your donations.'
+                      subheader='The simplest way to protect the environment with a monthly contribution allowing you to compensate CO&#x2082; on a regular basis. We thank you in advance for your donations.'
                       price={`$` + d.unit_amount / 100 + '/month'}
                       hover={hover}
                       onMouseLeave={() => setHover(-1)}
