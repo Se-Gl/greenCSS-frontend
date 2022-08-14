@@ -1,3 +1,10 @@
+## [1.6.10](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.9...v1.6.10) (2022-08-14)
+
+
+### Bug Fixes
+
+* **member:** changed subscription images ([bf60fee](https://github.com/Se-Gl/greenCSS-frontend/commit/bf60fee56682cfd1cd001d320295fd230320c468))
+
 ## [1.6.9](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.8...v1.6.9) (2022-08-14)
 
 ### Bug Fixes
