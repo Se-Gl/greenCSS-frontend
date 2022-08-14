@@ -1,9 +1,8 @@
 ## [1.6.6](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.5...v1.6.6) (2022-08-14)
 
-
 ### Bug Fixes
 
-* **general:** re-adjusted desktop values, deleted member code ([f8c775c](https://github.com/Se-Gl/greenCSS-frontend/commit/f8c775c2c44c57fef2b9bd9ea44183341741e0e4))
+- **general:** re-adjusted desktop values, deleted member code ([f8c775c](https://github.com/Se-Gl/greenCSS-frontend/commit/f8c775c2c44c57fef2b9bd9ea44183341741e0e4))
 
 ## [1.6.5](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.4...v1.6.5) (2022-08-14)
 

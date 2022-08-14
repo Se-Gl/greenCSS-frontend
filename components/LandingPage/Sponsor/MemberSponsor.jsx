@@ -1,11 +1,13 @@
 import { useContext, useState } from 'react'
 import { handleShowToast, Input, Toast } from 'codn'
-import { loadStripe } from '@stripe/stripe-js'
 import axios from 'axios'
 import { GreenButton } from '@/components/reusable/Button'
 import DonationContext from '@/utils/DonationContext'
 import ModernCard from '@/components/reusable/ModernCard'
 import Section from '@/components/reusable/Section'
+
+import { loadStripe } from '@stripe/stripe-js/pure'
+loadStripe.setLoadParameters({ advancedFraudSignals: false })
 
 const MemberSponsor = () => {
   const { amount, setAmount, finalPrize } = useContext(DonationContext)
