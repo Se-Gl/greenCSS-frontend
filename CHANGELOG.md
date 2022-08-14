@@ -1,16 +1,14 @@
 ## [1.6.12](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.11...v1.6.12) (2022-08-14)
 
-
 ### Performance Improvements
 
-* **member:** adjusted lazy loading component, updated image quality to 80 ([29b705d](https://github.com/Se-Gl/greenCSS-frontend/commit/29b705db74aed4ef48cf6fa74e11490cc795ccfb))
+- **member:** adjusted lazy loading component, updated image quality to 80 ([29b705d](https://github.com/Se-Gl/greenCSS-frontend/commit/29b705db74aed4ef48cf6fa74e11490cc795ccfb))
 
 ## [1.6.11](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.10...v1.6.11) (2022-08-14)
 
-
 ### Bug Fixes
 
-* **stripe:** only display the latest 3 subscription plans ([a203a5a](https://github.com/Se-Gl/greenCSS-frontend/commit/a203a5ace2e7013dd83f8ce6b7fdd1ff5962ad05))
+- **stripe:** only display the latest 3 subscription plans ([a203a5a](https://github.com/Se-Gl/greenCSS-frontend/commit/a203a5ace2e7013dd83f8ce6b7fdd1ff5962ad05))
 
 ## [1.6.10](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.9...v1.6.10) (2022-08-14)
 

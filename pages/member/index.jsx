@@ -6,11 +6,11 @@ import SEO from '@/components/reusable/SEO'
 import { DonationProvider } from '@/utils/DonationContext'
 import { UserContext } from '@/utils/SubscriptionContext'
 import ModernGrid from '@/components/grid/ModernGrid'
-import SignupModal from '@/components/member/SignupModal'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
 const MemberSponsor = dynamic(() => import('@/components/LandingPage/Sponsor/MemberSponsor'), { ssr: false })
 const SponsorCard = dynamic(() => import('@/components/LandingPage/Sponsor/SponsorCard'), { ssr: false })
+const SignupModal = dynamic(() => import('@/components/member/SignupModal'), { ssr: false })
 
 export default function index({ sliceStripeData }) {
   const [hover, setHover] = useState(false)
