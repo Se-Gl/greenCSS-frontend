@@ -1,3 +1,10 @@
+## [1.6.7](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.6...v1.6.7) (2022-08-14)
+
+
+### Performance Improvements
+
+* **stripe:** deleted iframe which leads to better performance ([8e26985](https://github.com/Se-Gl/greenCSS-frontend/commit/8e2698554eca89bb5bc6211e50a3b72948f39deb))
+
 ## [1.6.6](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.5...v1.6.6) (2022-08-14)
 
 ### Bug Fixes
