@@ -55,8 +55,8 @@ export default function index({ stripeData }) {
               imageAlt='memmber 3d wolf hero'
             />
             <MemberSponsor />
-            <div className='relative min-h-100vh' id='member-plans'>
-              <div className='grid grid-col-3 gap-30px sm:grid-col-1 md:grid-col-1 z-2'>
+            <>
+              <div className='relative grid grid-col-3 gap-30px sm:grid-col-1 md:grid-col-1 z-2' id='member-plans'>
                 {stripeData &&
                   stripeData.map((d, i) => (
                     <SponsorCard
@@ -74,7 +74,7 @@ export default function index({ stripeData }) {
                     />
                   ))}
               </div>
-            </div>
+            </>
           </>
           <div className='relative' style={{ zIndex: 99999998 }}>
             <SignupModal toggleModal={showModal} setToggleModal={setShowModal} />

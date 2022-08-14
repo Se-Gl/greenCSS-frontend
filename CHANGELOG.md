@@ -1,9 +1,8 @@
 ## [1.6.8](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.7...v1.6.8) (2022-08-14)
 
-
 ### Performance Improvements
 
-* **stripe:** refactored click handlers into one reusable function ([dedbc9b](https://github.com/Se-Gl/greenCSS-frontend/commit/dedbc9bbbdf85cf5ed2d072d786544308a3219d3))
+- **stripe:** refactored click handlers into one reusable function ([dedbc9b](https://github.com/Se-Gl/greenCSS-frontend/commit/dedbc9bbbdf85cf5ed2d072d786544308a3219d3))
 
 ## [1.6.7](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.6...v1.6.7) (2022-08-14)
 

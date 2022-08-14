@@ -24,10 +24,10 @@ export default function SponsorCard({
   return (
     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} key={index} onKeyDown={onKeyDown}>
       <div
-        className={`relative shadow-small-gray rounded-20px cursor-pointer min-h-35rem ${
-          (index === 0 && 'bg-white') ||
-          (index === 1 && 'bg-blue') ||
-          (index === 2 && 'bg-black') ||
+        className={`relative shadow-small-blue-5 transition-all transition-duration-300ms rounded-20px cursor-pointer min-h-35rem ${
+          (index === 0 && 'bg-white hover:shadow-small-blue-9') ||
+          (index === 1 && 'bg-blue hover:shadow-small-blue-3') ||
+          (index === 2 && 'bg-black hover:shadow-small-black-5') ||
           (bgColor && bgColor)
         }`}
         onClick={onClick}>
