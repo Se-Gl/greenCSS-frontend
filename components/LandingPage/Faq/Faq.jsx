@@ -1,7 +1,12 @@
 import { Accordion } from 'codn'
 import Section from '@/components/reusable/Section'
-import { GreenButton } from '@/components/reusable/Button'
-import ContactEmail from '@/components/icon/Contact/ContactEmail'
+
+const getGreenData = (path) => {
+  if (typeof window !== 'undefined') {
+    const localGreenData = localStorage.getItem(`green-data-${path}`)
+    if (localGreenData) return JSON.parse(localGreenData)
+  }
+}
 
 const questions = [
   {
@@ -38,6 +43,14 @@ const questions = [
     title: 'What is the goal of greenCSS?',
     description:
       'While you are programming, whether for a school project, a university assignment, in an agency or as a freelancer, you need electricity. Most of the energy is still produced without a climate-neutral footprint. The main goal is to plant trees worldwide and reduce the C02 emissions. You can be part of it and contribute to your carbon footprint. Even when you just use greenCSS in your next project, you are already helping. If this is not enough for you, you are welcome to leave a small donation. Your children, your family, our planet and greenCSS will be eternally grateful!'
+  },
+  {
+    title: 'What are your stats?',
+    description: `We try to keep our energy consumption as low as possible. We host on Vercel. Vercel relies on a serverless architecture, which is an efficient alternative to conventional servers. While conventional servers must stay online for 24/7/365, serverless computations only run when needed. Consequently, each individual website user only generates ${
+      getGreenData('emission') ? getGreenData('emission') : 0.17
+    }g of CO2 per visit. Most bots and spam accounts are filtered before the page loads. In other words, we are about ${
+      getGreenData('percent') ? getGreenData('percent') : 84
+    }% greener than the rest of the web.`
   }
 ]
 
