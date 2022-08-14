@@ -1,9 +1,8 @@
 ## [1.6.5](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.4...v1.6.5) (2022-08-14)
 
-
 ### Bug Fixes
 
-* **co2:** adjusted CO2 spelling, fixed landing page desktop values ([a55b716](https://github.com/Se-Gl/greenCSS-frontend/commit/a55b71634f7eac1be3e3d4eb7f1151d1d13f0ae4))
+- **co2:** adjusted CO2 spelling, fixed landing page desktop values ([a55b716](https://github.com/Se-Gl/greenCSS-frontend/commit/a55b71634f7eac1be3e3d4eb7f1151d1d13f0ae4))
 
 ## [1.6.4](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.3...v1.6.4) (2022-08-14)
 

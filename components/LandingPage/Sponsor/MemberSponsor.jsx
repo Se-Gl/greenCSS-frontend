@@ -107,7 +107,7 @@ const MemberSponsor = () => {
           headerclass='text-white'
           descriptionStyle='text-white'
           subheader='Choose your own amount to contribute. greenCSS supports worldwide projects. This is only possible with your help.'
-          imageBg={ceiledPrice ? 'blue' : 'greencss'}
+          imageBg={ceiledPrice ? 'blue' : 'orange'}
           imageUrl='/images/landingpage/donation/custom-amount-greencss.webp'
           imageAlt='greencss tree card'>
           <div className='mb-50px'>

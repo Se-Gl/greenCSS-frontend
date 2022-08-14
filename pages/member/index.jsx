@@ -1,14 +1,12 @@
 import dynamic from 'next/dynamic'
 import React, { useContext, useState } from 'react'
 import axios from 'axios'
+import { handleShowToast, Toast } from 'codn'
 import SEO from '@/components/reusable/SEO'
 import { DonationProvider } from '@/utils/DonationContext'
-import { tierDescription } from '@/data/member'
 import { UserContext } from '@/utils/SubscriptionContext'
 import SponsorCard from '@/components/LandingPage/Sponsor/SponsorCard'
-import Checkmark from '@/components/icon/Member/Checkmark'
 import ModernGrid from '@/components/grid/ModernGrid'
-import { handleShowToast, Toast } from 'codn'
 import SignupModal from '@/components/member/SignupModal'
 
 const Layout = dynamic(() => import('@/components/reusable/Layout'), { ssr: false })
@@ -75,18 +73,6 @@ export default function index({ stripeData }) {
                       }}
                     />
                   ))}
-              </div>
-              <div className='absolute md:relative md:my-50px sm:relative sm:my-50px bg-blue-5 rounded-20px flex h-75vh top-33per left-0per right-0per bottom-0per z-neg-1 shadow-small-blue-5'>
-                <ul className='m-auto pt-100px md:pt-0px sm:pt-0px'>
-                  {tierDescription.map((tier, i) => (
-                    <li key={i} className='my-15px flex'>
-                      {tier.name}
-                      <span className='ml-auto pl-50px'>
-                        <Checkmark fillColor='fill-blue' />
-                      </span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </div>
           </>

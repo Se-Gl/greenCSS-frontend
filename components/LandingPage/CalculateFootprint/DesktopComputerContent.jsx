@@ -19,25 +19,25 @@ export default function DesktopComputerContent() {
         </p>
       </div>
       <>
-        <div className='absolute left-45per' style={{ top: '130%' }}>
+        <div className='absolute left-45per' style={{ top: '140%' }}>
           <DisplayRangeSlider />
         </div>
         {finalPrize >= 0.01 && (
           <div className='fade-in animate animation-forwards'>
-            <div className='absolute left-45per' style={{ top: '160%' }}>
+            <div className='absolute left-45per' style={{ top: '170%' }}>
               <GreenButton href='/member#member-prediction' hasLink={true} isDefault={false}>
                 Be emission free
               </GreenButton>
             </div>
 
-            <div className='absolute left-55per' style={{ top: '115%' }}>
+            <div className='absolute left-55per' style={{ top: '125%' }}>
               <span className={`text-20px font-600`} id='calculation-result'>
                 {calculate}kg
               </span>
               <br />
               <span className='text-gray'>CO&#x2082; per year</span>
             </div>
-            <div className='absolute left-45per' style={{ top: '115%' }}>
+            <div className='absolute left-45per' style={{ top: '125%' }}>
               <CalculatePrice />
               <br />
               <span className='text-gray'>to compensate</span>
@@ -45,7 +45,7 @@ export default function DesktopComputerContent() {
           </div>
         )}
 
-        <div className='absolute left-23per' style={{ top: '205%' }}>
+        <div className='absolute left-23per' style={{ top: '220%' }}>
           <div className='bg-greencss hover:bg-greencss-1 w-15rem h-50px rounded-5px text-white flex px-10px transition-all transition-duration-200ms'>
             <span className='my-auto'>
               compensate <br />
@@ -54,7 +54,7 @@ export default function DesktopComputerContent() {
           </div>
         </div>
 
-        <div className='absolute left-42per select-none' style={{ top: '205%' }}>
+        <div className='absolute left-42per select-none' style={{ top: '220%' }}>
           <div className='border-1px border-solid border-greencss w-15rem h-50px rounded-5px flex text-greencss px-10px'>
             <span className='my-auto'>
               weekly emission <br />
@@ -63,7 +63,7 @@ export default function DesktopComputerContent() {
           </div>
         </div>
 
-        <div className='absolute left-61per select-none' style={{ top: '205%' }}>
+        <div className='absolute left-61per select-none' style={{ top: '220%' }}>
           <div className='border-1px border-solid border-greencss w-15rem h-50px rounded-5px flex text-greencss px-10px'>
             <span className='my-auto'>
               monthly emission <br />
@@ -73,7 +73,7 @@ export default function DesktopComputerContent() {
         </div>
 
         {finalPrize >= 0.01 ? (
-          <div className='absolute left-25per select-none' style={{ top: '205%' }}>
+          <div className='absolute left-25per select-none' style={{ top: '220%' }}>
             <VisualChart
               data={calculate}
               descriptionClassName='mb-0px text-10px mb-0px'
@@ -81,7 +81,7 @@ export default function DesktopComputerContent() {
             />
           </div>
         ) : (
-          <div className='opacity-33per min-w-80px absolute left-48per' style={{ top: '225%' }}>
+          <div className='opacity-33per min-w-80px absolute left-48per' style={{ top: '235%' }}>
             <div className='absolute z-10 fade-in animation-duration-500ms'>
               <Loader />
               <span className='text-black-10 text-center ml-neg-30px'>Waiting for your input</span>
@@ -89,7 +89,7 @@ export default function DesktopComputerContent() {
           </div>
         )}
 
-        <div className='absolute left-20per w-35rem' style={{ top: '280%' }}>
+        <div className='absolute left-20per w-35rem' style={{ top: '300%' }}>
           <h3>Conclusion about your footprint</h3>
           <p className='mb-0px mt-25px text-15px text-black-10'>
             In this calculation we have only calculated your PC/laptop consumption. We compared the mean energy

@@ -16,6 +16,7 @@ import VerifyBot from '@/components/bot/VerifyBot'
 import { useEffect, useState } from 'react'
 
 function MyApp({ Component, pageProps }) {
+  // check for bot activity
   const [isBotLocalstorage, setIsBotLocalstorage] = useState(
     useEffect(() => {
       const interval = setInterval(() => {
