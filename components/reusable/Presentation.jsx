@@ -21,7 +21,7 @@ export default function Presentation({
   return (
     <Section id={id} additionalClassName={`${backgroundColor} rounded-20px my-100px shadow-small-gray`}>
       <div className='m-auto grid grid-col-2 gap-30px sm:gap-0px sm:grid-col-1 md:grid-col-1 px-20px'>
-        <div className='grid grid-row-2 grid-col-2 gap-30px text-white' ref={ref}>
+        <div className='grid grid-row-2 grid-col-2 sm:grid-col-1 gap-30px text-white' ref={ref}>
           {imagesInfo.map((image, index) => (
             <div
               key={index}

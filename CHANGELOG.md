@@ -1,16 +1,14 @@
 ## [1.6.3](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.2...v1.6.3) (2022-08-14)
 
-
 ### Bug Fixes
 
-* **landingpage:** added carbon footprint api ([e2c6eb9](https://github.com/Se-Gl/greenCSS-frontend/commit/e2c6eb98f5502bd4999c185fc1a9528661a44dbe))
+- **landingpage:** added carbon footprint api ([e2c6eb9](https://github.com/Se-Gl/greenCSS-frontend/commit/e2c6eb98f5502bd4999c185fc1a9528661a44dbe))
 
 ## [1.6.2](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.1...v1.6.2) (2022-08-13)
 
-
 ### Bug Fixes
 
-* **layout:** fixed footer position in side bar layout ([c25a57a](https://github.com/Se-Gl/greenCSS-frontend/commit/c25a57a97a6fc151c134ba14aac48ac22276a7ed))
+- **layout:** fixed footer position in side bar layout ([c25a57a](https://github.com/Se-Gl/greenCSS-frontend/commit/c25a57a97a6fc151c134ba14aac48ac22276a7ed))
 
 ## [1.6.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.0...v1.6.1) (2022-08-13)
 

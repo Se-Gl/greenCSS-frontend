@@ -10,26 +10,28 @@ const aboutImages = [
   {
     path: 'about/zurich-sunset',
     alt: 'Zurich sunset by greenCSS',
-    additionalStyle: 'mt-50px',
+    additionalStyle: 'mt-50px flex justify-center items-center sm:max-h-30rem',
     width: 500,
     height: 747
   },
   {
     path: 'about/switzerland-nature',
     alt: 'Switzerland nature sunset by greenCSS',
+    additionalStyle: 'mb-50px sm:mb-0px flex justify-center items-center sm:max-h-30rem',
     width: 500,
     height: 747
   },
   {
     path: 'about/germany-sunset',
     alt: 'Germany sunset nature by greenCSS',
-    additionalStyle: 'mt-50px',
+    additionalStyle: 'mt-50px sm:mt-0px flex justify-center items-center sm:max-h-30rem',
     width: 500,
     height: 747
   },
   {
     path: 'about/berlin',
     alt: 'Berlin sunset by greenCSS',
+    additionalStyle: 'mb-50px flex justify-center items-center sm:max-h-30rem',
     width: 500,
     height: 747
   }
@@ -52,7 +54,7 @@ export default function AboutPage() {
           imageAlt='greencss documentation book'
         />
         <Presentation
-          backgroundColor='bg-black'
+          backgroundColor='from-black-2 to-black gradient-to-right sm:gradient-to-bottom md:gradient-to-bottom'
           headline='Unique sustainable open-source software supported from all over the world'
           imagesInfo={aboutImages}
           hasButton={true}
