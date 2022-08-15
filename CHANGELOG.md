@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.15...v1.7.0) (2022-08-15)
+
+
+### Features
+
+* **500:** added 500 page ([a27ad88](https://github.com/Se-Gl/greenCSS-frontend/commit/a27ad8834409b9c5400c0472a3a040fc990fe131))
+
 ## [1.6.15](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.14...v1.6.15) (2022-08-15)
 
 
