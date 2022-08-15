@@ -61,7 +61,7 @@ export default function SEO({ title, keywords, description, author, image, url, 
 }
 
 SEO.defaultProps = {
-  title: 'A classy way to write sustainable CSS',
+  title: 'A classy way to write sustainable CSS 🌿',
   keywords: 'sustainable CSS, green CSS, sustainable software, css library, css framework',
   description:
     'greenCSS is a sustainable cascade style sheet (CSS) library that is intuitive to use and provides zero-emission coding. The vision is to reduce our carbon footprint and simultaneously create beautiful new web applications. For everyone, for every framework!',

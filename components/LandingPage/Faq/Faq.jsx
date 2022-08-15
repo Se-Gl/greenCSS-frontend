@@ -12,7 +12,7 @@ const questions = [
   {
     title: 'What is greenCSS?',
     description:
-      'greenCSS is an MIT licensed CSS library. It uses the same technology like bulma, but with a class based system similar to tailwindcss. The difference is that greenCSS additionally aims to provide a green fingerprint for the earth. You can develop beautiful websites and code emission-free at the same time.'
+      'greenCSS is a MIT licensed CSS library. It uses the same technology like bulma, but with a class based system similar to tailwindcss. The difference is that greenCSS additionally aims to provide a green fingerprint for the earth. You can develop beautiful websites and code emission-free at the same time.'
   },
   {
     title: 'Are you greenwashing?',

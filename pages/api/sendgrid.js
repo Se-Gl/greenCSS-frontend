@@ -3,6 +3,8 @@ import sendgrid from '@sendgrid/mail'
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
 
 async function sendEmail(req, res) {
+  let getUserIP = req.headers['x-real-ip'] || req.connection.remoteAddress
+
   try {
     await sendgrid.send({
       to: `${process.env.SENDGRID_EMAIL}`,
@@ -22,15 +24,15 @@ async function sendEmail(req, res) {
         <div style="display: flex;justify-content: center;align-items: center;border-radius: 5px;overflow: hidden; font-family: 'helvetica', 'ui-sans';">              
             <div style="margin-left: 20px;margin-right: 20px;">
               <h3>New mail from ${req.body.fullname}, their email is: ✉️${req.body.email} </h3>
-              <div style="font-size: 12px;">
-                <b>Meta data:</b>
-                <p><b>User IP:</b> ${req.headers['x-real-ip'] || req.connection.remoteAddress}</p>
-                <p><b>User Agent:</b> ${req.headers['user-agent']}</p>
-              </div>
               <div style="font-size: 16px;">
-                <p>Message:</p>
+                <p><b>Message:</b></p>
                 <p>${req.body.message}</p>
                 <br>
+              </div>
+              <div style="font-size: 12px;">
+                <p><b>Meta data</b> helps us to prevent fraud:</p>
+                <p><b>User IP:</b> ${getUserIP}</p>
+                <p><b>User Agent:</b> ${req.headers['user-agent']}</p>
               </div>
               <img src="https://www.greencss.dev/images/brand/greencss_logo_dark.svg" style="height: 50px;width: 50px;border-radius: 12.5px;overflow: hidden;">
               <p style="font-size: 16px;padding-bottom: 20px;border-bottom: 1px solid #101010;">Regards<br>Se Gl<br>greenCSS<br></p>
