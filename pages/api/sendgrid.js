@@ -21,7 +21,12 @@ async function sendEmail(req, res) {
       <body>
         <div style="display: flex;justify-content: center;align-items: center;border-radius: 5px;overflow: hidden; font-family: 'helvetica', 'ui-sans';">              
             <div style="margin-left: 20px;margin-right: 20px;">
-              <h3>You've got a new mail from ${req.body.fullname}, their email is: ✉️${req.body.email} </h3>
+              <h3>New mail from ${req.body.fullname}, their email is: ✉️${req.body.email} </h3>
+              <div style="font-size: 12px;">
+                <b>Meta data:</b>
+                <p><b>User IP:</b> ${req.headers['x-real-ip'] || req.connection.remoteAddress}</p>
+                <p><b>User Agent:</b> ${req.headers['user-agent']}</p>
+              </div>
               <div style="font-size: 16px;">
                 <p>Message:</p>
                 <p>${req.body.message}</p>
