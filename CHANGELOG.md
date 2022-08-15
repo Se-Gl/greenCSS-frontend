@@ -1,3 +1,10 @@
+## [1.6.14](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.13...v1.6.14) (2022-08-15)
+
+
+### Bug Fixes
+
+* **mail:** added user metadata to mail - for spam protection ([bfa8163](https://github.com/Se-Gl/greenCSS-frontend/commit/bfa816388cc5540e90e1d31ef197328219745893))
+
 ## [1.6.13](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.12...v1.6.13) (2022-08-14)
 
 
