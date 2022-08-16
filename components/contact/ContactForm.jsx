@@ -14,6 +14,9 @@ export default function ContactForm() {
   // toast
   const [toastList, setToastList] = useState([])
 
+  // submit
+  const [submit, setSubmit] = useState(false)
+
   // captcha
   const [verifyCaptcha, setverifyCaptcha] = useState('')
   const [captcha, setCaptcha] = useState([])
@@ -53,7 +56,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
+    setSubmit(true)
     let isValidForm = handleValidation()
 
     if (isValidForm) {
@@ -75,6 +78,7 @@ export default function ContactForm() {
         setShowSuccessMessage(false)
         setShowFailureMessage(true)
         handleShowToast('error', 'Warning', '⚡ Oops! Something went wrong, please try again later.', setToastList)
+        setSubmit(false)
         return
       }
       setShowSuccessMessage(true)
@@ -86,6 +90,7 @@ export default function ContactForm() {
       setMessage('')
       setSubject('')
       setverifyCaptcha('')
+      setSubmit(false)
     }
   }
 
@@ -180,10 +185,10 @@ export default function ContactForm() {
           <div className='sm:mr-auto md:mr-auto my-25px'>
             <GreenButton
               type='submit'
-              isdisabled={!checkIsDisabled}
+              isdisabled={!checkIsDisabled || submit}
               id='submit-button'
               className={`text-15px font-400 ml-0px mt-25px ${
-                !checkIsDisabled ? 'cursor-not-allowed bg-gray-5 border-none' : ''
+                !checkIsDisabled || submit ? 'cursor-not-allowed bg-gray-5 border-none' : ''
               }`}
               isOutline={true}
               isDefault={false}>
