@@ -1,9 +1,8 @@
 ## [1.7.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.7.0...v1.7.1) (2022-08-16)
 
-
 ### Bug Fixes
 
-* **contact:** fixed multiple form submissions ([5c2ffdf](https://github.com/Se-Gl/greenCSS-frontend/commit/5c2ffdff83bb6730d442ba69ad1058132b5fa7ce))
+- **contact:** fixed multiple form submissions ([5c2ffdf](https://github.com/Se-Gl/greenCSS-frontend/commit/5c2ffdff83bb6730d442ba69ad1058132b5fa7ce))
 
 # [1.7.0](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.6.15...v1.7.0) (2022-08-15)
 

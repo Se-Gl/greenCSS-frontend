@@ -19,6 +19,7 @@ export const mobileDocsMenu = [
     url: '/docs/category/background'
   },
   { label: 'border', url: '/docs/category/border' },
+  { label: 'color', url: '/docs/category/color' },
   { label: 'effects', url: '/docs/category/effects' },
   { label: 'filter', url: '/docs/category/filter' },
   { label: 'flexbox', url: '/docs/category/flexbox' },
@@ -60,6 +61,7 @@ export const navsublinks = [
         url: '/docs/category/background'
       },
       { label: 'border', url: '/docs/category/border' },
+      { label: 'color', url: '/docs/category/color' },
       { label: 'effects', url: '/docs/category/effects' },
       { label: 'filter', url: '/docs/category/filter' },
       { label: 'flexbox', url: '/docs/category/flexbox' },
