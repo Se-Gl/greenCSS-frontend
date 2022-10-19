@@ -51,6 +51,8 @@ If you do not want to use the predefined color selection, but still want to use 
   --custom-color-purple: purple; // choose your custom purple
   --custom-color-green: green; // choose your custom green
   --custom-color-orange: orange; // choose your custom orange
+  --custom-color-black: black; // choose your custom black
+  --custom-color-white: white; // choose your custom white
   --custom-color-primary: #b950c8; // choose your custom corporate color
   --custom-color-secondary: #50c8a6; // choose another corporate color
 }

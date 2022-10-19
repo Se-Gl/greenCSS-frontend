@@ -1,13 +1,14 @@
 # Ignore artifacts:
 node_modules
 build
-coverage
 .next
 .vscode
 
+# testing
+coverage
+.nyc_output
+cypress
+
 # Ignore all HTML files:
 *.html
-
-styles/greenCSS.css
-
-cache/data.js
+styles/green.css

@@ -1,9 +1,8 @@
 ## [1.7.2](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.7.1...v1.7.2) (2022-10-13)
 
-
 ### Bug Fixes
 
-* **blog:** added new color documentation ([6c6c0b5](https://github.com/Se-Gl/greenCSS-frontend/commit/6c6c0b54b841add781880272d9493eb71814476d))
+- **blog:** added new color documentation ([6c6c0b5](https://github.com/Se-Gl/greenCSS-frontend/commit/6c6c0b54b841add781880272d9493eb71814476d))
 
 ## [1.7.1](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.7.0...v1.7.1) (2022-08-16)
 
