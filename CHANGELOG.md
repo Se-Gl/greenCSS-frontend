@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.7.2...v1.7.3) (2022-10-19)
+
+
+### Bug Fixes
+
+* **docs:** added documentation for custom black and white classes ([8b08ac1](https://github.com/Se-Gl/greenCSS-frontend/commit/8b08ac11294966438eebfa720642b93f779960ae))
+
 ## [1.7.2](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.7.1...v1.7.2) (2022-10-13)
 
 ### Bug Fixes
