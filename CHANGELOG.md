@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.7.3...v1.7.4) (2022-11-11)
+
+
+### Bug Fixes
+
+* **typography:** added line clamp doc ([0ad49a5](https://github.com/Se-Gl/greenCSS-frontend/commit/0ad49a5cce782b0ec341879645e76c0b1d054dcf))
+
 ## [1.7.3](https://github.com/Se-Gl/greenCSS-frontend/compare/v1.7.2...v1.7.3) (2022-10-19)
 
 
